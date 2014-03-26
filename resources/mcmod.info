@@ -1,0 +1,16 @@
+[
+{
+  "modid": "grimcraft",
+  "name": "Grimcraft",
+  "description": "New nether functionality.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authors": ["Lapiman, fwilson"],
+  "credits": "The Think Plank",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
