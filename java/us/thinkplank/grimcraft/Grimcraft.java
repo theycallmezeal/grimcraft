@@ -14,6 +14,7 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.util.EnumHelper;
 import us.thinkplank.grimcraft.block.*;
 import us.thinkplank.grimcraft.item.*;
@@ -29,6 +30,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 @Mod(modid="grimcraft", name="grimcraft", version="1.0.0")
 public class Grimcraft {
     @Instance("Grimcraft")
+    public Configuration config;
     public static Grimcraft instance;
 
     static ToolMaterial grimWoodMaterial = EnumHelper.addToolMaterial("GRIMWOOD", 4, 59, 2.0F, 0.0F, 15);
@@ -66,6 +68,8 @@ public class Grimcraft {
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
+    	
+    	this.config = new Configuration(event.getSuggestedConfigurationFile());
 
         GameRegistry.registerBlock(grimWoodPlanks, "grimwoodPlanks");
         GameRegistry.registerBlock(fossilstoneOre, "fossilstoneOre");
