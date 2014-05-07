@@ -1,9 +1,9 @@
 /*
- * Grimcraft.java 1.0.0 3-7-2014
+ * Grimcraft.java 1.0.0 5-7-2014
  * Made with love by Lapiman and Fox
  * Licensed under whatever we decide
- * To-do: Will tools be removed?
- * Figure out the tool material stuff
+ * To-do: Figure out the tool material stuff (TC compatibility is the ultimate goal)
+ * Nether alternatives for vanilla blocks?
  */
 
 
@@ -43,6 +43,7 @@ public class Grimcraft {
     public final static Block netherRedstoneOre = new BlockNetherRedstoneOre();
     public final static Block sulfurOre = new BlockSulfurOre();
     public final static Block blockSulfur = new BlockSulfur();
+    public final static Block peat = new BlockPeat();
 
     public final static Item grimWoodStick = new ItemGrimWoodStick();
 
@@ -77,6 +78,7 @@ public class Grimcraft {
         GameRegistry.registerBlock(netherGoldOre, "netherGoldOre");
         GameRegistry.registerBlock(netherRedstoneOre, "netherRedstoneOre");
         GameRegistry.registerBlock(sulfurOre, "sulfurOre");
+        GameRegistry.registerBlock(peat, "peat");
 
         GameRegistry.registerItem(grimWoodStick, "grimWoodStick");
 
