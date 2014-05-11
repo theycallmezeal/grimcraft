@@ -1,5 +1,5 @@
 /*
- * Grimcraft.java 1.0.0 5-7-2014
+ * Grimcraft.java 1.0.0 5-11-2014
  * Made with love by Lapiman and Fox
  * Licensed under whatever we decide
  * To-do: Figure out the tool material stuff (TC compatibility is the ultimate goal)
@@ -10,6 +10,7 @@
 package us.thinkplank.grimcraft;
 
 import net.minecraft.block.Block;
+import net.minecraft.init.Items;
 //import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
@@ -35,7 +36,8 @@ public class Grimcraft {
 
     static ToolMaterial grimWoodMaterial = EnumHelper.addToolMaterial("GRIMWOOD", 4, 59, 2.0F, 0.0F, 15);
     static ToolMaterial netherrackMaterial = EnumHelper.addToolMaterial("NETHERRACK", 5, 131, 4.0F, 1.0F, 5);
-
+    
+    public final static Block grimWoodLog = new BlockGrimWoodLog();
     public final static Block grimWoodPlanks = new BlockGrimWoodPlanks();
     public final static Block fossilstoneOre = new BlockFossilstoneOre();
     public final static Block netherCoalOre = new BlockNetherCoalOre();
@@ -71,7 +73,8 @@ public class Grimcraft {
     public void preInit(FMLPreInitializationEvent event) {
     	
     	this.config = new Configuration(event.getSuggestedConfigurationFile());
-
+    	
+    	GameRegistry.registerBlock(grimWoodLog, "grimWoodLog");
         GameRegistry.registerBlock(grimWoodPlanks, "grimwoodPlanks");
         GameRegistry.registerBlock(fossilstoneOre, "fossilstoneOre");
         GameRegistry.registerBlock(netherCoalOre, "netherCoalOre");
@@ -106,7 +109,8 @@ public class Grimcraft {
         GameRegistry.registerItem(strawberry, "strawberry");
         GameRegistry.registerItem(chiliPepper, "chiliPepper");
         GameRegistry.registerItem(phoenixEgg, "phoenixEgg");
-
+        
+        GameRegistry.addRecipe(new ItemStack(grimWoodPlanks, 4), "x", 'x', new ItemStack(grimWoodLog));
         GameRegistry.addRecipe(new ItemStack(grimWoodStick), "x", "x", 'x', new ItemStack(grimWoodPlanks));
         GameRegistry.addRecipe(new ItemStack(witherBonemeal, 3), "x", 'x', new ItemStack(witherBone));
         GameRegistry.addRecipe(new ItemStack(grimWoodShovel), "x", "y", "y", 'x', new ItemStack(grimWoodPlanks), 'y', new ItemStack(grimWoodStick));
@@ -115,11 +119,11 @@ public class Grimcraft {
         GameRegistry.addRecipe(new ItemStack(grimWoodHoe), "xx", " y", " y", 'x', new ItemStack(grimWoodPlanks), 'y', new ItemStack(grimWoodStick));
         GameRegistry.addRecipe(new ItemStack(grimWoodSword), "x", "x", "y", 'x', new ItemStack(grimWoodPlanks), 'y', new ItemStack(grimWoodStick));
 
-        GameRegistry.addSmelting(netherCoalOre, new ItemStack(GameRegistry.findItem("minecraft", "coal")), 0.2f);
-        GameRegistry.addSmelting(netherGoldOre, new ItemStack(GameRegistry.findItem("minecraft", "gold_ingot")), 1.2f);
-        GameRegistry.addSmelting(netherRedstoneOre, new ItemStack(GameRegistry.findItem("minecraft", "redstone")), 0.9f);
+        GameRegistry.addSmelting(netherCoalOre, new ItemStack(Items.coal), 0.2f);
+        GameRegistry.addSmelting(netherGoldOre, new ItemStack(Items.gold_ingot), 1.2f);
+        GameRegistry.addSmelting(netherRedstoneOre, new ItemStack(Items.redstone), 0.9f);
         GameRegistry.addSmelting(sulfurOre, new ItemStack(sulfur), 0.2f);
-        GameRegistry.addSmelting(fossilstoneOre, new ItemStack(GameRegistry.findItem("minecraft", "dye"), 1, 15), 0.2f);
+        GameRegistry.addSmelting(fossilstoneOre, new ItemStack(Items.dye, 1, 15), 0.2f);
 
         GameRegistry.registerFuelHandler(new GrimcraftFuelHandler());
     }

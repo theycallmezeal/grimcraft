@@ -23,4 +23,3 @@ public class BlockGrimWoodPlanks extends Block {
         this.blockIcon = iconRegister.registerIcon("grimcraft:grimwoodplanks");
     }
 }
-
