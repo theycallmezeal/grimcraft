@@ -12,7 +12,7 @@ public class BlockGrimWoodPlanks extends Block {
         super(Material.wood);
         setHardness(3F);
         setStepSound(Block.soundTypeWood);
-        setBlockName("grimWoodPlanks");
+        setBlockName("grimwood_planks");
         setCreativeTab(CreativeTabs.tabBlock);
         setHarvestLevel("axe", 0);
     }
@@ -20,6 +20,6 @@ public class BlockGrimWoodPlanks extends Block {
     @Override
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister iconRegister) {
-        this.blockIcon = iconRegister.registerIcon("grimcraft:grimwoodplanks");
+        this.blockIcon = iconRegister.registerIcon("grimcraft:grimwood_planks");
     }
 }

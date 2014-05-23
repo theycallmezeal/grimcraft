@@ -16,7 +16,7 @@ public class BlockSulfurOre extends Block {
         super(Material.rock);
         setHardness(3F);
         setStepSound(Block.soundTypeStone);
-        setBlockName("sulfurOre");
+        setBlockName("sulfur_ore");
         setCreativeTab(CreativeTabs.tabBlock);
         setHarvestLevel("pickaxe", 1);
     }
@@ -32,6 +32,6 @@ public class BlockSulfurOre extends Block {
     @Override
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister iconRegister) {
-        this.blockIcon = iconRegister.registerIcon("grimcraft:sulfurore");
+        this.blockIcon = iconRegister.registerIcon("grimcraft:sulfur_ore");
     }
 }

@@ -17,7 +17,7 @@ public class BlockNetherCoalOre extends Block {
         super(Material.rock);
         setHardness(3F);
         setStepSound(Block.soundTypeStone);
-        setBlockName("netherCoalOre");
+        setBlockName("nether_coal_ore");
         setCreativeTab(CreativeTabs.tabBlock);
         setHarvestLevel("pickaxe", 1);
     }
@@ -29,6 +29,6 @@ public class BlockNetherCoalOre extends Block {
     @Override
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister iconRegister) {
-        this.blockIcon = iconRegister.registerIcon("grimcraft:nethercoalore");
+        this.blockIcon = iconRegister.registerIcon("grimcraft:nether_coal_ore");
     }
 }

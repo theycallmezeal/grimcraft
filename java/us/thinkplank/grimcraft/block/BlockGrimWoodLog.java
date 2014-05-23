@@ -15,7 +15,7 @@ public class BlockGrimWoodLog extends BlockLog {
         super();
         setHardness(2F);
         setStepSound(Block.soundTypeWood);
-        setBlockName("grimWoodLog");
+        setBlockName("grimwood_log");
         setCreativeTab(CreativeTabs.tabBlock);
         setHarvestLevel("axe", 0);
     }
@@ -27,8 +27,8 @@ public class BlockGrimWoodLog extends BlockLog {
 	@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister iconRegister) {
 		icons = new IIcon[2];
-		icons[0] = iconRegister.registerIcon("grimcraft:grimwoodlogbottom");
-		icons[1] = iconRegister.registerIcon("grimcraft:grimwoodlogside");
+		icons[0] = iconRegister.registerIcon("grimcraft:grimwood_log_bottom");
+		icons[1] = iconRegister.registerIcon("grimcraft:grimwood_log_side");
 	}
 	
 	@SideOnly(Side.CLIENT)

@@ -22,7 +22,7 @@ public class BlockGrimWoodSlab extends BlockSlab {
     @Override
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister iconRegister) {
-        this.blockIcon = iconRegister.registerIcon("grimcraft:grimwoodplanks");
+        this.blockIcon = iconRegister.registerIcon("grimcraft:grimwood_planks");
     }
     
     public String func_150002_b(int p_150002_1_) {

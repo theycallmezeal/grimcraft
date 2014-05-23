@@ -12,7 +12,7 @@ public class BlockNetherGoldOre extends Block {
         super(Material.rock);
         setHardness(3F);
         setStepSound(Block.soundTypeStone);
-        setBlockName("netherGoldOre");
+        setBlockName("nether_gold_ore");
         setCreativeTab(CreativeTabs.tabBlock);
         setHarvestLevel("pickaxe", 1);
     }
@@ -20,6 +20,6 @@ public class BlockNetherGoldOre extends Block {
     @Override
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister iconRegister) {
-        this.blockIcon = iconRegister.registerIcon("grimcraft:nethergoldore");
+        this.blockIcon = iconRegister.registerIcon("grimcraft:nether_gold_ore");
     }
 }

@@ -16,7 +16,7 @@ public class BlockFossilstoneOre extends Block {
         super(Material.rock);
         setHardness(3F);
         setStepSound(Block.soundTypeStone);
-        setBlockName("fossilstoneOre");
+        setBlockName("fossilstone_ore");
         setCreativeTab(CreativeTabs.tabBlock);
         setHarvestLevel("pickaxe", 1);
     }
@@ -32,6 +32,6 @@ public class BlockFossilstoneOre extends Block {
     @Override
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister iconRegister) {
-        this.blockIcon = iconRegister.registerIcon("grimcraft:fossilstoneore");
+        this.blockIcon = iconRegister.registerIcon("grimcraft:fossilstone_ore");
     }
 }

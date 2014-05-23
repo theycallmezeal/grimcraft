@@ -12,7 +12,7 @@ public class BlockSulfur extends Block {
         super(Material.rock);
         setHardness(3F);
         setStepSound(Block.soundTypeStone);
-        setBlockName("sulfurOre");
+        setBlockName("sulfur_ore");
         setCreativeTab(CreativeTabs.tabBlock);
         setHarvestLevel("pickaxe", 1);
     }

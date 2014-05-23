@@ -16,7 +16,7 @@ public class BlockNetherRedstoneOre extends Block {
         super(Material.rock);
         setHardness(3F);
         setStepSound(Block.soundTypeStone);
-        setBlockName("netherRedstoneOre");
+        setBlockName("nether_redstone_ore");
         setCreativeTab(CreativeTabs.tabBlock);
         setHarvestLevel("pickaxe", 1);
     }
@@ -32,6 +32,6 @@ public class BlockNetherRedstoneOre extends Block {
     @Override
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister iconRegister) {
-        this.blockIcon = iconRegister.registerIcon("grimcraft:netherredstoneore");
+        this.blockIcon = iconRegister.registerIcon("grimcraft:nether_redstone_ore");
     }
 }
