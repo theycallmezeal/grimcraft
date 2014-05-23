@@ -17,7 +17,7 @@ public class BlockGrimWoodLog extends BlockLog {
         setStepSound(Block.soundTypeWood);
         setBlockName("grimWoodLog");
         setCreativeTab(CreativeTabs.tabBlock);
-        setHarvestLevel("axe", 4);
+        setHarvestLevel("axe", 0);
     }
 	
 	@SideOnly(Side.CLIENT)

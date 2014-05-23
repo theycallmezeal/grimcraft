@@ -1,10 +1,12 @@
+tile.grimWoodLog.name=Grimwood
 tile.grimWoodPlanks.name=Grimwood Planks
-tile.fossilstoneOre.name=Fossilstone Ore
-tile.netherCoalOre.name=Nether Coal Ore
-tile.netherGoldOre.name=Nether Gold Ore
-tile.netherRedstoneore.name=Nether Redstone Ore
-tile.sulfurOre.name=Sulfur Ore
-tile.blockSulfur.name=Sulfur Block
+tile.grimWoodSlab.name=Grimwood Slab
+tile.fossilstone_ore.name=Fossilstone Ore
+tile.nether_coal_ore.name=Nether Coal Ore
+tile.nether_gold_ore.name=Nether Gold Ore
+tile.nether_redstone_ore.name=Nether Redstone Ore
+tile.sulfur_ore.name=Sulfur Ore
+tile.block_sulfur.name=Sulfur Block
 
 item.grimWoodStick.name=Grimwood Stick
 item.grimWoodShovel.name=Grimwood Shovel

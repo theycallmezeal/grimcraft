@@ -14,6 +14,7 @@ public class BlockSulfur extends Block {
         setStepSound(Block.soundTypeStone);
         setBlockName("sulfurOre");
         setCreativeTab(CreativeTabs.tabBlock);
+        setHarvestLevel("pickaxe", 1);
     }
 
     @Override

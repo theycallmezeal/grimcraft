@@ -14,7 +14,7 @@ public class BlockNetherGoldOre extends Block {
         setStepSound(Block.soundTypeStone);
         setBlockName("netherGoldOre");
         setCreativeTab(CreativeTabs.tabBlock);
-        setHarvestLevel("pickaxe", 4);
+        setHarvestLevel("pickaxe", 1);
     }
 
     @Override

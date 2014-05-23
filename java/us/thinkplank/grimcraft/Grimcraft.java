@@ -1,5 +1,5 @@
 /*
- * Grimcraft.java 1.0.0 5-18-2014
+ * Grimcraft.java 1.0.0 5-22-2014
  * Made with love by Lapiman and Fox
  * Licensed under whatever we decide
  * To-do: Figure out the tool material stuff (TC compatibility is the ultimate goal)
@@ -42,6 +42,8 @@ public class Grimcraft {
     
     public final static Block grimWoodLog = new BlockGrimWoodLog();
     public final static Block grimWoodPlanks = new BlockGrimWoodPlanks();
+    public final static Block grimWoodSlab_single = new BlockGrimWoodSlab(false);
+    public final static Block grimWoodSlab_double = new BlockGrimWoodSlab(true);
     public final static Block fossilstoneOre = new BlockFossilstoneOre();
     public final static Block netherCoalOre = new BlockNetherCoalOre();
     public final static Block netherGoldOre = new BlockNetherGoldOre();
@@ -77,13 +79,15 @@ public class Grimcraft {
     	
     	this.config = new Configuration(event.getSuggestedConfigurationFile());
     	
-    	GameRegistry.registerBlock(grimWoodLog, "grimWoodLog");
-        GameRegistry.registerBlock(grimWoodPlanks, "grimwoodPlanks");
-        GameRegistry.registerBlock(fossilstoneOre, "fossilstoneOre");
-        GameRegistry.registerBlock(netherCoalOre, "netherCoalOre");
-        GameRegistry.registerBlock(netherGoldOre, "netherGoldOre");
-        GameRegistry.registerBlock(netherRedstoneOre, "netherRedstoneOre");
-        GameRegistry.registerBlock(sulfurOre, "sulfurOre");
+    	GameRegistry.registerBlock(grimWoodLog, "grimwood_log");
+        GameRegistry.registerBlock(grimWoodPlanks, "grimwood_planks");
+        GameRegistry.registerBlock(grimWoodSlab_single, ItemGrimWoodSlab.class, "single_grimwood_slab");
+        GameRegistry.registerBlock(grimWoodSlab_double, ItemGrimWoodSlab.class, "double_grimwood_slab");
+        GameRegistry.registerBlock(fossilstoneOre, "fossilstone_ore");
+        GameRegistry.registerBlock(netherCoalOre, "nether_coal_ore");
+        GameRegistry.registerBlock(netherGoldOre, "nether_gold_ore");
+        GameRegistry.registerBlock(netherRedstoneOre, "nether_redstone_ore");
+        GameRegistry.registerBlock(sulfurOre, "sulfur_ore");
         GameRegistry.registerBlock(peat, "peat");
         
         GameRegistry.registerItem(grimWoodShovel, "grimWoodShovel");
@@ -141,6 +145,6 @@ public class Grimcraft {
 
     @EventHandler
     public void postInit(FMLPostInitializationEvent event) {
-
+    	
     }
 }

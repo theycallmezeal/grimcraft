@@ -19,7 +19,7 @@ public class BlockPeat extends BlockFalling {
         setStepSound(Block.soundTypeGrass);
         setBlockName("peat");
         setCreativeTab(CreativeTabs.tabBlock);
-        setHarvestLevel("shovel", 4);
+        setHarvestLevel("shovel", 0);
     }
 
     @Override
