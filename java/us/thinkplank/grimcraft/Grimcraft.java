@@ -54,16 +54,16 @@ public class Grimcraft {
     public final static Block sulfur_block = new BlockSulfur();
     public final static Block peat = new BlockPeat();
 
-    public final static Item grimWoodShovel = new ItemGrimWoodShovel(grimWoodMaterial);
-    public final static Item grimWoodPickaxe = new ItemGrimWoodPickaxe(grimWoodMaterial);
-    public final static Item grimWoodAxe = new ItemGrimWoodAxe(grimWoodMaterial);
-    public final static Item grimWoodHoe = new ItemGrimWoodHoe(grimWoodMaterial);
-    public final static Item grimWoodSword = new ItemGrimWoodSword(grimWoodMaterial);
+    public final static Item grimWoodShovel = new ItemGrimwoodShovel(grimWoodMaterial);
+    public final static Item grimWoodPickaxe = new ItemGrimwoodPickaxe(grimWoodMaterial);
+    public final static Item grimWoodAxe = new ItemGrimwoodAxe(grimWoodMaterial);
+    public final static Item grimWoodHoe = new ItemGrimwoodHoe(grimWoodMaterial);
+    public final static Item grimWoodSword = new ItemGrimwoodSword(grimWoodMaterial);
 
     public final static Item netherrackPickaxe = new ItemNetherrackPickaxe(netherrackMaterial);
     /* rest of tools */
 
-    public final static Item grimWoodStick = new ItemGrimWoodStick();
+    public final static Item grimWoodStick = new ItemGrimwoodStick();
     public final static Item witherBone = new ItemWitherBone();
     public final static Item witherBonemeal = new ItemWitherBonemeal();
     public final static Item sulfur = new ItemSulfur();
@@ -83,8 +83,8 @@ public class Grimcraft {
     	
     	GameRegistry.registerBlock(grimwood_log, "grimwood_log");
         GameRegistry.registerBlock(grimwood_planks, "grimwood_planks");
-        GameRegistry.registerBlock(single_grimwood_slab, ItemGrimWoodSlab.class, "single_grimwood_slab");
-        GameRegistry.registerBlock(double_grimwood_slab, ItemGrimWoodSlab.class, "double_grimwood_slab");
+        GameRegistry.registerBlock(single_grimwood_slab, ItemGrimwoodSlab.class, "single_grimwood_slab");
+        GameRegistry.registerBlock(double_grimwood_slab, ItemGrimwoodSlab.class, "double_grimwood_slab");
         GameRegistry.registerBlock(grimwood_stairs, "grimwood_stairs");
         GameRegistry.registerBlock(fossilstone_ore, "fossilstone_ore");
         GameRegistry.registerBlock(nether_coal_ore, "nether_coal_ore");
