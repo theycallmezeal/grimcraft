@@ -7,8 +7,8 @@ import net.minecraft.creativetab.CreativeTabs;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockGrimWoodPlanks extends Block {
-    public BlockGrimWoodPlanks () {
+public class BlockGrimwoodPlanks extends Block {
+    public BlockGrimwoodPlanks () {
         super(Material.wood);
         setHardness(3F);
         setStepSound(Block.soundTypeWood);

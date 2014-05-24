@@ -41,10 +41,11 @@ public class Grimcraft {
     static ToolMaterial grimWoodMaterial = EnumHelper.addToolMaterial("GRIMWOOD", 0, 59, 2.0F, 0.0F, 15); //currently these are equal to vanilla wood / stone
     static ToolMaterial netherrackMaterial = EnumHelper.addToolMaterial("NETHERRACK", 1, 131, 4.0F, 1.0F, 5); //tweak later?
     
-    public final static Block grimwood_log = new BlockGrimWoodLog();
-    public final static Block grimwood_planks = new BlockGrimWoodPlanks();
-    public final static Block single_grimwood_slab = new BlockGrimWoodSlab(false);
-    public final static Block double_grimwood_slab = new BlockGrimWoodSlab(true);
+    public final static Block grimwood_log = new BlockGrimwoodLog();
+    public final static Block grimwood_planks = new BlockGrimwoodPlanks();
+    public final static Block single_grimwood_slab = new BlockGrimwoodSlab(false);
+    public final static Block double_grimwood_slab = new BlockGrimwoodSlab(true);
+    public final static Block grimwood_stairs = new BlockGrimwoodStairs();
     public final static Block fossilstone_ore = new BlockFossilstoneOre();
     public final static Block nether_coal_ore = new BlockNetherCoalOre();
     public final static Block nether_gold_ore = new BlockNetherGoldOre();
@@ -84,6 +85,7 @@ public class Grimcraft {
         GameRegistry.registerBlock(grimwood_planks, "grimwood_planks");
         GameRegistry.registerBlock(single_grimwood_slab, ItemGrimWoodSlab.class, "single_grimwood_slab");
         GameRegistry.registerBlock(double_grimwood_slab, ItemGrimWoodSlab.class, "double_grimwood_slab");
+        GameRegistry.registerBlock(grimwood_stairs, "grimwood_stairs");
         GameRegistry.registerBlock(fossilstone_ore, "fossilstone_ore");
         GameRegistry.registerBlock(nether_coal_ore, "nether_coal_ore");
         GameRegistry.registerBlock(nether_gold_ore, "nether_gold_ore");

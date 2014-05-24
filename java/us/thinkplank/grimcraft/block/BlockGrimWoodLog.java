@@ -9,9 +9,9 @@ import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.util.IIcon;
 
-public class BlockGrimWoodLog extends BlockLog {
+public class BlockGrimwoodLog extends BlockLog {
 	
-	public BlockGrimWoodLog () {
+	public BlockGrimwoodLog () {
         super();
         setHardness(2F);
         setStepSound(Block.soundTypeWood);
