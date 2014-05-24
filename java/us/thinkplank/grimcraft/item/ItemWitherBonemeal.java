@@ -8,7 +8,7 @@ public class ItemWitherBonemeal extends Item {
         super();
         setMaxStackSize(64);
         setCreativeTab(CreativeTabs.tabMaterials);
-        setUnlocalizedName("witherBonemeal");
-        setTextureName("grimcraft:witherBonemeal");
+        setUnlocalizedName("wither_bonemeal");
+        setTextureName("grimcraft:wither_bonemeal");
     }
 }

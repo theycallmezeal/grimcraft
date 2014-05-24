@@ -9,10 +9,10 @@ public class ItemGrimwoodShovel extends ItemSpade {
         super(material);
         setMaxStackSize(64);
         setCreativeTab(CreativeTabs.tabTools);
-        setUnlocalizedName("grimWoodShovel");
+        setUnlocalizedName("grimwood_shovel");
     }
     
     public void registerItemIcons(IIconRegister iconRegister) {
-        this.itemIcon = iconRegister.registerIcon("grimcraft:grimwoodshovel");
+        this.itemIcon = iconRegister.registerIcon("grimcraft:grimwood_shovel");
     }
 }

@@ -9,10 +9,10 @@ public class ItemGrimwoodAxe extends ItemAxe {
         super(material);
         setMaxStackSize(64);
         setCreativeTab(CreativeTabs.tabTools);
-        setUnlocalizedName("grimWoodAxe");
+        setUnlocalizedName("grimwood_axe");
     }
     
     public void registerItemIcons(IIconRegister iconRegister) {
-        this.itemIcon = iconRegister.registerIcon("grimcraft:grimwoodaxe");
+        this.itemIcon = iconRegister.registerIcon("grimcraft:grimwood_axe");
     }
 }

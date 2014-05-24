@@ -9,10 +9,10 @@ public class ItemGrimwoodHoe extends ItemHoe {
         super(material);
         setMaxStackSize(64);
         setCreativeTab(CreativeTabs.tabTools);
-        setUnlocalizedName("grimWoodHoe");
+        setUnlocalizedName("grimwood_hoe");
     }
     
     public void registerItemIcons(IIconRegister iconRegister) {
-        this.itemIcon = iconRegister.registerIcon("grimcraft:grimwoodhoe");
+        this.itemIcon = iconRegister.registerIcon("grimcraft:grimwood_hoe");
     }
 }

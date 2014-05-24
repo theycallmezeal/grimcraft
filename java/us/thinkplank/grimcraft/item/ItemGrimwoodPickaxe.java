@@ -9,10 +9,10 @@ public class ItemGrimwoodPickaxe extends ItemPickaxe {
         super(material);
         setMaxStackSize(64);
         setCreativeTab(CreativeTabs.tabTools);
-        setUnlocalizedName("grimWoodPickaxe");
+        setUnlocalizedName("grimwood_pickaxe");
     }
     
     public void registerItemIcons(IIconRegister iconRegister) {
-        this.itemIcon = iconRegister.registerIcon("grimcraft:grimwoodpickaxe");
+        this.itemIcon = iconRegister.registerIcon("grimcraft:grimwood_pickaxe");
     }
 }

@@ -8,7 +8,7 @@ public class ItemWitherBone extends Item {
         super();
         setMaxStackSize(64);
         setCreativeTab(CreativeTabs.tabMaterials);
-        setUnlocalizedName("witherBone");
-        setTextureName("grimcraft:witherbone");
+        setUnlocalizedName("wither_bone");
+        setTextureName("grimcraft:wither_bone");
     }
 }

@@ -8,7 +8,7 @@ public class ItemChiliPepper extends Item {
         super();
         setMaxStackSize(64);
         setCreativeTab(CreativeTabs.tabMaterials);
-        setUnlocalizedName("chiliPepper");
-        setTextureName("grimcraft:chilipepper");
+        setUnlocalizedName("chili_pepper");
+        setTextureName("grimcraft:chili_pepper");
     }
 }

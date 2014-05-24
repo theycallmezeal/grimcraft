@@ -8,7 +8,7 @@ public class ItemBarleySeeds extends Item {
         super();
         setMaxStackSize(64);
         setCreativeTab(CreativeTabs.tabMaterials);
-        setUnlocalizedName("barleySeeds");
-        setTextureName("grimcraft:barleySeeds");
+        setUnlocalizedName("barley_seeds");
+        setTextureName("grimcraft:barley_seeds");
     }
 }

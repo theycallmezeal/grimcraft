@@ -6,17 +6,17 @@ import net.minecraft.item.Item;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemNetherRoot extends Item {
-    public ItemNetherRoot() {
+public class ItemNetherroot extends Item {
+    public ItemNetherroot() {
         super();
         setMaxStackSize(64);
         setCreativeTab(CreativeTabs.tabMaterials);
-        setUnlocalizedName("beetroot");
+        setUnlocalizedName("netherroot");
     }
 
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IIconRegister iconRegister) {
-        this.itemIcon = iconRegister.registerIcon("grimcraft:beetroot");
+        this.itemIcon = iconRegister.registerIcon("grimcraft:netherroot");
     }
 }
