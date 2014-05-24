@@ -1,12 +1,20 @@
 /*
- * Grimcraft.java 1.0.0 5-22-2014
+ * Grimcraft.java 1.0.0 5-24-2014
  * Made with love by Lapiman and Fox
  * Licensed under whatever we decide
- * To-do: Figure out the tool material stuff (TC compatibility is the ultimate goal)
+ * 
+ * To-do:
+ * Figure out the tool material stuff (TC compatibility is the ultimate goal)
  * Nether alternatives for vanilla blocks?
  * Finish tools (ugh)
  * maybe a ModBlocks and ModItems class?
  * Sulfur ore texture
+ * 
+ * Big to-do:
+ * Foods (vaguely started)
+ * Mobs
+ * Potions
+ * Worldgen
  */
 
 
@@ -116,6 +124,8 @@ public class Grimcraft {
         
         GameRegistry.addRecipe(new ItemStack(grimwood_planks, 4), "x", 'x', new ItemStack(grimwood_log));
         GameRegistry.addRecipe(new ItemStack(grimwood_stick), "x", "x", 'x', new ItemStack(grimwood_planks));
+        GameRegistry.addRecipe(new ItemStack(single_grimwood_slab, 6), "xxx", 'x', new ItemStack(grimwood_planks));
+        GameRegistry.addRecipe(new ItemStack(grimwood_stairs, 4), "x  ", "xx ", "xxx", 'x', new ItemStack(grimwood_planks));
         GameRegistry.addRecipe(new ItemStack(Blocks.wooden_door), "xx", "xx", "xx", 'x', new ItemStack(grimwood_planks)); //grimwood door?
         GameRegistry.addRecipe(new ItemStack(Blocks.fence), "xxx", "xxx", 'x', new ItemStack(grimwood_stick)); //grimwood fence?
         GameRegistry.addRecipe(new ItemStack(Blocks.fence_gate), "xyx", "xyx", 'x', new ItemStack(grimwood_stick), 'y', new ItemStack(grimwood_planks));
