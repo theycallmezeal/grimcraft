@@ -4,8 +4,8 @@ import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemAxe;
 
-public class ItemGrimWoodAxe extends ItemAxe {
-    public ItemGrimWoodAxe(ToolMaterial material) {
+public class ItemGrimwoodAxe extends ItemAxe {
+    public ItemGrimwoodAxe(ToolMaterial material) {
         super(material);
         setMaxStackSize(64);
         setCreativeTab(CreativeTabs.tabTools);

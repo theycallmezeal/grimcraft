@@ -4,8 +4,8 @@ import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemPickaxe;
 
-public class ItemGrimWoodPickaxe extends ItemPickaxe {
-    public ItemGrimWoodPickaxe(ToolMaterial material) {
+public class ItemGrimwoodPickaxe extends ItemPickaxe {
+    public ItemGrimwoodPickaxe(ToolMaterial material) {
         super(material);
         setMaxStackSize(64);
         setCreativeTab(CreativeTabs.tabTools);

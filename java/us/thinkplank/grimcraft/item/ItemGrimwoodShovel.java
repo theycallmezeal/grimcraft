@@ -4,8 +4,8 @@ import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemSpade;
 
-public class ItemGrimWoodShovel extends ItemSpade {
-    public ItemGrimWoodShovel(ToolMaterial material) {
+public class ItemGrimwoodShovel extends ItemSpade {
+    public ItemGrimwoodShovel(ToolMaterial material) {
         super(material);
         setMaxStackSize(64);
         setCreativeTab(CreativeTabs.tabTools);

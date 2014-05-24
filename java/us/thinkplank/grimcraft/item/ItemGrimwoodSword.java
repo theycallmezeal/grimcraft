@@ -4,15 +4,15 @@ import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemHoe;
 
-public class ItemGrimWoodHoe extends ItemHoe {
-    public ItemGrimWoodHoe(ToolMaterial material) {
+public class ItemGrimwoodSword extends ItemHoe {
+    public ItemGrimwoodSword(ToolMaterial material) {
         super(material);
         setMaxStackSize(64);
         setCreativeTab(CreativeTabs.tabTools);
-        setUnlocalizedName("grimWoodHoe");
+        setUnlocalizedName("grimWoodSword");
     }
     
     public void registerItemIcons(IIconRegister iconRegister) {
-        this.itemIcon = iconRegister.registerIcon("grimcraft:grimwoodhoe");
+        this.itemIcon = iconRegister.registerIcon("grimcraft:grimwoodsword");
     }
 }
