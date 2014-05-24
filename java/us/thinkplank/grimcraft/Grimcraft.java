@@ -53,16 +53,16 @@ public class Grimcraft {
     public final static Block sulfur_ore = new BlockSulfurOre();
     public final static Block sulfur_block = new BlockSulfur();
     public final static Block peat = new BlockPeat();
-
+    
     public final static Item grimwood_shovel = new ItemGrimwoodShovel(grimWoodMaterial);
     public final static Item grimwood_pickaxe = new ItemGrimwoodPickaxe(grimWoodMaterial);
     public final static Item grimwood_axe = new ItemGrimwoodAxe(grimWoodMaterial);
     public final static Item grimwood_hoe = new ItemGrimwoodHoe(grimWoodMaterial);
     public final static Item grimwood_sword = new ItemGrimwoodSword(grimWoodMaterial);
-
+    
     public final static Item netherrack_pickaxe = new ItemNetherrackPickaxe(netherrackMaterial);
     /* rest of tools */
-
+    
     public final static Item grimwood_stick = new ItemGrimwoodStick();
     public final static Item wither_bone = new ItemWitherBone();
     public final static Item wither_bonemeal = new ItemWitherBonemeal();
