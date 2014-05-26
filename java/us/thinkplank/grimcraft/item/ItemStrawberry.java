@@ -2,10 +2,11 @@ package us.thinkplank.grimcraft.item;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemFood;
 
-public class ItemStrawberry extends Item {
+public class ItemStrawberry extends ItemFood {
     public ItemStrawberry() {
-        super();
+        super(1, 0.1F, false);
         setMaxStackSize(64);
         setCreativeTab(CreativeTabs.tabMaterials);
         setUnlocalizedName("strawberry");

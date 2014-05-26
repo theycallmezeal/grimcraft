@@ -17,7 +17,6 @@
  * Worldgen
  */
 
-
 package us.thinkplank.grimcraft;
 
 import net.minecraft.block.Block;
