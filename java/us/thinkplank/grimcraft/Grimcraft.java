@@ -1,12 +1,12 @@
 /*
- * Grimcraft.java 1.0.0 5-24-2014
+ * Grimcraft.java 1.0.0 6-3-2014
  * Made with love by Lapiman and Fox
  * Licensed under whatever we decide
  * 
  * To-do:
  * Figure out the tool material stuff (TC compatibility is the ultimate goal)
  * Nether alternatives for vanilla blocks?
- * Finish tools (ugh)
+ * Finish tools (ugh) [make sure we set the maxstacksizes to 1, not 64!]
  * maybe a ModBlocks and ModItems class?
  * Sulfur ore texture
  * 
@@ -44,9 +44,11 @@ public class Grimcraft {
     @Instance("Grimcraft")
     public Configuration config;
     public static Grimcraft instance;
-
-    static ToolMaterial grimWoodMaterial = EnumHelper.addToolMaterial("GRIMWOOD", 0, 59, 2.0F, 0.0F, 15); //currently these are equal to vanilla wood / stone
-    static ToolMaterial netherrackMaterial = EnumHelper.addToolMaterial("NETHERRACK", 1, 131, 4.0F, 1.0F, 5); //tweak later?
+    
+    /* currently equivalent to vanilla materials; will tweak later*/
+    static ToolMaterial grimwood_material = EnumHelper.addToolMaterial("GRIMWOOD", 0, 59, 2.0F, 0.0F, 15); // wood
+    static ToolMaterial netherrack_material = EnumHelper.addToolMaterial("NETHERRACK", 1, 131, 4.0F, 1.0F, 5); // stone
+    static ToolMaterial nether_quartz_material = EnumHelper.addToolMaterial("NETHER_QUARTZ", 0, 32, 12.0F, 0.0F, 22); // gold
     
     public final static Block grimwood_log = new BlockGrimwoodLog();
     public final static Block grimwood_planks = new BlockGrimwoodPlanks();
@@ -61,14 +63,20 @@ public class Grimcraft {
     public final static Block sulfur_block = new BlockSulfur();
     public final static Block peat = new BlockPeat();
     
-    public final static Item grimwood_shovel = new ItemGrimwoodShovel(grimWoodMaterial);
-    public final static Item grimwood_pickaxe = new ItemGrimwoodPickaxe(grimWoodMaterial);
-    public final static Item grimwood_axe = new ItemGrimwoodAxe(grimWoodMaterial);
-    public final static Item grimwood_hoe = new ItemGrimwoodHoe(grimWoodMaterial);
-    public final static Item grimwood_sword = new ItemGrimwoodSword(grimWoodMaterial);
+    public final static Item grimwood_shovel = new ItemGrimwoodShovel(grimwood_material);
+    public final static Item grimwood_pickaxe = new ItemGrimwoodPickaxe(grimwood_material);
+    public final static Item grimwood_axe = new ItemGrimwoodAxe(grimwood_material);
+    public final static Item grimwood_hoe = new ItemGrimwoodHoe(grimwood_material);
+    public final static Item grimwood_sword = new ItemGrimwoodSword(grimwood_material);
     
-    public final static Item netherrack_pickaxe = new ItemNetherrackPickaxe(netherrackMaterial);
-    /* rest of tools */
+    public final static Item netherrack_pickaxe = new ItemNetherrackPickaxe(netherrack_material);
+    /* rest of netherrack tools */
+    
+    public final static Item nether_quartz_shovel = new ItemNetherQuartzShovel(nether_quartz_material);
+    public final static Item nether_quartz_pickaxe = new ItemNetherQuartzPickaxe(nether_quartz_material);
+    public final static Item nether_quartz_axe = new ItemNetherQuartzAxe(nether_quartz_material);
+    public final static Item nether_quartz_hoe = new ItemNetherQuartzHoe(nether_quartz_material);
+    public final static Item nether_quartz_sword = new ItemNetherQuartzSword(nether_quartz_material);
     
     public final static Item grimwood_stick = new ItemGrimwoodStick();
     public final static Item wither_bone = new ItemWitherBone();

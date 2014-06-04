@@ -2,17 +2,17 @@ package us.thinkplank.grimcraft.item;
 
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.ItemAxe;
+import net.minecraft.item.ItemHoe;
 
-public class ItemNetherQuartzAxe extends ItemAxe {
-    public ItemNetherQuartzAxe(ToolMaterial material) {
+public class ItemNetherQuartzHoe extends ItemHoe {
+    public ItemNetherQuartzHoe(ToolMaterial material) {
         super(material);
         setMaxStackSize(64);
         setCreativeTab(CreativeTabs.tabTools);
-        setUnlocalizedName("netherQuartzAxe");
+        setUnlocalizedName("nether_quartz_hoe");
     }
     
     public void registerItemIcons(IIconRegister iconRegister) {
-        this.itemIcon = iconRegister.registerIcon("grimcraft:nether_quartz_axe");
+        this.itemIcon = iconRegister.registerIcon("grimcraft:nether_quartz_hoe");
     }
 }
