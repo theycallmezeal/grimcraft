@@ -9,7 +9,7 @@ public class ItemNetherQuartzPickaxe extends ItemPickaxe {
         super(material);
         setMaxStackSize(64);
         setCreativeTab(CreativeTabs.tabTools);
-        setUnlocalizedName("netherQuartzPickaxe");
+        setUnlocalizedName("nether_quartz_pickaxe");
     }
     
     public void registerItemIcons(IIconRegister iconRegister) {

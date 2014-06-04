@@ -9,7 +9,7 @@ public class ItemNetherQuartzAxe extends ItemAxe {
         super(material);
         setMaxStackSize(64);
         setCreativeTab(CreativeTabs.tabTools);
-        setUnlocalizedName("netherQuartzAxe");
+        setUnlocalizedName("nether_quartz_axe");
     }
     
     public void registerItemIcons(IIconRegister iconRegister) {

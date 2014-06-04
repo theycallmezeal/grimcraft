@@ -9,7 +9,7 @@ public class ItemNetherQuartzSword extends ItemSword {
         super(material);
         setMaxStackSize(64);
         setCreativeTab(CreativeTabs.tabTools);
-        setUnlocalizedName("netherQuartzSword");
+        setUnlocalizedName("nether_quartz_sword");
     }
     
     public void registerItemIcons(IIconRegister iconRegister) {

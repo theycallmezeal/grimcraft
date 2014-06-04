@@ -9,7 +9,7 @@ public class ItemNetherQuartzShovel extends ItemShovel {
         super(material);
         setMaxStackSize(64);
         setCreativeTab(CreativeTabs.tabTools);
-        setUnlocalizedName("netherQuartzShovel");
+        setUnlocalizedName("nether_quartz_shovel");
     }
     
     public void registerItemIcons(IIconRegister iconRegister) {

@@ -9,7 +9,7 @@ public class ItemNetherQuartzHoe extends ItemHoe {
         super(material);
         setMaxStackSize(64);
         setCreativeTab(CreativeTabs.tabTools);
-        setUnlocalizedName("netherQuartzHoe");
+        setUnlocalizedName("nether_quartz_hoe");
     }
     
     public void registerItemIcons(IIconRegister iconRegister) {
