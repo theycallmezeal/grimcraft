@@ -2,9 +2,9 @@ package us.thinkplank.grimcraft.item;
 
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.ItemShovel;
+import net.minecraft.item.ItemSpade;
 
-public class ItemNetherQuartzShovel extends ItemShovel {
+public class ItemNetherQuartzShovel extends ItemSpade {
     public ItemNetherQuartzShovel(ToolMaterial material) {
         super(material);
         setMaxStackSize(64);
