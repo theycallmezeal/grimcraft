@@ -2,17 +2,17 @@ package us.thinkplank.grimcraft.item;
 
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.ItemPickaxe;
+import net.minecraft.item.ItemSpade;
 
-public class ItemNetherrackPickaxe extends ItemPickaxe {
-    public ItemNetherrackPickaxe(ToolMaterial material) {
+public class ItemNetherrackShovel extends ItemSpade {
+    public ItemNetherrackShovel(ToolMaterial material) {
         super(material);
         setMaxStackSize(64);
         setCreativeTab(CreativeTabs.tabTools);
-        setUnlocalizedName("netherrack_pickaxe");
+        setUnlocalizedName("netherrack_shovel");
     }
     
     public void registerItemIcons(IIconRegister iconRegister) {
-        this.itemIcon = iconRegister.registerIcon("grimcraft:netherrack_pickaxe");
+        this.itemIcon = iconRegister.registerIcon("grimcraft:netherrack_shovel");
     }
 }
