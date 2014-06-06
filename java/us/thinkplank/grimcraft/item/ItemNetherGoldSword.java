@@ -7,8 +7,8 @@ import net.minecraft.item.ItemSword;
 public class ItemNetherGoldSword extends ItemSword {
     public ItemNetherGoldSword(ToolMaterial material) {
         super(material);
-        setMaxStackSize(64);
-        setCreativeTab(CreativeTabs.tabTools);
+        setMaxStackSize(1);
+        setCreativeTab(CreativeTabs.tabCombat);
         setUnlocalizedName("nether_gold_sword");
     }
     

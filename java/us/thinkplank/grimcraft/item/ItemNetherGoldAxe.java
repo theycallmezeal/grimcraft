@@ -7,7 +7,7 @@ import net.minecraft.item.ItemAxe;
 public class ItemNetherGoldAxe extends ItemAxe {
     public ItemNetherGoldAxe(ToolMaterial material) {
         super(material);
-        setMaxStackSize(64);
+        setMaxStackSize(1);
         setCreativeTab(CreativeTabs.tabTools);
         setUnlocalizedName("nether_gold_axe");
     }

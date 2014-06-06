@@ -7,7 +7,7 @@ import net.minecraft.item.ItemPickaxe;
 public class ItemNetherrackPickaxe extends ItemPickaxe {
     public ItemNetherrackPickaxe(ToolMaterial material) {
         super(material);
-        setMaxStackSize(64);
+        setMaxStackSize(1);
         setCreativeTab(CreativeTabs.tabTools);
         setUnlocalizedName("netherrack_pickaxe");
     }

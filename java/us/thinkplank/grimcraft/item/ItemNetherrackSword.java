@@ -7,8 +7,8 @@ import net.minecraft.item.ItemSword;
 public class ItemNetherrackSword extends ItemSword {
     public ItemNetherrackSword(ToolMaterial material) {
         super(material);
-        setMaxStackSize(64);
-        setCreativeTab(CreativeTabs.tabTools);
+        setMaxStackSize(1);
+        setCreativeTab(CreativeTabs.tabCombat);
         setUnlocalizedName("netherrack_sword");
     }
     

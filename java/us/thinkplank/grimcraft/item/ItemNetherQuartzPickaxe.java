@@ -7,7 +7,7 @@ import net.minecraft.item.ItemPickaxe;
 public class ItemNetherQuartzPickaxe extends ItemPickaxe {
     public ItemNetherQuartzPickaxe(ToolMaterial material) {
         super(material);
-        setMaxStackSize(64);
+        setMaxStackSize(1);
         setCreativeTab(CreativeTabs.tabTools);
         setUnlocalizedName("nether_quartz_pickaxe");
     }

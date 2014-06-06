@@ -1,5 +1,5 @@
 /*
- * Grimcraft.java 1.0.0 6-3-2014
+ * Grimcraft.java 1.0.0 6-6-2014
  * Made with love by Lapiman and Fox
  * Licensed under whatever we decide
  * 
@@ -49,6 +49,7 @@ public class Grimcraft {
     static ToolMaterial grimwood_material = EnumHelper.addToolMaterial("GRIMWOOD", 0, 59, 2.0F, 0.0F, 15); // wood
     static ToolMaterial netherrack_material = EnumHelper.addToolMaterial("NETHERRACK", 1, 131, 4.0F, 1.0F, 5); // stone
     static ToolMaterial nether_quartz_material = EnumHelper.addToolMaterial("NETHER_QUARTZ", 0, 32, 12.0F, 0.0F, 22); // gold
+    static ToolMaterial nether_gold_material = EnumHelper.addToolMaterial("NETHER_GOLD", 2, 250, 6.0F, 2.0F, 14); //iron, oddly enough
     
     public final static Block grimwood_log = new BlockGrimwoodLog();
     public final static Block grimwood_planks = new BlockGrimwoodPlanks();
@@ -80,6 +81,12 @@ public class Grimcraft {
     public final static Item nether_quartz_axe = new ItemNetherQuartzAxe(nether_quartz_material);
     public final static Item nether_quartz_hoe = new ItemNetherQuartzHoe(nether_quartz_material);
     public final static Item nether_quartz_sword = new ItemNetherQuartzSword(nether_quartz_material);
+    
+    public final static Item nether_gold_shovel = new ItemNetherGoldShovel(nether_gold_material);
+    public final static Item nether_gold_pickaxe = new ItemNetherGoldPickaxe(nether_gold_material);
+    public final static Item nether_gold_axe = new ItemNetherGoldAxe(nether_gold_material);
+    public final static Item nether_gold_hoe = new ItemNetherGoldHoe(nether_gold_material);
+    public final static Item nether_gold_sword = new ItemNetherGoldSword(nether_gold_material);
     
     public final static Item grimwood_stick = new ItemGrimwoodStick();
     public final static Item wither_bone = new ItemWitherBone();
@@ -124,6 +131,18 @@ public class Grimcraft {
         GameRegistry.registerItem(netherrack_hoe, "netherrack_hoe");
         GameRegistry.registerItem(netherrack_sword, "netherrack_sword");
         
+        GameRegistry.registerItem(nether_quartz_shovel, "nether_quartz_shovel");
+        GameRegistry.registerItem(nether_quartz_pickaxe, "nether_quartz_pickaxe");
+        GameRegistry.registerItem(nether_quartz_axe, "nether_quartz_axe");
+        GameRegistry.registerItem(nether_quartz_hoe, "nether_quartz_hoe");
+        GameRegistry.registerItem(nether_quartz_sword, "nether_quartz_sword");
+        
+        GameRegistry.registerItem(nether_gold_shovel, "nether_gold_shovel");
+        GameRegistry.registerItem(nether_gold_pickaxe, "nether_gold_pickaxe");
+        GameRegistry.registerItem(nether_gold_axe, "nether_gold_axe");
+        GameRegistry.registerItem(nether_gold_hoe, "nether_gold_hoe");
+        GameRegistry.registerItem(nether_gold_sword, "nether_gold_sword");
+        
         GameRegistry.registerItem(grimwood_stick, "grimwood_stick");
         GameRegistry.registerItem(wither_bone, "wither_bone");
         GameRegistry.registerItem(wither_bonemeal, "wither_bonemeal");
@@ -149,22 +168,27 @@ public class Grimcraft {
         GameRegistry.addRecipe(new ItemStack(grimwood_shovel), "x", "y", "y", 'x', new ItemStack(grimwood_planks), 'y', new ItemStack(grimwood_stick));
         GameRegistry.addRecipe(new ItemStack(netherrack_shovel), "x", "y", "y", 'x', new ItemStack(Blocks.netherrack), 'y', new ItemStack(grimwood_stick));
         GameRegistry.addRecipe(new ItemStack(nether_quartz_shovel), "x", "y", "y", 'x', new ItemStack(Items.quartz), 'y', new ItemStack(grimwood_stick));
+        GameRegistry.addRecipe(new ItemStack(nether_gold_shovel), "x", "y", "y", 'x', new ItemStack(Items.gold_ingot), 'y', new ItemStack(grimwood_stick));
         
         GameRegistry.addRecipe(new ItemStack(grimwood_pickaxe), "xxx", " y ", " y ", 'x', new ItemStack(grimwood_planks), 'y', new ItemStack(grimwood_stick));
         GameRegistry.addRecipe(new ItemStack(netherrack_pickaxe), "xxx", " y ", " y ", 'x', new ItemStack(Blocks.netherrack), 'y', new ItemStack(grimwood_stick));
         GameRegistry.addRecipe(new ItemStack(nether_quartz_pickaxe), "xxx", " y ", " y ", 'x', new ItemStack(Items.quartz), 'y', new ItemStack(grimwood_stick));
+        GameRegistry.addRecipe(new ItemStack(nether_gold_pickaxe), "xxx", " y ", " y ", 'x', new ItemStack(Items.gold_ingot), 'y', new ItemStack(grimwood_stick));
         
         GameRegistry.addRecipe(new ItemStack(grimwood_axe), "xx", "xy", " y", 'x', new ItemStack(grimwood_planks), 'y', new ItemStack(grimwood_stick));
         GameRegistry.addRecipe(new ItemStack(netherrack_axe), "xx", "xy", " y", 'x', new ItemStack(Blocks.netherrack), 'y', new ItemStack(grimwood_stick));
         GameRegistry.addRecipe(new ItemStack(nether_quartz_axe), "xx", "xy", " y", 'x', new ItemStack(Items.quartz), 'y', new ItemStack(grimwood_stick));
+        GameRegistry.addRecipe(new ItemStack(nether_gold_axe), "xx", "xy", " y", 'x', new ItemStack(Items.gold_ingot), 'y', new ItemStack(grimwood_stick));
         
         GameRegistry.addRecipe(new ItemStack(grimwood_hoe), "xx", " y", " y", 'x', new ItemStack(grimwood_planks), 'y', new ItemStack(grimwood_stick));
         GameRegistry.addRecipe(new ItemStack(netherrack_hoe), "xx", " y", " y", 'x', new ItemStack(Blocks.netherrack), 'y', new ItemStack(grimwood_stick));
         GameRegistry.addRecipe(new ItemStack(nether_quartz_hoe), "xx", " y", " y", 'x', new ItemStack(Items.quartz), 'y', new ItemStack(grimwood_stick));
+        GameRegistry.addRecipe(new ItemStack(nether_gold_hoe), "xx", " y", " y", 'x', new ItemStack(Items.gold_ingot), 'y', new ItemStack(grimwood_stick));
         
         GameRegistry.addRecipe(new ItemStack(grimwood_sword), "x", "x", "y", 'x', new ItemStack(grimwood_planks), 'y', new ItemStack(grimwood_stick));
         GameRegistry.addRecipe(new ItemStack(netherrack_sword), "x", "x", "y", 'x', new ItemStack(Blocks.netherrack), 'y', new ItemStack(grimwood_stick));
         GameRegistry.addRecipe(new ItemStack(nether_quartz_sword), "x", "x", "y", 'x', new ItemStack(Items.quartz), 'y', new ItemStack(grimwood_stick));
+        GameRegistry.addRecipe(new ItemStack(nether_gold_sword), "x", "x", "y", 'x', new ItemStack(Items.gold_ingot), 'y', new ItemStack(grimwood_stick));
 
         GameRegistry.addSmelting(nether_coal_ore, new ItemStack(Items.coal), 0.2f);
         GameRegistry.addSmelting(nether_gold_ore, new ItemStack(Items.gold_ingot), 1.2f);

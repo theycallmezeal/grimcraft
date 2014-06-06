@@ -7,7 +7,7 @@ import net.minecraft.item.ItemAxe;
 public class ItemNetherrackAxe extends ItemAxe {
     public ItemNetherrackAxe(ToolMaterial material) {
         super(material);
-        setMaxStackSize(64);
+        setMaxStackSize(1);
         setCreativeTab(CreativeTabs.tabTools);
         setUnlocalizedName("netherrack_axe");
     }
