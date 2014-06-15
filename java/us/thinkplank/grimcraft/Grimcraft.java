@@ -28,6 +28,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.util.EnumHelper;
+import net.minecraftforge.oredict.OreDictionary;
 import us.thinkplank.grimcraft.block.*;
 import us.thinkplank.grimcraft.item.*;
 import cpw.mods.fml.common.Mod;
@@ -201,7 +202,11 @@ public class Grimcraft {
 
     @EventHandler
     public void load(FMLInitializationEvent event) {
-
+    	OreDictionary.registerOre("oreCoal", nether_coal_ore);
+    	OreDictionary.registerOre("oreGold", nether_gold_ore);
+    	OreDictionary.registerOre("oreRedstone", nether_redstone_ore);
+    	OreDictionary.registerOre("oreSulfur", sulfur_ore);
+    	OreDictionary.registerOre("oreFossilstone", fossilstone_ore);
     }
 
     @EventHandler
