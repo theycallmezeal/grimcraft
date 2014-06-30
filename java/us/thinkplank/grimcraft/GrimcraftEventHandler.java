@@ -13,7 +13,7 @@ public class GrimcraftEventHandler {
 		Block targetBlock = event.world.getBlock(event.x, event.y, event.z);
 		
 		if (targetBlock.equals(Blocks.soul_sand)) {
-			event.world.setBlock(event.x, event.y, event.z, new BlockPeat());
+			event.world.setBlock(event.x, event.y, event.z, Grimcraft.peat);
 		}
 	}
 }
