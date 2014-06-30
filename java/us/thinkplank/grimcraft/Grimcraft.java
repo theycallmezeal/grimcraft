@@ -1,12 +1,12 @@
 /*
- * Grimcraft.java 1.0.0 6-6-2014
+ * Grimcraft.java 1.0.0 6-28-2014
  * Made with love by Lapiman and Fox
  * Licensed under whatever we decide
  * 
  * To-do:
  * Figure out the tool material stuff (TC compatibility is the ultimate goal)
  * Nether alternatives for vanilla blocks?
- * Finish tools (ugh) [make sure we set the maxstacksizes to 1, not 64!]
+ * Finish tools (ugh)
  * maybe a ModBlocks and ModItems class?
  * Sulfur ore texture
  * 
@@ -202,6 +202,8 @@ public class Grimcraft {
 
     @EventHandler
     public void load(FMLInitializationEvent event) {
+    	MinecraftForge.EVENT_BUS.register(new GrimcraftEventHandler());
+    	
     	OreDictionary.registerOre("oreCoal", nether_coal_ore);
     	OreDictionary.registerOre("oreGold", nether_gold_ore);
     	OreDictionary.registerOre("oreRedstone", nether_redstone_ore);
