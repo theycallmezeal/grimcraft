@@ -1,5 +1,5 @@
 /*
- * Grimcraft.java 1.0.0 6-28-2014
+ * Grimcraft.java 1.0.0 6-30-2014
  * Made with love by Lapiman and Fox
  * Licensed under whatever we decide
  * 

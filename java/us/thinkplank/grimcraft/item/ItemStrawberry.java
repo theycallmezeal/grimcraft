@@ -8,7 +8,7 @@ public class ItemStrawberry extends ItemFood {
     public ItemStrawberry() {
         super(1, 0.1F, false);
         setMaxStackSize(64);
-        setCreativeTab(CreativeTabs.tabMaterials);
+        setCreativeTab(CreativeTabs.tabFood);
         setUnlocalizedName("strawberry");
         setTextureName("grimcraft:strawberry");
     }
