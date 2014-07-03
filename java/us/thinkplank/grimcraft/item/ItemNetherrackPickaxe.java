@@ -10,9 +10,6 @@ public class ItemNetherrackPickaxe extends ItemPickaxe {
         setMaxStackSize(1);
         setCreativeTab(CreativeTabs.tabTools);
         setUnlocalizedName("netherrack_pickaxe");
-    }
-    
-    public void registerItemIcons(IIconRegister iconRegister) {
-        this.itemIcon = iconRegister.registerIcon("grimcraft:netherrack_pickaxe");
+        setTextureName("grimcraft:netherrack_pickaxe");
     }
 }

@@ -10,9 +10,6 @@ public class ItemGrimwoodSword extends ItemHoe {
         setMaxStackSize(1);
         setCreativeTab(CreativeTabs.tabCombat);
         setUnlocalizedName("grimwood_sword");
-    }
-    
-    public void registerItemIcons(IIconRegister iconRegister) {
-        this.itemIcon = iconRegister.registerIcon("grimcraft:grimwood_sword");
+        setTextureName("grimcraft:grimwood_sword");
     }
 }

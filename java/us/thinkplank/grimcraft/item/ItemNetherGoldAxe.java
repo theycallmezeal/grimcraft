@@ -10,9 +10,6 @@ public class ItemNetherGoldAxe extends ItemAxe {
         setMaxStackSize(1);
         setCreativeTab(CreativeTabs.tabTools);
         setUnlocalizedName("nether_gold_axe");
-    }
-    
-    public void registerItemIcons(IIconRegister iconRegister) {
-        this.itemIcon = iconRegister.registerIcon("grimcraft:nether_gold_axe");
+        setTextureName("grimcraft:nether_gold_axe");
     }
 }

@@ -10,9 +10,6 @@ public class ItemNetherrackShovel extends ItemSpade {
         setMaxStackSize(1);
         setCreativeTab(CreativeTabs.tabTools);
         setUnlocalizedName("netherrack_shovel");
-    }
-    
-    public void registerItemIcons(IIconRegister iconRegister) {
-        this.itemIcon = iconRegister.registerIcon("grimcraft:netherrack_shovel");
+        setTextureName("grimcraft:netherrack_shovel");
     }
 }

@@ -10,9 +10,6 @@ public class ItemNetherrackHoe extends ItemHoe {
         setMaxStackSize(1);
         setCreativeTab(CreativeTabs.tabTools);
         setUnlocalizedName("netherrack_hoe");
-    }
-    
-    public void registerItemIcons(IIconRegister iconRegister) {
-        this.itemIcon = iconRegister.registerIcon("grimcraft:netherrack_hoe");
+        setTextureName("grimcraft:netherrack_hoe");
     }
 }

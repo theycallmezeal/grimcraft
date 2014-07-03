@@ -10,9 +10,6 @@ public class ItemNetherQuartzShovel extends ItemSpade {
         setMaxStackSize(1);
         setCreativeTab(CreativeTabs.tabTools);
         setUnlocalizedName("nether_quartz_shovel");
-    }
-    
-    public void registerItemIcons(IIconRegister iconRegister) {
-        this.itemIcon = iconRegister.registerIcon("grimcraft:nether_quartz_shovel");
+        setTextureName("grimcraft:nether_quartz_shovel");
     }
 }

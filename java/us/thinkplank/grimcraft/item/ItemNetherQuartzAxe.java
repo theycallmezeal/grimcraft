@@ -10,9 +10,6 @@ public class ItemNetherQuartzAxe extends ItemAxe {
         setMaxStackSize(1);
         setCreativeTab(CreativeTabs.tabTools);
         setUnlocalizedName("nether_quartz_axe");
-    }
-    
-    public void registerItemIcons(IIconRegister iconRegister) {
-        this.itemIcon = iconRegister.registerIcon("grimcraft:nether_quartz_axe");
+        setTextureName("grimcraft:nether_quartz_axe");
     }
 }

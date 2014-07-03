@@ -10,9 +10,6 @@ public class ItemNetherrackAxe extends ItemAxe {
         setMaxStackSize(1);
         setCreativeTab(CreativeTabs.tabTools);
         setUnlocalizedName("netherrack_axe");
-    }
-    
-    public void registerItemIcons(IIconRegister iconRegister) {
-        this.itemIcon = iconRegister.registerIcon("grimcraft:netherrack_axe");
+        setTextureName("grimcraft:netherrack_axe");
     }
 }

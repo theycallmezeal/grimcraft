@@ -10,9 +10,6 @@ public class ItemNetherGoldSword extends ItemSword {
         setMaxStackSize(1);
         setCreativeTab(CreativeTabs.tabCombat);
         setUnlocalizedName("nether_gold_sword");
-    }
-    
-    public void registerItemIcons(IIconRegister iconRegister) {
-        this.itemIcon = iconRegister.registerIcon("grimcraft:nether_gold_sword");
+        setTextureName("grimcraft:nether_gold_sword");
     }
 }

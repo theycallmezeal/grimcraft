@@ -10,9 +10,6 @@ public class ItemNetherrackSword extends ItemSword {
         setMaxStackSize(1);
         setCreativeTab(CreativeTabs.tabCombat);
         setUnlocalizedName("netherrack_sword");
-    }
-    
-    public void registerItemIcons(IIconRegister iconRegister) {
-        this.itemIcon = iconRegister.registerIcon("grimcraft:netherrack_sword");
+        setTextureName("grimcraft:netherrack_sword");
     }
 }
