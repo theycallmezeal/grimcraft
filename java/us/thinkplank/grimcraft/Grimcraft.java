@@ -99,6 +99,8 @@ public class Grimcraft {
     public final static Item chili_pepper = new ItemChiliPepper();
     public final static Item netherroot = new ItemNetherroot();
     public final static Item phoenix_egg = new ItemPhoenixEgg();
+    
+    public final static Item netherroot_soup = new ItemNetherRootSoup();
 
     @SidedProxy(clientSide="us.thinkplank.grimcraft.client.ClientProxy", serverSide="us.thinkplank.grimcraft.CommonProxy")
         public static CommonProxy proxy;
@@ -153,6 +155,7 @@ public class Grimcraft {
         GameRegistry.registerItem(strawberry, "strawberry");
         GameRegistry.registerItem(chili_pepper, "chili_pepper");
         GameRegistry.registerItem(netherroot, "netherroot");
+        GameRegistry.registerItem(netherroot_soup, "netherrootsoup");
         GameRegistry.registerItem(phoenix_egg, "phoenix_egg");
         
         GameRegistry.addRecipe(new ItemStack(grimwood_planks, 4), "x", 'x', new ItemStack(grimwood_log));
