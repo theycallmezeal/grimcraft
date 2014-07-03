@@ -1,5 +1,5 @@
 /*
- * Grimcraft.java 1.0.0 6-30-2014
+ * Grimcraft.java 1.0.0 7-2-2014
  * Made with love by Lapiman and Fox
  * Licensed under whatever we decide
  * 
@@ -99,7 +99,6 @@ public class Grimcraft {
     public final static Item chili_pepper = new ItemChiliPepper();
     public final static Item netherroot = new ItemNetherroot();
     public final static Item phoenix_egg = new ItemPhoenixEgg();
-    
     public final static Item netherroot_soup = new ItemNetherRootSoup();
 
     @SidedProxy(clientSide="us.thinkplank.grimcraft.client.ClientProxy", serverSide="us.thinkplank.grimcraft.CommonProxy")
