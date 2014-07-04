@@ -65,6 +65,8 @@ public class Grimcraft {
     public final static Block sulfur_block = new BlockSulfur();
     public final static Block peat = new BlockPeat();
     
+    public final static Block barley_crop = new BlockBarleyCrop();
+    
     public final static Item grimwood_shovel = new ItemGrimwoodShovel(grimwood_material);
     public final static Item grimwood_pickaxe = new ItemGrimwoodPickaxe(grimwood_material);
     public final static Item grimwood_axe = new ItemGrimwoodAxe(grimwood_material);
@@ -120,6 +122,8 @@ public class Grimcraft {
         GameRegistry.registerBlock(nether_redstone_ore, "nether_redstone_ore");
         GameRegistry.registerBlock(sulfur_ore, "sulfur_ore");
         GameRegistry.registerBlock(peat, "peat");
+        
+        GameRegistry.registerBlock(barley_crop, "barley_crop");
         
         GameRegistry.registerItem(grimwood_shovel, "grimwood_shovel");
         GameRegistry.registerItem(grimwood_pickaxe, "grimwood_pickaxe");
