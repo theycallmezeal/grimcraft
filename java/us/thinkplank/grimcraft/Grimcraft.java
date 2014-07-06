@@ -1,5 +1,5 @@
 /*
- * Grimcraft.java 1.0.0 6-30-2014
+ * Grimcraft.java 1.0.0 7-2-2014
  * Made with love by Lapiman and Fox
  * Licensed under whatever we decide
  * 
@@ -65,6 +65,8 @@ public class Grimcraft {
     public final static Block sulfur_block = new BlockSulfur();
     public final static Block peat = new BlockPeat();
     
+    public final static Block barley_crop = new BlockBarleyCrop();
+    
     public final static Item grimwood_shovel = new ItemGrimwoodShovel(grimwood_material);
     public final static Item grimwood_pickaxe = new ItemGrimwoodPickaxe(grimwood_material);
     public final static Item grimwood_axe = new ItemGrimwoodAxe(grimwood_material);
@@ -99,7 +101,6 @@ public class Grimcraft {
     public final static Item chili_pepper = new ItemChiliPepper();
     public final static Item netherroot = new ItemNetherroot();
     public final static Item phoenix_egg = new ItemPhoenixEgg();
-    
     public final static Item netherroot_soup = new ItemNetherRootSoup();
 
     @SidedProxy(clientSide="us.thinkplank.grimcraft.client.ClientProxy", serverSide="us.thinkplank.grimcraft.CommonProxy")
@@ -121,6 +122,8 @@ public class Grimcraft {
         GameRegistry.registerBlock(nether_redstone_ore, "nether_redstone_ore");
         GameRegistry.registerBlock(sulfur_ore, "sulfur_ore");
         GameRegistry.registerBlock(peat, "peat");
+        
+        GameRegistry.registerBlock(barley_crop, "barley_crop");
         
         GameRegistry.registerItem(grimwood_shovel, "grimwood_shovel");
         GameRegistry.registerItem(grimwood_pickaxe, "grimwood_pickaxe");
