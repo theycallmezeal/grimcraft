@@ -2,7 +2,6 @@ package us.thinkplank.grimcraft.block;
 
 import java.util.ArrayList;
 import java.util.Random;
-
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import us.thinkplank.grimcraft.Grimcraft;
@@ -19,7 +18,7 @@ import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 
 public class BlockBarleyCrop extends BlockCrops {
-	private IIcon[] textures;
+	private IIcon[] field_149867_a;
 	
 	public BlockBarleyCrop() {
 		super();
@@ -31,36 +30,7 @@ public class BlockBarleyCrop extends BlockCrops {
 	
 	protected boolean canPlaceBlockOn(Block block)
     {
-        return block == Grimcraft.peat;
-    }
-	
-	@SideOnly(Side.CLIENT)
-    public void registerBlockIcons(IIconRegister iconRegister)
-    {
-        this.textures = new IIcon[8];
-
-        for (int i = 0; i < this.textures.length; ++i)
-        {
-            this.textures[i] = iconRegister.registerIcon("grimcraft:barley_stage_" + i);
-        }
-    }
-	
-	@SideOnly(Side.CLIENT)
-	public IIcon getIcon(int side, int metadata)
-    {
-        if (metadata < 7)
-        {
-            if (metadata == 6)
-            {
-                metadata = 5;
-            }
-
-            return this.textures[metadata >> 1];
-        }
-        else
-        {
-            return this.textures[3];
-        }
+        return block instanceof BlockPeat;
     }
 	
 	protected Item func_149866_i()

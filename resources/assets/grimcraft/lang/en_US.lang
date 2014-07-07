@@ -9,6 +9,7 @@ tile.nether_redstone_ore.name=Nether Redstone Ore
 tile.sulfur_ore.name=Sulfur Ore
 tile.sulfur_block.name=Sulfur Block
 tile.peat.name=Peat
+tile.barley_crop.name=Barley
 
 item.grimwood_shovel.name=Grimwood Shovel
 item.grimwood_pickaxe.name=Grimwood Pickaxe
