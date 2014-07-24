@@ -222,17 +222,18 @@ public class Grimcraft {
         GameRegistry.addSmelting(fossilstone_ore, new ItemStack(Items.dye, 1, 15), 0.2f);
 
         GameRegistry.registerFuelHandler(new GrimcraftFuelHandler());
+        GameRegistry.registerWorldGenerator(new GrimcraftWorldGenerator(), 20); //is this value fine?
     }
 
     @EventHandler
     public void load(FMLInitializationEvent event) {
     	MinecraftForge.EVENT_BUS.register(new GrimcraftEventHandler());
     	
+    	OreDictionary.registerOre("oreFossilstone", fossilstone_ore);
     	OreDictionary.registerOre("oreCoal", nether_coal_ore);
     	OreDictionary.registerOre("oreGold", nether_gold_ore);
     	OreDictionary.registerOre("oreRedstone", nether_redstone_ore);
     	OreDictionary.registerOre("oreSulfur", sulfur_ore);
-    	OreDictionary.registerOre("oreFossilstone", fossilstone_ore);
     }
 
     @EventHandler
