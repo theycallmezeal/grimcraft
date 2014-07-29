@@ -1,20 +1,7 @@
 /*
- * Grimcraft.java 1.0.0 7-2-2014
+ * Grimcraft.java 1.0.0 7-28-2014
  * Made with love by Lapiman and Fox
  * Licensed under whatever we decide
- * 
- * To-do:
- * Figure out the tool material stuff (TC compatibility is the ultimate goal)
- * Nether alternatives for vanilla blocks?
- * Finish tools (ugh)
- * maybe a ModBlocks and ModItems class?
- * Sulfur ore texture
- * 
- * Big to-do:
- * Foods (vaguely started)
- * Mobs
- * Potions
- * Worldgen
  */
 
 package us.thinkplank.grimcraft;

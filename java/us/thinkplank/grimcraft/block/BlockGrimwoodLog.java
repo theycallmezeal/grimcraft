@@ -10,6 +10,8 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.util.IIcon;
 
 public class BlockGrimwoodLog extends BlockLog {
+	@SideOnly(Side.CLIENT)
+	private IIcon[] icons;
 	
 	public BlockGrimwoodLog () {
         super();
@@ -19,9 +21,6 @@ public class BlockGrimwoodLog extends BlockLog {
         setCreativeTab(CreativeTabs.tabBlock);
         setHarvestLevel("axe", 0);
     }
-	
-	@SideOnly(Side.CLIENT)
-	private IIcon[] icons;
 	
 	@Override
 	@SideOnly(Side.CLIENT)

@@ -18,7 +18,7 @@ import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 
 public class BlockBeetrootCrop extends BlockCrops {
-	private IIcon[] field_149867_a;
+	private IIcon[] icons;
 	
 	public BlockBeetrootCrop() {
 		super();
@@ -30,7 +30,7 @@ public class BlockBeetrootCrop extends BlockCrops {
 	
 	protected boolean canPlaceBlockOn(Block block)
     {
-        return block instanceof BlockPeat;
+        return block == Grimcraft.peat;
     }
 	
 	protected Item func_149866_i()
@@ -41,5 +41,27 @@ public class BlockBeetrootCrop extends BlockCrops {
     protected Item func_149865_P()
     {
         return Grimcraft.beetroot;
+    }
+    
+    @SideOnly(Side.CLIENT)
+    public void registerBlockIcons(IIconRegister p_149651_1_)
+    {
+        this.icons = new IIcon[8];
+
+        for (int i = 0; i < this.icons.length; ++i)
+        {
+            this.icons[i] = p_149651_1_.registerIcon("grimcraft:beetroot" + "_stage_" + i);
+        }
+    }
+    
+    @SideOnly(Side.CLIENT)
+    public IIcon getIcon(int p_149691_1_, int p_149691_2_)
+    {
+        if (p_149691_2_ < 0 || p_149691_2_ > 7)
+        {
+            p_149691_2_ = 7;
+        }
+
+        return this.icons[p_149691_2_];
     }
 }
