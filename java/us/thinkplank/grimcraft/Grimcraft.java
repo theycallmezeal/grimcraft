@@ -1,11 +1,14 @@
 /*
- * Grimcraft.java 1.0.0 7-29-2014
+ * Grimcraft.java 1.0.0 7-30-2014
  * Made with love by Lapiman and Fox
  * Licensed under whatever we decide
  * 
  * to do:
  * sounds and jumping decay for peat
  * functionality for wither bonemeal
+ * fix falling through peat
+ * peat's texture... eughhhh
+ * take a look at hardnesses
  */
 
 package us.thinkplank.grimcraft;

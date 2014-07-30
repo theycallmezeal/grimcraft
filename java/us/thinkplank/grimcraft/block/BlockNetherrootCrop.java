@@ -22,9 +22,8 @@ public class BlockNetherrootCrop extends BlockCrops {
 	
 	public BlockNetherrootCrop() {
 		super();
-		setHardness(3F);
 		setStepSound(Block.soundTypeGrass);
-		setBlockName("beetroot_crop");
+		setBlockName("netherroot_crop");
 		setCreativeTab(CreativeTabs.tabFood);
 	}
 	
@@ -69,7 +68,5 @@ public class BlockNetherrootCrop extends BlockCrops {
         {
             return this.icons[3];
         }
-        
-        //wouldn't a return this.icons[meta / 2] do exactly the same thing?
     }
 }

@@ -22,7 +22,6 @@ public class BlockBarleyCrop extends BlockCrops {
 	
 	public BlockBarleyCrop() {
 		super();
-		setHardness(3F);
 		setStepSound(Block.soundTypeGrass);
 		setBlockName("barley_crop");
 		setCreativeTab(CreativeTabs.tabFood);
