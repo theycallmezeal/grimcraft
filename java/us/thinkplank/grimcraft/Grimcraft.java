@@ -1,7 +1,11 @@
 /*
- * Grimcraft.java 1.0.0 7-28-2014
+ * Grimcraft.java 1.0.0 7-29-2014
  * Made with love by Lapiman and Fox
  * Licensed under whatever we decide
+ * 
+ * to do:
+ * sounds and jumping decay for peat
+ * functionality for wither bonemeal
  */
 
 package us.thinkplank.grimcraft;
@@ -47,21 +51,19 @@ public class Grimcraft {
     public final static Block single_grimwood_slab = new BlockGrimwoodSlab(false);
     public final static Block double_grimwood_slab = new BlockGrimwoodSlab(true);
     public final static Block grimwood_stairs = new BlockGrimwoodStairs();
+    public final static Block grimwood_fence = new BlockFence("grimcraft:grimwood_planks", Material.wood); //seperate class?
     public final static Block fossilstone_ore = new BlockFossilstoneOre();
     public final static Block nether_coal_ore = new BlockNetherCoalOre();
     public final static Block nether_gold_ore = new BlockNetherGoldOre();
     public final static Block nether_redstone_ore = new BlockNetherRedstoneOre();
+    public final static Block peat = new BlockPeat();
     public final static Block sulfur_ore = new BlockSulfurOre();
     public final static Block sulfur_block = new BlockSulfur();
-    public final static Block peat = new BlockPeat();
-    
-    public final static Block barley_crop = new BlockBarleyCrop();
-    
-    public final static Block lava_lamp = new BlockLavaLamp();
-    public final static Block nether_lantern = new BlockNetherLantern();
-    public final static Block beetroot_crop = new BlockBeetrootCrop();
-    public final static Block grimwood_fence = new BlockFence("grimcraft:grimwood_planks", Material.wood);
     public final static Block soul_sand_glass = new BlockSoulSandGlass();
+    public final static Block barley_crop = new BlockBarleyCrop();
+    public final static Block netherroot_crop = new BlockNetherrootCrop();
+    public final static Block nether_lantern = new BlockNetherLantern();
+    public final static Block lava_lamp = new BlockLavaLamp();
     
     public final static Item grimwood_shovel = new ItemGrimwoodShovel(grimwood_material);
     public final static Item grimwood_pickaxe = new ItemGrimwoodPickaxe(grimwood_material);
@@ -98,7 +100,6 @@ public class Grimcraft {
     public final static Item netherroot = new ItemNetherroot();
     public final static Item phoenix_egg = new ItemPhoenixEgg();
     public final static Item netherroot_soup = new ItemNetherRootSoup();
-    public final static Item beetroot = new ItemBeetroot();
 
     @SidedProxy(clientSide="us.thinkplank.grimcraft.client.ClientProxy", serverSide="us.thinkplank.grimcraft.CommonProxy")
         public static CommonProxy proxy;
@@ -114,20 +115,19 @@ public class Grimcraft {
         GameRegistry.registerBlock(single_grimwood_slab, ItemGrimwoodSlab.class, "single_grimwood_slab");
         GameRegistry.registerBlock(double_grimwood_slab, ItemGrimwoodSlab.class, "double_grimwood_slab");
         GameRegistry.registerBlock(grimwood_stairs, "grimwood_stairs");
+        GameRegistry.registerBlock(grimwood_fence, "grimwood_fence");
         GameRegistry.registerBlock(fossilstone_ore, "fossilstone_ore");
         GameRegistry.registerBlock(nether_coal_ore, "nether_coal_ore");
         GameRegistry.registerBlock(nether_gold_ore, "nether_gold_ore");
         GameRegistry.registerBlock(nether_redstone_ore, "nether_redstone_ore");
-        GameRegistry.registerBlock(sulfur_ore, "sulfur_ore");
         GameRegistry.registerBlock(peat, "peat");
-        
+        GameRegistry.registerBlock(sulfur_ore, "sulfur_ore");
+        //sulfur block goes here
+        GameRegistry.registerBlock(soul_sand_glass, "soul_sand_glass");
         GameRegistry.registerBlock(barley_crop, "barley_crop");
-        
+        GameRegistry.registerBlock(netherroot_crop, "netherroot_crop");
         GameRegistry.registerBlock(nether_lantern, "nether_lantern");
         GameRegistry.registerBlock(lava_lamp, "lava_lamp");
-        GameRegistry.registerBlock(grimwood_fence, "grimwood_fence");
-        GameRegistry.registerBlock(beetroot_crop, "beetroot_crop");
-        GameRegistry.registerBlock(soul_sand_glass, "soul_sand_glass");
         
         GameRegistry.registerItem(grimwood_shovel, "grimwood_shovel");
         GameRegistry.registerItem(grimwood_pickaxe, "grimwood_pickaxe");
@@ -159,7 +159,6 @@ public class Grimcraft {
         GameRegistry.registerItem(sulfur, "sulfur");
         GameRegistry.registerItem(barley, "barley");
         GameRegistry.registerItem(barley_seeds, "barley_seeds");
-        GameRegistry.registerItem(beetroot, "beetroot");
         GameRegistry.registerItem(strawberry, "strawberry");
         GameRegistry.registerItem(chili_pepper, "chili_pepper");
         GameRegistry.registerItem(netherroot, "netherroot");

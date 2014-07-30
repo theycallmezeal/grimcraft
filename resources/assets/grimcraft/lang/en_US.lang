@@ -6,10 +6,12 @@ tile.fossilstone_ore.name=Fossilstone Ore
 tile.nether_coal_ore.name=Nether Coal Ore
 tile.nether_gold_ore.name=Nether Gold Ore
 tile.nether_redstone_ore.name=Nether Redstone Ore
+tile.peat.name=Peat
 tile.sulfur_ore.name=Sulfur Ore
 tile.sulfur_block.name=Sulfur Block
-tile.peat.name=Peat
+tile.soul_sand_glass.name=Soul Sand Glass
 tile.barley_crop.name=Barley
+tile.netherroot_crop.name=Netherroot
 
 item.grimwood_shovel.name=Grimwood Shovel
 item.grimwood_pickaxe.name=Grimwood Pickaxe

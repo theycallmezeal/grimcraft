@@ -17,10 +17,10 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 
-public class BlockBeetrootCrop extends BlockCrops {
+public class BlockNetherrootCrop extends BlockCrops {
 	private IIcon[] icons;
 	
-	public BlockBeetrootCrop() {
+	public BlockNetherrootCrop() {
 		super();
 		setHardness(3F);
 		setStepSound(Block.soundTypeGrass);
@@ -35,33 +35,41 @@ public class BlockBeetrootCrop extends BlockCrops {
 	
 	protected Item func_149866_i()
     {
-        return Grimcraft.beetroot;
+        return Grimcraft.netherroot;
     }
 
     protected Item func_149865_P()
     {
-        return Grimcraft.beetroot;
+        return Grimcraft.netherroot;
     }
     
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister p_149651_1_)
     {
-        this.icons = new IIcon[8];
+        this.icons = new IIcon[4];
 
         for (int i = 0; i < this.icons.length; ++i)
         {
-            this.icons[i] = p_149651_1_.registerIcon("grimcraft:beetroot" + "_stage_" + i);
+            this.icons[i] = p_149651_1_.registerIcon("grimcraft:netherroot_stage_" + i);
         }
     }
     
-    @SideOnly(Side.CLIENT)
-    public IIcon getIcon(int p_149691_1_, int p_149691_2_)
+    public IIcon getIcon(int side, int meta)
     {
-        if (p_149691_2_ < 0 || p_149691_2_ > 7)
+        if (meta < 7)
         {
-            p_149691_2_ = 7;
-        }
+            if (meta == 6)
+            {
+                meta = 5;
+            }
 
-        return this.icons[p_149691_2_];
+            return this.icons[meta >> 1];
+        }
+        else
+        {
+            return this.icons[3];
+        }
+        
+        //wouldn't a return this.icons[meta / 2] do exactly the same thing?
     }
 }
