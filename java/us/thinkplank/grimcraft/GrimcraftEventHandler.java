@@ -2,10 +2,13 @@ package us.thinkplank.grimcraft;
 
 import us.thinkplank.grimcraft.block.BlockPeat;
 import net.minecraft.block.Block;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.entity.player.BonemealEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.entity.player.UseHoeEvent;
+import net.minecraftforge.event.world.BlockEvent.BreakEvent;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 
 public class GrimcraftEventHandler {
@@ -35,11 +38,17 @@ public class GrimcraftEventHandler {
 		}
 	}
 	
+	@SubscribeEvent
 	public void onPlayerInteract(PlayerInteractEvent event) {
 		Block targetBlock = event.world.getBlock(event.x, event.y, event.z);
 		
 		if (targetBlock.equals(Grimcraft.strawberry_plant) && event.action == event.action.LEFT_CLICK_BLOCK) {
-			event.world.setBlockMetadataWithNotify(event.x, event.y, event.z, 0, 2);
+			event.world.setBlock(event.x, event.y, event.z, Grimcraft.strawberry_plant);
+			
+			if (event.world.getBlockMetadata(event.x, event.y, event.z) == 1) {
+				event.world.spawnEntityInWorld(new EntityItem(event.world, (double)event.x, (double)event.y, (double)event.z, new ItemStack(Grimcraft.strawberry, 3)));
+				event.world.setBlockMetadataWithNotify(event.x, event.y, event.z, 0, 2);
+			}
 			event.setCanceled(true);
 		}
 	}
