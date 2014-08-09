@@ -4,6 +4,7 @@ import us.thinkplank.grimcraft.block.BlockPeat;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraftforge.event.entity.player.BonemealEvent;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.entity.player.UseHoeEvent;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 
@@ -30,6 +31,15 @@ public class GrimcraftEventHandler {
 		Block targetBlock = event.block;
 		
 		if (targetBlock.equals(Grimcraft.barley_crop) || targetBlock.equals(Grimcraft.netherroot_crop)) {
+			event.setCanceled(true);
+		}
+	}
+	
+	public void onPlayerInteract(PlayerInteractEvent event) {
+		Block targetBlock = event.world.getBlock(event.x, event.y, event.z);
+		
+		if (targetBlock.equals(Grimcraft.strawberry_plant) && event.action == event.action.LEFT_CLICK_BLOCK) {
+			event.world.setBlockMetadataWithNotify(event.x, event.y, event.z, 0, 2);
 			event.setCanceled(true);
 		}
 	}

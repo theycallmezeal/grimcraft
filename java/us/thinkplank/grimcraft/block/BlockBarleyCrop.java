@@ -64,6 +64,7 @@ public class BlockBarleyCrop extends BlockCrops {
 //        }
 //    }
     
+    @Override
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister p_149651_1_)
     {
@@ -75,6 +76,7 @@ public class BlockBarleyCrop extends BlockCrops {
         }
     }
     
+    @Override
     @SideOnly(Side.CLIENT)
     public IIcon getIcon(int p_149691_1_, int p_149691_2_)
     {

@@ -1,11 +1,6 @@
-/* this is intended to be a sorta extender class
- * for blocks that have the behavior of the two bushes we have planned.
- * dunno if this is a good idea...
- * how best to make this as easy-to-use for other people as possible?
- */
-
 package us.thinkplank.grimcraft.block;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 import com.sun.xml.internal.bind.v2.schemagen.xmlschema.List;
@@ -16,17 +11,25 @@ import us.thinkplank.grimcraft.Grimcraft;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.IGrowable;
+import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.EnumPlantType;
+import net.minecraftforge.common.IShearable;
 
-public class BlockBushPlant extends BlockBush {
-	private IIcon[] texture;
+public class BlockBushPlant extends BlockBush implements IShearable {
+	private IIcon[] icons;
+	
+	public BlockBushPlant () {
+        setBlockName("strawberry_plant");
+    }
 	
 	@Override
 	public EnumPlantType getPlantType(IBlockAccess world, int x, int y, int z) {
@@ -40,16 +43,55 @@ public class BlockBushPlant extends BlockBush {
     }
 	
 	@Override
+	public ArrayList<ItemStack> getDrops(World world, int x, int y, int z, int meta, int fortune) {
+		ArrayList<ItemStack> ret = new ArrayList<ItemStack>();
+		ret.add(new ItemStack(Grimcraft.strawberry, 3));
+		return ret;
+	}
+	
+	@Override
 	public void updateTick(World world, int x, int y, int z, Random random)
     {
-        int l = world.getBlockMetadata(x, y, z);
+        int meta = world.getBlockMetadata(x, y, z);
 
-        if (l < 2 && random.nextInt(10) == 0)
+        if (meta < 2 && random.nextInt(10) == 0)
         {
-            ++l;
-            world.setBlockMetadataWithNotify(x, y, z, l, 2);
+            meta++;
+            world.setBlockMetadataWithNotify(x, y, z, meta, 2);
         }
 
         super.updateTick(world, x, y, z, random);
     }
+
+	@Override
+	public boolean isShearable(ItemStack item, IBlockAccess world, int x, int y, int z) {
+		return true;
+	}
+
+	@Override
+	public ArrayList<ItemStack> onSheared(ItemStack item, IBlockAccess world, int x, int y, int z, int fortune) {
+		ArrayList<ItemStack> ret = new ArrayList<ItemStack>();
+		ret.add(new ItemStack(this));
+		
+		if (world.getBlockMetadata(x, y, z) != 0) {
+			ret.add(new ItemStack(Grimcraft.strawberry));
+		}
+		
+		return ret;
+	}
+	
+	@Override
+    @SideOnly(Side.CLIENT)
+    public void registerBlockIcons(IIconRegister iconRegister) {
+		this.icons = new IIcon[2];
+		
+        this.icons[0] = iconRegister.registerIcon("grimcraft:strawberry_bush_stage_0");
+        this.icons[1] = iconRegister.registerIcon("grimcraft:strawberry_bush_stage_1");
+    }
+	
+	@Override
+	@SideOnly(Side.CLIENT)
+	public IIcon getIcon(int side, int meta) {
+		return icons[meta];
+	}
 }
