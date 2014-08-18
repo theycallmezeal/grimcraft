@@ -24,10 +24,10 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.EnumPlantType;
 import net.minecraftforge.common.IShearable;
 
-public class BlockBushPlant extends BlockBush implements IShearable {
+public class BlockStrawberryBush extends BlockBush implements IShearable {
 	private IIcon[] icons;
 	
-	public BlockBushPlant () {
+	public BlockStrawberryBush () {
         setBlockName("strawberry_plant");
     }
 	
@@ -44,8 +44,9 @@ public class BlockBushPlant extends BlockBush implements IShearable {
 	
 	@Override
 	public ArrayList<ItemStack> getDrops(World world, int x, int y, int z, int meta, int fortune) {
+		// this should not be reached if meta is 0 because of the event handler
 		ArrayList<ItemStack> ret = new ArrayList<ItemStack>();
-		ret.add(new ItemStack(Grimcraft.strawberry, 3));
+		ret.add(new ItemStack(Grimcraft.strawberry_plant));
 		return ret;
 	}
 	
@@ -54,7 +55,7 @@ public class BlockBushPlant extends BlockBush implements IShearable {
     {
         int meta = world.getBlockMetadata(x, y, z);
 
-        if (meta < 2 && random.nextInt(10) == 0)
+        if (meta < 1 && random.nextInt(10) == 0)
         {
             meta++;
             world.setBlockMetadataWithNotify(x, y, z, meta, 2);

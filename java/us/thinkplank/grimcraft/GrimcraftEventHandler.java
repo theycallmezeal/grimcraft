@@ -41,15 +41,26 @@ public class GrimcraftEventHandler {
 	@SubscribeEvent
 	public void onPlayerInteract(PlayerInteractEvent event) {
 		Block targetBlock = event.world.getBlock(event.x, event.y, event.z);
+		ItemStack heldStack = event.entityPlayer.getItemInUse();
 		
+		// this code crashes for some reason.
+//		// handles wither bonemeal
+//		if (heldStack.getItem() == Grimcraft.wither_bonemeal && event.action == event.action.RIGHT_CLICK_BLOCK) {
+//			if (targetBlock == Blocks.deadbush) {
+//				// TODO implement witherbonemeal conversion
+//			}
+//			if (targetBlock == Grimcraft.strawberry_plant) {
+//				event.world.setBlockMetadataWithNotify(event.x, event.y, event.z, 1, 2);
+//			}
+//		}
+		
+		// handles strawberry harvesting
 		if (targetBlock.equals(Grimcraft.strawberry_plant) && event.action == event.action.LEFT_CLICK_BLOCK) {
-			event.world.setBlock(event.x, event.y, event.z, Grimcraft.strawberry_plant);
-			
 			if (event.world.getBlockMetadata(event.x, event.y, event.z) == 1) {
+				event.setCanceled(true);
 				event.world.spawnEntityInWorld(new EntityItem(event.world, (double)event.x, (double)event.y, (double)event.z, new ItemStack(Grimcraft.strawberry, 3)));
 				event.world.setBlockMetadataWithNotify(event.x, event.y, event.z, 0, 2);
 			}
-			event.setCanceled(true);
 		}
 	}
 }
