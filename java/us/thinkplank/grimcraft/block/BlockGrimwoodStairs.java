@@ -11,7 +11,7 @@ import net.minecraft.creativetab.CreativeTabs;
 public class BlockGrimwoodStairs extends BlockStairs {
 
 	public BlockGrimwoodStairs() {
-		super(Grimcraft.grimwood_planks, 0);
+		super(GrimcraftBlocks.grimwood_planks, 0);
 		setHardness(3F);
         setStepSound(Block.soundTypeWood);
         setBlockName("grimwood_stairs");

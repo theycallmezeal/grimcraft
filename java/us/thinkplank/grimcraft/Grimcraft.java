@@ -49,27 +49,6 @@ public class Grimcraft {
     static ToolMaterial nether_quartz_material = EnumHelper.addToolMaterial("NETHER_QUARTZ", 0, 32, 12.0F, 0.0F, 22); // gold
     static ToolMaterial nether_gold_material = EnumHelper.addToolMaterial("NETHER_GOLD", 2, 250, 6.0F, 2.0F, 14); //iron, oddly enough
     
-    public final static Block grimwood_log = new BlockGrimwoodLog();
-    public final static Block grimwood_planks = new BlockGrimwoodPlanks();
-    public final static Block single_grimwood_slab = new BlockGrimwoodSlab(false);
-    public final static Block double_grimwood_slab = new BlockGrimwoodSlab(true);
-    public final static Block grimwood_stairs = new BlockGrimwoodStairs();
-    public final static Block grimwood_fence = new BlockFence("grimcraft:grimwood_planks", Material.wood); //seperate class?
-    public final static Block fossilstone_ore = new BlockFossilstoneOre();
-    public final static Block nether_coal_ore = new BlockNetherCoalOre();
-    public final static Block nether_gold_ore = new BlockNetherGoldOre();
-    public final static Block nether_redstone_ore = new BlockNetherRedstoneOre();
-    public final static Block peat = new BlockPeat();
-    public final static Block sulfur_ore = new BlockSulfurOre();
-    public final static Block sulfur_block = new BlockSulfur();
-    public final static Block soul_sand_glass = new BlockSoulSandGlass();
-    public final static Block barley_crop = new BlockBarleyCrop();
-    public final static Block netherroot_crop = new BlockNetherrootCrop();
-    public final static Block strawberry_plant = new BlockStrawberryBush(); //TODO rename?
-    public final static Block chili_pepper_plant = new BlockChiliPepperBush();
-    public final static Block nether_lantern = new BlockNetherLantern();
-    public final static Block lava_lamp = new BlockLavaLamp();
-    
     public final static Item grimwood_shovel = new ItemGrimwoodShovel(grimwood_material);
     public final static Item grimwood_pickaxe = new ItemGrimwoodPickaxe(grimwood_material);
     public final static Item grimwood_axe = new ItemGrimwoodAxe(grimwood_material);
@@ -114,27 +93,7 @@ public class Grimcraft {
     public void preInit(FMLPreInitializationEvent event) {
     	
     	this.config = new Configuration(event.getSuggestedConfigurationFile());
-    	
-    	GameRegistry.registerBlock(grimwood_log, "grimwood_log");
-        GameRegistry.registerBlock(grimwood_planks, "grimwood_planks");
-        GameRegistry.registerBlock(single_grimwood_slab, ItemGrimwoodSlab.class, "single_grimwood_slab");
-        GameRegistry.registerBlock(double_grimwood_slab, ItemGrimwoodSlab.class, "double_grimwood_slab");
-        GameRegistry.registerBlock(grimwood_stairs, "grimwood_stairs");
-        GameRegistry.registerBlock(grimwood_fence, "grimwood_fence");
-        GameRegistry.registerBlock(fossilstone_ore, "fossilstone_ore");
-        GameRegistry.registerBlock(nether_coal_ore, "nether_coal_ore");
-        GameRegistry.registerBlock(nether_gold_ore, "nether_gold_ore");
-        GameRegistry.registerBlock(nether_redstone_ore, "nether_redstone_ore");
-        GameRegistry.registerBlock(peat, "peat");
-        GameRegistry.registerBlock(sulfur_ore, "sulfur_ore");
-        //sulfur block goes here
-        GameRegistry.registerBlock(soul_sand_glass, "soul_sand_glass");
-        GameRegistry.registerBlock(barley_crop, "barley_crop");
-        GameRegistry.registerBlock(netherroot_crop, "netherroot_crop");
-        GameRegistry.registerBlock(strawberry_plant, "strawberry_plant");
-        GameRegistry.registerBlock(chili_pepper_plant, "chili_pepper_plant");
-        GameRegistry.registerBlock(nether_lantern, "nether_lantern");
-        GameRegistry.registerBlock(lava_lamp, "lava_lamp");
+    	GrimcraftBlocks.register();
         
         GameRegistry.registerItem(grimwood_shovel, "grimwood_shovel");
         GameRegistry.registerItem(grimwood_pickaxe, "grimwood_pickaxe");
@@ -172,47 +131,47 @@ public class Grimcraft {
         GameRegistry.registerItem(netherroot_soup, "netherrootsoup");
         GameRegistry.registerItem(phoenix_egg, "phoenix_egg");
         
-        GameRegistry.addRecipe(new ItemStack(grimwood_planks, 4), "x", 'x', new ItemStack(grimwood_log));
-        GameRegistry.addRecipe(new ItemStack(grimwood_stick), "x", "x", 'x', new ItemStack(grimwood_planks));
-        GameRegistry.addRecipe(new ItemStack(single_grimwood_slab, 6), "xxx", 'x', new ItemStack(grimwood_planks));
-        GameRegistry.addRecipe(new ItemStack(grimwood_stairs, 4), "x  ", "xx ", "xxx", 'x', new ItemStack(grimwood_planks));
-        GameRegistry.addRecipe(new ItemStack(Blocks.wooden_door), "xx", "xx", "xx", 'x', new ItemStack(grimwood_planks)); //grimwood door?
+        GameRegistry.addRecipe(new ItemStack(GrimcraftBlocks.grimwood_planks, 4), "x", 'x', new ItemStack(GrimcraftBlocks.grimwood_log));
+        GameRegistry.addRecipe(new ItemStack(grimwood_stick), "x", "x", 'x', new ItemStack(GrimcraftBlocks.grimwood_planks));
+        GameRegistry.addRecipe(new ItemStack(GrimcraftBlocks.single_grimwood_slab, 6), "xxx", 'x', new ItemStack(GrimcraftBlocks.grimwood_planks));
+        GameRegistry.addRecipe(new ItemStack(GrimcraftBlocks.grimwood_stairs, 4), "x  ", "xx ", "xxx", 'x', new ItemStack(GrimcraftBlocks.grimwood_planks));
+        GameRegistry.addRecipe(new ItemStack(Blocks.wooden_door), "xx", "xx", "xx", 'x', new ItemStack(GrimcraftBlocks.grimwood_planks)); //grimwood door?
         GameRegistry.addRecipe(new ItemStack(Blocks.fence), "xxx", "xxx", 'x', new ItemStack(grimwood_stick)); //grimwood fence?
-        GameRegistry.addRecipe(new ItemStack(Blocks.fence_gate), "xyx", "xyx", 'x', new ItemStack(grimwood_stick), 'y', new ItemStack(grimwood_planks));
-        GameRegistry.addRecipe(new ItemStack(Blocks.trapdoor, 2), "xxx", "xxx", 'x', new ItemStack(grimwood_planks)); //grimwood trapdoor?
+        GameRegistry.addRecipe(new ItemStack(Blocks.fence_gate), "xyx", "xyx", 'x', new ItemStack(grimwood_stick), 'y', new ItemStack(GrimcraftBlocks.grimwood_planks));
+        GameRegistry.addRecipe(new ItemStack(Blocks.trapdoor, 2), "xxx", "xxx", 'x', new ItemStack(GrimcraftBlocks.grimwood_planks)); //grimwood trapdoor?
         
         GameRegistry.addRecipe(new ItemStack(wither_bonemeal, 3), "x", 'x', new ItemStack(wither_bone));
         
-        GameRegistry.addRecipe(new ItemStack(grimwood_shovel), "x", "y", "y", 'x', new ItemStack(grimwood_planks), 'y', new ItemStack(grimwood_stick));
+        GameRegistry.addRecipe(new ItemStack(grimwood_shovel), "x", "y", "y", 'x', new ItemStack(GrimcraftBlocks.grimwood_planks), 'y', new ItemStack(grimwood_stick));
         GameRegistry.addRecipe(new ItemStack(netherrack_shovel), "x", "y", "y", 'x', new ItemStack(Blocks.netherrack), 'y', new ItemStack(grimwood_stick));
         GameRegistry.addRecipe(new ItemStack(nether_quartz_shovel), "x", "y", "y", 'x', new ItemStack(Items.quartz), 'y', new ItemStack(grimwood_stick));
         GameRegistry.addRecipe(new ItemStack(nether_gold_shovel), "x", "y", "y", 'x', new ItemStack(Items.gold_ingot), 'y', new ItemStack(grimwood_stick));
         
-        GameRegistry.addRecipe(new ItemStack(grimwood_pickaxe), "xxx", " y ", " y ", 'x', new ItemStack(grimwood_planks), 'y', new ItemStack(grimwood_stick));
+        GameRegistry.addRecipe(new ItemStack(grimwood_pickaxe), "xxx", " y ", " y ", 'x', new ItemStack(GrimcraftBlocks.grimwood_planks), 'y', new ItemStack(grimwood_stick));
         GameRegistry.addRecipe(new ItemStack(netherrack_pickaxe), "xxx", " y ", " y ", 'x', new ItemStack(Blocks.netherrack), 'y', new ItemStack(grimwood_stick));
         GameRegistry.addRecipe(new ItemStack(nether_quartz_pickaxe), "xxx", " y ", " y ", 'x', new ItemStack(Items.quartz), 'y', new ItemStack(grimwood_stick));
         GameRegistry.addRecipe(new ItemStack(nether_gold_pickaxe), "xxx", " y ", " y ", 'x', new ItemStack(Items.gold_ingot), 'y', new ItemStack(grimwood_stick));
         
-        GameRegistry.addRecipe(new ItemStack(grimwood_axe), "xx", "xy", " y", 'x', new ItemStack(grimwood_planks), 'y', new ItemStack(grimwood_stick));
+        GameRegistry.addRecipe(new ItemStack(grimwood_axe), "xx", "xy", " y", 'x', new ItemStack(GrimcraftBlocks.grimwood_planks), 'y', new ItemStack(grimwood_stick));
         GameRegistry.addRecipe(new ItemStack(netherrack_axe), "xx", "xy", " y", 'x', new ItemStack(Blocks.netherrack), 'y', new ItemStack(grimwood_stick));
         GameRegistry.addRecipe(new ItemStack(nether_quartz_axe), "xx", "xy", " y", 'x', new ItemStack(Items.quartz), 'y', new ItemStack(grimwood_stick));
         GameRegistry.addRecipe(new ItemStack(nether_gold_axe), "xx", "xy", " y", 'x', new ItemStack(Items.gold_ingot), 'y', new ItemStack(grimwood_stick));
         
-        GameRegistry.addRecipe(new ItemStack(grimwood_hoe), "xx", " y", " y", 'x', new ItemStack(grimwood_planks), 'y', new ItemStack(grimwood_stick));
+        GameRegistry.addRecipe(new ItemStack(grimwood_hoe), "xx", " y", " y", 'x', new ItemStack(GrimcraftBlocks.grimwood_planks), 'y', new ItemStack(grimwood_stick));
         GameRegistry.addRecipe(new ItemStack(netherrack_hoe), "xx", " y", " y", 'x', new ItemStack(Blocks.netherrack), 'y', new ItemStack(grimwood_stick));
         GameRegistry.addRecipe(new ItemStack(nether_quartz_hoe), "xx", " y", " y", 'x', new ItemStack(Items.quartz), 'y', new ItemStack(grimwood_stick));
         GameRegistry.addRecipe(new ItemStack(nether_gold_hoe), "xx", " y", " y", 'x', new ItemStack(Items.gold_ingot), 'y', new ItemStack(grimwood_stick));
         
-        GameRegistry.addRecipe(new ItemStack(grimwood_sword), "x", "x", "y", 'x', new ItemStack(grimwood_planks), 'y', new ItemStack(grimwood_stick));
+        GameRegistry.addRecipe(new ItemStack(grimwood_sword), "x", "x", "y", 'x', new ItemStack(GrimcraftBlocks.grimwood_planks), 'y', new ItemStack(grimwood_stick));
         GameRegistry.addRecipe(new ItemStack(netherrack_sword), "x", "x", "y", 'x', new ItemStack(Blocks.netherrack), 'y', new ItemStack(grimwood_stick));
         GameRegistry.addRecipe(new ItemStack(nether_quartz_sword), "x", "x", "y", 'x', new ItemStack(Items.quartz), 'y', new ItemStack(grimwood_stick));
         GameRegistry.addRecipe(new ItemStack(nether_gold_sword), "x", "x", "y", 'x', new ItemStack(Items.gold_ingot), 'y', new ItemStack(grimwood_stick));
 
-        GameRegistry.addSmelting(nether_coal_ore, new ItemStack(Items.coal), 0.2f);
-        GameRegistry.addSmelting(nether_gold_ore, new ItemStack(Items.gold_ingot), 1.2f);
-        GameRegistry.addSmelting(nether_redstone_ore, new ItemStack(Items.redstone), 0.9f);
-        GameRegistry.addSmelting(sulfur_ore, new ItemStack(sulfur), 0.2f);
-        GameRegistry.addSmelting(fossilstone_ore, new ItemStack(Items.dye, 1, 15), 0.2f);
+        GameRegistry.addSmelting(GrimcraftBlocks.nether_coal_ore, new ItemStack(Items.coal), 0.2f);
+        GameRegistry.addSmelting(GrimcraftBlocks.nether_gold_ore, new ItemStack(Items.gold_ingot), 1.2f);
+        GameRegistry.addSmelting(GrimcraftBlocks.nether_redstone_ore, new ItemStack(Items.redstone), 0.9f);
+        GameRegistry.addSmelting(GrimcraftBlocks.sulfur_ore, new ItemStack(sulfur), 0.2f);
+        GameRegistry.addSmelting(GrimcraftBlocks.fossilstone_ore, new ItemStack(Items.dye, 1, 15), 0.2f);
 
         GameRegistry.registerFuelHandler(new GrimcraftFuelHandler());
         GameRegistry.registerWorldGenerator(new GrimcraftWorldGenerator(), 20); //is this value fine?
@@ -222,11 +181,11 @@ public class Grimcraft {
     public void load(FMLInitializationEvent event) {
     	MinecraftForge.EVENT_BUS.register(new GrimcraftEventHandler());
     	
-    	OreDictionary.registerOre("oreFossilstone", fossilstone_ore);
-    	OreDictionary.registerOre("oreCoal", nether_coal_ore);
-    	OreDictionary.registerOre("oreGold", nether_gold_ore);
-    	OreDictionary.registerOre("oreRedstone", nether_redstone_ore);
-    	OreDictionary.registerOre("oreSulfur", sulfur_ore);
+    	OreDictionary.registerOre("oreFossilstone", GrimcraftBlocks.fossilstone_ore);
+    	OreDictionary.registerOre("oreCoal", GrimcraftBlocks.nether_coal_ore);
+    	OreDictionary.registerOre("oreGold", GrimcraftBlocks.nether_gold_ore);
+    	OreDictionary.registerOre("oreRedstone", GrimcraftBlocks.nether_redstone_ore);
+    	OreDictionary.registerOre("oreSulfur", GrimcraftBlocks.sulfur_ore);
     }
 
     @EventHandler

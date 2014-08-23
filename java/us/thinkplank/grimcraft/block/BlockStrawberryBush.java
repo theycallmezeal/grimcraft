@@ -39,14 +39,14 @@ public class BlockStrawberryBush extends BlockBush implements IShearable {
 	@Override
 	protected boolean canPlaceBlockOn(Block p_149854_1_)
     {
-        return p_149854_1_ == Grimcraft.peat;
+        return p_149854_1_ == GrimcraftBlocks.peat;
     }
 	
 	@Override
 	public ArrayList<ItemStack> getDrops(World world, int x, int y, int z, int meta, int fortune) {
 		// this should not be reached if meta is 0 because of the event handler
 		ArrayList<ItemStack> ret = new ArrayList<ItemStack>();
-		ret.add(new ItemStack(Grimcraft.strawberry_plant));
+		ret.add(new ItemStack(GrimcraftBlocks.strawberry_plant));
 		return ret;
 	}
 	
@@ -72,7 +72,7 @@ public class BlockStrawberryBush extends BlockBush implements IShearable {
 	@Override
 	public ArrayList<ItemStack> onSheared(ItemStack item, IBlockAccess world, int x, int y, int z, int fortune) {
 		ArrayList<ItemStack> ret = new ArrayList<ItemStack>();
-		ret.add(new ItemStack(this));
+		ret.add(new ItemStack(GrimcraftBlocks.strawberry_plant));
 		
 		if (world.getBlockMetadata(x, y, z) != 0) {
 			ret.add(new ItemStack(Grimcraft.strawberry));

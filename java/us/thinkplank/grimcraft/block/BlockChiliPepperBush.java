@@ -39,7 +39,7 @@ public class BlockChiliPepperBush extends BlockBush implements IShearable {
 	@Override
 	protected boolean canPlaceBlockOn(Block p_149854_1_)
     {
-        return p_149854_1_ == Grimcraft.peat;
+        return p_149854_1_ == GrimcraftBlocks.peat;
     }
 	
 	@Override
@@ -72,7 +72,7 @@ public class BlockChiliPepperBush extends BlockBush implements IShearable {
 	@Override
 	public ArrayList<ItemStack> onSheared(ItemStack item, IBlockAccess world, int x, int y, int z, int fortune) {
 		ArrayList<ItemStack> ret = new ArrayList<ItemStack>();
-		ret.add(new ItemStack(this));
+		ret.add(new ItemStack(GrimcraftBlocks.chili_pepper_plant));
 		
 		if (world.getBlockMetadata(x, y, z) != 0) {
 			ret.add(new ItemStack(Grimcraft.chili_pepper));

@@ -1,6 +1,7 @@
 package us.thinkplank.grimcraft;
 
 import us.thinkplank.grimcraft.block.BlockPeat;
+import us.thinkplank.grimcraft.block.GrimcraftBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.init.Blocks;
@@ -25,7 +26,7 @@ public class GrimcraftEventHandler {
 				return;
 			}
 			
-			event.world.setBlock(event.x, event.y, event.z, Grimcraft.peat);
+			event.world.setBlock(event.x, event.y, event.z, GrimcraftBlocks.peat);
             event.current.damageItem(1, event.entityPlayer);
 		}
 	}
@@ -34,7 +35,7 @@ public class GrimcraftEventHandler {
 	public void onUseBonemeal(BonemealEvent event) {
 		Block targetBlock = event.block;
 		
-		if (targetBlock.equals(Grimcraft.barley_crop) || targetBlock.equals(Grimcraft.netherroot_crop)) {
+		if (targetBlock.equals(GrimcraftBlocks.barley_crop) || targetBlock.equals(GrimcraftBlocks.netherroot_crop)) {
 			event.setCanceled(true);
 		}
 	}
@@ -56,7 +57,7 @@ public class GrimcraftEventHandler {
 //		}
 		
 		// handles strawberry harvesting
-		if (targetBlock.equals(Grimcraft.strawberry_plant) && event.action == event.action.LEFT_CLICK_BLOCK) {
+		if (targetBlock.equals(GrimcraftBlocks.strawberry_plant) && event.action == event.action.LEFT_CLICK_BLOCK) {
 			if (event.world.getBlockMetadata(event.x, event.y, event.z) == 1) {
 				event.setCanceled(true);
 				event.world.spawnEntityInWorld(new EntityItem(event.world, (double)event.x, (double)event.y, (double)event.z, new ItemStack(Grimcraft.strawberry, 3)));

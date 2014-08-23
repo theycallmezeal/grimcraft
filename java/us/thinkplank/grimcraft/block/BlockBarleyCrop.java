@@ -2,6 +2,7 @@ package us.thinkplank.grimcraft.block;
 
 import java.util.ArrayList;
 import java.util.Random;
+
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import us.thinkplank.grimcraft.Grimcraft;
@@ -29,7 +30,7 @@ public class BlockBarleyCrop extends BlockCrops {
 	
 	protected boolean canPlaceBlockOn(Block block)
     {
-        return block == Grimcraft.peat;
+        return block == GrimcraftBlocks.peat;
     }
 	
 	protected Item func_149866_i()

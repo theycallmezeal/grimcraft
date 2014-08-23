@@ -1,6 +1,7 @@
 package us.thinkplank.grimcraft.item;
 
 import us.thinkplank.grimcraft.Grimcraft;
+import us.thinkplank.grimcraft.block.GrimcraftBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
@@ -12,7 +13,7 @@ import net.minecraftforge.common.util.ForgeDirection;
 
 public class ItemBarleySeeds extends ItemSeeds {
     public ItemBarleySeeds() {
-        super(Grimcraft.barley_crop, Grimcraft.peat);
+        super(GrimcraftBlocks.barley_crop, GrimcraftBlocks.peat);
         setMaxStackSize(64);
         setCreativeTab(CreativeTabs.tabMaterials);
         setUnlocalizedName("barley_seeds");
@@ -29,7 +30,7 @@ public class ItemBarleySeeds extends ItemSeeds {
         {
             if (par3World.getBlock(par4, par5, par6).canSustainPlant(par3World, par4, par5, par6, ForgeDirection.UP, this) && par3World.isAirBlock(par4, par5 + 1, par6))
             {
-                par3World.setBlock(par4, par5 + 1, par6, Grimcraft.barley_crop);
+                par3World.setBlock(par4, par5 + 1, par6, GrimcraftBlocks.barley_crop);
                 --par1ItemStack.stackSize;
                 return true;
             }
