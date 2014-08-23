@@ -8,6 +8,7 @@ import com.sun.xml.internal.bind.v2.schemagen.xmlschema.List;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import us.thinkplank.grimcraft.Grimcraft;
+import us.thinkplank.grimcraft.item.GrimcraftItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.IGrowable;
@@ -46,7 +47,7 @@ public class BlockChiliPepperBush extends BlockBush implements IShearable {
 	public ArrayList<ItemStack> getDrops(World world, int x, int y, int z, int meta, int fortune) {
 		// this should not be reached if meta is 0 because of the event handler
 		ArrayList<ItemStack> ret = new ArrayList<ItemStack>();
-		ret.add(new ItemStack(Grimcraft.chili_pepper));
+		ret.add(new ItemStack(GrimcraftItems.chili_pepper));
 		return ret;
 	}
 	
@@ -75,7 +76,7 @@ public class BlockChiliPepperBush extends BlockBush implements IShearable {
 		ret.add(new ItemStack(GrimcraftBlocks.chili_pepper_plant));
 		
 		if (world.getBlockMetadata(x, y, z) != 0) {
-			ret.add(new ItemStack(Grimcraft.chili_pepper));
+			ret.add(new ItemStack(GrimcraftItems.chili_pepper));
 		}
 		
 		return ret;

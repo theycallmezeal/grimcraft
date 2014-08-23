@@ -8,6 +8,7 @@ import com.sun.xml.internal.bind.v2.schemagen.xmlschema.List;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import us.thinkplank.grimcraft.Grimcraft;
+import us.thinkplank.grimcraft.item.GrimcraftItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.IGrowable;
@@ -75,7 +76,7 @@ public class BlockStrawberryBush extends BlockBush implements IShearable {
 		ret.add(new ItemStack(GrimcraftBlocks.strawberry_plant));
 		
 		if (world.getBlockMetadata(x, y, z) != 0) {
-			ret.add(new ItemStack(Grimcraft.strawberry));
+			ret.add(new ItemStack(GrimcraftItems.strawberry));
 		}
 		
 		return ret;

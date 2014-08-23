@@ -6,6 +6,7 @@ import java.util.Random;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import us.thinkplank.grimcraft.Grimcraft;
+import us.thinkplank.grimcraft.item.GrimcraftItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockCrops;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -35,12 +36,12 @@ public class BlockBarleyCrop extends BlockCrops {
 	
 	protected Item func_149866_i()
     {
-        return Grimcraft.barley_seeds;
+        return GrimcraftItems.barley_seeds;
     }
 
     protected Item func_149865_P()
     {
-        return Grimcraft.barley;
+        return GrimcraftItems.barley;
     }
     
     //i think i have to override this to alter light requirement

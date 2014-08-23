@@ -2,6 +2,7 @@ package us.thinkplank.grimcraft;
 
 import us.thinkplank.grimcraft.block.BlockPeat;
 import us.thinkplank.grimcraft.block.GrimcraftBlocks;
+import us.thinkplank.grimcraft.item.GrimcraftItems;
 import net.minecraft.block.Block;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.init.Blocks;
@@ -60,15 +61,15 @@ public class GrimcraftEventHandler {
 		if (targetBlock.equals(GrimcraftBlocks.strawberry_plant) && event.action == event.action.LEFT_CLICK_BLOCK) {
 			if (event.world.getBlockMetadata(event.x, event.y, event.z) == 1) {
 				event.setCanceled(true);
-				event.world.spawnEntityInWorld(new EntityItem(event.world, (double)event.x, (double)event.y, (double)event.z, new ItemStack(Grimcraft.strawberry, 3)));
+				event.world.spawnEntityInWorld(new EntityItem(event.world, (double)event.x, (double)event.y, (double)event.z, new ItemStack(GrimcraftItems.strawberry, 3)));
 				event.world.setBlockMetadataWithNotify(event.x, event.y, event.z, 0, 2);
 			}
 		}
 		
-		if (targetBlock.equals(Grimcraft.chili_pepper) && event.action == event.action.LEFT_CLICK_BLOCK) {
+		if (targetBlock.equals(GrimcraftItems.chili_pepper) && event.action == event.action.LEFT_CLICK_BLOCK) {
 			if (event.world.getBlockMetadata(event.x, event.y, event.z) == 1) {
 				event.setCanceled(true);
-				event.world.spawnEntityInWorld(new EntityItem(event.world, (double)event.x, (double)event.y, (double)event.z, new ItemStack(Grimcraft.chili_pepper, 3)));
+				event.world.spawnEntityInWorld(new EntityItem(event.world, (double)event.x, (double)event.y, (double)event.z, new ItemStack(GrimcraftItems.chili_pepper, 3)));
 				event.world.setBlockMetadataWithNotify(event.x, event.y, event.z, 0, 2);
 			}
 		}
