@@ -12,7 +12,8 @@ public class GrimcraftBlocks {
     public final static Block single_grimwood_slab = new BlockGrimwoodSlab(false);
     public final static Block double_grimwood_slab = new BlockGrimwoodSlab(true);
     public final static Block grimwood_stairs = new BlockGrimwoodStairs();
-    public final static Block grimwood_fence = new BlockFence("grimcraft:grimwood_planks", Material.wood); //seperate class?
+    public final static Block grimwood_fence = new BlockGrimwoodFence();
+    public final static Block grimwood_fence_gate = new BlockGrimwoodFenceGate();
     public final static Block fossilstone_ore = new BlockFossilstoneOre();
     public final static Block nether_coal_ore = new BlockNetherCoalOre();
     public final static Block nether_gold_ore = new BlockNetherGoldOre();
@@ -24,7 +25,7 @@ public class GrimcraftBlocks {
     public final static Block barley_crop = new BlockBarleyCrop();
     public final static Block netherroot_crop = new BlockNetherrootCrop();
     public final static Block strawberry_plant = new BlockStrawberryBush(); //TODO rename?
-    public final static Block chili_pepper_plant = new BlockChiliPepperBush();
+    public final static Block chili_pepper_plant = new BlockChiliPepperBush(); //TODO rename?
     public final static Block nether_lantern = new BlockNetherLantern();
     public final static Block lava_lamp = new BlockLavaLamp();
     
@@ -35,6 +36,7 @@ public class GrimcraftBlocks {
         GameRegistry.registerBlock(double_grimwood_slab, ItemGrimwoodSlab.class, "double_grimwood_slab");
         GameRegistry.registerBlock(grimwood_stairs, "grimwood_stairs");
         GameRegistry.registerBlock(grimwood_fence, "grimwood_fence");
+        GameRegistry.registerBlock(grimwood_fence_gate, "grimwood_fence_gate");
         GameRegistry.registerBlock(fossilstone_ore, "fossilstone_ore");
         GameRegistry.registerBlock(nether_coal_ore, "nether_coal_ore");
         GameRegistry.registerBlock(nether_gold_ore, "nether_gold_ore");

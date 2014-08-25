@@ -1,13 +1,10 @@
 /*
- * Grimcraft.java 1.0.0 7-30-2014
+ * Grimcraft.java 1.0.0 8-24-2014
  * Made with love by Lapiman and Fox
  * Licensed under whatever we decide
  * 
  * to do:
- * sounds and jumping decay for peat
- * functionality for wither bonemeal
  * fix falling through peat
- * peat's texture... eughhhh
  * take a look at hardnesses
  */
 
@@ -59,7 +56,7 @@ public class Grimcraft {
         GameRegistry.addRecipe(new ItemStack(GrimcraftBlocks.single_grimwood_slab, 6), "xxx", 'x', new ItemStack(GrimcraftBlocks.grimwood_planks));
         GameRegistry.addRecipe(new ItemStack(GrimcraftBlocks.grimwood_stairs, 4), "x  ", "xx ", "xxx", 'x', new ItemStack(GrimcraftBlocks.grimwood_planks));
         GameRegistry.addRecipe(new ItemStack(Blocks.wooden_door), "xx", "xx", "xx", 'x', new ItemStack(GrimcraftBlocks.grimwood_planks)); //grimwood door?
-        GameRegistry.addRecipe(new ItemStack(Blocks.fence), "xxx", "xxx", 'x', new ItemStack(GrimcraftItems.grimwood_stick)); //grimwood fence?
+        GameRegistry.addRecipe(new ItemStack(GrimcraftBlocks.grimwood_fence), "xxx", "xxx", 'x', new ItemStack(GrimcraftItems.grimwood_stick));
         GameRegistry.addRecipe(new ItemStack(Blocks.fence_gate), "xyx", "xyx", 'x', new ItemStack(GrimcraftItems.grimwood_stick), 'y', new ItemStack(GrimcraftBlocks.grimwood_planks));
         GameRegistry.addRecipe(new ItemStack(Blocks.trapdoor, 2), "xxx", "xxx", 'x', new ItemStack(GrimcraftBlocks.grimwood_planks)); //grimwood trapdoor?
         

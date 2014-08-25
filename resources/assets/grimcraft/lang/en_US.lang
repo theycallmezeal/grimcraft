@@ -2,6 +2,8 @@ tile.grimwood_log.name=Grimwood
 tile.grimwood_planks.name=Grimwood Planks
 tile.grimwood_slab.name=Grimwood Slab
 tile.grimwood_stairs.name=Grimwood Stairs
+tile.grimwood_fence.name=Grimwood Fence
+tile.grimwood_fence_gate.name=Grimwood Fence Gate
 tile.fossilstone_ore.name=Fossilstone Ore
 tile.nether_coal_ore.name=Nether Coal Ore
 tile.nether_gold_ore.name=Nether Gold Ore
@@ -14,6 +16,8 @@ tile.barley_crop.name=Barley
 tile.netherroot_crop.name=Netherroot
 tile.strawberry_plant.name=Strawberry Bush
 tile.chili_pepper_plant.name=Chili Pepper Bush
+tile.nether_lantern.name=Nether Lantern
+tile.lava_lamp.name=Lava Lamp
 
 item.grimwood_shovel.name=Grimwood Shovel
 item.grimwood_pickaxe.name=Grimwood Pickaxe
@@ -47,4 +51,3 @@ item.chili_pepper.name=Chili Pepper
 item.netherroot.name=Netherroot
 item.netherroot_soup.name=Netherroot Soup
 item.phoenix_egg.name=Phoenix Egg
-
