@@ -1,17 +1,14 @@
 package us.thinkplank.grimcraft;
 
-import us.thinkplank.grimcraft.block.BlockPeat;
-import us.thinkplank.grimcraft.block.GrimcraftBlocks;
-import us.thinkplank.grimcraft.item.GrimcraftItems;
 import net.minecraft.block.Block;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.entity.player.BonemealEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.entity.player.UseHoeEvent;
-import net.minecraftforge.event.world.BlockEvent.BreakEvent;
+import us.thinkplank.grimcraft.block.GrimcraftBlocks;
+import us.thinkplank.grimcraft.item.GrimcraftItems;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 
 public class GrimcraftEventHandler {

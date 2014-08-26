@@ -1,11 +1,10 @@
 package us.thinkplank.grimcraft.block;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.BlockFenceGate;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.init.Blocks;
 import net.minecraft.util.IIcon;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockGrimwoodFenceGate extends BlockFenceGate {
 	public BlockGrimwoodFenceGate() {

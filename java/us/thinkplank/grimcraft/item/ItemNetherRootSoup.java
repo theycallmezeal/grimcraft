@@ -1,7 +1,6 @@
 package us.thinkplank.grimcraft.item;
 
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemSoup;
 
 public class ItemNetherRootSoup extends ItemSoup {

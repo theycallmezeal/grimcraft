@@ -6,11 +6,11 @@ package us.thinkplank.grimcraft;
 
 import java.util.Random;
 
-import us.thinkplank.grimcraft.block.GrimcraftBlocks;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
+import us.thinkplank.grimcraft.block.GrimcraftBlocks;
 import cpw.mods.fml.common.IWorldGenerator;
 
 public class GrimcraftWorldGenerator implements IWorldGenerator {
