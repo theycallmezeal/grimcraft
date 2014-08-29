@@ -1,5 +1,5 @@
 /*
- * Grimcraft.java 1.0.0 8-24-2014
+ * Grimcraft.java 1.0.0 8-25-2014
  * Made with love by Lapiman and Fox
  * Licensed under whatever we decide
  * 
@@ -10,9 +10,12 @@
 
 package us.thinkplank.grimcraft;
 
+import net.minecraft.entity.EnumCreatureType;
+import net.minecraft.entity.monster.EntityCaveSpider;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.oredict.OreDictionary;
@@ -25,6 +28,7 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 @Mod(modid="grimcraft", name="grimcraft", version="1.0.0")
@@ -100,6 +104,8 @@ public class Grimcraft {
     	OreDictionary.registerOre("oreGold", GrimcraftBlocks.nether_gold_ore);
     	OreDictionary.registerOre("oreRedstone", GrimcraftBlocks.nether_redstone_ore);
     	OreDictionary.registerOre("oreSulfur", GrimcraftBlocks.sulfur_ore);
+    	
+    	EntityRegistry.addSpawn(EntityCaveSpider.class, 10, 1, 3, EnumCreatureType.monster, BiomeGenBase.hell); //spawns with prob. 10 in groups of 1-3
     }
 
     @EventHandler

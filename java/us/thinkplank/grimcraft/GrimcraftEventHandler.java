@@ -3,9 +3,11 @@ package us.thinkplank.grimcraft;
 import net.minecraft.block.Block;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.entity.player.BonemealEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import net.minecraftforge.event.entity.player.PlayerUseItemEvent;
 import net.minecraftforge.event.entity.player.UseHoeEvent;
 import us.thinkplank.grimcraft.block.GrimcraftBlocks;
 import us.thinkplank.grimcraft.item.GrimcraftItems;
@@ -41,18 +43,20 @@ public class GrimcraftEventHandler {
 	@SubscribeEvent
 	public void onPlayerInteract(PlayerInteractEvent event) {
 		Block targetBlock = event.world.getBlock(event.x, event.y, event.z);
-		ItemStack heldStack = event.entityPlayer.getItemInUse(); // this causes a Ticking memory connection
+		ItemStack heldItemStack = event.entityPlayer.inventory.getCurrentItem();
 		
-		// this code crashes for some reason.
-//		// handles wither bonemeal
-//		if (heldStack.getItem() == Grimcraft.wither_bonemeal && event.action == event.action.RIGHT_CLICK_BLOCK) {
-//			if (targetBlock == Blocks.deadbush) {
-//				// TODO implement witherbonemeal conversion
-//			}
-//			if (targetBlock == Grimcraft.strawberry_plant) {
-//				event.world.setBlockMetadataWithNotify(event.x, event.y, event.z, 1, 2);
-//			}
-//		}
+		//wither bonemeal
+		if (heldItemStack != null) {
+			Item heldItem = heldItemStack.getItem();
+			
+			if (heldItem == GrimcraftItems.wither_bonemeal && event.action == event.action.RIGHT_CLICK_BLOCK) {
+				if (targetBlock == GrimcraftBlocks.barley_crop || targetBlock == GrimcraftBlocks.chili_pepper_plant || targetBlock == GrimcraftBlocks.strawberry_plant) {
+					int currentMeta = event.world.getBlockMetadata(event.x, event.y, event.z);
+					event.world.setBlockMetadataWithNotify(event.x, event.y, event.z, currentMeta + 1, 2);
+					heldItemStack.stackSize--;
+				}
+			}
+		}
 		
 		// handles strawberry harvesting
 		if (targetBlock.equals(GrimcraftBlocks.strawberry_plant) && event.action == event.action.LEFT_CLICK_BLOCK) {
@@ -71,4 +75,19 @@ public class GrimcraftEventHandler {
 			}
 		}
 	}
+	
+	/*
+	ItemStack heldStack = event.entityPlayer.getItemInUse(); // this causes a Ticking memory connection
+	//this code crashes for some reason.
+	// handles wither bonemeal
+	if (heldStack != null) {
+		if (heldStack.getItem() == GrimcraftItems.wither_bonemeal && event.action == event.action.RIGHT_CLICK_BLOCK) {
+			if (targetBlock == Blocks.deadbush) {
+				// TODO implement witherbonemeal conversion
+			}
+			if (targetBlock == GrimcraftBlocks.strawberry_plant) {
+				event.world.setBlockMetadataWithNotify(event.x, event.y, event.z, 1, 2);
+			}
+		}
+	*/
 }
