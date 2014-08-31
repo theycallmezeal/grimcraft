@@ -1,10 +1,12 @@
 package us.thinkplank.grimcraft;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.player.BonemealEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.entity.player.PlayerUseItemEvent;
@@ -45,19 +47,6 @@ public class GrimcraftEventHandler {
 		Block targetBlock = event.world.getBlock(event.x, event.y, event.z);
 		ItemStack heldItemStack = event.entityPlayer.inventory.getCurrentItem();
 		
-		//wither bonemeal
-		if (heldItemStack != null) {
-			Item heldItem = heldItemStack.getItem();
-			
-			if (heldItem == GrimcraftItems.wither_bonemeal && event.action == event.action.RIGHT_CLICK_BLOCK) {
-				if (targetBlock == GrimcraftBlocks.barley_crop || targetBlock == GrimcraftBlocks.chili_pepper_plant || targetBlock == GrimcraftBlocks.strawberry_plant) {
-					int currentMeta = event.world.getBlockMetadata(event.x, event.y, event.z);
-					event.world.setBlockMetadataWithNotify(event.x, event.y, event.z, currentMeta + 1, 2);
-					heldItemStack.stackSize--;
-				}
-			}
-		}
-		
 		// handles strawberry harvesting
 		if (targetBlock.equals(GrimcraftBlocks.strawberry_plant) && event.action == event.action.LEFT_CLICK_BLOCK) {
 			if (event.world.getBlockMetadata(event.x, event.y, event.z) == 1) {
@@ -76,18 +65,9 @@ public class GrimcraftEventHandler {
 		}
 	}
 	
-	/*
-	ItemStack heldStack = event.entityPlayer.getItemInUse(); // this causes a Ticking memory connection
-	//this code crashes for some reason.
-	// handles wither bonemeal
-	if (heldStack != null) {
-		if (heldStack.getItem() == GrimcraftItems.wither_bonemeal && event.action == event.action.RIGHT_CLICK_BLOCK) {
-			if (targetBlock == Blocks.deadbush) {
-				// TODO implement witherbonemeal conversion
-			}
-			if (targetBlock == GrimcraftBlocks.strawberry_plant) {
-				event.world.setBlockMetadataWithNotify(event.x, event.y, event.z, 1, 2);
-			}
-		}
-	*/
+	/* this makes lava push around mobs */
+	@SubscribeEvent
+	public void onLivingUpdate(LivingEvent.LivingUpdateEvent event) {
+		event.entity.worldObj.handleMaterialAcceleration(event.entity.boundingBox.expand(0.0D, -0.4000000059604645D, 0.0D).contract(0.001D, 0.001D, 0.001D), Material.lava, event.entity);
+	}
 }
