@@ -26,6 +26,7 @@ public class GrimcraftBlocks {
     public final static Block chili_pepper_plant = new BlockChiliPepperBush(); //TODO rename?
     public final static Block nether_lantern = new BlockNetherLantern();
     public final static Block lava_lamp = new BlockLavaLamp();
+    public final static Block gc_farming_base = new BlockGrimcraftFarmingBase();
     
     public static void register() {
     	GameRegistry.registerBlock(grimwood_log, "grimwood_log");
@@ -49,5 +50,6 @@ public class GrimcraftBlocks {
         GameRegistry.registerBlock(chili_pepper_plant, "chili_pepper_plant");
         GameRegistry.registerBlock(nether_lantern, "nether_lantern");
         GameRegistry.registerBlock(lava_lamp, "lava_lamp");
+        GameRegistry.registerBlock(gc_farming_base, "gc_farming_base");
     }
 }

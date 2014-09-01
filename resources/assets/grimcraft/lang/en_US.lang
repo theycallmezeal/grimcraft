@@ -18,6 +18,7 @@ tile.strawberry_plant.name=Strawberry Bush
 tile.chili_pepper_plant.name=Chili Pepper Bush
 tile.nether_lantern.name=Nether Lantern
 tile.lava_lamp.name=Lava Lamp
+tile.gc_farming_base=Farming Base
 
 item.grimwood_shovel.name=Grimwood Shovel
 item.grimwood_pickaxe.name=Grimwood Pickaxe
