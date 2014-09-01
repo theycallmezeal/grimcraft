@@ -50,6 +50,9 @@ public class BlockGrimcraftFarmingBase extends Block {
 						if(Block.isEqualTo(this, world.getBlock(i+xo, j+yo, k+zo))) {
 							continue;
 						}
+						if(Block.isEqualTo(Blocks.air, world.getBlock(i+xo, j+yo, k+zo))) {
+							continue;
+						}
 						world.setBlock(i+xo, j+yo, k+zo, Blocks.glowstone);
 						world.markBlockForUpdate(i+xo, j+yo, k+zo);
 					}
