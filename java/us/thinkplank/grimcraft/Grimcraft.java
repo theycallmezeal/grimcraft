@@ -1,5 +1,5 @@
 /*
- * Grimcraft.java 1.0.0 8-25-2014
+ * Grimcraft.java 1.0.0 9-14-2014
  * Made with love by Lapiman and Fox
  * Licensed under whatever we decide
  * 
@@ -88,7 +88,7 @@ public class Grimcraft {
         GameRegistry.addSmelting(GrimcraftBlocks.nether_coal_ore, new ItemStack(Items.coal), 0.2f);
         GameRegistry.addSmelting(GrimcraftBlocks.nether_gold_ore, new ItemStack(Items.gold_ingot), 1.2f);
         GameRegistry.addSmelting(GrimcraftBlocks.nether_redstone_ore, new ItemStack(Items.redstone), 0.9f);
-        GameRegistry.addSmelting(GrimcraftBlocks.sulfur_ore, new ItemStack(GrimcraftItems.sulfur), 0.2f);
+        GameRegistry.addSmelting(GrimcraftBlocks.brimstone_ore, new ItemStack(GrimcraftItems.brimstone), 0.2f);
         GameRegistry.addSmelting(GrimcraftBlocks.fossilstone_ore, new ItemStack(Items.dye, 1, 15), 0.2f);
 
         GameRegistry.registerFuelHandler(new GrimcraftFuelHandler());
@@ -103,7 +103,7 @@ public class Grimcraft {
     	OreDictionary.registerOre("oreCoal", GrimcraftBlocks.nether_coal_ore);
     	OreDictionary.registerOre("oreGold", GrimcraftBlocks.nether_gold_ore);
     	OreDictionary.registerOre("oreRedstone", GrimcraftBlocks.nether_redstone_ore);
-    	OreDictionary.registerOre("oreSulfur", GrimcraftBlocks.sulfur_ore);
+    	OreDictionary.registerOre("oreSulfur", GrimcraftBlocks.brimstone_ore); //makes brimstone work as sulfur
     	
     	EntityRegistry.addSpawn(EntityCaveSpider.class, 10, 1, 3, EnumCreatureType.monster, BiomeGenBase.hell); //spawns with prob. 10 in groups of 1-3
     }

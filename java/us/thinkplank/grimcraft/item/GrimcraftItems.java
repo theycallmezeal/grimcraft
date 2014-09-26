@@ -39,11 +39,11 @@ public class GrimcraftItems {
     public final static Item grimwood_stick = new ItemGrimwoodStick();
     public final static Item wither_bone = new ItemWitherBone();
     public final static Item wither_bonemeal = new ItemWitherBonemeal();
-    public final static Item sulfur = new ItemSulfur();
+    public final static Item brimstone = new ItemBrimstone();
     public final static Item barley = new ItemBarley();
     public final static Item barley_seeds = new ItemBarleySeeds();
     public final static Item strawberry = new ItemStrawberry();
-    public final static Item chili_pepper = new ItemChiliPepper();
+    public final static Item ghast_pepper = new ItemGhastPepper();
     public final static Item netherroot = new ItemNetherroot();
     public final static Item phoenix_egg = new ItemPhoenixEgg();
     public final static Item netherroot_soup = new ItemNetherRootSoup();
@@ -76,11 +76,11 @@ public class GrimcraftItems {
         GameRegistry.registerItem(grimwood_stick, "grimwood_stick");
         GameRegistry.registerItem(wither_bone, "wither_bone");
         GameRegistry.registerItem(wither_bonemeal, "wither_bonemeal");
-        GameRegistry.registerItem(sulfur, "sulfur");
+        GameRegistry.registerItem(brimstone, "brimstone");
         GameRegistry.registerItem(barley, "barley");
         GameRegistry.registerItem(barley_seeds, "barley_seeds");
         GameRegistry.registerItem(strawberry, "strawberry");
-        GameRegistry.registerItem(chili_pepper, "chili_pepper");
+        GameRegistry.registerItem(ghast_pepper, "ghast_pepper");
         GameRegistry.registerItem(netherroot, "netherroot");
         GameRegistry.registerItem(netherroot_soup, "netherrootsoup");
         GameRegistry.registerItem(phoenix_egg, "phoenix_egg");

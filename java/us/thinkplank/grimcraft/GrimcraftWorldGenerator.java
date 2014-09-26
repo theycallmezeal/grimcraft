@@ -72,7 +72,7 @@ public class GrimcraftWorldGenerator implements IWorldGenerator {
 			int yCoord = random.nextInt(128);
 			int zCoord = y + random.nextInt(16);
 			
-			(new WorldGenMinable(GrimcraftBlocks.sulfur_ore, 12, Blocks.netherrack)).generate(world, random, xCoord, yCoord, zCoord);
+			(new WorldGenMinable(GrimcraftBlocks.brimstone_ore, 12, Blocks.netherrack)).generate(world, random, xCoord, yCoord, zCoord);
 		}
 	}
 }

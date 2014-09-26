@@ -56,10 +56,10 @@ public class GrimcraftEventHandler {
 			}
 		}
 		
-		if (targetBlock.equals(GrimcraftItems.chili_pepper) && event.action == event.action.LEFT_CLICK_BLOCK) {
+		if (targetBlock.equals(GrimcraftBlocks.ghast_pepper_bush) && event.action == event.action.LEFT_CLICK_BLOCK) {
 			if (event.world.getBlockMetadata(event.x, event.y, event.z) == 1) {
 				event.setCanceled(true);
-				event.world.spawnEntityInWorld(new EntityItem(event.world, (double)event.x, (double)event.y, (double)event.z, new ItemStack(GrimcraftItems.chili_pepper, 3)));
+				event.world.spawnEntityInWorld(new EntityItem(event.world, (double)event.x, (double)event.y, (double)event.z, new ItemStack(GrimcraftItems.ghast_pepper, 3)));
 				event.world.setBlockMetadataWithNotify(event.x, event.y, event.z, 0, 2);
 			}
 		}

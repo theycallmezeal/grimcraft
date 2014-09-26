@@ -17,13 +17,13 @@ public class GrimcraftBlocks {
     public final static Block nether_gold_ore = new BlockNetherGoldOre();
     public final static Block nether_redstone_ore = new BlockNetherRedstoneOre();
     public final static Block peat = new BlockPeat();
-    public final static Block sulfur_ore = new BlockSulfurOre();
-    public final static Block sulfur_block = new BlockSulfur();
+    public final static Block brimstone_ore = new BlockBrimstoneOre();
+    public final static Block brimstone_block = new BlockBrimstone();
     public final static Block soul_sand_glass = new BlockSoulSandGlass();
     public final static Block barley_crop = new BlockBarleyCrop();
     public final static Block netherroot_crop = new BlockNetherrootCrop();
     public final static Block strawberry_plant = new BlockStrawberryBush(); //TODO rename?
-    public final static Block chili_pepper_plant = new BlockChiliPepperBush(); //TODO rename?
+    public final static Block ghast_pepper_bush = new BlockGhastPepperBush();
     public final static Block nether_lantern = new BlockNetherLantern();
     public final static Block lava_lamp = new BlockLavaLamp();
     public final static Block gc_farming_base = new BlockGrimcraftFarmingBase();
@@ -41,13 +41,13 @@ public class GrimcraftBlocks {
         GameRegistry.registerBlock(nether_gold_ore, "nether_gold_ore");
         GameRegistry.registerBlock(nether_redstone_ore, "nether_redstone_ore");
         GameRegistry.registerBlock(peat, "peat");
-        GameRegistry.registerBlock(sulfur_ore, "sulfur_ore");
-        //sulfur block goes here
+        GameRegistry.registerBlock(brimstone_ore, "brimstone_ore");
+        GameRegistry.registerBlock(brimstone_block, "brimstone_block");
         GameRegistry.registerBlock(soul_sand_glass, "soul_sand_glass");
         GameRegistry.registerBlock(barley_crop, "barley_crop");
         GameRegistry.registerBlock(netherroot_crop, "netherroot_crop");
         GameRegistry.registerBlock(strawberry_plant, "strawberry_plant");
-        GameRegistry.registerBlock(chili_pepper_plant, "chili_pepper_plant");
+        GameRegistry.registerBlock(ghast_pepper_bush, "chili_pepper_plant");
         GameRegistry.registerBlock(nether_lantern, "nether_lantern");
         GameRegistry.registerBlock(lava_lamp, "lava_lamp");
         GameRegistry.registerBlock(gc_farming_base, "gc_farming_base");

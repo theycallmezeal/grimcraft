@@ -6,8 +6,8 @@ import net.minecraft.item.Item;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemSulfur extends Item {
-    public ItemSulfur() {
+public class ItemBrimstone extends Item {
+    public ItemBrimstone() {
         super();
         setMaxStackSize(64);
         setCreativeTab(CreativeTabs.tabMaterials);
