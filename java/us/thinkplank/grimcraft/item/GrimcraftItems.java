@@ -42,7 +42,7 @@ public class GrimcraftItems {
     public final static Item brimstone = new ItemBrimstone();
     public final static Item barley = new ItemBarley();
     public final static Item barley_seeds = new ItemBarleySeeds();
-    public final static Item strawberry = new ItemStrawberry();
+    public final static Item vulpiberry = new ItemVulpiberry();
     public final static Item ghast_pepper = new ItemGhastPepper();
     public final static Item netherroot = new ItemNetherroot();
     public final static Item phoenix_egg = new ItemPhoenixEgg();
@@ -79,7 +79,7 @@ public class GrimcraftItems {
         GameRegistry.registerItem(brimstone, "brimstone");
         GameRegistry.registerItem(barley, "barley");
         GameRegistry.registerItem(barley_seeds, "barley_seeds");
-        GameRegistry.registerItem(strawberry, "strawberry");
+        GameRegistry.registerItem(vulpiberry, "vulpiberry");
         GameRegistry.registerItem(ghast_pepper, "ghast_pepper");
         GameRegistry.registerItem(netherroot, "netherroot");
         GameRegistry.registerItem(netherroot_soup, "netherrootsoup");

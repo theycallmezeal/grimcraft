@@ -16,11 +16,11 @@ import us.thinkplank.grimcraft.item.GrimcraftItems;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockStrawberryBush extends BlockBush implements IShearable {
+public class BlockVulpiberryBush extends BlockBush implements IShearable {
 	private IIcon[] icons;
 	
-	public BlockStrawberryBush () {
-        setBlockName("strawberry_plant");
+	public BlockVulpiberryBush () {
+        setBlockName("vulpiberry_bush");
     }
 	
 	@Override
@@ -38,7 +38,7 @@ public class BlockStrawberryBush extends BlockBush implements IShearable {
 	public ArrayList<ItemStack> getDrops(World world, int x, int y, int z, int meta, int fortune) {
 		// this should not be reached if meta is 0 because of the event handler
 		ArrayList<ItemStack> ret = new ArrayList<ItemStack>();
-		ret.add(new ItemStack(GrimcraftBlocks.strawberry_plant));
+		ret.add(new ItemStack(GrimcraftBlocks.vulpiberry_bush));
 		return ret;
 	}
 	
@@ -64,10 +64,10 @@ public class BlockStrawberryBush extends BlockBush implements IShearable {
 	@Override
 	public ArrayList<ItemStack> onSheared(ItemStack item, IBlockAccess world, int x, int y, int z, int fortune) {
 		ArrayList<ItemStack> ret = new ArrayList<ItemStack>();
-		ret.add(new ItemStack(GrimcraftBlocks.strawberry_plant));
+		ret.add(new ItemStack(GrimcraftBlocks.vulpiberry_bush));
 		
 		if (world.getBlockMetadata(x, y, z) != 0) {
-			ret.add(new ItemStack(GrimcraftItems.strawberry));
+			ret.add(new ItemStack(GrimcraftItems.vulpiberry));
 		}
 		
 		return ret;
@@ -78,8 +78,8 @@ public class BlockStrawberryBush extends BlockBush implements IShearable {
     public void registerBlockIcons(IIconRegister iconRegister) {
 		this.icons = new IIcon[2];
 		
-        this.icons[0] = iconRegister.registerIcon("grimcraft:strawberry_bush_stage_0");
-        this.icons[1] = iconRegister.registerIcon("grimcraft:strawberry_bush_stage_1");
+        this.icons[0] = iconRegister.registerIcon("grimcraft:vulpiberry_bush_stage_0");
+        this.icons[1] = iconRegister.registerIcon("grimcraft:vulpiberry_bush_stage_1");
     }
 	
 	@Override

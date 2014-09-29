@@ -22,7 +22,7 @@ public class GrimcraftBlocks {
     public final static Block soul_sand_glass = new BlockSoulSandGlass();
     public final static Block barley_crop = new BlockBarleyCrop();
     public final static Block netherroot_crop = new BlockNetherrootCrop();
-    public final static Block strawberry_plant = new BlockStrawberryBush(); //TODO rename?
+    public final static Block vulpiberry_bush = new BlockVulpiberryBush();
     public final static Block ghast_pepper_bush = new BlockGhastPepperBush();
     public final static Block nether_lantern = new BlockNetherLantern();
     public final static Block lava_lamp = new BlockLavaLamp();
@@ -46,8 +46,8 @@ public class GrimcraftBlocks {
         GameRegistry.registerBlock(soul_sand_glass, "soul_sand_glass");
         GameRegistry.registerBlock(barley_crop, "barley_crop");
         GameRegistry.registerBlock(netherroot_crop, "netherroot_crop");
-        GameRegistry.registerBlock(strawberry_plant, "strawberry_plant");
-        GameRegistry.registerBlock(ghast_pepper_bush, "chili_pepper_plant");
+        GameRegistry.registerBlock(vulpiberry_bush, "vulpiberry_bush");
+        GameRegistry.registerBlock(ghast_pepper_bush, "ghast_pepper_bush");
         GameRegistry.registerBlock(nether_lantern, "nether_lantern");
         GameRegistry.registerBlock(lava_lamp, "lava_lamp");
         GameRegistry.registerBlock(gc_farming_base, "gc_farming_base");

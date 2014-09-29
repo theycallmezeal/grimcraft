@@ -48,10 +48,10 @@ public class GrimcraftEventHandler {
 		ItemStack heldItemStack = event.entityPlayer.inventory.getCurrentItem();
 		
 		// handles strawberry harvesting
-		if (targetBlock.equals(GrimcraftBlocks.strawberry_plant) && event.action == event.action.LEFT_CLICK_BLOCK) {
+		if (targetBlock.equals(GrimcraftBlocks.vulpiberry_bush) && event.action == event.action.LEFT_CLICK_BLOCK) {
 			if (event.world.getBlockMetadata(event.x, event.y, event.z) == 1) {
 				event.setCanceled(true);
-				event.world.spawnEntityInWorld(new EntityItem(event.world, (double)event.x, (double)event.y, (double)event.z, new ItemStack(GrimcraftItems.strawberry, 3)));
+				event.world.spawnEntityInWorld(new EntityItem(event.world, (double)event.x, (double)event.y, (double)event.z, new ItemStack(GrimcraftItems.vulpiberry, 3)));
 				event.world.setBlockMetadataWithNotify(event.x, event.y, event.z, 0, 2);
 			}
 		}
