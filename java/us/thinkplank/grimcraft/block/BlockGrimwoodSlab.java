@@ -11,7 +11,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class BlockGrimwoodSlab extends BlockSlab {
     public BlockGrimwoodSlab (boolean isDouble) {
         super(isDouble, Material.wood);
-        setHardness(3F);
+        setHardness(2F);
         setStepSound(Block.soundTypeWood);
         setBlockName("grimwood_slab");
         setCreativeTab(CreativeTabs.tabBlock);

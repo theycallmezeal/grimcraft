@@ -10,7 +10,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class BlockGrimwoodPlanks extends Block {
     public BlockGrimwoodPlanks () {
         super(Material.wood);
-        setHardness(3F);
+        setHardness(2F);
         setStepSound(Block.soundTypeWood);
         setBlockName("grimwood_planks");
         setCreativeTab(CreativeTabs.tabBlock);

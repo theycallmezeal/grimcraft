@@ -11,7 +11,7 @@ public class BlockGrimwoodStairs extends BlockStairs {
 
 	public BlockGrimwoodStairs() {
 		super(GrimcraftBlocks.grimwood_planks, 0);
-		setHardness(3F);
+		setHardness(2F);
         setStepSound(Block.soundTypeWood);
         setBlockName("grimwood_stairs");
         setCreativeTab(CreativeTabs.tabBlock);

@@ -9,8 +9,8 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class BlockGrimwoodFenceGate extends BlockFenceGate {
 	public BlockGrimwoodFenceGate() {
 		super();
+		setHardness(2F);
 		setBlockName("grimwood_fence_gate");
-		setCreativeTab(CreativeTabs.tabDecorations);
 	}
 	
 	@SideOnly(Side.CLIENT)

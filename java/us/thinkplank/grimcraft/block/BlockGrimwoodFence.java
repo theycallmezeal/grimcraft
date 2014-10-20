@@ -9,8 +9,8 @@ import net.minecraft.world.IBlockAccess;
 public class BlockGrimwoodFence extends BlockFence {
 	public BlockGrimwoodFence() {
 		super("grimcraft:grimwood_planks", Material.wood);
+		setHardness(2F);
 		setBlockName("grimwood_fence");
-		setCreativeTab(CreativeTabs.tabDecorations);
 	}
 	
 	public boolean canConnectFenceTo(IBlockAccess blockAccess, int x, int y, int z)
