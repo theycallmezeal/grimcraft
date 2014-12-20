@@ -1,0 +1,6 @@
+{
+    "parent": "block/cube_all",
+    "textures": {
+        "all": "grimcraft:blocks/double_grimwood_slab"
+    }
+}

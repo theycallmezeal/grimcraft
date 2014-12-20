@@ -1,11 +1,10 @@
 /*
- * Grimcraft.java 1.0.0 9-14-2014
+ * Grimcraft.java 1.0.0 12-20-2014
  * Made with love by Lapiman and Fox
  * Licensed under whatever we decide
  * 
  * to do:
  * fix falling through peat
- * take a look at hardnesses
  */
 
 package us.thinkplank.grimcraft;
