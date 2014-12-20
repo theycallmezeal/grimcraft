@@ -3,7 +3,7 @@ package us.thinkplank.grimcraft.item;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraftforge.common.util.EnumHelper;
-import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class GrimcraftItems {
 	/* currently equivalent to vanilla materials; will tweak later*/
