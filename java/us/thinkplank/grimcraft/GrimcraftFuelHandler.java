@@ -2,8 +2,8 @@ package us.thinkplank.grimcraft;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import cpw.mods.fml.common.IFuelHandler;
-import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.common.IFuelHandler;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class GrimcraftFuelHandler implements IFuelHandler {
     @Override
