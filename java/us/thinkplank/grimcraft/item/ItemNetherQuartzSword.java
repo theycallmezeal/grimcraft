@@ -9,6 +9,5 @@ public class ItemNetherQuartzSword extends ItemSword {
         setMaxStackSize(1);
         setCreativeTab(CreativeTabs.tabCombat);
         setUnlocalizedName("nether_quartz_sword");
-        setTextureName("grimcraft:nether_quartz_sword");
     }
 }

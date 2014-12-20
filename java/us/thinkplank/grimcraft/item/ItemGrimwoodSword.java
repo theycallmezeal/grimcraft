@@ -9,6 +9,5 @@ public class ItemGrimwoodSword extends ItemHoe {
         setMaxStackSize(1);
         setCreativeTab(CreativeTabs.tabCombat);
         setUnlocalizedName("grimwood_sword");
-        setTextureName("grimcraft:grimwood_sword");
     }
 }

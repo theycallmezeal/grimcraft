@@ -9,6 +9,5 @@ public class ItemNetherGoldPickaxe extends ItemPickaxe {
         setMaxStackSize(1);
         setCreativeTab(CreativeTabs.tabTools);
         setUnlocalizedName("nether_gold_pickaxe");
-        setTextureName("grimcraft:nether_gold_pickaxe");
     }
 }

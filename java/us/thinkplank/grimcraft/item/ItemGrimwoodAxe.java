@@ -9,6 +9,5 @@ public class ItemGrimwoodAxe extends ItemAxe {
         setMaxStackSize(1);
         setCreativeTab(CreativeTabs.tabTools);
         setUnlocalizedName("grimwood_axe");
-        setTextureName("grimcraft:grimwood_axe");
     }
 }

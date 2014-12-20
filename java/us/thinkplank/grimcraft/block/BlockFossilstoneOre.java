@@ -4,7 +4,6 @@ import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -16,7 +15,7 @@ public class BlockFossilstoneOre extends Block {
         super(Material.rock);
         setHardness(3F);
         setStepSound(Block.soundTypeStone);
-        setBlockName("fossilstone_ore");
+        setUnlocalizedName("fossilstone_ore");
         setCreativeTab(CreativeTabs.tabBlock);
         setHarvestLevel("pickaxe", 1);
     }
@@ -27,11 +26,5 @@ public class BlockFossilstoneOre extends Block {
 
     public int quantityDropped(Random random) {
         return random.nextInt(2) + 4;
-    }
-
-    @Override
-    @SideOnly(Side.CLIENT)
-    public void registerBlockIcons(IIconRegister iconRegister) {
-        this.blockIcon = iconRegister.registerIcon("grimcraft:fossilstone_ore");
     }
 }

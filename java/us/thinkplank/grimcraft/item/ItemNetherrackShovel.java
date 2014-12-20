@@ -9,6 +9,5 @@ public class ItemNetherrackShovel extends ItemSpade {
         setMaxStackSize(1);
         setCreativeTab(CreativeTabs.tabTools);
         setUnlocalizedName("netherrack_shovel");
-        setTextureName("grimcraft:netherrack_shovel");
     }
 }

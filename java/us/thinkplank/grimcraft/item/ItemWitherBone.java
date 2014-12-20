@@ -9,6 +9,5 @@ public class ItemWitherBone extends Item {
         setMaxStackSize(64);
         setCreativeTab(CreativeTabs.tabMaterials);
         setUnlocalizedName("wither_bone");
-        setTextureName("grimcraft:wither_bone");
     }
 }

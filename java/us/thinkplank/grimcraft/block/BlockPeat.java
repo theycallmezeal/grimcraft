@@ -3,7 +3,6 @@ package us.thinkplank.grimcraft.block;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.AxisAlignedBB;
@@ -16,7 +15,7 @@ public class BlockPeat extends BlockFalling {
         super(Material.grass);
         setHardness(3F);
         setStepSound(Block.soundTypeGrass);
-        setBlockName("peat");
+        setUnlocalizedName("peat");
         setCreativeTab(CreativeTabs.tabBlock);
         setHarvestLevel("shovel", 0);
     }

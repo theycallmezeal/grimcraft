@@ -10,7 +10,7 @@ public class BlockGrimwoodFence extends BlockFence {
 	public BlockGrimwoodFence() {
 		super("grimcraft:grimwood_planks", Material.wood);
 		setHardness(2F);
-		setBlockName("grimwood_fence");
+		setUnlocalizedName("grimwood_fence");
 	}
 	
 	public boolean canConnectFenceTo(IBlockAccess blockAccess, int x, int y, int z)

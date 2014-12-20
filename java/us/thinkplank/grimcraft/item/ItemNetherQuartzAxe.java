@@ -9,6 +9,5 @@ public class ItemNetherQuartzAxe extends ItemAxe {
         setMaxStackSize(1);
         setCreativeTab(CreativeTabs.tabTools);
         setUnlocalizedName("nether_quartz_axe");
-        setTextureName("grimcraft:nether_quartz_axe");
     }
 }

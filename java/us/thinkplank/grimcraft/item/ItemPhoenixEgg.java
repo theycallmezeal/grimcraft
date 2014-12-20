@@ -9,6 +9,5 @@ public class ItemPhoenixEgg extends Item {
         setMaxStackSize(64);
         setCreativeTab(CreativeTabs.tabMaterials);
         setUnlocalizedName("phoenix_egg");
-        setTextureName("grimcraft:phoenix_egg");
     }
 }

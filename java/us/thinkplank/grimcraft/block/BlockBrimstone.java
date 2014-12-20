@@ -2,7 +2,6 @@ package us.thinkplank.grimcraft.block;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -12,14 +11,8 @@ public class BlockBrimstone extends Block {
         super(Material.rock);
         setHardness(3F);
         setStepSound(Block.soundTypeStone);
-        setBlockName("brimstone");
+        setUnlocalizedName("brimstone");
         setCreativeTab(CreativeTabs.tabBlock);
         setHarvestLevel("pickaxe", 1);
-    }
-
-    @Override
-    @SideOnly(Side.CLIENT)
-    public void registerBlockIcons(IIconRegister iconRegister) {
-        this.blockIcon = iconRegister.registerIcon("grimcraft:brimstone_block");
     }
 }

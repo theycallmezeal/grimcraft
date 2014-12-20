@@ -5,7 +5,6 @@ import java.util.Random;
 import us.thinkplank.grimcraft.item.GrimcraftItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -17,7 +16,7 @@ public class BlockBrimstoneOre extends Block {
         super(Material.rock);
         setHardness(3F);
         setStepSound(Block.soundTypeStone);
-        setBlockName("brimstone_ore");
+        setUnlocalizedName("brimstone_ore");
         setCreativeTab(CreativeTabs.tabBlock);
         setHarvestLevel("pickaxe", 1);
     }
@@ -28,11 +27,5 @@ public class BlockBrimstoneOre extends Block {
 
     public int quantityDropped(Random random) {
         return random.nextInt(5) + 4;
-    }
-
-    @Override
-    @SideOnly(Side.CLIENT)
-    public void registerBlockIcons(IIconRegister iconRegister) {
-        this.blockIcon = iconRegister.registerIcon("grimcraft:brimstone_ore");
     }
 }

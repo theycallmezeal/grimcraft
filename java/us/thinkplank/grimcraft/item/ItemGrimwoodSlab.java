@@ -7,7 +7,7 @@ import us.thinkplank.grimcraft.block.GrimcraftBlocks;
 
 public class ItemGrimwoodSlab extends ItemSlab {
 	public ItemGrimwoodSlab(Block block) {
-		super(block, (BlockSlab)GrimcraftBlocks.single_grimwood_slab, (BlockSlab)GrimcraftBlocks.double_grimwood_slab, false);
+		super(block, (BlockSlab)GrimcraftBlocks.single_grimwood_slab, (BlockSlab)GrimcraftBlocks.double_grimwood_slab);
 		this.setMaxDamage(0);
         this.setHasSubtypes(true);
 	}

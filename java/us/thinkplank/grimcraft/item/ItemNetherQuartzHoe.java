@@ -9,6 +9,5 @@ public class ItemNetherQuartzHoe extends ItemHoe {
         setMaxStackSize(1);
         setCreativeTab(CreativeTabs.tabTools);
         setUnlocalizedName("nether_quartz_hoe");
-        setTextureName("grimcraft:nether_quartz_hoe");
     }
 }

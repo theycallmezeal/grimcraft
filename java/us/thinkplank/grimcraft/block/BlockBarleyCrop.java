@@ -2,21 +2,18 @@ package us.thinkplank.grimcraft.block;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockCrops;
-import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
-import net.minecraft.util.IIcon;
 import us.thinkplank.grimcraft.item.GrimcraftItems;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockBarleyCrop extends BlockCrops {
-	private IIcon[] icons;
 	
 	public BlockBarleyCrop() {
 		super();
 		setStepSound(Block.soundTypeGrass);
-		setBlockName("barley_crop");
+		setUnlocalizedName("barley_crop");
 		setCreativeTab(CreativeTabs.tabFood);
 	}
 	
@@ -56,28 +53,4 @@ public class BlockBarleyCrop extends BlockCrops {
 //            }
 //        }
 //    }
-    
-    @Override
-    @SideOnly(Side.CLIENT)
-    public void registerBlockIcons(IIconRegister p_149651_1_)
-    {
-        this.icons = new IIcon[8];
-
-        for (int i = 0; i < this.icons.length; ++i)
-        {
-            this.icons[i] = p_149651_1_.registerIcon("grimcraft:barley_crop_stage_" + i);
-        }
-    }
-    
-    @Override
-    @SideOnly(Side.CLIENT)
-    public IIcon getIcon(int p_149691_1_, int p_149691_2_)
-    {
-        if (p_149691_2_ < 0 || p_149691_2_ > 7)
-        {
-            p_149691_2_ = 7;
-        }
-
-        return this.icons[p_149691_2_];
-    }
 }

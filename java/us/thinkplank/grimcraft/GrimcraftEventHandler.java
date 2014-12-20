@@ -13,7 +13,6 @@ import net.minecraftforge.event.entity.player.PlayerUseItemEvent;
 import net.minecraftforge.event.entity.player.UseHoeEvent;
 import us.thinkplank.grimcraft.block.GrimcraftBlocks;
 import us.thinkplank.grimcraft.item.GrimcraftItems;
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 
 public class GrimcraftEventHandler {
 	

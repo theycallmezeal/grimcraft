@@ -9,6 +9,5 @@ public class ItemVulpiberry extends ItemFood {
         setMaxStackSize(64);
         setCreativeTab(CreativeTabs.tabFood);
         setUnlocalizedName("vulpiberry");
-        setTextureName("grimcraft:vulpiberry");
     }
 }

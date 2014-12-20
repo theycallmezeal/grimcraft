@@ -5,6 +5,7 @@
  * 
  * to do:
  * fix falling through peat
+ * slabs are all weird now. figure them out
  */
 
 package us.thinkplank.grimcraft;

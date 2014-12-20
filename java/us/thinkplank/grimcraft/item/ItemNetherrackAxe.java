@@ -9,6 +9,5 @@ public class ItemNetherrackAxe extends ItemAxe {
         setMaxStackSize(1);
         setCreativeTab(CreativeTabs.tabTools);
         setUnlocalizedName("netherrack_axe");
-        setTextureName("grimcraft:netherrack_axe");
     }
 }

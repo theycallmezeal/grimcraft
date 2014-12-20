@@ -9,6 +9,5 @@ public class ItemBarley extends Item {
         setMaxStackSize(64);
         setCreativeTab(CreativeTabs.tabMaterials);
         setUnlocalizedName("barley");
-        setTextureName("grimcraft:barley");
     }
 }

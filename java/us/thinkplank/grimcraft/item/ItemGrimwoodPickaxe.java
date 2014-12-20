@@ -9,6 +9,5 @@ public class ItemGrimwoodPickaxe extends ItemPickaxe {
         setMaxStackSize(1);
         setCreativeTab(CreativeTabs.tabTools);
         setUnlocalizedName("grimwood_pickaxe");
-        setTextureName("grimcraft:grimwood_pickaxe");
     }
 }

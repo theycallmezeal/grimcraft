@@ -9,6 +9,5 @@ public class ItemGrimwoodStick extends Item {
         setMaxStackSize(64);
         setCreativeTab(CreativeTabs.tabMaterials);
         setUnlocalizedName("grimwood_stick");
-        setTextureName("grimcraft:grimwood_stick");
     }
 }

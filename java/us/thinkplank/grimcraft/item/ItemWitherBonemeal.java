@@ -13,7 +13,6 @@ public class ItemWitherBonemeal extends Item {
         setMaxStackSize(64);
         setCreativeTab(CreativeTabs.tabMaterials);
         setUnlocalizedName("wither_bonemeal");
-        setTextureName("grimcraft:wither_bonemeal");
     }
     
     //TODO find out what the rest of these args do

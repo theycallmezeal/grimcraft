@@ -5,7 +5,6 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemSeeds;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import net.minecraftforge.common.util.ForgeDirection;
 import us.thinkplank.grimcraft.block.GrimcraftBlocks;
 
 public class ItemBarleySeeds extends ItemSeeds {
@@ -14,7 +13,6 @@ public class ItemBarleySeeds extends ItemSeeds {
         setMaxStackSize(64);
         setCreativeTab(CreativeTabs.tabMaterials);
         setUnlocalizedName("barley_seeds");
-        setTextureName("grimcraft:barley_seeds");
     }
     
     //TODO refactor this

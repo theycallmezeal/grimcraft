@@ -9,6 +9,5 @@ public class ItemNetherGoldHoe extends ItemHoe {
         setMaxStackSize(1);
         setCreativeTab(CreativeTabs.tabTools);
         setUnlocalizedName("nether_gold_hoe");
-        setTextureName("grimcraft:nether_gold_hoe");
     }
 }

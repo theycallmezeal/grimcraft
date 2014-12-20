@@ -9,6 +9,5 @@ public class ItemNetherQuartzPickaxe extends ItemPickaxe {
         setMaxStackSize(1);
         setCreativeTab(CreativeTabs.tabTools);
         setUnlocalizedName("nether_quartz_pickaxe");
-        setTextureName("grimcraft:nether_quartz_pickaxe");
     }
 }

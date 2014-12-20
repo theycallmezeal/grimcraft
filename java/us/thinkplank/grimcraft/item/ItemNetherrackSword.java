@@ -9,6 +9,5 @@ public class ItemNetherrackSword extends ItemSword {
         setMaxStackSize(1);
         setCreativeTab(CreativeTabs.tabCombat);
         setUnlocalizedName("netherrack_sword");
-        setTextureName("grimcraft:netherrack_sword");
     }
 }

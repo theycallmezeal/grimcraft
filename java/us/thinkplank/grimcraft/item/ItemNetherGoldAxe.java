@@ -9,6 +9,5 @@ public class ItemNetherGoldAxe extends ItemAxe {
         setMaxStackSize(1);
         setCreativeTab(CreativeTabs.tabTools);
         setUnlocalizedName("nether_gold_axe");
-        setTextureName("grimcraft:nether_gold_axe");
     }
 }

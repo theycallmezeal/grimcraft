@@ -5,10 +5,8 @@ import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLog;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
-import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -20,17 +18,11 @@ public class BlockGrimcraftFarmingBase extends Block {
         super(Material.ground);
         setHardness(2F);
         setStepSound(Block.soundTypeStone);
-        setBlockName("gc_farming_base");
+        setUnlocalizedName("gc_farming_base");
         setCreativeTab(CreativeTabs.tabBlock);
         setHarvestLevel("pickaxe", 0);
         setTickRandomly(true);
     }
-	
-	@Override
-	@SideOnly(Side.CLIENT)
-	public void registerBlockIcons(IIconRegister iconRegister) {
-		this.blockIcon = iconRegister.registerIcon("grimcraft:fossilstone_ore");
-	}
 	
 	@Override
 	public void updateTick(World world, int x, int y, int z, Random random) {

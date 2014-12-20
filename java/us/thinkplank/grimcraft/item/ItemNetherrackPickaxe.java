@@ -9,6 +9,5 @@ public class ItemNetherrackPickaxe extends ItemPickaxe {
         setMaxStackSize(1);
         setCreativeTab(CreativeTabs.tabTools);
         setUnlocalizedName("netherrack_pickaxe");
-        setTextureName("grimcraft:netherrack_pickaxe");
     }
 }
