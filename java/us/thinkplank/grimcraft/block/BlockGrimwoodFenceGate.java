@@ -11,10 +11,4 @@ public class BlockGrimwoodFenceGate extends BlockFenceGate {
 		setHardness(2F);
 		setUnlocalizedName("grimwood_fence_gate");
 	}
-	
-	@SideOnly(Side.CLIENT)
-    public IIcon getIcon(int side, int meta)
-    {
-        return GrimcraftBlocks.grimwood_planks.getBlockTextureFromSide(side);
-    }
 }

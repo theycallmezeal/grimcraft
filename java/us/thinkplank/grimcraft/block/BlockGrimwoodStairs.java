@@ -7,7 +7,6 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockGrimwoodStairs extends BlockStairs {
-
 	public BlockGrimwoodStairs() {
 		super(GrimcraftBlocks.grimwood_planks, 0);
 		setHardness(2F);
@@ -17,10 +16,4 @@ public class BlockGrimwoodStairs extends BlockStairs {
         setHarvestLevel("axe", 0);
         setLightOpacity(0);
 	}
-	
-	@Override
-    @SideOnly(Side.CLIENT)
-    public void registerBlockIcons(IIconRegister iconRegister) {
-        this.blockIcon = iconRegister.registerIcon("grimcraft:grimwood_planks");
-    }
 }
