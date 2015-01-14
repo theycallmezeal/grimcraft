@@ -18,16 +18,16 @@ public class GrimcraftEventHandler {
 	
 	@SubscribeEvent
 	public void onUseHoe(UseHoeEvent event) {
-		Block targetBlock = event.world.getBlock(event.blockPos);
+		Block targetBlock = event.world.getBlock(event.pos);
 		
 		if (targetBlock.equals(Blocks.soul_sand)) {
-			event.world.playSoundEffect(new BlockPos((double)((float)event.blockPos.getX() + 0.5F), (double)((float)event.blockPos.getY() + 0.5F), (double)((float)event.blockPos.getZ() + 0.5F)), targetBlock.stepSound.getStepResourcePath(), (targetBlock.stepSound.getVolume() + 1.0F) / 2.0F, targetBlock.stepSound.getPitch() * 0.8F);
+			event.world.playSoundEffect(new BlockPos((double)((float)event.pos.getX() + 0.5F), (double)((float)event.pos.getY() + 0.5F), (double)((float)event.pos.getZ() + 0.5F)), targetBlock.stepSound.getStepResourcePath(), (targetBlock.stepSound.getVolume() + 1.0F) / 2.0F, targetBlock.stepSound.getPitch() * 0.8F);
 			
 			if (event.world.isRemote) {
 				return;
 			}
 			
-			event.world.setBlock(event.blockPos, GrimcraftBlocks.peat);
+			event.world.setBlock(event.pos, GrimcraftBlocks.peat);
             event.current.damageItem(1, event.entityPlayer);
 		}
 	}
@@ -43,23 +43,23 @@ public class GrimcraftEventHandler {
 	
 	@SubscribeEvent
 	public void onPlayerInteract(PlayerInteractEvent event) {
-		Block targetBlock = event.world.getBlock(event.blockPos);
+		Block targetBlock = event.world.getBlock(event.pos);
 		ItemStack heldItemStack = event.entityPlayer.inventory.getCurrentItem();
 		
 		// handles strawberry harvesting
 		if (targetBlock.equals(GrimcraftBlocks.vulpiberry_bush) && event.action == event.action.LEFT_CLICK_BLOCK) {
-			if (event.world.getBlockMetadata(event.blockPos) == 1) {
+			if (event.world.getBlockMetadata(event.pos) == 1) {
 				event.setCanceled(true);
-				event.world.spawnEntityInWorld(new EntityItem(event.world, event.blockPos, new ItemStack(GrimcraftItems.vulpiberry, 3)));
-				event.world.setBlockMetadataWithNotify(event.blockPos, 0, 2);
+				event.world.spawnEntityInWorld(new EntityItem(event.world, event.pos, new ItemStack(GrimcraftItems.vulpiberry, 3)));
+				event.world.setBlockMetadataWithNotify(event.pos, 0, 2);
 			}
 		}
 		
 		if (targetBlock.equals(GrimcraftBlocks.ghast_pepper_bush) && event.action == event.action.LEFT_CLICK_BLOCK) {
-			if (event.world.getBlockMetadata(event.blockPos) == 1) {
+			if (event.world.getBlockMetadata(event.pos) == 1) {
 				event.setCanceled(true);
-				event.world.spawnEntityInWorld(new EntityItem(event.world, event.blockPos, new ItemStack(GrimcraftItems.ghast_pepper, 3)));
-				event.world.setBlockMetadataWithNotify(event.blockPos, 0, 2);
+				event.world.spawnEntityInWorld(new EntityItem(event.world, event.pos, new ItemStack(GrimcraftItems.ghast_pepper, 3)));
+				event.world.setBlockMetadataWithNotify(event.pos, 0, 2);
 			}
 		}
 	}
