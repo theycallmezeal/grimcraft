@@ -7,6 +7,7 @@ import net.minecraft.block.BlockLog;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
+import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -30,26 +31,26 @@ public class BlockGrimcraftFarmingBase extends Block {
 	    int y = pos.getY();
 	    int z = pos.getZ();
 		int radius = 5;
-		for(int i = x-radius; i < x+radius; i++) {
-			for(int j = y-radius; j < y+radius; j++) {
-				for(int k = z-radius; k < z+radius; k++) {
+		for(int i = x - radius; i < x + radius; i++) {
+			for(int j = y - radius; j < y + radius; j++) {
+				for(int k = z - radius; k < z + radius; k++) {
 					if(random.nextInt(100) > 10) {
 						continue;
 					}  
 					Block cBlock = world.getBlock(new BlockPos(i, j, k));
 					if(Block.isEqualTo(cBlock, Blocks.glowstone)) {
-						int xo = random.nextInt(3)-1;
-						int yo = random.nextInt(3)-1;
-						int zo = random.nextInt(3)-1;
+						int xo = random.nextInt(3) - 1;
+						int yo = random.nextInt(3) - 1;
+						int zo = random.nextInt(3) - 1;
 						
-						if(Block.isEqualTo(this, world.getBlock(new BlockPos(i+xo, j+yo, k+zo))) {
+						if(Block.isEqualTo(this, world.getBlock(new BlockPos(i + xo, j + yo, k + zo))) {
 							continue;
 						}
-						if(!Block.isEqualTo(Blocks.air, world.getBlock(i+xo, j+yo, k+zo))) {
+						if(!Block.isEqualTo(Blocks.air, world.getBlock(i + xo, j + yo, k + zo))) {
 							continue;
 						}
-						world.setBlock(new BlockPos(i+xo, j+yo, k+zo), Blocks.glowstone);
-						world.markBlockForUpdate(new BlockPos(i+xo, j+yo, k+zo));
+						world.setBlock(new BlockPos(i + xo, j + yo, k + zo), Blocks.glowstone);
+						world.markBlockForUpdate(new BlockPos(i + xo, j + yo, k + zo));
 					}
 				}
 			}
