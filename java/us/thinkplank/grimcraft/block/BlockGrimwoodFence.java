@@ -13,9 +13,9 @@ public class BlockGrimwoodFence extends BlockFence {
 		setUnlocalizedName("grimwood_fence");
 	}
 	
-	public boolean canConnectFenceTo(IBlockAccess blockAccess, int x, int y, int z)
+	public boolean canConnectFenceTo(IBlockAccess blockAccess, BlockPos pos)
     {
-        Block block = blockAccess.getBlock(x, y, z);
+        Block block = blockAccess.getBlock(pos);
         return block != this && block != GrimcraftBlocks.grimwood_fence_gate ? (block.getMaterial().isOpaque() && block.renderAsNormalBlock() ? block.getMaterial() != Material.gourd : false) : true;
     }
 }

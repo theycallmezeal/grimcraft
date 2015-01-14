@@ -21,7 +21,7 @@ public class BlockVulpiberryBush extends BlockBush implements IShearable {
     }
 	
 	@Override
-	public EnumPlantType getPlantType(IBlockAccess world, int x, int y, int z) {
+	public EnumPlantType getPlantType(IBlockAccess world, BlockPos pos) {
 		return EnumPlantType.Nether;
 	}
 	
@@ -32,7 +32,7 @@ public class BlockVulpiberryBush extends BlockBush implements IShearable {
     }
 	
 	@Override
-	public ArrayList<ItemStack> getDrops(World world, int x, int y, int z, int meta, int fortune) {
+	public ArrayList<ItemStack> getDrops(World world, BlockPos pos, int meta, int fortune) {
 		// this should not be reached if meta is 0 because of the event handler
 		ArrayList<ItemStack> ret = new ArrayList<ItemStack>();
 		ret.add(new ItemStack(GrimcraftBlocks.vulpiberry_bush));
@@ -40,30 +40,30 @@ public class BlockVulpiberryBush extends BlockBush implements IShearable {
 	}
 	
 	@Override
-	public void updateTick(World world, int x, int y, int z, Random random)
+	public void updateTick(World world, BlockPos pos, Random random)
     {
-        int meta = world.getBlockMetadata(x, y, z);
+        int meta = world.getBlockMetadata(pos);
 
         if (meta < 1 && random.nextInt(10) == 0)
         {
             meta++;
-            world.setBlockMetadataWithNotify(x, y, z, meta, 2);
+            world.setBlockMetadataWithNotify(pos, meta, 2);
         }
 
-        super.updateTick(world, x, y, z, random);
+        super.updateTick(world, pos, random);
     }
 
 	@Override
-	public boolean isShearable(ItemStack item, IBlockAccess world, int x, int y, int z) {
+	public boolean isShearable(ItemStack item, IBlockAccess world, BlockPos pos) {
 		return true;
 	}
 
 	@Override
-	public ArrayList<ItemStack> onSheared(ItemStack item, IBlockAccess world, int x, int y, int z, int fortune) {
+	public ArrayList<ItemStack> onSheared(ItemStack item, IBlockAccess world, BlockPos pos, int fortune) {
 		ArrayList<ItemStack> ret = new ArrayList<ItemStack>();
 		ret.add(new ItemStack(GrimcraftBlocks.vulpiberry_bush));
 		
-		if (world.getBlockMetadata(x, y, z) != 0) {
+		if (world.getBlockMetadata(pos) != 0) {
 			ret.add(new ItemStack(GrimcraftItems.vulpiberry));
 		}
 		

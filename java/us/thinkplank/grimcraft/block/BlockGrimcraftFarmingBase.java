@@ -25,7 +25,10 @@ public class BlockGrimcraftFarmingBase extends Block {
     }
 	
 	@Override
-	public void updateTick(World world, int x, int y, int z, Random random) {
+	public void updateTick(World world, BlockPos pos, Random random) {
+	    int x = pos.getX();
+	    int y = pos.getY();
+	    int z = pos.getZ();
 		int radius = 5;
 		for(int i = x-radius; i < x+radius; i++) {
 			for(int j = y-radius; j < y+radius; j++) {
@@ -33,20 +36,20 @@ public class BlockGrimcraftFarmingBase extends Block {
 					if(random.nextInt(100) > 10) {
 						continue;
 					}  
-					Block cBlock = world.getBlock(i, j, k);
+					Block cBlock = world.getBlock(new BlockPos(i, j, k));
 					if(Block.isEqualTo(cBlock, Blocks.glowstone)) {
 						int xo = random.nextInt(3)-1;
 						int yo = random.nextInt(3)-1;
 						int zo = random.nextInt(3)-1;
 						
-						if(Block.isEqualTo(this, world.getBlock(i+xo, j+yo, k+zo))) {
+						if(Block.isEqualTo(this, world.getBlock(new BlockPos(i+xo, j+yo, k+zo))) {
 							continue;
 						}
 						if(!Block.isEqualTo(Blocks.air, world.getBlock(i+xo, j+yo, k+zo))) {
 							continue;
 						}
-						world.setBlock(i+xo, j+yo, k+zo, Blocks.glowstone);
-						world.markBlockForUpdate(i+xo, j+yo, k+zo);
+						world.setBlock(new BlockPos(i+xo, j+yo, k+zo), Blocks.glowstone);
+						world.markBlockForUpdate(new BlockPos(i+xo, j+yo, k+zo));
 					}
 				}
 			}
