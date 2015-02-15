@@ -21,7 +21,7 @@ public class ItemWitherBonemeal extends Item {
         if (itemStack == null) {
             return false;
         } else if (player.canPlayerEdit(pos, par7, itemStack)) {
-            if (world.getBlock(pos) == GrimcraftBlocks.barley_crop) {
+            if (world.getBlockState(pos).getBlock() == GrimcraftBlocks.barley_crop) {
                 int currentMeta = world.getBlockMetadata(pos);
                 world.setBlockMetadataWithNotify(pos, currentMeta + 1, 2);
                 itemStack.stackSize--;

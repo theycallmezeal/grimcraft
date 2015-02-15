@@ -25,7 +25,6 @@ public class BlockGrimcraftFarmingBase extends Block {
         setTickRandomly(true);
     }
 	
-	@Override
 	public void updateTick(World world, BlockPos pos, Random random) {
 	    int x = pos.getX();
 	    int y = pos.getY();
@@ -37,19 +36,20 @@ public class BlockGrimcraftFarmingBase extends Block {
 					if(random.nextInt(100) > 10) {
 						continue;
 					}  
-					Block cBlock = world.getBlock(new BlockPos(i, j, k));
+					Block cBlock = world.getBlockState(new BlockPos(i, j, k)).getBlock();
 					if(Block.isEqualTo(cBlock, Blocks.glowstone)) {
 						int xo = random.nextInt(3) - 1;
 						int yo = random.nextInt(3) - 1;
 						int zo = random.nextInt(3) - 1;
+						BlockPos newPos = new BlockPos (i + xo, j + yo, k + zo);
 						
-						if(Block.isEqualTo(this, world.getBlock(new BlockPos(i + xo, j + yo, k + zo))) {
+						if (Block.isEqualTo(this, world.getBlockState(newPos).getBlock())) {
 							continue;
 						}
-						if(!Block.isEqualTo(Blocks.air, world.getBlock(i + xo, j + yo, k + zo))) {
+						if (!Block.isEqualTo(Blocks.air, world.getBlockState(newPos).getBlock())) {
 							continue;
 						}
-						world.setBlock(new BlockPos(i + xo, j + yo, k + zo), Blocks.glowstone);
+						world.setBlockState(new BlockPos(i + xo, j + yo, k + zo), Blocks.glowstone);
 						world.markBlockForUpdate(new BlockPos(i + xo, j + yo, k + zo));
 					}
 				}

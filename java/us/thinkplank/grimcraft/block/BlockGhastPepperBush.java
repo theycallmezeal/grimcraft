@@ -5,6 +5,7 @@ import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockPos;
 import net.minecraft.world.IBlockAccess;
@@ -41,17 +42,17 @@ public class BlockGhastPepperBush extends BlockBush implements IShearable {
 	}
 	
 	@Override
-	public void updateTick(World world, BlockPos pos, Random random)
+	public void updateTick(World world, BlockPos pos, IBlockState state, Random rand)
     {
-        int meta = world.getBlockMetadata(x, y, z);
+        int meta = world.getBlockMetadata(pos);
 
-        if (meta < 1 && random.nextInt(10) == 0)
+        if (meta < 1 && rand.nextInt(10) == 0)
         {
             meta++;
-            world.setBlockMetadataWithNotify(x, y, z, meta, 2);
+            world.setBlockMetadataWithNotify(pos, meta, 2);
         }
 
-        super.updateTick(world, x, y, z, random);
+        super.updateTick(world, pos, rand);
     }
 
 	@Override

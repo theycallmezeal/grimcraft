@@ -7,8 +7,8 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 public class GrimcraftBlocks {
 	public final static Block grimwood_log = new BlockGrimwoodLog();
     public final static Block grimwood_planks = new BlockGrimwoodPlanks();
-    public final static Block single_grimwood_slab = new BlockGrimwoodSlab(false);
-    public final static Block double_grimwood_slab = new BlockGrimwoodSlab(true);
+    public final static Block single_grimwood_slab = new BlockSingleGrimwoodSlab();
+    public final static Block double_grimwood_slab = new BlockDoubleGrimwoodSlab();
     public final static Block grimwood_stairs = new BlockGrimwoodStairs();
     public final static Block grimwood_fence = new BlockGrimwoodFence();
     public final static Block grimwood_fence_gate = new BlockGrimwoodFenceGate();

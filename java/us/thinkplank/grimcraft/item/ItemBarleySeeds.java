@@ -24,7 +24,7 @@ public class ItemBarleySeeds extends ItemSeeds {
         }
         else if (par2EntityPlayer.canPlayerEdit(par4, par5, par6, par7, par1ItemStack) && par2EntityPlayer.canPlayerEdit(par4, par5 + 1, par6, par7, par1ItemStack))
         {
-            if (par3World.getBlock(par4, par5, par6) == GrimcraftBlocks.peat && par3World.isAirBlock(par4, par5 + 1, par6))
+            if (par3World.getBlock(par4, par5, par6) == GrimcraftBlocks.peat && par3World.isAirBlock(new BlockPos(par4, par5 + 1, par6)))
             {
                 par3World.setBlock(par4, par5 + 1, par6, GrimcraftBlocks.barley_crop);
                 par1ItemStack.stackSize--;

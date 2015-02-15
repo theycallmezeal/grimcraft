@@ -1,5 +1,6 @@
 {
     "variants": {
-        "normal": { "model": "grimcraft:double_grimwood_slab" }
+        "variant=false": { "model": "grimcraft:grimwood_planks" },
+        "variant=true":    { "model": "grimcraft:grimwood_planks" }
     }
 }
