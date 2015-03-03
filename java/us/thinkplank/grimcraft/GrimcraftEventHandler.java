@@ -23,13 +23,13 @@ public class GrimcraftEventHandler {
 		Block targetBlock = event.world.getBlockState(event.pos).getBlock();
 		
 		if (targetBlock.equals(Blocks.soul_sand)) {
-			event.world.playSoundEffect(new BlockPos((double)((float)event.pos.getX() + 0.5F), (double)((float)event.pos.getY() + 0.5F), (double)((float)event.pos.getZ() + 0.5F)), targetBlock.stepSound.getStepResourcePath(), (targetBlock.stepSound.getVolume() + 1.0F) / 2.0F, targetBlock.stepSound.getPitch() * 0.8F);
-			
+			BlockPos target = event.pos;
+			//TODO figure out how to play a sound here			
 			if (event.world.isRemote) {
 				return;
 			}
 			
-			event.world.setBlock(event.pos, GrimcraftBlocks.peat);
+			event.world.setBlockState(event.pos, GrimcraftBlocks.peat.getDefaultState());
             event.current.damageItem(1, event.entityPlayer);
 		}
 	}

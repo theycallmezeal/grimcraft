@@ -7,6 +7,7 @@ package us.thinkplank.grimcraft;
 import java.util.Random;
 
 import net.minecraft.init.Blocks;
+import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
@@ -35,8 +36,9 @@ public class GrimcraftWorldGenerator implements IWorldGenerator {
 			int xCoord = x + random.nextInt(16);
 			int yCoord = random.nextInt(128);
 			int zCoord = y + random.nextInt(16);
+			BlockPos pos = new BlockPos(xCoord, yCoord, zCoord);
 			
-			(new WorldGenMinable(GrimcraftBlocks.fossilstone_ore, 32, Blocks.netherrack)).generate(world, random, xCoord, yCoord, zCoord); //ores per vein
+			(new WorldGenMinable(GrimcraftBlocks.fossilstone_ore.getDefaultState(), 32)).generate(world, random, pos); //ores per vein
 		}
 		
 		/* nether coal */
@@ -44,8 +46,9 @@ public class GrimcraftWorldGenerator implements IWorldGenerator {
 			int xCoord = x + random.nextInt(16);
 			int yCoord = random.nextInt(128);
 			int zCoord = y + random.nextInt(16);
+			BlockPos pos = new BlockPos(xCoord, yCoord, zCoord);
 			
-			(new WorldGenMinable(GrimcraftBlocks.nether_coal_ore, 12, Blocks.netherrack)).generate(world, random, xCoord, yCoord, zCoord); //vanilla 16
+			(new WorldGenMinable(GrimcraftBlocks.nether_coal_ore.getDefaultState(), 12)).generate(world, random, pos); //vanilla 16
 		}
 		
 		/* nether gold*/
@@ -53,8 +56,9 @@ public class GrimcraftWorldGenerator implements IWorldGenerator {
 			int xCoord = x + random.nextInt(16);
 			int yCoord = random.nextInt(128);
 			int zCoord = y + random.nextInt(16);
+			BlockPos pos = new BlockPos(xCoord, yCoord, zCoord);
 			
-			(new WorldGenMinable(GrimcraftBlocks.nether_gold_ore, 10, Blocks.netherrack)).generate(world, random, xCoord, yCoord, zCoord); //vanilla 8
+			(new WorldGenMinable(GrimcraftBlocks.nether_gold_ore.getDefaultState(), 10)).generate(world, random, pos); //vanilla 8
 		}
 		
 		/* nether redstone */
@@ -62,8 +66,9 @@ public class GrimcraftWorldGenerator implements IWorldGenerator {
 			int xCoord = x + random.nextInt(16);
 			int yCoord = random.nextInt(128);
 			int zCoord = y + random.nextInt(16);
+			BlockPos pos = new BlockPos(xCoord, yCoord, zCoord);
 			
-			(new WorldGenMinable(GrimcraftBlocks.nether_redstone_ore, 7, Blocks.netherrack)).generate(world, random, xCoord, yCoord, zCoord); //vanilla 7
+			(new WorldGenMinable(GrimcraftBlocks.nether_redstone_ore.getDefaultState(), 7)).generate(world, random, pos); //vanilla 7
 		}
 		
 		/* sulfur */
@@ -71,8 +76,9 @@ public class GrimcraftWorldGenerator implements IWorldGenerator {
 			int xCoord = x + random.nextInt(16);
 			int yCoord = random.nextInt(128);
 			int zCoord = y + random.nextInt(16);
+			BlockPos pos = new BlockPos(xCoord, yCoord, zCoord);
 			
-			(new WorldGenMinable(GrimcraftBlocks.brimstone_ore, 12, Blocks.netherrack)).generate(world, random, xCoord, yCoord, zCoord);
+			(new WorldGenMinable(GrimcraftBlocks.brimstone_ore.getDefaultState(), 12)).generate(world, random, pos);
 		}
 	}
 }
