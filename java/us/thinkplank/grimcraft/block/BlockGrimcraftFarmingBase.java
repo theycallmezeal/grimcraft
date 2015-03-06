@@ -49,7 +49,7 @@ public class BlockGrimcraftFarmingBase extends Block {
 						if (!Block.isEqualTo(Blocks.air, world.getBlockState(newPos).getBlock())) {
 							continue;
 						}
-						world.setBlockState(new BlockPos(i + xo, j + yo, k + zo), Blocks.glowstone);
+						world.setBlockState(new BlockPos(i + xo, j + yo, k + zo), Blocks.glowstone.getDefaultState());
 						world.markBlockForUpdate(new BlockPos(i + xo, j + yo, k + zo));
 					}
 				}

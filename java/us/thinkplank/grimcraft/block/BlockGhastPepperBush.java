@@ -35,7 +35,7 @@ public class BlockGhastPepperBush extends BlockBush implements IShearable {
 	
 	@Override
 	public ArrayList<ItemStack> getDrops(World world, BlockPos pos, int meta, int fortune) {
-		// this should not be reached if meta is 0 because of the event handler
+		// this should only be reached if meta is 0 because of the event handler
 		ArrayList<ItemStack> ret = new ArrayList<ItemStack>();
 		ret.add(new ItemStack(GrimcraftItems.ghast_pepper));
 		return ret;
@@ -52,7 +52,7 @@ public class BlockGhastPepperBush extends BlockBush implements IShearable {
             world.setBlockMetadataWithNotify(pos, meta, 2);
         }
 
-        super.updateTick(world, pos, rand);
+        super.updateTick(world, pos, state, rand);
     }
 
 	@Override

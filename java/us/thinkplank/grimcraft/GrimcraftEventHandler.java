@@ -48,7 +48,7 @@ public class GrimcraftEventHandler {
 		Block targetBlock = event.world.getBlockState(event.pos).getBlock();
 		ItemStack heldItemStack = event.entityPlayer.inventory.getCurrentItem();
 		
-		// handles strawberry harvesting
+		// handles vulpiberry punch harvesting
 		if (targetBlock.equals(GrimcraftBlocks.vulpiberry_bush) && event.action == event.action.LEFT_CLICK_BLOCK) {
 			if (event.world.getBlockState(event.pos) == 1) {
 				event.setCanceled(true);
@@ -57,6 +57,7 @@ public class GrimcraftEventHandler {
 			}
 		}
 		
+		//handles ghast pepper punch harvesting
 		if (targetBlock.equals(GrimcraftBlocks.ghast_pepper_bush) && event.action == event.action.LEFT_CLICK_BLOCK) {
 			if (event.world.getBlockState(event.pos) == 1) {
 				event.setCanceled(true);

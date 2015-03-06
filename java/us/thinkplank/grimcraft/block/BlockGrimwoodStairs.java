@@ -8,7 +8,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockGrimwoodStairs extends BlockStairs {
 	public BlockGrimwoodStairs() {
-		super(GrimcraftBlocks.grimwood_planks, 0);
+		super(GrimcraftBlocks.grimwood_planks.getStateFromMeta(0));
 		setHardness(2F);
         setStepSound(Block.soundTypeWood);
         setUnlocalizedName("grimwood_stairs");

@@ -6,6 +6,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockPos;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.world.World;
 
 public class ItemWitherBonemeal extends Item {
@@ -17,7 +18,7 @@ public class ItemWitherBonemeal extends Item {
     }
 
     //TODO find out what the rest of these args do
-    public boolean onItemUse(ItemStack itemStack, EntityPlayer player, World world, BlockPos pos, int par7, float par8, float par9, float par10) {
+    public boolean onItemUse(ItemStack itemStack, EntityPlayer player, World world, BlockPos pos, EnumFacing par7, float par8, float par9, float par10) {
         if (itemStack == null) {
             return false;
         } else if (player.canPlayerEdit(pos, par7, itemStack)) {
