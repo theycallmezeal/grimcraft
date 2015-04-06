@@ -17,17 +17,17 @@ public class ItemWitherBonemeal extends Item {
         setUnlocalizedName("wither_bonemeal");
     }
 
-    //TODO find out what the rest of these args do
-    public boolean onItemUse(ItemStack itemStack, EntityPlayer player, World world, BlockPos pos, EnumFacing par7, float par8, float par9, float par10) {
-        if (itemStack == null) {
-            return false;
-        } else if (player.canPlayerEdit(pos, par7, itemStack)) {
-            if (world.getBlockState(pos).getBlock() == GrimcraftBlocks.barley_crop) {
-                int currentMeta = world.getBlockMetadata(pos);
-                world.setBlockMetadataWithNotify(pos, currentMeta + 1, 2);
-                itemStack.stackSize--;
-            }
-        }
-        return false;
-    }
+//    //TODO find out what the rest of these args do
+//    public boolean onItemUse(ItemStack itemStack, EntityPlayer player, World world, BlockPos pos, EnumFacing par7, float par8, float par9, float par10) {
+//        if (itemStack == null) {
+//            return false;
+//        } else if (player.canPlayerEdit(pos, par7, itemStack)) {
+//            if (world.getBlockState(pos).getBlock() == GrimcraftBlocks.barley_crop) {
+//                int currentMeta = world.getBlockMetadata(pos);
+//                world.setBlockMetadataWithNotify(pos, currentMeta + 1, 2);
+//                itemStack.stackSize--;
+//            }
+//        }
+//        return false;
+//    }
 }

@@ -2,6 +2,7 @@ package us.thinkplank.grimcraft;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
@@ -43,29 +44,29 @@ public class GrimcraftEventHandler {
 		}
 	}
 	
-	@SubscribeEvent
-	public void onPlayerInteract(PlayerInteractEvent event) {
-		Block targetBlock = event.world.getBlockState(event.pos).getBlock();
-		ItemStack heldItemStack = event.entityPlayer.inventory.getCurrentItem();
-		
-		// handles vulpiberry punch harvesting
-		if (targetBlock.equals(GrimcraftBlocks.vulpiberry_bush) && event.action == event.action.LEFT_CLICK_BLOCK) {
-			if (event.world.getBlockState(event.pos) == 1) {
-				event.setCanceled(true);
-				event.world.spawnEntityInWorld(new EntityItem(event.world, event.pos.getX(), event.pos.getY(), event.pos.getZ(), new ItemStack(GrimcraftItems.vulpiberry, 3)));
-				event.world.setBlockMetadataWithNotify(event.pos, 0, 2);
-			}
-		}
-		
-		//handles ghast pepper punch harvesting
-		if (targetBlock.equals(GrimcraftBlocks.ghast_pepper_bush) && event.action == event.action.LEFT_CLICK_BLOCK) {
-			if (event.world.getBlockState(event.pos) == 1) {
-				event.setCanceled(true);
-				event.world.spawnEntityInWorld(new EntityItem(event.world, event.pos.getX(), event.pos.getY(), event.pos.getZ(), new ItemStack(GrimcraftItems.ghast_pepper, 3)));
-				event.world.setBlockMetadataWithNotify(event.pos, 0, 2);
-			}
-		}
-	}
+//	@SubscribeEvent
+//	public void onPlayerInteract(PlayerInteractEvent event) {
+//		Block targetBlock = event.world.getBlockState(event.pos).getBlock();
+//		ItemStack heldItemStack = event.entityPlayer.inventory.getCurrentItem();
+//		
+//		// handles vulpiberry punch harvesting
+//		if (targetBlock.equals(GrimcraftBlocks.vulpiberry_bush) && event.action == event.action.LEFT_CLICK_BLOCK) {
+//			if (event.world.getBlockState(event.pos) == 1) {
+//				event.setCanceled(true);
+//				event.world.spawnEntityInWorld(new EntityItem(event.world, event.pos.getX(), event.pos.getY(), event.pos.getZ(), new ItemStack(GrimcraftItems.vulpiberry, 3)));
+//				event.world.setBlockMetadataWithNotify(event.pos, 0, 2);
+//			}
+//		}
+//		
+//		//handles ghast pepper punch harvesting
+//		if (targetBlock.equals(GrimcraftBlocks.ghast_pepper_bush) && event.action == event.action.LEFT_CLICK_BLOCK) {
+//			if (event.world.getBlockState(event.pos) == 1) {
+//				event.setCanceled(true);
+//				event.world.spawnEntityInWorld(new EntityItem(event.world, event.pos.getX(), event.pos.getY(), event.pos.getZ(), new ItemStack(GrimcraftItems.ghast_pepper, 3)));
+//				event.world.setBlockMetadataWithNotify(event.pos, 0, 2);
+//			}
+//		}
+//	}
 	
 	/* this makes lava push around mobs */
 	@SubscribeEvent
