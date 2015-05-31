@@ -1,5 +1,8 @@
 package us.thinkplank.grimcraft.item;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.entity.RenderItem;
+import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraftforge.common.util.EnumHelper;
@@ -49,40 +52,47 @@ public class GrimcraftItems {
     public final static Item netherroot_soup = new ItemNetherRootSoup();
     
     public static void register() {
-    	GameRegistry.registerItem(grimwood_shovel, "grimwood_shovel");
-        GameRegistry.registerItem(grimwood_pickaxe, "grimwood_pickaxe");
-        GameRegistry.registerItem(grimwood_axe, "grimwood_axe");
-        GameRegistry.registerItem(grimwood_hoe, "grimwood_hoe");
-        GameRegistry.registerItem(grimwood_sword, "grimwood_sword");
+    	registerItem(grimwood_shovel, "grimwood_shovel");
+        registerItem(grimwood_pickaxe, "grimwood_pickaxe");
+        registerItem(grimwood_axe, "grimwood_axe");
+        registerItem(grimwood_hoe, "grimwood_hoe");
+        registerItem(grimwood_sword, "grimwood_sword");
         
-        GameRegistry.registerItem(netherrack_shovel, "netherrack_shovel");
-        GameRegistry.registerItem(netherrack_pickaxe, "netherrack_pickaxe");
-        GameRegistry.registerItem(netherrack_axe, "netherrack_axe");
-        GameRegistry.registerItem(netherrack_hoe, "netherrack_hoe");
-        GameRegistry.registerItem(netherrack_sword, "netherrack_sword");
+        registerItem(netherrack_shovel, "netherrack_shovel");
+       	registerItem(netherrack_pickaxe, "netherrack_pickaxe");
+        registerItem(netherrack_axe, "netherrack_axe");
+        registerItem(netherrack_hoe, "netherrack_hoe");
+        registerItem(netherrack_sword, "netherrack_sword");
         
-        GameRegistry.registerItem(nether_quartz_shovel, "nether_quartz_shovel");
-        GameRegistry.registerItem(nether_quartz_pickaxe, "nether_quartz_pickaxe");
-        GameRegistry.registerItem(nether_quartz_axe, "nether_quartz_axe");
-        GameRegistry.registerItem(nether_quartz_hoe, "nether_quartz_hoe");
-        GameRegistry.registerItem(nether_quartz_sword, "nether_quartz_sword");
+        registerItem(nether_quartz_shovel, "nether_quartz_shovel");
+        registerItem(nether_quartz_pickaxe, "nether_quartz_pickaxe");
+        registerItem(nether_quartz_axe, "nether_quartz_axe");
+        registerItem(nether_quartz_hoe, "nether_quartz_hoe");
+        registerItem(nether_quartz_sword, "nether_quartz_sword");
         
-        GameRegistry.registerItem(nether_gold_shovel, "nether_gold_shovel");
-        GameRegistry.registerItem(nether_gold_pickaxe, "nether_gold_pickaxe");
-        GameRegistry.registerItem(nether_gold_axe, "nether_gold_axe");
-        GameRegistry.registerItem(nether_gold_hoe, "nether_gold_hoe");
-        GameRegistry.registerItem(nether_gold_sword, "nether_gold_sword");
+        registerItem(nether_gold_shovel, "nether_gold_shovel");
+        registerItem(nether_gold_pickaxe, "nether_gold_pickaxe");
+        registerItem(nether_gold_axe, "nether_gold_axe");
+        registerItem(nether_gold_hoe, "nether_gold_hoe");
+        registerItem(nether_gold_sword, "nether_gold_sword");
         
-        GameRegistry.registerItem(grimwood_stick, "grimwood_stick");
-        GameRegistry.registerItem(wither_bone, "wither_bone");
-        GameRegistry.registerItem(wither_bonemeal, "wither_bonemeal");
-        GameRegistry.registerItem(brimstone, "brimstone");
-        GameRegistry.registerItem(barley, "barley");
-        GameRegistry.registerItem(barley_seeds, "barley_seeds");
-        GameRegistry.registerItem(vulpiberry, "vulpiberry");
-        GameRegistry.registerItem(ghast_pepper, "ghast_pepper");
-        GameRegistry.registerItem(netherroot, "netherroot");
-        GameRegistry.registerItem(netherroot_soup, "netherrootsoup");
-        GameRegistry.registerItem(phoenix_egg, "phoenix_egg");
+        registerItem(grimwood_stick, "grimwood_stick");
+        registerItem(wither_bone, "wither_bone");
+        registerItem(wither_bonemeal, "wither_bonemeal");
+        registerItem(brimstone, "brimstone");
+        registerItem(barley, "barley");
+        registerItem(barley_seeds, "barley_seeds");
+        registerItem(vulpiberry, "vulpiberry");
+        registerItem(ghast_pepper, "ghast_pepper");
+        registerItem(netherroot, "netherroot");
+        registerItem(netherroot_soup, "netherrootsoup");
+        registerItem(phoenix_egg, "phoenix_egg");
+    }
+    
+    private static void registerItem(Item item, String name) {
+    	RenderItem renderItem = Minecraft.getMinecraft().getRenderItem();
+    	
+    	GameRegistry.registerItem(item, name);
+    	renderItem.getItemModelMesher().register(item, 0, new ModelResourceLocation("grimcraft:" + name, "inventory"));
     }
 }

@@ -44,8 +44,11 @@ public class Grimcraft {
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-    	
     	this.config = new Configuration(event.getSuggestedConfigurationFile());
+    }
+
+    @EventHandler
+    public void load(FMLInitializationEvent event) {
     	GrimcraftBlocks.register();
         GrimcraftItems.register();
         
@@ -93,10 +96,7 @@ public class Grimcraft {
 
         GameRegistry.registerFuelHandler(new GrimcraftFuelHandler());
         GameRegistry.registerWorldGenerator(new GrimcraftWorldGenerator(), 20); //is this value fine?
-    }
-
-    @EventHandler
-    public void load(FMLInitializationEvent event) {
+    	
     	MinecraftForge.EVENT_BUS.register(new GrimcraftEventHandler());
     	
     	OreDictionary.registerOre("oreFossilstone", GrimcraftBlocks.fossilstone_ore);

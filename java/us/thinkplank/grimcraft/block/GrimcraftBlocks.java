@@ -1,6 +1,10 @@
 package us.thinkplank.grimcraft.block;
 
 import net.minecraft.block.Block;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.entity.RenderItem;
+import net.minecraft.client.resources.model.ModelResourceLocation;
+import net.minecraft.item.Item;
 import us.thinkplank.grimcraft.item.ItemGrimwoodSlab;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
@@ -29,27 +33,36 @@ public class GrimcraftBlocks {
     public final static Block gc_farming_base = new BlockGrimcraftFarmingBase();
     
     public static void register() {
-    	GameRegistry.registerBlock(grimwood_log, "grimwood_log");
-        GameRegistry.registerBlock(grimwood_planks, "grimwood_planks");
+    	registerBlock(grimwood_log, "grimwood_log");
+        registerBlock(grimwood_planks, "grimwood_planks");
+        
         GameRegistry.registerBlock(single_grimwood_slab, ItemGrimwoodSlab.class, "single_grimwood_slab");
         GameRegistry.registerBlock(double_grimwood_slab, ItemGrimwoodSlab.class, "double_grimwood_slab");
-        GameRegistry.registerBlock(grimwood_stairs, "grimwood_stairs");
-        GameRegistry.registerBlock(grimwood_fence, "grimwood_fence");
-        GameRegistry.registerBlock(grimwood_fence_gate, "grimwood_fence_gate");
-        GameRegistry.registerBlock(fossilstone_ore, "fossilstone_ore");
-        GameRegistry.registerBlock(nether_coal_ore, "nether_coal_ore");
-        GameRegistry.registerBlock(nether_gold_ore, "nether_gold_ore");
-        GameRegistry.registerBlock(nether_redstone_ore, "nether_redstone_ore");
-        GameRegistry.registerBlock(peat, "peat");
-        GameRegistry.registerBlock(brimstone_ore, "brimstone_ore");
-        GameRegistry.registerBlock(brimstone_block, "brimstone_block");
-        GameRegistry.registerBlock(soul_sand_glass, "soul_sand_glass");
-        GameRegistry.registerBlock(barley_crop, "barley_crop");
-        GameRegistry.registerBlock(netherroot_crop, "netherroot_crop");
-        GameRegistry.registerBlock(vulpiberry_bush, "vulpiberry_bush");
-        GameRegistry.registerBlock(ghast_pepper_bush, "ghast_pepper_bush");
-        GameRegistry.registerBlock(nether_lantern, "nether_lantern");
-        GameRegistry.registerBlock(lava_lamp, "lava_lamp");
-        GameRegistry.registerBlock(gc_farming_base, "gc_farming_base");
+        
+        registerBlock(grimwood_stairs, "grimwood_stairs");
+        registerBlock(grimwood_fence, "grimwood_fence");
+        registerBlock(grimwood_fence_gate, "grimwood_fence_gate");
+        registerBlock(fossilstone_ore, "fossilstone_ore");
+        registerBlock(nether_coal_ore, "nether_coal_ore");
+        registerBlock(nether_gold_ore, "nether_gold_ore");
+        registerBlock(nether_redstone_ore, "nether_redstone_ore");
+        registerBlock(peat, "peat");
+        registerBlock(brimstone_ore, "brimstone_ore");
+        registerBlock(brimstone_block, "brimstone_block");
+        registerBlock(soul_sand_glass, "soul_sand_glass");
+        registerBlock(barley_crop, "barley_crop");
+        registerBlock(netherroot_crop, "netherroot_crop");
+        registerBlock(vulpiberry_bush, "vulpiberry_bush");
+        registerBlock(ghast_pepper_bush, "ghast_pepper_bush");
+        registerBlock(nether_lantern, "nether_lantern");
+        registerBlock(lava_lamp, "lava_lamp");
+        registerBlock(gc_farming_base, "gc_farming_base");
+    }
+    
+    private static void registerBlock(Block block, String name) {
+    	RenderItem renderItem = Minecraft.getMinecraft().getRenderItem();
+    	
+    	GameRegistry.registerBlock(block, name);
+    	renderItem.getItemModelMesher().register(Item.getItemFromBlock(block), 0, new ModelResourceLocation("grimcraft:" + name, "inventory"));
     }
 }
