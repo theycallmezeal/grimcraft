@@ -29,93 +29,93 @@ public abstract class BlockGrimwoodSlab extends BlockSlab {
         setStepSound(Block.soundTypeWood);
         setUnlocalizedName("grimwood_slab");
         if (!this.isDouble()) {
-        	setCreativeTab(CreativeTabs.tabBlock);
+            setCreativeTab(CreativeTabs.tabBlock);
         }
+
+        IBlockState blockState = this.blockState.getBaseState();
+        blockState = blockState.withProperty(VARIANT_PROPERTY, false);
+        if (!this.isDouble()) {
+            blockState = blockState.withProperty(HALF, EnumBlockHalf.BOTTOM);
+        }
+
+        setDefaultState(blockState);
         setHarvestLevel("axe", 0);
         setLightOpacity(0);
     }
+	
+    @Override
+    public final String getUnlocalizedName(final int metadata) {
+        return this.getUnlocalizedName();
+    }
 
-	public final String getId() {
-		return this.innerGetId(this.isDouble());
-	}
+    @Override
+    public final Object getVariant(final ItemStack itemStack) {
+        return false;
+    }
 
-	@Override
-	public final String getUnlocalizedName(final int metadata) {
-	    return this.getUnlocalizedName();
-	}
-	
-	@Override
-	public final Object getVariant(final ItemStack itemStack) {
-	    return false;
-	}
-	
-	@Override
-	public final IProperty getVariantProperty() {
-	    return VARIANT_PROPERTY;
-	}
-	
-	@Override
-	public final IBlockState getStateFromMeta(final int meta) {
-	    IBlockState blockState = this.getDefaultState();
-	    blockState = blockState.withProperty(VARIANT_PROPERTY, false);
-	    if (!this.isDouble()) {
-	        EnumBlockHalf value = EnumBlockHalf.BOTTOM;
-	        if ((meta & HALF_META_BIT) != 0) {
-	            value = EnumBlockHalf.TOP;
-	        }
-	
-	        blockState = blockState.withProperty(HALF, value);
-	    }
-	
-	    return blockState;
-	}
-	
-	@Override
-	public final int getMetaFromState(IBlockState state) {
-	    if (this.isDouble()) {
-	       return 0;
-	    }
-	
-	    if ((EnumBlockHalf) state.getValue(HALF) == EnumBlockHalf.TOP) {
-	        return HALF_META_BIT;
-	    } else {
-	        return 0;
-	    }
-	}
-	
-	@Override
-	public final int damageDropped(IBlockState state) {
-	    return 0;
-	}
-	
-	@Override
-	public Item getItemDropped(IBlockState blockState, Random random,
-	    final int unused) {
-	    String blockId = this.innerGetId(false);
-	    return GameRegistry.findItem("grimcraft", blockId);
-	}
-	
-	@SideOnly(Side.CLIENT)
-	@Override
-	public Item getItem(World world, BlockPos blockPos) {
-	    String blockId = this.innerGetId(false);
-	    return GameRegistry.findItem("grimcraft", blockId);
-	    //TODO make this string not hardcoded
-	}
-	
-	@Override
-	protected final BlockState createBlockState() {
-	    if (this.isDouble()) {
-	        return new BlockState(this, new IProperty[] {VARIANT_PROPERTY});
-	    } else {
-	        return new BlockState(this,new IProperty[] {VARIANT_PROPERTY, HALF});
-	    }
-	}
-	
-	private String innerGetId(boolean isDoubleStacked) {
-	    if (isDoubleStacked) {
-	        return "double_grimwood_slab";
-	    }
-	    return "single_grimwood_slab";
-	}
+    @Override
+    public final IProperty getVariantProperty() {
+        return VARIANT_PROPERTY;
+    }
+
+    @Override
+    public final IBlockState getStateFromMeta(final int meta) {
+        IBlockState blockState = this.getDefaultState();
+        blockState = blockState.withProperty(VARIANT_PROPERTY, false);
+        if (!this.isDouble()) {
+            EnumBlockHalf value = EnumBlockHalf.BOTTOM;
+            if ((meta & HALF_META_BIT) != 0) {
+                value = EnumBlockHalf.TOP;
+            }
+
+            blockState = blockState.withProperty(HALF, value);
+        }
+
+        return blockState;
+    }
+
+    @Override
+    public final int getMetaFromState(final IBlockState state) {
+        if (this.isDouble()) {
+           return 0;
+        }
+
+        if ((EnumBlockHalf) state.getValue(HALF) == EnumBlockHalf.TOP) {
+            return HALF_META_BIT;
+        } else {
+            return 0;
+        }
+    }
+
+    @Override
+    public final int damageDropped(final IBlockState state) {
+        return 0;
+    }
+
+    @Override
+    public final Item getItemDropped(
+        final IBlockState blockState,
+        final java.util.Random random,
+        final int unused) {
+        return GameRegistry.findItem("grimcraft", "half_grimwood_slab");
+    }
+
+    @SideOnly(Side.CLIENT)
+    @Override
+    public final net.minecraft.item.Item getItem(
+        final net.minecraft.world.World world,
+        final net.minecraft.util.BlockPos blockPos) {
+        return GameRegistry.findItem("grimcraft", "half_grimwood_slab");
+    }
+
+    @Override
+    protected final BlockState createBlockState() {
+        if (this.isDouble()) {
+            return new BlockState(this, new IProperty[] {VARIANT_PROPERTY});
+        } else {
+            return new BlockState(
+                this,
+                new IProperty[] {VARIANT_PROPERTY, HALF});
+        }
+    }
 }

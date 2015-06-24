@@ -2,6 +2,7 @@ package us.thinkplank.grimcraft.block;
 
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.ItemModelMesher;
 import net.minecraft.client.renderer.entity.RenderItem;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.item.Item;
@@ -11,7 +12,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 public class GrimcraftBlocks {
 	public final static Block grimwood_log = new BlockGrimwoodLog();
     public final static Block grimwood_planks = new BlockGrimwoodPlanks();
-    public final static Block single_grimwood_slab = new BlockSingleGrimwoodSlab();
+    public final static Block half_grimwood_slab = new BlockHalfGrimwoodSlab();
     public final static Block double_grimwood_slab = new BlockDoubleGrimwoodSlab();
     public final static Block grimwood_stairs = new BlockGrimwoodStairs();
     public final static Block grimwood_fence = new BlockGrimwoodFence();
@@ -32,12 +33,18 @@ public class GrimcraftBlocks {
     public final static Block lava_lamp = new BlockLavaLamp();
     public final static Block gc_farming_base = new BlockGrimcraftFarmingBase();
     
+    private final static ItemModelMesher renderItem = Minecraft.getMinecraft().getRenderItem().getItemModelMesher();
+    
     public static void register() {
     	registerBlock(grimwood_log, "grimwood_log");
         registerBlock(grimwood_planks, "grimwood_planks");
         
-        GameRegistry.registerBlock(single_grimwood_slab, ItemGrimwoodSlab.class, "single_grimwood_slab");
-        GameRegistry.registerBlock(double_grimwood_slab, ItemGrimwoodSlab.class, "double_grimwood_slab");
+        //TODO figure out why the slab is getting bumped to the end of the list
+        //TODO make this less hideous
+        GameRegistry.registerBlock(half_grimwood_slab, ItemBlockGrimwoodSlab.class, "half_grimwood_slab", half_grimwood_slab, double_grimwood_slab, false);
+        GameRegistry.registerBlock(double_grimwood_slab, ItemBlockGrimwoodSlab.class, "double_grimwood_slab", half_grimwood_slab, double_grimwood_slab, true);
+        renderItem.register(Item.getItemFromBlock(half_grimwood_slab), 0, new ModelResourceLocation("grimcraft:half_grimwood_slab", "inventory"));
+        renderItem.register(Item.getItemFromBlock(double_grimwood_slab), 0, new ModelResourceLocation("grimcraft:double_grimwood_slab", "inventory"));
         
         registerBlock(grimwood_stairs, "grimwood_stairs");
         registerBlock(grimwood_fence, "grimwood_fence");
@@ -60,9 +67,7 @@ public class GrimcraftBlocks {
     }
     
     private static void registerBlock(Block block, String name) {
-    	RenderItem renderItem = Minecraft.getMinecraft().getRenderItem();
-    	
     	GameRegistry.registerBlock(block, name);
-    	renderItem.getItemModelMesher().register(Item.getItemFromBlock(block), 0, new ModelResourceLocation("grimcraft:" + name, "inventory"));
+    	renderItem.register(Item.getItemFromBlock(block), 0, new ModelResourceLocation("grimcraft:" + name, "inventory"));
     }
 }

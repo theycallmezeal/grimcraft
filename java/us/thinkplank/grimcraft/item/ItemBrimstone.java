@@ -10,6 +10,6 @@ public class ItemBrimstone extends Item {
         super();
         setMaxStackSize(64);
         setCreativeTab(CreativeTabs.tabMaterials);
-        setUnlocalizedName("sulfur");
+        setUnlocalizedName("brimstone");
     }
 }

@@ -1,6 +1,7 @@
 package us.thinkplank.grimcraft.item;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.ItemModelMesher;
 import net.minecraft.client.renderer.entity.RenderItem;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.item.Item;
@@ -90,9 +91,9 @@ public class GrimcraftItems {
     }
     
     private static void registerItem(Item item, String name) {
-    	RenderItem renderItem = Minecraft.getMinecraft().getRenderItem();
+    	ItemModelMesher renderItem = Minecraft.getMinecraft().getRenderItem().getItemModelMesher();
     	
     	GameRegistry.registerItem(item, name);
-    	renderItem.getItemModelMesher().register(item, 0, new ModelResourceLocation("grimcraft:" + name, "inventory"));
+    	renderItem.register(item, 0, new ModelResourceLocation("grimcraft:" + name, "inventory"));
     }
 }
