@@ -1,6 +1,6 @@
 {
     "variants": {
-        "half=bottom,variant=false": { "model":"grimcraft:grimwood_planks" },
-        "half=top,variant=false": { "model": "grimcraft:grimwood_planks" }
+        "half=bottom,variant=false": { "model":"grimcraft:half_grimwood_slab_bottom" },
+        "half=top,variant=false": { "model": "grimcraft:half_grimwood_slab_top" }
     }
 }

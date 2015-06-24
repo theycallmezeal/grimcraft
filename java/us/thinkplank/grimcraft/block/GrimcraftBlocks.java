@@ -43,7 +43,7 @@ public class GrimcraftBlocks {
         //TODO make this less hideous
         GameRegistry.registerBlock(half_grimwood_slab, ItemBlockGrimwoodSlab.class, "half_grimwood_slab", half_grimwood_slab, double_grimwood_slab, false);
         GameRegistry.registerBlock(double_grimwood_slab, ItemBlockGrimwoodSlab.class, "double_grimwood_slab", half_grimwood_slab, double_grimwood_slab, true);
-        renderItem.register(Item.getItemFromBlock(half_grimwood_slab), 0, new ModelResourceLocation("grimcraft:half_grimwood_slab", "inventory"));
+        renderItem.register(Item.getItemFromBlock(half_grimwood_slab), 0, new ModelResourceLocation("grimcraft:grimwood_slab", "inventory"));
         renderItem.register(Item.getItemFromBlock(double_grimwood_slab), 0, new ModelResourceLocation("grimcraft:double_grimwood_slab", "inventory"));
         
         registerBlock(grimwood_stairs, "grimwood_stairs");
