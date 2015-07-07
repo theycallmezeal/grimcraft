@@ -1,5 +1,8 @@
 {
     "variants": {
-        "normal": { "model": "grimcraft:grimwood_log" }
+        "axis=y":  { "model": "grimwood_log" },
+        "axis=z":   { "model": "grimwood_log_side" },
+        "axis=x":   { "model": "grimwood_log_side", "y": 90 },
+        "axis=none": { "model": "grimwood_bark" }
     }
 }

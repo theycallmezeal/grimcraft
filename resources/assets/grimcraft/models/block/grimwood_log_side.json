@@ -1,5 +1,5 @@
 {
-    "parent": "block/cube_column",
+    "parent": "block/column_side",
     "textures": {
         "end": "blocks/grimwood_log_bottom",
         "side": "blocks/grimwood_log_side"
