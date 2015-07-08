@@ -15,5 +15,6 @@ public class BlockGrimwoodStairs extends BlockStairs {
         setCreativeTab(CreativeTabs.tabBlock);
         setHarvestLevel("axe", 0);
         setLightOpacity(0);
+        this.useNeighborBrightness = true;
 	}
 }

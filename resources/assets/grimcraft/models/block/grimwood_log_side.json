@@ -1,7 +1,7 @@
 {
     "parent": "block/column_side",
     "textures": {
-        "end": "blocks/grimwood_log_bottom",
-        "side": "blocks/grimwood_log_side"
+        "end": "grimcraft:blocks/grimwood_log_bottom",
+        "side": "grimcraft:blocks/grimwood_log_side"
     }
 }
