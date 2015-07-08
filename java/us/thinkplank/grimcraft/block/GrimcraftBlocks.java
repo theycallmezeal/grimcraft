@@ -61,8 +61,10 @@ public class GrimcraftBlocks {
         registerBlock(brimstone_ore, "brimstone_ore");
         registerBlock(brimstone_block, "brimstone_block");
         registerBlock(soul_sand_glass, "soul_sand_glass");
+        
         registerBlock(barley_crop, "barley_crop");
-        registerBlock(netherroot_crop, "netherroot_crop");
+        GameRegistry.registerBlock(netherroot_crop, "netherroot_crop");
+        
         registerBlock(vulpiberry_bush, "vulpiberry_bush");
         registerBlock(ghast_pepper_bush, "ghast_pepper_bush");
         registerBlock(nether_lantern, "nether_lantern");

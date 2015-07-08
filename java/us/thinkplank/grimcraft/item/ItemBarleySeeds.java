@@ -17,19 +17,16 @@ public class ItemBarleySeeds extends ItemSeeds {
         setUnlocalizedName("barley_seeds");
     }
     
-    //TODO make it work with peat only. probably have to mess with canSustainPlant
-    public boolean onItemUse(ItemStack stack, EntityPlayer player, World worldIn, BlockPos pos, EnumFacing side, float hitX, float hitY, float hitZ) {
+    public boolean onItemUseFirst(ItemStack stack, EntityPlayer player, World worldIn, BlockPos pos, EnumFacing side, float hitX, float hitY, float hitZ) {
     	if (side != EnumFacing.UP) {
             return false;
-        }
-    	
-        else if (!player.canPlayerEdit(pos.offset(side), side, stack)) {
+        } else if (!player.canPlayerEdit(pos.offset(side), side, stack)) {
             return false;
-        }
-    	
-        else if (worldIn.getBlockState(pos).getBlock().canSustainPlant(worldIn, pos, EnumFacing.UP, this) && worldIn.isAirBlock(pos.up())) {
+        } else if (worldIn.getBlockState(pos).getBlock() == GrimcraftBlocks.peat && worldIn.isAirBlock(pos.up())) {
             worldIn.setBlockState(pos.up(), GrimcraftBlocks.barley_crop.getDefaultState());
-            stack.stackSize--;
+            if (!player.capabilities.isCreativeMode) {
+            	stack.stackSize--;
+            }
             return true;
         }
     	
