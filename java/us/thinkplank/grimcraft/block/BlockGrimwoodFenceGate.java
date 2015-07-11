@@ -9,6 +9,6 @@ public class BlockGrimwoodFenceGate extends BlockFenceGate {
 	public BlockGrimwoodFenceGate() {
 		super();
 		setHardness(2F);
-		setUnlocalizedName("grimwood_fence_gate");
+		setUnlocalizedName("grimwood_wall_gate");
 	}
 }
