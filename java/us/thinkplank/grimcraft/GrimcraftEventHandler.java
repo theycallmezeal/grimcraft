@@ -28,6 +28,7 @@ public class GrimcraftEventHandler {
 				return;
 			}
 			
+			//TODO fix player dropping through block when this happens
 			event.world.setBlock(event.x, event.y, event.z, GrimcraftBlocks.peat);
             event.current.damageItem(1, event.entityPlayer);
 		}

@@ -20,34 +20,29 @@ public class BlockNetherrootCrop extends BlockCrops {
 		setCreativeTab(CreativeTabs.tabFood);
 	}
 	
-	protected boolean canPlaceBlockOn(Block block)
-    {
+	protected boolean canPlaceBlockOn(Block block) {
         return block == GrimcraftBlocks.peat;
     }
 	
-	protected Item func_149866_i()
-    {
+	protected Item func_149866_i() {
         return GrimcraftItems.netherroot;
     }
 
-    protected Item func_149865_P()
-    {
+    protected Item func_149865_P() {
         return GrimcraftItems.netherroot;
     }
     
     @SideOnly(Side.CLIENT)
-    public void registerBlockIcons(IIconRegister p_149651_1_)
-    {
+    public void registerBlockIcons(IIconRegister p_149651_1_) {
         this.icons = new IIcon[4];
 
         for (int i = 0; i < this.icons.length; ++i)
         {
-            this.icons[i] = p_149651_1_.registerIcon("grimcraft:netherroot_stage_" + i);
+            this.icons[i] = p_149651_1_.registerIcon("grimcraft:netherroot_crop_stage_" + i);
         }
     }
     
-    public IIcon getIcon(int side, int meta)
-    {
+    public IIcon getIcon(int side, int meta) {
         if (meta < 7)
         {
             if (meta == 6)

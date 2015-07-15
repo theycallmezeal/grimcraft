@@ -17,7 +17,6 @@ public class BlockBarleyCrop extends BlockCrops {
 		super();
 		setStepSound(Block.soundTypeGrass);
 		setBlockName("barley_crop");
-		setCreativeTab(CreativeTabs.tabFood);
 	}
 	
 	protected boolean canPlaceBlockOn(Block block)

@@ -11,12 +11,12 @@ public class ItemBrimstone extends Item {
         super();
         setMaxStackSize(64);
         setCreativeTab(CreativeTabs.tabMaterials);
-        setUnlocalizedName("sulfur");
+        setUnlocalizedName("brimstone");
     }
     
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IIconRegister iconRegister) {
-        this.itemIcon = iconRegister.registerIcon("grimcraft:sulfur");
+        this.itemIcon = iconRegister.registerIcon("grimcraft:brimstone");
     }
 }

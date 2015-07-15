@@ -11,10 +11,9 @@ import net.minecraft.item.Item;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockSoulSandGlass extends Block {
+public class BlockSoulSandGlass extends BlockGlass {
     public BlockSoulSandGlass () {
-        // super(Material.glass, true);
-    	super(Material.glass);
+    	super(Material.glass, true);
         setHardness(3F);
         setStepSound(Block.soundTypeGlass);
         setBlockName("soul_sand_glass");

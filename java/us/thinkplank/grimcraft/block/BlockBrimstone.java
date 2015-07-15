@@ -12,7 +12,7 @@ public class BlockBrimstone extends Block {
         super(Material.rock);
         setHardness(3F);
         setStepSound(Block.soundTypeStone);
-        setBlockName("brimstone");
+        setBlockName("brimstone_block");
         setCreativeTab(CreativeTabs.tabBlock);
         setHarvestLevel("pickaxe", 1);
     }
