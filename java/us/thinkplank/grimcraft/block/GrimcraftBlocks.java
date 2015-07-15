@@ -5,8 +5,8 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ItemModelMesher;
 import net.minecraft.client.renderer.entity.RenderItem;
 import net.minecraft.client.resources.model.ModelResourceLocation;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
-import us.thinkplank.grimcraft.item.ItemGrimwoodSlab;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class GrimcraftBlocks {
@@ -36,18 +36,15 @@ public class GrimcraftBlocks {
     private final static ItemModelMesher renderItem = Minecraft.getMinecraft().getRenderItem().getItemModelMesher();
     
     public static void register() {
+    	System.out.println("in register now");
     	registerBlock(grimwood_log, "grimwood_log");
         registerBlock(grimwood_planks, "grimwood_planks");
         
         //TODO figure out why the slab is getting bumped to the end of the list
-        //TODO why is getItemFromBlock not working?
         GameRegistry.registerBlock(half_grimwood_slab, ItemBlockGrimwoodSlab.class, "half_grimwood_slab", half_grimwood_slab, double_grimwood_slab, false);
         GameRegistry.registerBlock(double_grimwood_slab, ItemBlockGrimwoodSlab.class, "double_grimwood_slab", half_grimwood_slab, double_grimwood_slab, true);
         
-        Item grimwoodSlabItem = GameRegistry.findItem("grimcraft", "half_grimwood_slab");
-        renderItem.register(grimwoodSlabItem, 0, new ModelResourceLocation("grimcraft:half_grimwood_slab", "inventory"));
-        //renderItem.register(Item.getItemFromBlock(half_grimwood_slab), 0, new ModelResourceLocation("grimcraft:half_grimwood_slab", "inventory"));
-        //renderItem.register(Item.getItemFromBlock(double_grimwood_slab), 0, new ModelResourceLocation("grimcraft:double_grimwood_slab", "inventory"));
+        renderItem.register(Item.getItemFromBlock(half_grimwood_slab), 0, new ModelResourceLocation("grimcraft:half_grimwood_slab", "inventory"));
         
         registerBlock(grimwood_stairs, "grimwood_stairs");
         registerBlock(grimwood_fence, "grimwood_fence");
@@ -62,7 +59,7 @@ public class GrimcraftBlocks {
         registerBlock(soul_sand_glass, "soul_sand_glass");
         
         registerBlock(barley_crop, "barley_crop");
-        GameRegistry.registerBlock(netherroot_crop, "netherroot_crop");
+        registerBlock(netherroot_crop, "netherroot_crop");
         
         registerBlock(vulpiberry_bush, "vulpiberry_bush");
         registerBlock(ghast_pepper_bush, "ghast_pepper_bush");
