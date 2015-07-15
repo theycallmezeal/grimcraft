@@ -22,16 +22,19 @@ public class ItemWitherBonemeal extends Item {
     	if (itemStack == null) {
     		return false;
     	} else if (player.canPlayerEdit(x, y, z, par7, itemStack)) {
+    		
     		if (world.getBlock(x, y, z) == GrimcraftBlocks.barley_crop) {
     			int currentMeta = world.getBlockMetadata(x, y, z);
-				world.setBlockMetadataWithNotify(x, y, z, currentMeta + 1, 2);
+    			if (currentMeta < 7) {
+    				world.setBlockMetadataWithNotify(x, y, z, currentMeta + 1, 2);
+    			}
 				itemStack.stackSize--;
 				return true;
-    		}
-    	} else if (player.canPlayerEdit(x, y, z, par7, itemStack)) {
-    		if (world.getBlock(x, y, z) == GrimcraftBlocks.netherroot_crop) {
+    		} else if (world.getBlock(x, y, z) == GrimcraftBlocks.netherroot_crop) {
     			int currentMeta = world.getBlockMetadata(x, y, z);
-				world.setBlockMetadataWithNotify(x, y, z, currentMeta + 1, 2);
+    			if (currentMeta < 7) {
+    				world.setBlockMetadataWithNotify(x, y, z, currentMeta + 1, 2);
+    			}
 				itemStack.stackSize--;
 				return true;
     		}
