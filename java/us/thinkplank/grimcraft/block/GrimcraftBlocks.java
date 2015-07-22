@@ -40,10 +40,8 @@ public class GrimcraftBlocks {
     	registerBlock(grimwood_log, "grimwood_log");
         registerBlock(grimwood_planks, "grimwood_planks");
         
-        //TODO figure out why the slab is getting bumped to the end of the list
         GameRegistry.registerBlock(half_grimwood_slab, ItemBlockGrimwoodSlab.class, "half_grimwood_slab", half_grimwood_slab, double_grimwood_slab, false);
         GameRegistry.registerBlock(double_grimwood_slab, ItemBlockGrimwoodSlab.class, "double_grimwood_slab", half_grimwood_slab, double_grimwood_slab, true);
-        
         renderItem.register(Item.getItemFromBlock(half_grimwood_slab), 0, new ModelResourceLocation("grimcraft:half_grimwood_slab", "inventory"));
         
         registerBlock(grimwood_stairs, "grimwood_stairs");
