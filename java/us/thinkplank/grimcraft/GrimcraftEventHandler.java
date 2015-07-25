@@ -6,14 +6,20 @@ import net.minecraft.entity.item.EntityItem;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionEffect;
+import net.minecraft.tileentity.TileEntityFurnace;
+import net.minecraft.world.EnumDifficulty;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.player.BonemealEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import net.minecraftforge.event.entity.player.PlayerOpenContainerEvent;
 import net.minecraftforge.event.entity.player.PlayerUseItemEvent;
 import net.minecraftforge.event.entity.player.UseHoeEvent;
 import us.thinkplank.grimcraft.block.GrimcraftBlocks;
 import us.thinkplank.grimcraft.item.GrimcraftItems;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import cpw.mods.fml.common.gameevent.PlayerEvent.ItemSmeltedEvent;
 
 public class GrimcraftEventHandler {
 	
@@ -62,6 +68,32 @@ public class GrimcraftEventHandler {
 				event.setCanceled(true);
 				event.world.spawnEntityInWorld(new EntityItem(event.world, (double)event.x, (double)event.y, (double)event.z, new ItemStack(GrimcraftItems.ghast_pepper, 3)));
 				event.world.setBlockMetadataWithNotify(event.x, event.y, event.z, 0, 2);
+			}
+		}
+		
+		//TODO give this nasty ass code a refactor
+		EnumDifficulty difficulty = event.world.difficultySetting;
+		double chance = 0;
+		if (difficulty == EnumDifficulty.NORMAL) {
+			chance = 0.2;
+		} else if (difficulty == EnumDifficulty.HARD) {
+			chance = 0.4;
+		}
+		
+		if (targetBlock.equals(Blocks.furnace) && event.action == event.action.RIGHT_CLICK_BLOCK && Math.random() < chance) {
+			TileEntityFurnace furnace = (TileEntityFurnace) event.world.getTileEntity(event.x, event.y, event.z);
+			ItemStack furnaceFuel = furnace.getStackInSlot(1);
+			if (furnaceFuel != null && furnaceFuel.getItem() == GrimcraftItems.brimstone) {
+				int poisonStrength = 0;
+				if (difficulty == EnumDifficulty.NORMAL) {
+					poisonStrength = 7;
+				} else if (difficulty == EnumDifficulty.HARD){
+					poisonStrength = 15;
+				}
+				
+				if (poisonStrength > 0) {
+					event.entityPlayer.addPotionEffect(new PotionEffect(Potion.poison.id, poisonStrength * 20, 0));
+				}
 			}
 		}
 	}
