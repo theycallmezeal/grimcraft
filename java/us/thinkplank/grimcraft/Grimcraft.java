@@ -90,6 +90,7 @@ public class Grimcraft {
         GameRegistry.addSmelting(GrimcraftBlocks.nether_redstone_ore, new ItemStack(Items.redstone), 0.9f);
         GameRegistry.addSmelting(GrimcraftBlocks.brimstone_ore, new ItemStack(GrimcraftItems.brimstone), 0.2f);
         GameRegistry.addSmelting(GrimcraftBlocks.fossilstone_ore, new ItemStack(Items.dye, 1, 15), 0.2f);
+        GameRegistry.addSmelting(Blocks.soul_sand, new ItemStack(Blocks.stained_glass, 15), 0.1f);
 
         GameRegistry.registerFuelHandler(new GrimcraftFuelHandler());
         GameRegistry.registerWorldGenerator(new GrimcraftWorldGenerator(), 20); //is this value fine?
