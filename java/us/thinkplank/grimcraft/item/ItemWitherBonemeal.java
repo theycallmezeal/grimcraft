@@ -1,8 +1,11 @@
 package us.thinkplank.grimcraft.item;
 
+import us.thinkplank.grimcraft.GrimwoodTree;
 import us.thinkplank.grimcraft.block.GrimcraftBlocks;
+import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
@@ -22,15 +25,14 @@ public class ItemWitherBonemeal extends Item {
     	if (itemStack == null) {
     		return false;
     	} else if (player.canPlayerEdit(x, y, z, par7, itemStack)) {
+    		Block block = world.getBlock(x, y, z);
     		
-    		if (world.getBlock(x, y, z) == GrimcraftBlocks.barley_crop) {
-    			int currentMeta = world.getBlockMetadata(x, y, z);
-    			if (currentMeta < 7) {
-    				world.setBlockMetadataWithNotify(x, y, z, currentMeta + 1, 2);
-    			}
-				itemStack.stackSize--;
-				return true;
-    		} else if (world.getBlock(x, y, z) == GrimcraftBlocks.netherroot_crop) {
+    		if (block.equals(Blocks.nether_wart)) {
+    			GrimwoodTree.attemptTree(world, x, y, z);
+    			return true;
+    		}
+    		
+    		if (block.equals(GrimcraftBlocks.barley_crop) || block.equals(GrimcraftBlocks.netherroot_crop) || block.equals(Blocks.nether_wart)) {
     			int currentMeta = world.getBlockMetadata(x, y, z);
     			if (currentMeta < 7) {
     				world.setBlockMetadataWithNotify(x, y, z, currentMeta + 1, 2);

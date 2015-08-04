@@ -64,6 +64,7 @@ public class GrimcraftEventHandler {
 			}
 		}
 		
+		// handles ghast pepper harvesting
 		if (targetBlock.equals(GrimcraftBlocks.ghast_pepper_bush) && event.action == event.action.LEFT_CLICK_BLOCK) {
 			if (event.world.getBlockMetadata(event.x, event.y, event.z) == 1) {
 				event.setCanceled(true);
@@ -73,6 +74,7 @@ public class GrimcraftEventHandler {
 		}
 		
 		//TODO give this nasty ass code a refactor
+		// handles poisoning with sulfur in furnaces
 		EnumDifficulty difficulty = event.world.difficultySetting;
 		double chance = 0;
 		if (difficulty == EnumDifficulty.NORMAL) {

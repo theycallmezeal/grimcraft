@@ -10,7 +10,10 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.AxisAlignedBB;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraftforge.common.IPlantable;
+import net.minecraftforge.common.util.ForgeDirection;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -43,69 +46,12 @@ public class BlockPeat extends BlockFalling {
         this.blockIcon = iconRegister.registerIcon("grimcraft:peat");
     }
     
-    //TODO should all this tree code go in BlockPeat?
     @Override
-    public void updateTick(World world, int x, int y, int z, Random random) {
-    	if (isSurroundedByLava(world, x, y, z)) {
-    		Block above = world.getBlock(x, y + 1, z);
-    		if (above.equals(Blocks.nether_wart)){
-    			growTree(world, x, y, z);
-    		}
-    	}
-    }
-    
-    private boolean isSurroundedByLava(World world, int x, int y, int z) {
-    	int lava = 0;
-    	for (int i = x - 1; i <= x + 1; i++) {
-    		for (int j = z - 1; j <= z + 1; j++) {
-    			if (world.getBlock(i, y, j).equals(Blocks.lava)) {
-    				lava++;
-    			}
-    		}
-    	}
-    	
-    	if (lava == 8) {
+    public boolean canSustainPlant(IBlockAccess world, int x, int y, int z, ForgeDirection direction, IPlantable plantable) {
+    	Block plant = plantable.getPlant(world, x, y + 1, z);
+    	if (plant == GrimcraftBlocks.barley_crop || plant == GrimcraftBlocks.netherroot_crop || plant == Blocks.nether_wart) {
     		return true;
     	}
     	return false;
-    }
-//    	if (!world.getBlock(x + 1, y, z).equals(Blocks.lava)) {
-//    		return false;
-//    	}
-//    	if (!world.getBlock(x + 1, y, z + 1).equals(Blocks.lava)) {
-//    		return false;
-//    	}
-//    	if (!world.getBlock(x, y, z + 1).equals(Blocks.lava)) {
-//    		return false;
-//    	}
-//    	if (!world.getBlock(x - 1, y, z + 1).equals(Blocks.lava)) {
-//    		return false;
-//    	}
-//    	if (!world.getBlock(x - 1, y, z).equals(Blocks.lava)) {
-//    		return false;
-//    	}
-//    	if (!world.getBlock(x - 1, y, z - 1).equals(Blocks.lava)) {
-//    		return false;
-//    	}
-//    	if (!world.getBlock(x, y, z - 1).equals(Blocks.lava)) {
-//    		return false;
-//    	}
-//    	if (!world.getBlock(x + 1, y, z - 1).equals(Blocks.lava)) {
-//    		return false;
-//    	}
-//    	
-//    	return true;
-    
-    private void growTree(World world, int x, int y, int z) {
-    	int random = (int)(Math.random() * 4) + 3; // 3, 4, 5, or 6... if I did the math right.
-    	for (int i = 0; i < random; i++) {
-    		attemptLogPlace(world, x, y + i, z);
-    	}
-    }
-    
-    private void attemptLogPlace(World world, int x, int y, int z) {
-    	if (world.getBlock(x, y, z).equals(Blocks.air) || world.getBlock(x, y, z).equals(Blocks.nether_wart)) {
-    		world.setBlock(x, y, z, GrimcraftBlocks.grimwood_log);
-    	}
     }
 }
