@@ -1,6 +1,6 @@
 package us.thinkplank.grimcraft.item;
 
-import us.thinkplank.grimcraft.GrimwoodTree;
+import us.thinkplank.grimcraft.GrimcraftPlants;
 import us.thinkplank.grimcraft.block.GrimcraftBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
@@ -27,8 +27,21 @@ public class ItemWitherBonemeal extends Item {
     	} else if (player.canPlayerEdit(x, y, z, par7, itemStack)) {
     		Block block = world.getBlock(x, y, z);
     		
+    		if (block.equals(Blocks.deadbush)) {
+    			if (GrimcraftPlants.isSurroundedByLava(world, x, y - 1, z)) {
+    				world.setBlock(x, y, z, GrimcraftBlocks.ghast_pepper_bush);
+    			} else {
+    				world.setBlock(x, y, z, GrimcraftBlocks.vulpiberry_bush);
+    			}
+    			world.playAuxSFX(2005, x, y, z, 0);
+    			itemStack.stackSize--;
+    			return true;
+    		}
+    		
     		if (block.equals(Blocks.nether_wart)) {
-    			GrimwoodTree.attemptTree(world, x, y, z);
+    			GrimcraftPlants.attemptTree(world, x, y, z);
+    			world.playAuxSFX(2005, x, y, z, 0);
+    			itemStack.stackSize--;
     			return true;
     		}
     		
@@ -37,6 +50,7 @@ public class ItemWitherBonemeal extends Item {
     			if (currentMeta < 7) {
     				world.setBlockMetadataWithNotify(x, y, z, currentMeta + 1, 2);
     			}
+    			world.playAuxSFX(2005, x, y, z, 0);
 				itemStack.stackSize--;
 				return true;
     		}

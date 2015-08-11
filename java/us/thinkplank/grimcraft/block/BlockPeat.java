@@ -49,7 +49,8 @@ public class BlockPeat extends BlockFalling {
     @Override
     public boolean canSustainPlant(IBlockAccess world, int x, int y, int z, ForgeDirection direction, IPlantable plantable) {
     	Block plant = plantable.getPlant(world, x, y + 1, z);
-    	if (plant == GrimcraftBlocks.barley_crop || plant == GrimcraftBlocks.netherroot_crop || plant == Blocks.nether_wart) {
+    	if (plant.equals(GrimcraftBlocks.barley_crop) || plant.equals(GrimcraftBlocks.netherroot_crop) || plant.equals(Blocks.nether_wart)
+    			|| plant.equals(GrimcraftBlocks.vulpiberry_bush) || plant.equals(GrimcraftBlocks.ghast_pepper_bush) || plant.equals(Blocks.deadbush)) {
     		return true;
     	}
     	return false;

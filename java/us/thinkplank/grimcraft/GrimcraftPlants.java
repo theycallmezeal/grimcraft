@@ -7,15 +7,15 @@ import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import us.thinkplank.grimcraft.block.GrimcraftBlocks;
 
-//helper class for some tree methods
-public class GrimwoodTree {
+//helper class for some plants methods
+public class GrimcraftPlants {
     public static void attemptTree(World world, int x, int y, int z) {
     	if (isSurroundedByLava(world, x, y - 1, z)) {
     		growTree(world, x, y, z);
     	}
     }
     
-    private static boolean isSurroundedByLava(World world, int x, int y, int z) {
+    public static boolean isSurroundedByLava(World world, int x, int y, int z) {
     	int lava = 0;
     	for (int i = x - 1; i <= x + 1; i++) {
     		for (int j = z - 1; j <= z + 1; j++) {
