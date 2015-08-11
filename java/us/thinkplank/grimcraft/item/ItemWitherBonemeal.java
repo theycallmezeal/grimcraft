@@ -28,7 +28,7 @@ public class ItemWitherBonemeal extends Item {
     		Block block = world.getBlock(x, y, z);
     		
     		if (block.equals(Blocks.deadbush)) {
-    			if (GrimcraftPlants.isSurroundedByLava(world, x, y - 1, z)) {
+    			if (world.getBlock(x, y - 1, z).equals(GrimcraftBlocks.peat) && GrimcraftPlants.isSurroundedByLava(world, x, y - 1, z)) {
     				world.setBlock(x, y, z, GrimcraftBlocks.ghast_pepper_bush);
     			} else {
     				world.setBlock(x, y, z, GrimcraftBlocks.vulpiberry_bush);
