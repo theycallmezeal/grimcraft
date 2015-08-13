@@ -1,5 +1,5 @@
 /*
- * Grimcraft.java 1.0.0 8-10-2015
+ * Grimcraft.java 1.0.0 8-12-2015
  * Made with love by Lapiman and Fox
  * Licensed under whatever we decide
  * 
@@ -20,6 +20,8 @@ import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.oredict.OreDictionary;
 import us.thinkplank.grimcraft.block.GrimcraftBlocks;
 import us.thinkplank.grimcraft.item.GrimcraftItems;
+import us.thinkplank.mobs.*;
+import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -62,7 +64,13 @@ public class Grimcraft {
     	OreDictionary.registerOre("oreRedstone", GrimcraftBlocks.nether_redstone_ore);
     	OreDictionary.registerOre("oreSulfur", GrimcraftBlocks.brimstone_ore); //makes brimstone work as sulfur
     	
-    	EntityRegistry.addSpawn(EntityCaveSpider.class, 10, 1, 3, EnumCreatureType.monster, BiomeGenBase.hell); //spawns with prob. 10 in groups of 1-3
+    	//TODO add boar sounds, add tusks to texture
+    	//TODO do they spawn at all...?
+    	EntityRegistry.registerModEntity(EntityBoar.class, "boar", 0, this, 80, 1, true);
+    	RenderingRegistry.registerEntityRenderingHandler(EntityBoar.class, new RenderBoar(new ModelBoar(), 0.5F));
+    	
+    	EntityRegistry.addSpawn(EntityCaveSpider.class, 75, 1, 3, EnumCreatureType.monster, BiomeGenBase.hell);
+    	EntityRegistry.addSpawn(EntityBoar.class, 100, 1, 3, EnumCreatureType.monster, BiomeGenBase.hell);
     }
 
     @EventHandler
