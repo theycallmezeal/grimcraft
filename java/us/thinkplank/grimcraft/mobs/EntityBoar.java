@@ -1,5 +1,6 @@
-package us.thinkplank.mobs;
+package us.thinkplank.grimcraft.mobs;
 
+import us.thinkplank.grimcraft.item.GrimcraftItems;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -28,47 +29,56 @@ public class EntityBoar extends EntityAnimal {
         this.tasks.addTask(0, new EntityAISwimming(this));
         this.tasks.addTask(1, new EntityAIPanic(this, 2.0D));
         this.tasks.addTask(2, new EntityAIMate(this, 1.0D));
-        this.tasks.addTask(3, new EntityAITempt(this, 1.25D, Items.wheat, false));
+        this.tasks.addTask(3, new EntityAITempt(this, 1.25D, GrimcraftItems.barley, false));
         this.tasks.addTask(4, new EntityAIFollowParent(this, 1.25D));
         this.tasks.addTask(5, new EntityAIWander(this, 1.0D));
         this.tasks.addTask(6, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
         this.tasks.addTask(7, new EntityAILookIdle(this));
     }
 
+    @Override
     public boolean isAIEnabled() {
         return true;
     }
 
+    @Override
     protected void applyEntityAttributes() {
         super.applyEntityAttributes();
         this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(10.0D);
         this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.20000000298023224D);
     }
 
+    @Override
     protected String getLivingSound() {
         return "mob.cow.say";
     }
-
+    
+    @Override
     protected String getHurtSound() {
         return "mob.cow.hurt";
     }
 
+    @Override
     protected String getDeathSound() {
         return "mob.cow.hurt";
     }
 
-    protected void func_145780_a(int p_145780_1_, int p_145780_2_, int p_145780_3_, Block p_145780_4_) {
+    @Override
+    protected void func_145780_a(int x, int y, int z, Block block) {
         this.playSound("mob.cow.step", 0.15F, 1.0F);
     }
 
+    @Override
     protected float getSoundVolume() {
         return 0.4F;
     }
 
+    @Override
     protected Item getDropItem() {
         return Items.leather;
     }
 
+    @Override
     protected void dropFewItems(boolean recentlyHit, int looting)  {
         int i = this.rand.nextInt(3) + this.rand.nextInt(1 + looting);
         int j;
@@ -81,29 +91,24 @@ public class EntityBoar extends EntityAnimal {
 
         for (j = 0; j < i; j++) {
             if (this.isBurning()) {
-                this.dropItem(Items.cooked_beef, 1);
+                this.dropItem(Items.cooked_porkchop, 1);
             } else {
-                this.dropItem(Items.beef, 1);
+                this.dropItem(Items.porkchop, 1);
             }
         }
     }
-
+    
+    @Override
+    public boolean isBreedingItem(ItemStack itemstack) {
+    	return itemstack.getItem().equals(GrimcraftItems.barley);
+    }
+    
+    @Override
     public boolean interact(EntityPlayer player) {
-        ItemStack itemstack = player.inventory.getCurrentItem();
-
-        if (itemstack != null && itemstack.getItem() == Items.bucket && !player.capabilities.isCreativeMode) {
-            if (itemstack.stackSize-- == 1) {
-                player.inventory.setInventorySlotContents(player.inventory.currentItem, new ItemStack(Items.milk_bucket));
-            } else if (!player.inventory.addItemStackToInventory(new ItemStack(Items.milk_bucket))) {
-                player.dropPlayerItemWithRandomChoice(new ItemStack(Items.milk_bucket, 1, 0), false);
-            }
-
-            return true;
-        } else {
-            return super.interact(player);
-        }
+    	return super.interact(player);
     }
 
+    @Override
     public EntityBoar createChild(EntityAgeable p_90011_1_) {
         return new EntityBoar(this.worldObj);
     }

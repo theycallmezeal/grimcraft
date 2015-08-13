@@ -3,13 +3,16 @@ package us.thinkplank.grimcraft;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.monster.EntitySkeleton;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.tileentity.TileEntityFurnace;
 import net.minecraft.world.EnumDifficulty;
+import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.player.BonemealEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
@@ -18,7 +21,7 @@ import net.minecraftforge.event.entity.player.PlayerUseItemEvent;
 import net.minecraftforge.event.entity.player.UseHoeEvent;
 import us.thinkplank.grimcraft.block.GrimcraftBlocks;
 import us.thinkplank.grimcraft.item.GrimcraftItems;
-import us.thinkplank.mobs.EntityBoar;
+import us.thinkplank.grimcraft.mobs.EntityBoar;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.PlayerEvent.ItemSmeltedEvent;
 import cpw.mods.fml.common.gameevent.TickEvent;
@@ -41,6 +44,17 @@ public class GrimcraftEventHandler {
             event.current.damageItem(1, event.entityPlayer);
 		}
 	}
+	
+	@SubscribeEvent
+	public void onEvent(LivingDropsEvent event) {
+	    if (event.entity instanceof EntitySkeleton && ((EntitySkeleton) event.entity).getSkeletonType() == 1) {
+	        for (int i = 0; i < event.drops.size(); i++) {
+	        	if (event.drops.get(i).getEntityItem().getItem().equals(Items.bone)) {
+	        		event.drops.get(i).setEntityItemStack(new ItemStack(GrimcraftItems.wither_bone));
+	        	}
+	        }
+	    }
+	} 
 	
 	@SubscribeEvent
 	public void onUseBonemeal(BonemealEvent event) {

@@ -1,4 +1,4 @@
-package us.thinkplank.mobs;
+package us.thinkplank.grimcraft.mobs;
 
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderLiving;

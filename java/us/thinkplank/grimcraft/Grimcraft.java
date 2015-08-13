@@ -1,5 +1,5 @@
 /*
- * Grimcraft.java 1.0.0 8-12-2015
+ * Grimcraft.java 1.0.0 8-13-2015
  * Made with love by Lapiman and Fox
  * Licensed under whatever we decide
  * 
@@ -20,7 +20,7 @@ import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.oredict.OreDictionary;
 import us.thinkplank.grimcraft.block.GrimcraftBlocks;
 import us.thinkplank.grimcraft.item.GrimcraftItems;
-import us.thinkplank.mobs.*;
+import us.thinkplank.grimcraft.mobs.*;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -65,7 +65,7 @@ public class Grimcraft {
     	OreDictionary.registerOre("oreSulfur", GrimcraftBlocks.brimstone_ore); //makes brimstone work as sulfur
     	
     	//TODO add boar sounds, add tusks to texture
-    	//TODO do they spawn at all...?
+    	//TODO do boars spawn at all...?
     	EntityRegistry.registerModEntity(EntityBoar.class, "boar", 0, this, 80, 1, true);
     	RenderingRegistry.registerEntityRenderingHandler(EntityBoar.class, new RenderBoar(new ModelBoar(), 0.5F));
     	
