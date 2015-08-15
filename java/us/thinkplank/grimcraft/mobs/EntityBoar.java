@@ -104,8 +104,8 @@ public class EntityBoar extends EntityAnimal {
     }
     
     @Override
-    public boolean isBreedingItem(ItemStack itemstack) {
-    	return itemstack.getItem().equals(GrimcraftItems.barley);
+    public boolean isBreedingItem(ItemStack itemStack) {
+    	return itemStack.getItem().equals(GrimcraftItems.barley);
     }
     
     @Override

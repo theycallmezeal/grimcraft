@@ -10,10 +10,10 @@ public class RenderPhoenix extends RenderChicken {
 		super(model, size);
 	}
 
-	private static final ResourceLocation chickenTextures = new ResourceLocation("grimcraft:textures/entity/phoenix.png");
+	private static final ResourceLocation phoenixTextures = new ResourceLocation("grimcraft:textures/entity/phoenix.png");
 	
 	@Override
 	protected ResourceLocation getEntityTexture(EntityChicken p_110775_1_) {
-        return chickenTextures;
+        return phoenixTextures;
     }
 }
