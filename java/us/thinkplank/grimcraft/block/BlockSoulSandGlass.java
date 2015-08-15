@@ -2,6 +2,8 @@ package us.thinkplank.grimcraft.block;
 
 import java.util.Random;
 
+/* we decided against this block! */
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockGlass;
 import net.minecraft.block.material.Material;

@@ -26,7 +26,7 @@ public class GrimcraftBlocks {
     public final static Block ghast_pepper_bush = new BlockGhastPepperBush();
     public final static Block nether_lantern = new BlockNetherLantern();
     public final static Block lava_lamp = new BlockLavaLamp();
-    public final static Block gc_farming_base = new BlockGrimcraftFarmingBase();
+    public final static Block gc_farming_base = new BlockGlowstoneGrower();
     
     public static void register() {
     	GameRegistry.registerBlock(grimwood_log, "grimwood_log");

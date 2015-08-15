@@ -18,7 +18,7 @@ tile.vulpiberry_bush.name=Vulpiberry Bush
 tile.ghast_pepper_bush.name=Ghast Pepper Bush
 tile.nether_lantern.name=Nether Lantern
 tile.lava_lamp.name=Lava Lamp
-tile.gc_farming_base=Farming Base
+tile.glowstone_grower=Glowstone Grower
 
 item.grimwood_shovel.name=Grimwood Shovel
 item.grimwood_pickaxe.name=Grimwood Pickaxe

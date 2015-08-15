@@ -13,14 +13,14 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockGrimcraftFarmingBase extends Block {
+public class BlockGlowstoneGrower extends Block {
 	@SideOnly(Side.CLIENT)
 	
-	public BlockGrimcraftFarmingBase () {
+	public BlockGlowstoneGrower () {
         super(Material.ground);
         setHardness(2F);
         setStepSound(Block.soundTypeStone);
-        setBlockName("gc_farming_base");
+        setBlockName("glowstone_grower");
         setCreativeTab(CreativeTabs.tabBlock);
         setHarvestLevel("pickaxe", 0);
         setTickRandomly(true);
@@ -35,39 +35,42 @@ public class BlockGrimcraftFarmingBase extends Block {
 	@Override
 	public void updateTick(World world, int x, int y, int z, Random random) {
 		int radius = 5;
-		for(int i = x-radius; i < x+radius; i++) {
-			for(int j = y-radius; j < y+radius; j++) {
-				for(int k = z-radius; k < z+radius; k++) {
+		for(int i = x - radius; i < x + radius; i++) {
+			for(int j = y - radius; j < y + radius; j++) {
+				for(int k = z - radius; k < z + radius; k++) {
 					if(random.nextInt(100) > 10) {
 						continue;
-					}  
+					}
+					
 					Block cBlock = world.getBlock(i, j, k);
-					if(Block.isEqualTo(cBlock, Blocks.glowstone)) {
-						int xo = random.nextInt(3)-1;
-						int yo = random.nextInt(3)-1;
-						int zo = random.nextInt(3)-1;
+					if(cBlock.equals(Blocks.glowstone)) {
+						int xo = random.nextInt(3) - 1;
+						int yo = random.nextInt(3) - 1;
+						int zo = random.nextInt(3) - 1;
 						
-						if(Block.isEqualTo(this, world.getBlock(i+xo, j+yo, k+zo))) {
+						if(this.equals(world.getBlock(i+xo, j+yo, k+zo))) {
 							continue;
 						}
-						if(!Block.isEqualTo(Blocks.air, world.getBlock(i+xo, j+yo, k+zo))) {
+						
+						if(world.getBlock(i+xo, j+yo, k+zo).equals(Blocks.air)) {
 							continue;
 						}
-						world.setBlock(i+xo, j+yo, k+zo, Blocks.glowstone);
-						world.markBlockForUpdate(i+xo, j+yo, k+zo);
+						
+						world.setBlock(i + xo, j + yo, k + zo, Blocks.glowstone);
+						world.markBlockForUpdate(i + xo, j + yo, k + zo);
 					}
 				}
 			}
 		}
-		// world.scheduleBlockUpdate(x, y, z, this, tickRate());
+		world.scheduleBlockUpdate(x, y, z, this, tickRate());
 	}
 	
-	/* Override
+	@Override
 	public void onBlockAdded(World world, int x, int y, int z) {
 		world.scheduleBlockUpdate(x, y, z, this, tickRate());
-	} */
+	}
 	
 	public int tickRate() {
-		return 40;
+		return 10;
 	}
 }

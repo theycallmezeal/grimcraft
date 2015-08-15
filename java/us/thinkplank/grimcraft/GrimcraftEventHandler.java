@@ -39,14 +39,13 @@ public class GrimcraftEventHandler {
 				return;
 			}
 			
-			//TODO fix player dropping through block when this happens
 			event.world.setBlock(event.x, event.y, event.z, GrimcraftBlocks.peat);
             event.current.damageItem(1, event.entityPlayer);
 		}
 	}
 	
 	@SubscribeEvent
-	public void onEvent(LivingDropsEvent event) {
+	public void onSkeletonDeath(LivingDropsEvent event) {
 	    if (event.entity instanceof EntitySkeleton && ((EntitySkeleton) event.entity).getSkeletonType() == 1) {
 	        for (int i = 0; i < event.drops.size(); i++) {
 	        	if (event.drops.get(i).getEntityItem().getItem().equals(Items.bone)) {

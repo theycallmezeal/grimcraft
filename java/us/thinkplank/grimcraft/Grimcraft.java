@@ -9,6 +9,8 @@
 
 package us.thinkplank.grimcraft;
 
+import net.minecraft.client.model.ModelChicken;
+import net.minecraft.client.renderer.entity.RenderChicken;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.entity.monster.EntityCaveSpider;
 import net.minecraft.init.Blocks;
@@ -66,8 +68,12 @@ public class Grimcraft {
     	
     	//TODO add boar sounds, add tusks to texture
     	//TODO do boars spawn at all...?
+    
     	EntityRegistry.registerModEntity(EntityBoar.class, "boar", 0, this, 80, 1, true);
     	RenderingRegistry.registerEntityRenderingHandler(EntityBoar.class, new RenderBoar(new ModelBoar(), 0.5F));
+    	
+    	EntityRegistry.registerModEntity(EntityPhoenix.class, "phoenix", 1, this, 80, 1, true);
+    	RenderingRegistry.registerEntityRenderingHandler(EntityPhoenix.class, new RenderPhoenix(new ModelPhoenix(), 0.5F));
     	
     	EntityRegistry.addSpawn(EntityCaveSpider.class, 75, 1, 3, EnumCreatureType.monster, BiomeGenBase.hell);
     	EntityRegistry.addSpawn(EntityBoar.class, 100, 1, 3, EnumCreatureType.monster, BiomeGenBase.hell);
