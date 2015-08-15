@@ -9,20 +9,20 @@
 
 package us.thinkplank.grimcraft;
 
-import net.minecraft.client.model.ModelChicken;
-import net.minecraft.client.renderer.entity.RenderChicken;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.entity.monster.EntityCaveSpider;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.oredict.OreDictionary;
 import us.thinkplank.grimcraft.block.GrimcraftBlocks;
 import us.thinkplank.grimcraft.item.GrimcraftItems;
-import us.thinkplank.grimcraft.mobs.*;
+import us.thinkplank.grimcraft.mobs.EntityBoar;
+import us.thinkplank.grimcraft.mobs.EntityPhoenix;
+import us.thinkplank.grimcraft.mobs.ModelBoar;
+import us.thinkplank.grimcraft.mobs.ModelPhoenix;
+import us.thinkplank.grimcraft.mobs.RenderBoar;
+import us.thinkplank.grimcraft.mobs.RenderPhoenix;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;

@@ -1,9 +1,7 @@
 package us.thinkplank.grimcraft.mobs;
 
-import us.thinkplank.grimcraft.item.GrimcraftItems;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EntityAgeable;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIFollowParent;
 import net.minecraft.entity.ai.EntityAILookIdle;
@@ -14,36 +12,31 @@ import net.minecraft.entity.ai.EntityAITempt;
 import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.passive.EntityAnimal;
-import net.minecraft.entity.passive.EntityChicken;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemSeeds;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
+import us.thinkplank.grimcraft.item.GrimcraftItems;
 
-public class EntityPhoenix extends EntityAnimal
-{
+public class EntityPhoenix extends EntityAnimal {
     public float field_70886_e;
     public float destPos;
     public float field_70884_g;
     public float field_70888_h;
     public float field_70889_i = 1.0F;
-    /** The time until the next egg is spawned. */
     public int timeUntilNextEgg;
     public boolean field_152118_bv;
     private static final String __OBFID = "CL_00001639";
 
-    public EntityPhoenix(World p_i1682_1_) {
-        super(p_i1682_1_);
+    public EntityPhoenix(World world) {
+        super(world);
         this.setSize(0.3F, 0.7F);
         this.timeUntilNextEgg = this.rand.nextInt(6000) + 6000;
         this.tasks.addTask(0, new EntityAISwimming(this));
         this.tasks.addTask(1, new EntityAIPanic(this, 1.4D));
         this.tasks.addTask(2, new EntityAIMate(this, 1.0D));
-        this.tasks.addTask(3, new EntityAITempt(this, 1.0D, Items.wheat_seeds, false));
+        this.tasks.addTask(3, new EntityAITempt(this, 1.0D, GrimcraftItems.barley_seeds, false));
         this.tasks.addTask(4, new EntityAIFollowParent(this, 1.1D));
         this.tasks.addTask(5, new EntityAIWander(this, 1.0D));
         this.tasks.addTask(6, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
@@ -135,6 +128,6 @@ public class EntityPhoenix extends EntityAnimal
 
     @Override
     public boolean isBreedingItem(ItemStack itemStack) {
-    	return itemStack.getItem().equals(GrimcraftItems.barley);
+    	return itemStack.getItem().equals(GrimcraftItems.barley_seeds);
     }
 }

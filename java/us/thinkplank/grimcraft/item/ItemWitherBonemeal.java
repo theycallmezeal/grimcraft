@@ -1,7 +1,5 @@
 package us.thinkplank.grimcraft.item;
 
-import us.thinkplank.grimcraft.GrimcraftPlants;
-import us.thinkplank.grimcraft.block.GrimcraftBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
@@ -9,6 +7,8 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import us.thinkplank.grimcraft.GrimcraftPlants;
+import us.thinkplank.grimcraft.block.GrimcraftBlocks;
 
 public class ItemWitherBonemeal extends Item {
     public ItemWitherBonemeal() {

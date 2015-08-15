@@ -2,16 +2,16 @@ package us.thinkplank.grimcraft.block;
 
 import java.util.Random;
 
-/* we decided against this block! */
-
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockGlass;
 import net.minecraft.block.material.Material;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+/* we decided against this block! */
+import net.minecraft.block.Block;
+
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockSoulSandGlass extends BlockGlass {
     public BlockSoulSandGlass () {

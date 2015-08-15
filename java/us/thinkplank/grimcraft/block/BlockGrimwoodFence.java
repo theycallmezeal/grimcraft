@@ -3,7 +3,6 @@ package us.thinkplank.grimcraft.block;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFence;
 import net.minecraft.block.material.Material;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.world.IBlockAccess;
 
 public class BlockGrimwoodFence extends BlockFence {

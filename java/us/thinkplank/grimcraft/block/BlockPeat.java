@@ -1,7 +1,5 @@
 package us.thinkplank.grimcraft.block;
 
-import java.util.Random;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.material.Material;
