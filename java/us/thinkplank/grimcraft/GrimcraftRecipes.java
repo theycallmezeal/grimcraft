@@ -18,8 +18,8 @@ public class GrimcraftRecipes {
         GameRegistry.addRecipe(new ItemStack(GrimcraftBlocks.grimwood_fence_gate), "xyx", "xyx", 'x', new ItemStack(GrimcraftItems.grimwood_stick), 'y', new ItemStack(GrimcraftBlocks.grimwood_planks));
         GameRegistry.addRecipe(new ItemStack(Blocks.trapdoor, 2), "xxx", "xxx", 'x', new ItemStack(GrimcraftBlocks.grimwood_planks)); //grimwood trapdoor?
         
-        GameRegistry.addShapelessRecipe(new ItemStack(GrimcraftItems.wither_bone), new ItemStack(Items.bone), new ItemStack(Items.coal));
-        GameRegistry.addRecipe(new ItemStack(GrimcraftItems.wither_bonemeal, 3), "x", 'x', new ItemStack(GrimcraftItems.wither_bone));
+        GameRegistry.addShapelessRecipe(new ItemStack(GrimcraftItems.wither_bone), new ItemStack(Items.bone), new ItemStack(Items.coal), new ItemStack(GrimcraftItems.brimstone));
+        GameRegistry.addRecipe(new ItemStack(GrimcraftItems.wither_bonemeal, 3), "x", 'x', new ItemStack(GrimcraftItems.wither_bone), new ItemStack(GrimcraftItems.brimstone));
         
         GameRegistry.addRecipe(new ItemStack(GrimcraftBlocks.brimstone_block), "xxx", "xxx", "xxx", 'x', new ItemStack(GrimcraftItems.brimstone));
         GameRegistry.addRecipe(new ItemStack(GrimcraftItems.brimstone, 9), "x", 'x', new ItemStack(GrimcraftBlocks.brimstone_block));

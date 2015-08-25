@@ -2,7 +2,12 @@ package us.thinkplank.grimcraft;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.monster.EntityBlaze;
+import net.minecraft.entity.monster.EntityGhast;
+import net.minecraft.entity.monster.EntityMagmaCube;
+import net.minecraft.entity.monster.EntityPigZombie;
 import net.minecraft.entity.monster.EntitySkeleton;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -39,12 +44,26 @@ public class GrimcraftEventHandler {
 	}
 	
 	@SubscribeEvent
-	public void onSkeletonDeath(LivingDropsEvent event) {
-	    if (event.entity instanceof EntitySkeleton && ((EntitySkeleton) event.entity).getSkeletonType() == 1) {
+	public void onMobDeath(LivingDropsEvent event) {
+		Entity entity = event.entity;
+		
+	    if (entity instanceof EntitySkeleton && ((EntitySkeleton) entity).getSkeletonType() == 1) { // if entity is wither skeleton
 	        for (int i = 0; i < event.drops.size(); i++) {
 	        	if (event.drops.get(i).getEntityItem().getItem().equals(Items.bone)) {
 	        		event.drops.get(i).setEntityItemStack(new ItemStack(GrimcraftItems.wither_bone));
 	        	}
+	        }
+	        
+	        int random = (int) (Math.random() * 3) + 3; // 3 to 5
+	        for (int i = 0; i < random; i++) {
+	        	event.drops.add(new EntityItem(entity.worldObj, entity.posX, entity.posY, entity.posZ, new ItemStack(GrimcraftItems.brimstone)));
+	        }
+	    }
+	    
+	    if (entity instanceof EntityGhast || entity instanceof EntityBlaze || entity instanceof EntityMagmaCube || entity instanceof EntityPigZombie) {
+	    	int random = (int) (Math.random() * 3) + 3; // 3 to 5
+	        for (int i = 0; i < random; i++) {
+	        	event.drops.add(new EntityItem(entity.worldObj, entity.posX, entity.posY, entity.posZ, new ItemStack(GrimcraftItems.brimstone)));
 	        }
 	    }
 	} 
