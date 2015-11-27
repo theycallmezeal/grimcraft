@@ -29,12 +29,12 @@ public class GrimcraftWorldGenerator implements IWorldGenerator {
         }
 	}
 
-	private void generateNether(World world, Random random, int x, int y) {
+	private void generateNether(World world, Random random, int x, int z) {
 		/* fossilstone */
 		for (int i = 0; i < 4; i++) { //veins per chunk
 			int xCoord = x + random.nextInt(16);
 			int yCoord = random.nextInt(128);
-			int zCoord = y + random.nextInt(16);
+			int zCoord = z + random.nextInt(16);
 			
 			(new WorldGenMinable(GrimcraftBlocks.fossilstone_ore, 32, Blocks.netherrack)).generate(world, random, xCoord, yCoord, zCoord); //ores per vein
 		}
@@ -43,7 +43,7 @@ public class GrimcraftWorldGenerator implements IWorldGenerator {
 		for (int i = 0; i < 20; i++) {
 			int xCoord = x + random.nextInt(16);
 			int yCoord = random.nextInt(128);
-			int zCoord = y + random.nextInt(16);
+			int zCoord = z + random.nextInt(16);
 			
 			(new WorldGenMinable(GrimcraftBlocks.nether_coal_ore, 12, Blocks.netherrack)).generate(world, random, xCoord, yCoord, zCoord); //vanilla 16
 		}
@@ -52,7 +52,7 @@ public class GrimcraftWorldGenerator implements IWorldGenerator {
 		for (int i = 0; i < 2; i++) {
 			int xCoord = x + random.nextInt(16);
 			int yCoord = random.nextInt(128);
-			int zCoord = y + random.nextInt(16);
+			int zCoord = z + random.nextInt(16);
 			
 			(new WorldGenMinable(GrimcraftBlocks.nether_gold_ore, 10, Blocks.netherrack)).generate(world, random, xCoord, yCoord, zCoord); //vanilla 8
 		}
@@ -61,7 +61,7 @@ public class GrimcraftWorldGenerator implements IWorldGenerator {
 		for (int i = 0; i < 8; i++) {
 			int xCoord = x + random.nextInt(16);
 			int yCoord = random.nextInt(128);
-			int zCoord = y + random.nextInt(16);
+			int zCoord = z + random.nextInt(16);
 			
 			(new WorldGenMinable(GrimcraftBlocks.nether_redstone_ore, 7, Blocks.netherrack)).generate(world, random, xCoord, yCoord, zCoord); //vanilla 7
 		}
@@ -70,7 +70,7 @@ public class GrimcraftWorldGenerator implements IWorldGenerator {
 		for (int i = 0; i < 10; i++) {
 			int xCoord = x + random.nextInt(16);
 			int yCoord = random.nextInt(128);
-			int zCoord = y + random.nextInt(16);
+			int zCoord = z + random.nextInt(16);
 			
 			(new WorldGenMinable(GrimcraftBlocks.brimstone_ore, 12, Blocks.netherrack)).generate(world, random, xCoord, yCoord, zCoord);
 		}

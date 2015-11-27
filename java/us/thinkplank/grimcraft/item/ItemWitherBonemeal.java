@@ -20,7 +20,6 @@ public class ItemWitherBonemeal extends Item {
     }
     
     //TODO find out what the rest of these args do
-    //TODO add sparklies
     public boolean onItemUse(ItemStack itemStack, EntityPlayer player, World world, int x, int y, int z, int par7, float par8, float par9, float par10) {
     	if (itemStack == null) {
     		return false;
