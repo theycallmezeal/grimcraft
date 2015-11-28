@@ -16,6 +16,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 import us.thinkplank.grimcraft.item.GrimcraftItems;
 
@@ -26,6 +27,7 @@ public class EntityPhoenix extends EntityAnimal {
     public float field_70888_h;
     public float field_70889_i = 1.0F;
     public int timeUntilNextEgg;
+    private int explosionRadius = 2;
     public boolean field_152118_bv;
     private static final String __OBFID = "CL_00001639";
 
@@ -120,6 +122,15 @@ public class EntityPhoenix extends EntityAnimal {
         } else {
             this.dropItem(Items.chicken, 1);
         }
+    }
+    
+    @Override
+    public void onDeath(DamageSource source) {
+    	super.onDeath(source);
+    	if (source == DamageSource.lava) {
+    		boolean flag = this.worldObj.getGameRules().getGameRuleBooleanValue("mobGriefing");
+    		this.worldObj.createExplosion(this, this.posX, this.posY, this.posZ, (float)(this.explosionRadius * 2), flag);
+    	}
     }
 
     public EntityPhoenix createChild(EntityAgeable p_90011_1_) {

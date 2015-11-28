@@ -21,6 +21,6 @@ public class RenderBoar extends RenderLiving {
      * Returns the location of an entity's texture. Doesn't seem to be called unless you call Render.bindEntityTexture.
      */
     protected ResourceLocation getEntityTexture(Entity entity) {
-        return this.getEntityTexture((EntityBoar) entity);
+        return boarTextures;
     }
 }
