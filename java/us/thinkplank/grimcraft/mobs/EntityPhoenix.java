@@ -127,7 +127,7 @@ public class EntityPhoenix extends EntityAnimal {
     @Override
     public void onDeath(DamageSource source) {
     	super.onDeath(source);
-    	if (source == DamageSource.lava) {
+    	if (source == DamageSource.lava || source == DamageSource.inFire || source == DamageSource.onFire) {
     		boolean flag = this.worldObj.getGameRules().getGameRuleBooleanValue("mobGriefing");
     		this.worldObj.createExplosion(this, this.posX, this.posY, this.posZ, (float)(this.explosionRadius * 2), flag);
     	}
