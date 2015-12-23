@@ -1,11 +1,14 @@
 /*
- * Untested and numbers need tweaking
+ * TODO Untested and numbers need tweaking
+ * TODO does the same seed give you the same ores every time?
+ * TODO make sure that stuff can rotate
  */
 
 package us.thinkplank.grimcraft;
 
 import java.util.Random;
 
+import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
@@ -30,49 +33,23 @@ public class GrimcraftWorldGenerator implements IWorldGenerator {
 	}
 
 	private void generateNether(World world, Random random, int x, int z) {
-		/* fossilstone */
-		for (int i = 0; i < 4; i++) { //veins per chunk
-			int xCoord = x + random.nextInt(16);
-			int yCoord = random.nextInt(128);
-			int zCoord = z + random.nextInt(16);
-			
-			(new WorldGenMinable(GrimcraftBlocks.fossilstone_ore, 32, Blocks.netherrack)).generate(world, random, xCoord, yCoord, zCoord); //ores per vein
-		}
+		generateOre(world, random, x, z, GrimcraftBlocks.fossilstone_ore, 4, 32);
+		generateOre(world, random, x, z, GrimcraftBlocks.nether_coal_ore, 20, 12);
+		generateOre(world, random, x, z, GrimcraftBlocks.nether_gold_ore, 2, 10);
+		generateOre(world, random, x, z, GrimcraftBlocks.nether_redstone_ore, 8, 7);
+		generateOre(world, random, x, z, GrimcraftBlocks.fossilstone_ore, 10, 12);
 		
-		/* nether coal */
-		for (int i = 0; i < 20; i++) {
+		int y = random.nextInt(64) + 32;
+		new WorldGenNetherLair().generate(world, random, x, y, z);
+	}
+	
+	private void generateOre(World world, Random random, int x, int z, Block ore, int veinsPerChunk, int oresPerVein) {
+		for (int i = 0; i < veinsPerChunk; i++) { //veins per chunk
 			int xCoord = x + random.nextInt(16);
 			int yCoord = random.nextInt(128);
 			int zCoord = z + random.nextInt(16);
 			
-			(new WorldGenMinable(GrimcraftBlocks.nether_coal_ore, 12, Blocks.netherrack)).generate(world, random, xCoord, yCoord, zCoord); //vanilla 16
-		}
-		
-		/* nether gold*/
-		for (int i = 0; i < 2; i++) {
-			int xCoord = x + random.nextInt(16);
-			int yCoord = random.nextInt(128);
-			int zCoord = z + random.nextInt(16);
-			
-			(new WorldGenMinable(GrimcraftBlocks.nether_gold_ore, 10, Blocks.netherrack)).generate(world, random, xCoord, yCoord, zCoord); //vanilla 8
-		}
-		
-		/* nether redstone */
-		for (int i = 0; i < 8; i++) {
-			int xCoord = x + random.nextInt(16);
-			int yCoord = random.nextInt(128);
-			int zCoord = z + random.nextInt(16);
-			
-			(new WorldGenMinable(GrimcraftBlocks.nether_redstone_ore, 7, Blocks.netherrack)).generate(world, random, xCoord, yCoord, zCoord); //vanilla 7
-		}
-		
-		/* sulfur */
-		for (int i = 0; i < 10; i++) {
-			int xCoord = x + random.nextInt(16);
-			int yCoord = random.nextInt(128);
-			int zCoord = z + random.nextInt(16);
-			
-			(new WorldGenMinable(GrimcraftBlocks.brimstone_ore, 12, Blocks.netherrack)).generate(world, random, xCoord, yCoord, zCoord);
+			(new WorldGenMinable(ore, 32, Blocks.netherrack)).generate(world, random, xCoord, yCoord, zCoord); //ores per vein
 		}
 	}
 }
