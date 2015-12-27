@@ -23,6 +23,8 @@ public class GrimcraftRecipes {
         
         GameRegistry.addRecipe(new ItemStack(GrimcraftBlocks.brimstone_block), "xxx", "xxx", "xxx", 'x', new ItemStack(GrimcraftItems.brimstone));
         GameRegistry.addRecipe(new ItemStack(GrimcraftItems.brimstone, 9), "x", 'x', new ItemStack(GrimcraftBlocks.brimstone_block));
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.fire_charge), new ItemStack(Items.gunpowder), new ItemStack(GrimcraftItems.brimstone), new ItemStack(Items.coal));
+        GameRegistry.addRecipe(new ItemStack(Blocks.tnt), "xyx", "yxy", "xyx", 'x', new ItemStack(GrimcraftItems.brimstone), 'y', new ItemStack(Blocks.sand));
         
         GameRegistry.addRecipe(new ItemStack(GrimcraftItems.grimwood_shovel), "x", "y", "y", 'x', new ItemStack(GrimcraftBlocks.grimwood_planks), 'y', new ItemStack(GrimcraftItems.grimwood_stick));
         GameRegistry.addRecipe(new ItemStack(GrimcraftItems.netherrack_shovel), "x", "y", "y", 'x', new ItemStack(Blocks.netherrack), 'y', new ItemStack(GrimcraftItems.grimwood_stick));
@@ -53,7 +55,6 @@ public class GrimcraftRecipes {
         GameRegistry.addShapelessRecipe(new ItemStack(GrimcraftItems.netherroot), new ItemStack(Items.potato), new ItemStack(GrimcraftItems.wither_bonemeal));
         GameRegistry.addShapelessRecipe(new ItemStack(GrimcraftItems.netherroot), new ItemStack(Items.carrot), new ItemStack(GrimcraftItems.wither_bonemeal));
         GameRegistry.addShapelessRecipe(new ItemStack(GrimcraftItems.netherroot), new ItemStack(Items.poisonous_potato), new ItemStack(GrimcraftItems.wither_bonemeal));
-
 
         GameRegistry.addSmelting(GrimcraftBlocks.nether_coal_ore, new ItemStack(Items.coal), 0.2f);
         GameRegistry.addSmelting(GrimcraftBlocks.nether_gold_ore, new ItemStack(Items.gold_ingot), 1.2f);
