@@ -46,11 +46,11 @@ public class BlockGlowstoneGrower extends Block {
 						int yo = random.nextInt(3) - 1;
 						int zo = random.nextInt(3) - 1;
 						
-						if(this.equals(world.getBlock(i+xo, j+yo, k+zo))) {
+						if (this.equals(world.getBlock(i + xo, j + yo, k + zo))) {
 							continue;
 						}
 						
-						if(world.getBlock(i+xo, j+yo, k+zo).equals(Blocks.air)) {
+						if (world.getBlock(i + xo, j + yo, k + zo).equals(Blocks.air)) {
 							continue;
 						}
 						

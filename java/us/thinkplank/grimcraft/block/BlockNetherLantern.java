@@ -8,7 +8,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockNetherLantern extends BlockGlowstone {
+public class BlockNetherLantern extends Block {
     public BlockNetherLantern () {
         super(Material.glass);
         setHardness(3F);
@@ -23,5 +23,15 @@ public class BlockNetherLantern extends BlockGlowstone {
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister iconRegister) {
         this.blockIcon = iconRegister.registerIcon("grimcraft:nether_lantern");
+    }
+    
+    @Override
+    public boolean renderAsNormalBlock() {
+    	return false;
+    }
+    
+    @Override
+    public boolean isOpaqueCube() {
+    	return false;
     }
 }
