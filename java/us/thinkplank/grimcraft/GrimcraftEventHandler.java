@@ -100,7 +100,6 @@ public class GrimcraftEventHandler {
 			}
 		}
 		
-		//TODO give this nasty ass code a refactor
 		// handles poisoning with sulfur in furnaces
 		EnumDifficulty difficulty = event.world.difficultySetting;
 		double chance = 0;
