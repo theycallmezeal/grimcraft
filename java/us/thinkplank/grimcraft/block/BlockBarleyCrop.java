@@ -9,6 +9,9 @@ import us.thinkplank.grimcraft.item.GrimcraftItems;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
+// TODO does crop growth depend on water? how does it compare to wheat
+// TODO can I disable crop growth in the overworld?
+
 public class BlockBarleyCrop extends BlockCrops {
 	private IIcon[] icons;
 	

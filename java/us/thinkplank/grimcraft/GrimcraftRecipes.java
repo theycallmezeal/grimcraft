@@ -54,6 +54,8 @@ public class GrimcraftRecipes {
         GameRegistry.addRecipe(new ItemStack(GrimcraftItems.nether_gold_sword), "x", "x", "y", 'x', new ItemStack(Items.gold_ingot), 'y', new ItemStack(GrimcraftItems.grimwood_stick));
         
         GameRegistry.addRecipe(new ItemStack(GrimcraftItems.barley_seeds, 8), "xxx", "xyx", "xxx", 'x', new ItemStack(Items.wheat_seeds), 'y', new ItemStack(GrimcraftItems.wither_bonemeal));
+        GameRegistry.addRecipe(new ItemStack(Items.bread), "xxx", 'x', new ItemStack(GrimcraftItems.barley));
+        
         GameRegistry.addShapelessRecipe(new ItemStack(GrimcraftItems.netherroot), new ItemStack(Items.potato), new ItemStack(GrimcraftItems.wither_bonemeal));
         GameRegistry.addShapelessRecipe(new ItemStack(GrimcraftItems.netherroot), new ItemStack(Items.carrot), new ItemStack(GrimcraftItems.wither_bonemeal));
         GameRegistry.addShapelessRecipe(new ItemStack(GrimcraftItems.netherroot), new ItemStack(Items.poisonous_potato), new ItemStack(GrimcraftItems.wither_bonemeal));
