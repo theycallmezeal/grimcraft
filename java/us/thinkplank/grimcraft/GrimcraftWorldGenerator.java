@@ -1,7 +1,5 @@
 /*
- * TODO Untested and numbers need tweaking
  * TODO does the same seed give you the same ores every time?
- * TODO make sure that stuff can rotate
  */
 
 package us.thinkplank.grimcraft;
