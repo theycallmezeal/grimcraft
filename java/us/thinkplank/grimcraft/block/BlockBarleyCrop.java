@@ -1,16 +1,18 @@
 package us.thinkplank.grimcraft.block;
 
+import java.util.Random;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockCrops;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.Item;
 import net.minecraft.util.IIcon;
+import net.minecraft.world.World;
 import us.thinkplank.grimcraft.item.GrimcraftItems;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 // TODO does crop growth depend on water? how does it compare to wheat
-// TODO can I disable crop growth in the overworld?
 
 public class BlockBarleyCrop extends BlockCrops {
 	private IIcon[] icons;
@@ -34,6 +36,13 @@ public class BlockBarleyCrop extends BlockCrops {
     protected Item func_149865_P() {
         return GrimcraftItems.barley;
     }
+	
+	@Override
+    public void updateTick(World world, int x, int y, int z, Random rand) {
+		if (world.provider.dimensionId == -1) {
+			super.updateTick(world, x, y, z, rand);
+		}
+	}
     
     @Override
     @SideOnly(Side.CLIENT)
