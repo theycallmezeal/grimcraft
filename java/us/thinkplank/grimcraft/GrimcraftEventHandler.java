@@ -1,6 +1,7 @@
 package us.thinkplank.grimcraft;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockFurnace;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityItem;
@@ -109,7 +110,7 @@ public class GrimcraftEventHandler {
 			chance = 0.4;
 		}
 		
-		if (targetBlock.equals(Blocks.furnace) && event.action == event.action.RIGHT_CLICK_BLOCK && Math.random() < chance) {
+		if (targetBlock instanceof BlockFurnace && event.action == event.action.RIGHT_CLICK_BLOCK) {
 			TileEntityFurnace furnace = (TileEntityFurnace) event.world.getTileEntity(event.x, event.y, event.z);
 			ItemStack furnaceFuel = furnace.getStackInSlot(1);
 			if (furnaceFuel != null && furnaceFuel.getItem() == GrimcraftItems.brimstone) {
