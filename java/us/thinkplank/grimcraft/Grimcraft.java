@@ -66,7 +66,6 @@ public class Grimcraft {
     	OreDictionary.registerOre("oreRedstone", GrimcraftBlocks.nether_redstone_ore);
     	OreDictionary.registerOre("oreSulfur", GrimcraftBlocks.brimstone_ore); //makes brimstone work as sulfur
     	
-    	//TODO add tusks to boar texture
     	//TODO do boars spawn at all...?
     
     	EntityRegistry.registerGlobalEntityID(EntityBoar.class, "boar", EntityRegistry.findGlobalUniqueEntityId(), 0xA26C60, 0x8C3519);

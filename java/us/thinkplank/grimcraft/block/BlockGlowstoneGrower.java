@@ -22,6 +22,7 @@ public class BlockGlowstoneGrower extends Block {
         setCreativeTab(CreativeTabs.tabBlock);
         setHarvestLevel("pickaxe", 0);
         setTickRandomly(true);
+        setLightLevel(15F);
     }
 	
 	@Override
