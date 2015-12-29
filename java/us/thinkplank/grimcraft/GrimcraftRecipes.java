@@ -63,6 +63,12 @@ public class GrimcraftRecipes {
         GameRegistry.addShapelessRecipe(new ItemStack(GrimcraftItems.netherroot), new ItemStack(Items.poisonous_potato), new ItemStack(GrimcraftItems.wither_bonemeal));
         GameRegistry.addShapelessRecipe(new ItemStack(GrimcraftItems.netherroot_soup), new ItemStack(GrimcraftItems.netherroot), new ItemStack(Items.bowl));
 
+        GameRegistry.addRecipe(new ItemStack(GrimcraftBlocks.glowstone_grower), "plp", "pbp", "ggg",
+        		'p', new ItemStack(GrimcraftBlocks.grimwood_planks),
+        		'l', new ItemStack(Items.lava_bucket),
+        		'b', new ItemStack(GrimcraftBlocks.brimstone_block),
+        		'g', new ItemStack(Blocks.glowstone));
+        
         GameRegistry.addSmelting(GrimcraftBlocks.nether_coal_ore, new ItemStack(Items.coal), 0.2f);
         GameRegistry.addSmelting(GrimcraftBlocks.nether_gold_ore, new ItemStack(Items.gold_ingot), 1.2f);
         GameRegistry.addSmelting(GrimcraftBlocks.nether_redstone_ore, new ItemStack(Items.redstone), 0.9f);
