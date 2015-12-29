@@ -18,7 +18,7 @@ public class GrimcraftRecipes {
         GameRegistry.addRecipe(new ItemStack(GrimcraftBlocks.grimwood_fence_gate), "xyx", "xyx", 'x', new ItemStack(GrimcraftItems.grimwood_stick), 'y', new ItemStack(GrimcraftBlocks.grimwood_planks));
         GameRegistry.addRecipe(new ItemStack(Blocks.trapdoor, 2), "xxx", "xxx", 'x', new ItemStack(GrimcraftBlocks.grimwood_planks)); //grimwood trapdoor?
         
-        GameRegistry.addRecipe(new ItemStack(GrimcraftBlocks.nether_lantern), "xxx", "xyx", "xxx", 'x', new ItemStack(Blocks.stained_glass, 12), 'y', new ItemStack(GrimcraftItems.brimstone));
+        GameRegistry.addRecipe(new ItemStack(GrimcraftBlocks.nether_lantern), "xxx", "xyx", "xxx", 'x', new ItemStack(GrimcraftBlocks.soul_sand_glass), 'y', new ItemStack(GrimcraftItems.brimstone));
         
         GameRegistry.addShapelessRecipe(new ItemStack(GrimcraftItems.wither_bone), new ItemStack(Items.bone), new ItemStack(Items.coal), new ItemStack(GrimcraftItems.brimstone));
         GameRegistry.addRecipe(new ItemStack(GrimcraftItems.wither_bonemeal, 3), "x", 'x', new ItemStack(GrimcraftItems.wither_bone));
@@ -72,6 +72,6 @@ public class GrimcraftRecipes {
         GameRegistry.addSmelting(GrimcraftBlocks.nether_redstone_ore, new ItemStack(Items.redstone), 0.9f);
         GameRegistry.addSmelting(GrimcraftBlocks.brimstone_ore, new ItemStack(GrimcraftItems.brimstone), 0.2f);
         GameRegistry.addSmelting(GrimcraftBlocks.fossilstone_ore, new ItemStack(Items.dye, 1, 15), 0.2f);
-        GameRegistry.addSmelting(Blocks.soul_sand, new ItemStack(Blocks.stained_glass, 15), 0.1f);
+        GameRegistry.addSmelting(Blocks.soul_sand, new ItemStack(GrimcraftBlocks.soul_sand_glass), 0.1f);
 	}
 }
