@@ -23,9 +23,9 @@ public class ItemGhastPepper extends ItemFood {
     	EnumDifficulty difficulty = world.difficultySetting;
 		double chance = 0;
 		if (difficulty == EnumDifficulty.NORMAL) {
-			chance = 0.2;
+			chance = 0.05;
 		} else if (difficulty == EnumDifficulty.HARD) {
-			chance = 0.4;
+			chance = 0.1;
 		}
 		
 		if (Math.random() < chance) {
