@@ -7,10 +7,11 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 public class GrimcraftItems {
 	/* TODO currently equivalent to vanilla materials; will tweak later*/
-    static ToolMaterial grimwood_material = EnumHelper.addToolMaterial("GRIMWOOD", 0, 59, 2.0F, 0.0F, 15); // wood
-    static ToolMaterial netherrack_material = EnumHelper.addToolMaterial("NETHERRACK", 1, 131, 4.0F, 1.0F, 5); // stone
-    static ToolMaterial nether_quartz_material = EnumHelper.addToolMaterial("NETHER_QUARTZ", 0, 32, 12.0F, 0.0F, 22); // gold
-    static ToolMaterial nether_gold_material = EnumHelper.addToolMaterial("NETHER_GOLD", 2, 250, 6.0F, 2.0F, 14); //iron, oddly enough
+	// name, harvest level, maxUses, efficiency, damage, enchantability
+    static ToolMaterial grimwood_material = EnumHelper.addToolMaterial("GRIMWOOD", 0, 59, 2.0F, 1.0F, 15);
+    static ToolMaterial netherrack_material = EnumHelper.addToolMaterial("NETHERRACK", 1, 131, 5.0F, 1.0F, 5);
+    static ToolMaterial nether_quartz_material = EnumHelper.addToolMaterial("NETHER_QUARTZ", 0, 32, 13.0F, 0.0F, 22);
+    static ToolMaterial nether_gold_material = EnumHelper.addToolMaterial("NETHER_GOLD", 3, 250, 7.0F, 2.0F, 14);
     
     public final static Item grimwood_shovel = new ItemGrimwoodShovel(grimwood_material);
     public final static Item grimwood_pickaxe = new ItemGrimwoodPickaxe(grimwood_material);
