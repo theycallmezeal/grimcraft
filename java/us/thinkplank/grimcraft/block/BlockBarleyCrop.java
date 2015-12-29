@@ -12,8 +12,6 @@ import us.thinkplank.grimcraft.item.GrimcraftItems;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-// TODO does crop growth depend on water? how does it compare to wheat
-
 public class BlockBarleyCrop extends BlockCrops {
 	private IIcon[] icons;
 	

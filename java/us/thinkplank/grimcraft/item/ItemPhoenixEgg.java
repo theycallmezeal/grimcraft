@@ -25,9 +25,9 @@ public class ItemPhoenixEgg extends Item {
 		} else if (player.canPlayerEdit(x, y, z, par7, itemStack)) {
 			Block block = world.getBlock(x, y, z);
 			
-			//TODO add fancy effects?
 			if (block.equals(Blocks.gravel) && !world.isRemote){
 				world.setBlock(x, y, z, Blocks.air);
+				world.playAuxSFX(2005, x, y, z, 0);
 				EntityPhoenix phoenix = new EntityPhoenix(world);
 				phoenix.setLocationAndAngles((double)x + 0.5D, (double)y, (double)z + 0.5D, 0.0F, 0.0F);
 				world.spawnEntityInWorld(phoenix);

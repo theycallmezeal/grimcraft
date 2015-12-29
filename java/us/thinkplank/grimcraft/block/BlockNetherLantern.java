@@ -8,8 +8,6 @@ import net.minecraft.creativetab.CreativeTabs;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-// TODO do these actually glow?
-
 public class BlockNetherLantern extends Block {
     public BlockNetherLantern () {
         super(Material.glass);

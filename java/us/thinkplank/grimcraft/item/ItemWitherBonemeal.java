@@ -19,8 +19,9 @@ public class ItemWitherBonemeal extends Item {
         setTextureName("grimcraft:wither_bonemeal");
     }
     
-    //TODO find out what the rest of these args do
-    public boolean onItemUse(ItemStack itemStack, EntityPlayer player, World world, int x, int y, int z, int par7, float par8, float par9, float par10) {
+    // px, py, pz are the coords on the block face that were clicked
+    @Override
+    public boolean onItemUse(ItemStack itemStack, EntityPlayer player, World world, int x, int y, int z, int par7, float px, float py, float pz) {
     	if (itemStack == null) {
     		return false;
     	} else if (player.canPlayerEdit(x, y, z, par7, itemStack)) {
