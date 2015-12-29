@@ -234,14 +234,6 @@ public class WorldGenNetherLair extends WorldGenerator implements IWorldGenerato
 		if(!locationIsValidSpawn(world, i, j, k) || !locationIsValidSpawn(world, i + 8, j, k) || !locationIsValidSpawn(world, i + 8, j, k + 8) || !locationIsValidSpawn(world, i, j, k + 8)) {
 			return false;
 		}
-
-		k = k - 10;
-		i = i - 10;
-		
-		// for debugging and finding the durn things
-		for (int q = 0; q < 20; q++) {
-			world.setBlock(i, j + q + 7, k, Blocks.diamond_block, 0, 0);
-		}
 		
 		int rotateNum = (int) Math.floor(rand.nextDouble() * 4);
 		
