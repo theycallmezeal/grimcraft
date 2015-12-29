@@ -7,6 +7,7 @@ package us.thinkplank.grimcraft;
 
 import java.util.Random;
 
+import us.thinkplank.grimcraft.item.GrimcraftItems;
 import cpw.mods.fml.common.IWorldGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
@@ -21,21 +22,19 @@ public class WorldGenNetherLair extends WorldGenerator implements IWorldGenerato
 	
 	//WeightedRandomChestContent(Item, meta, min stack size, max stack size, freq)
     public static final WeightedRandomChestContent[] loot = new WeightedRandomChestContent[] {
-    	new WeightedRandomChestContent(Items.saddle, 0, 1, 1, 10), 
-    	new WeightedRandomChestContent(Items.iron_ingot, 0, 1, 4, 10), 
+    	new WeightedRandomChestContent(GrimcraftItems.wither_bone, 0, 1, 4, 10), 
+    	new WeightedRandomChestContent(GrimcraftItems.wither_bonemeal, 0, 1, 4, 10), 
     	new WeightedRandomChestContent(Items.bread, 0, 1, 1, 10), 
-    	new WeightedRandomChestContent(Items.wheat, 0, 1, 4, 10), 
-    	new WeightedRandomChestContent(Items.gunpowder, 0, 1, 4, 10), 
+    	new WeightedRandomChestContent(GrimcraftItems.barley, 0, 1, 4, 10), 
+    	new WeightedRandomChestContent(GrimcraftItems.brimstone, 0, 1, 4, 10), 
     	new WeightedRandomChestContent(Items.string, 0, 1, 4, 10), 
     	new WeightedRandomChestContent(Items.bucket, 0, 1, 1, 10), 
     	new WeightedRandomChestContent(Items.golden_apple, 0, 1, 1, 1), 
-    	new WeightedRandomChestContent(Items.redstone, 0, 1, 4, 10), 
-    	new WeightedRandomChestContent(Items.record_13, 0, 1, 1, 10), 
-    	new WeightedRandomChestContent(Items.record_cat, 0, 1, 1, 10), 
+    	new WeightedRandomChestContent(GrimcraftItems.ghast_pepper, 0, 1, 4, 10),
+    	new WeightedRandomChestContent(GrimcraftItems.vulpiberry, 0, 1, 4, 10), 
+    	new WeightedRandomChestContent(Items.record_11, 0, 1, 1, 10), 
+    	new WeightedRandomChestContent(Items.record_wait, 0, 1, 1, 10), 
     	new WeightedRandomChestContent(Items.name_tag, 0, 1, 1, 10), 
-    	new WeightedRandomChestContent(Items.golden_horse_armor, 0, 1, 1, 2), 
-    	new WeightedRandomChestContent(Items.iron_horse_armor, 0, 1, 1, 5), 
-    	new WeightedRandomChestContent(Items.diamond_horse_armor, 0, 1, 1, 1)
     };
 	
 	Block air = Blocks.air;
