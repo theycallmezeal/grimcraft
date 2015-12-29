@@ -17,7 +17,6 @@ public class BlockNetherrootCrop extends BlockCrops {
 		super();
 		setStepSound(Block.soundTypeGrass);
 		setBlockName("netherroot_crop");
-		setCreativeTab(CreativeTabs.tabFood);
 	}
 	
 	@Override
