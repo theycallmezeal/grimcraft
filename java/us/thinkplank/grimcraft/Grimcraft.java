@@ -66,13 +66,15 @@ public class Grimcraft {
     	OreDictionary.registerOre("oreRedstone", GrimcraftBlocks.nether_redstone_ore);
     	OreDictionary.registerOre("oreSulfur", GrimcraftBlocks.brimstone_ore); //makes brimstone work as sulfur
     	
-    	//TODO add boar sounds, add tusks to texture
+    	//TODO add tusks to boar texture
     	//TODO do boars spawn at all...?
     
-    	EntityRegistry.registerModEntity(EntityBoar.class, "boar", 0, this, 80, 1, true);
+    	EntityRegistry.registerGlobalEntityID(EntityBoar.class, "boar", EntityRegistry.findGlobalUniqueEntityId(), 0xA26C60, 0x8C3519);
+    	EntityRegistry.registerModEntity(EntityBoar.class, "boar", EntityRegistry.findGlobalUniqueEntityId(), this, 80, 1, true);
     	RenderingRegistry.registerEntityRenderingHandler(EntityBoar.class, new RenderBoar(new ModelBoar(), 0.5F));
     	
-    	EntityRegistry.registerModEntity(EntityPhoenix.class, "phoenix", 1, this, 80, 1, true);
+    	EntityRegistry.registerGlobalEntityID(EntityPhoenix.class, "phoenix", EntityRegistry.findGlobalUniqueEntityId(), 0x000000, 0xFF0000);
+    	EntityRegistry.registerModEntity(EntityPhoenix.class, "phoenix", EntityRegistry.findGlobalUniqueEntityId(), this, 80, 1, true);
     	RenderingRegistry.registerEntityRenderingHandler(EntityPhoenix.class, new RenderPhoenix(new ModelPhoenix(), 0.5F));
     	
     	EntityRegistry.addSpawn(EntityCaveSpider.class, 75, 1, 3, EnumCreatureType.monster, BiomeGenBase.hell);
