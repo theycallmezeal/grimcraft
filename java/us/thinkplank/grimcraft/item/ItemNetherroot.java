@@ -16,12 +16,7 @@ public class ItemNetherroot extends ItemSeedFood {
         setMaxStackSize(64);
         setCreativeTab(CreativeTabs.tabMaterials);
         setUnlocalizedName("netherroot");
-    }
-
-    @Override
-    @SideOnly(Side.CLIENT)
-    public void registerIcons(IIconRegister iconRegister) {
-        this.itemIcon = iconRegister.registerIcon("grimcraft:netherroot");
+        setTextureName("grimcraft:netherroot");
     }
     
     public boolean onItemUse(ItemStack itemStack, EntityPlayer player, World world, int x, int y, int z, int par7, float par8, float par9, float par10) {
