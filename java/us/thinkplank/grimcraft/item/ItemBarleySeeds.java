@@ -4,8 +4,6 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemSeeds;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.BlockPos;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.world.World;
 import us.thinkplank.grimcraft.block.GrimcraftBlocks;
 
@@ -15,21 +13,22 @@ public class ItemBarleySeeds extends ItemSeeds {
         setMaxStackSize(64);
         setCreativeTab(CreativeTabs.tabMaterials);
         setUnlocalizedName("barley_seeds");
+        setTextureName("grimcraft:barley_seeds");
     }
     
-    public boolean onItemUseFirst(ItemStack stack, EntityPlayer player, World worldIn, BlockPos pos, EnumFacing side, float hitX, float hitY, float hitZ) {
-    	if (side != EnumFacing.UP) {
+    public boolean onItemUse(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, World par3World, int par4, int par5, int par6, int par7, float par8, float par9, float par10) {
+        if (par7 != 1) {
             return false;
-        } else if (!player.canPlayerEdit(pos.offset(side), side, stack)) {
-            return false;
-        } else if (worldIn.getBlockState(pos).getBlock() == GrimcraftBlocks.peat && worldIn.isAirBlock(pos.up())) {
-            worldIn.setBlockState(pos.up(), GrimcraftBlocks.barley_crop.getDefaultState());
-            if (!player.capabilities.isCreativeMode) {
-            	stack.stackSize--;
+        } else if (par2EntityPlayer.canPlayerEdit(par4, par5, par6, par7, par1ItemStack) && par2EntityPlayer.canPlayerEdit(par4, par5 + 1, par6, par7, par1ItemStack)) {
+            if (par3World.getBlock(par4, par5, par6) == GrimcraftBlocks.peat && par3World.isAirBlock(par4, par5 + 1, par6)) {
+                par3World.setBlock(par4, par5 + 1, par6, GrimcraftBlocks.barley_crop);
+                par1ItemStack.stackSize--;
+                return true;
+            } else {
+                return false;
             }
-            return true;
+        } else {
+            return false;
         }
-    	
-        return false;
     }
 }

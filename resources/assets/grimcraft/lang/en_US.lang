@@ -18,7 +18,7 @@ tile.vulpiberry_bush.name=Vulpiberry Bush
 tile.ghast_pepper_bush.name=Ghast Pepper Bush
 tile.nether_lantern.name=Nether Lantern
 tile.lava_lamp.name=Lava Lamp
-tile.gc_farming_base=Farming Base
+tile.glowstone_grower.name=Glowstone Grower
 
 item.grimwood_shovel.name=Grimwood Shovel
 item.grimwood_pickaxe.name=Grimwood Pickaxe
@@ -47,8 +47,11 @@ item.wither_bonemeal.name=Wither Bonemeal
 item.brimstone.name=Brimstone
 item.barley.name=Barley
 item.barley_seeds.name=Barley Seeds
-item.strawberry.name=Strawberry
+item.vulpiberry.name=Vulpiberry
 item.ghast_pepper.name=Ghast Pepper
 item.netherroot.name=Netherroot
 item.netherroot_soup.name=Netherroot Soup
 item.phoenix_egg.name=Phoenix Egg
+
+entity.boar.name=Boar
+entity.phoenix.name=Phoenix

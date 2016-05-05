@@ -1,7 +1,0 @@
-{
-    "parent": "block/cube_column",
-    "textures": {
-        "end": "grimcraft:blocks/grimwood_log_bottom",
-        "side": "grimcraft:blocks/grimwood_log_side"
-    }
-}

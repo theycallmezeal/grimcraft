@@ -1,6 +1,0 @@
-{
-    "variants": {
-        "variant=false": { "model": "grimcraft:grimwood_planks" },
-        "variant=true":    { "model": "grimcraft:grimwood_planks" }
-    }
-}

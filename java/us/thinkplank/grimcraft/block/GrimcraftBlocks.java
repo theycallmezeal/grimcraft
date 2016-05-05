@@ -1,19 +1,14 @@
 package us.thinkplank.grimcraft.block;
 
 import net.minecraft.block.Block;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.ItemModelMesher;
-import net.minecraft.client.renderer.entity.RenderItem;
-import net.minecraft.client.resources.model.ModelResourceLocation;
-import net.minecraft.init.Blocks;
-import net.minecraft.item.Item;
-import net.minecraftforge.fml.common.registry.GameRegistry;
+import us.thinkplank.grimcraft.item.ItemGrimwoodSlab;
+import cpw.mods.fml.common.registry.GameRegistry;
 
 public class GrimcraftBlocks {
 	public final static Block grimwood_log = new BlockGrimwoodLog();
     public final static Block grimwood_planks = new BlockGrimwoodPlanks();
-    public final static Block half_grimwood_slab = new BlockHalfGrimwoodSlab();
-    public final static Block double_grimwood_slab = new BlockDoubleGrimwoodSlab();
+    public final static Block single_grimwood_slab = new BlockGrimwoodSlab(false);
+    public final static Block double_grimwood_slab = new BlockGrimwoodSlab(true);
     public final static Block grimwood_stairs = new BlockGrimwoodStairs();
     public final static Block grimwood_fence = new BlockGrimwoodFence();
     public final static Block grimwood_fence_gate = new BlockGrimwoodFenceGate();
@@ -31,43 +26,30 @@ public class GrimcraftBlocks {
     public final static Block ghast_pepper_bush = new BlockGhastPepperBush();
     public final static Block nether_lantern = new BlockNetherLantern();
     public final static Block lava_lamp = new BlockLavaLamp();
-    public final static Block gc_farming_base = new BlockGrimcraftFarmingBase();
-    
-    private final static ItemModelMesher renderItem = Minecraft.getMinecraft().getRenderItem().getItemModelMesher();
+    public final static Block glowstone_grower = new BlockGlowstoneGrower();
     
     public static void register() {
-    	System.out.println("in register now");
-    	registerBlock(grimwood_log, "grimwood_log");
-        registerBlock(grimwood_planks, "grimwood_planks");
-        
-        GameRegistry.registerBlock(half_grimwood_slab, ItemBlockGrimwoodSlab.class, "half_grimwood_slab", half_grimwood_slab, double_grimwood_slab, false);
-        GameRegistry.registerBlock(double_grimwood_slab, ItemBlockGrimwoodSlab.class, "double_grimwood_slab", half_grimwood_slab, double_grimwood_slab, true);
-        renderItem.register(Item.getItemFromBlock(half_grimwood_slab), 0, new ModelResourceLocation("grimcraft:half_grimwood_slab", "inventory"));
-        
-        registerBlock(grimwood_stairs, "grimwood_stairs");
-        registerBlock(grimwood_fence, "grimwood_fence");
-        registerBlock(grimwood_fence_gate, "grimwood_fence_gate");
-        registerBlock(fossilstone_ore, "fossilstone_ore");
-        registerBlock(nether_coal_ore, "nether_coal_ore");
-        registerBlock(nether_gold_ore, "nether_gold_ore");
-        registerBlock(nether_redstone_ore, "nether_redstone_ore");
-        registerBlock(peat, "peat");
-        registerBlock(brimstone_ore, "brimstone_ore");
-        registerBlock(brimstone_block, "brimstone_block");
-        registerBlock(soul_sand_glass, "soul_sand_glass");
-        
-        registerBlock(barley_crop, "barley_crop");
-        registerBlock(netherroot_crop, "netherroot_crop");
-        
-        registerBlock(vulpiberry_bush, "vulpiberry_bush");
-        registerBlock(ghast_pepper_bush, "ghast_pepper_bush");
-        registerBlock(nether_lantern, "nether_lantern");
-        registerBlock(lava_lamp, "lava_lamp");
-        registerBlock(gc_farming_base, "gc_farming_base");
-    }
-    
-    private static void registerBlock(Block block, String name) {
-    	GameRegistry.registerBlock(block, name);
-    	renderItem.register(Item.getItemFromBlock(block), 0, new ModelResourceLocation("grimcraft:" + name, "inventory"));
+    	GameRegistry.registerBlock(grimwood_log, "grimwood_log");
+        GameRegistry.registerBlock(grimwood_planks, "grimwood_planks");
+        GameRegistry.registerBlock(single_grimwood_slab, ItemGrimwoodSlab.class, "single_grimwood_slab");
+        GameRegistry.registerBlock(double_grimwood_slab, ItemGrimwoodSlab.class, "double_grimwood_slab");
+        GameRegistry.registerBlock(grimwood_stairs, "grimwood_stairs");
+        GameRegistry.registerBlock(grimwood_fence, "grimwood_fence");
+        GameRegistry.registerBlock(grimwood_fence_gate, "grimwood_fence_gate");
+        GameRegistry.registerBlock(fossilstone_ore, "fossilstone_ore");
+        GameRegistry.registerBlock(nether_coal_ore, "nether_coal_ore");
+        GameRegistry.registerBlock(nether_gold_ore, "nether_gold_ore");
+        GameRegistry.registerBlock(nether_redstone_ore, "nether_redstone_ore");
+        GameRegistry.registerBlock(peat, "peat");
+        GameRegistry.registerBlock(brimstone_ore, "brimstone_ore");
+        GameRegistry.registerBlock(brimstone_block, "brimstone_block");
+        GameRegistry.registerBlock(soul_sand_glass, "soul_sand_glass");
+        GameRegistry.registerBlock(barley_crop, "barley_crop");
+        GameRegistry.registerBlock(netherroot_crop, "netherroot_crop");
+        GameRegistry.registerBlock(vulpiberry_bush, "vulpiberry_bush");
+        GameRegistry.registerBlock(ghast_pepper_bush, "ghast_pepper_bush");
+        GameRegistry.registerBlock(nether_lantern, "nether_lantern");
+        GameRegistry.registerBlock(lava_lamp, "lava_lamp");
+        GameRegistry.registerBlock(glowstone_grower, "glowstone_grower");
     }
 }
