@@ -15,7 +15,7 @@ public class BlockNetherCoalOre extends Block {
         super(Material.rock);
         setHardness(3F);
         setStepSound(Block.soundTypeStone);
-        setBlockName("nether_coal_ore");
+        setRegistryName("nether_coal_ore");
         setCreativeTab(CreativeTabs.tabBlock);
         setHarvestLevel("pickaxe", 1);
     }

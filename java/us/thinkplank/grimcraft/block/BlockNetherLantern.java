@@ -13,7 +13,7 @@ public class BlockNetherLantern extends Block {
         super(Material.glass);
         setHardness(3F);
         setStepSound(Block.soundTypeGlass);
-        setBlockName("nether_lantern");
+        setRegistryName("nether_lantern");
         setCreativeTab(CreativeTabs.tabDecorations);
         setHarvestLevel("pickaxe", 1);
         setLightLevel(15F);

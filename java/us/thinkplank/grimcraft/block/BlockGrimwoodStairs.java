@@ -13,7 +13,7 @@ public class BlockGrimwoodStairs extends BlockStairs {
 		super(GrimcraftBlocks.grimwood_planks, 0);
 		setHardness(2F);
         setStepSound(Block.soundTypeWood);
-        setBlockName("grimwood_stairs");
+        setRegistryName("grimwood_stairs");
         setCreativeTab(CreativeTabs.tabBlock);
         setHarvestLevel("axe", 0);
         setLightOpacity(0);

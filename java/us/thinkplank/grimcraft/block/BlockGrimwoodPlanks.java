@@ -12,7 +12,7 @@ public class BlockGrimwoodPlanks extends Block {
         super(Material.wood);
         setHardness(2F);
         setStepSound(Block.soundTypeWood);
-        setBlockName("grimwood_planks");
+        setRegistryName("grimwood_planks");
         setCreativeTab(CreativeTabs.tabBlock);
         setHarvestLevel("axe", 0);
     }

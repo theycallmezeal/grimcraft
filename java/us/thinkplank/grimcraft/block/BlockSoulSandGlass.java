@@ -18,7 +18,7 @@ public class BlockSoulSandGlass extends BlockGlass {
     	super(Material.glass, true);
         setHardness(3F);
         setStepSound(Block.soundTypeGlass);
-        setBlockName("soul_sand_glass");
+        setRegistryName("soul_sand_glass");
         setCreativeTab(CreativeTabs.tabDecorations);
         setHarvestLevel("pickaxe", 1);
     }

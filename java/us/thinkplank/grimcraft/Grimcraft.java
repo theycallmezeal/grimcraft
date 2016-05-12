@@ -77,10 +77,10 @@ public class Grimcraft {
     	EntityRegistry.registerModEntity(EntityPhoenix.class, "phoenix", EntityRegistry.findGlobalUniqueEntityId(), this, 80, 1, true);
     	RenderingRegistry.registerEntityRenderingHandler(EntityPhoenix.class, new RenderPhoenix(new ModelPhoenix(), 0.5F));
     	
-    	EntityRegistry.addSpawn(EntityCaveSpider.class, 75, 1, 3, EnumCreatureType.monster, BiomeGenBase.hell);
-    	EntityRegistry.addSpawn(EntityEnderman.class, 75, 1, 1, EnumCreatureType.monster, BiomeGenBase.hell);
-    	EntityRegistry.addSpawn(EntityBoar.class, 100, 1, 3, EnumCreatureType.monster, BiomeGenBase.hell);
-    	EntityRegistry.addSpawn(EntityPhoenix.class, 100, 1, 3, EnumCreatureType.monster, BiomeGenBase.hell);
+    	EntityRegistry.addSpawn(EntityCaveSpider.class, 75, 1, 3, EnumCreatureType.MONSTER, BiomeGenBase.hell);
+    	EntityRegistry.addSpawn(EntityEnderman.class, 75, 1, 1, EnumCreatureType.MONSTER, BiomeGenBase.hell);
+    	EntityRegistry.addSpawn(EntityBoar.class, 100, 1, 3, EnumCreatureType.MONSTER, BiomeGenBase.hell);
+    	EntityRegistry.addSpawn(EntityPhoenix.class, 100, 1, 3, EnumCreatureType.MONSTER, BiomeGenBase.hell);
     }
 
     @EventHandler

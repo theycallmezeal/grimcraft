@@ -13,7 +13,7 @@ public class BlockGrimwoodLog extends BlockLog {
         super();
         setHardness(2F);
         setStepSound(Block.soundTypeWood);
-        setBlockName("grimwood_log");
+        setRegistryName("grimwood_log");
         setCreativeTab(CreativeTabs.tabBlock);
         setHarvestLevel("axe", 0);
     }

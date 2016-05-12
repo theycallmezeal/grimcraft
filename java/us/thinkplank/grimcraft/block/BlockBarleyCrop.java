@@ -4,6 +4,7 @@ import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockCrops;
+import net.minecraft.block.SoundType;
 import net.minecraft.item.Item;
 import net.minecraft.world.World;
 import us.thinkplank.grimcraft.item.GrimcraftItems;
@@ -14,8 +15,8 @@ public class BlockBarleyCrop extends BlockCrops {
 	
 	public BlockBarleyCrop() {
 		super();
-		setStepSound(Block.soundTypeGrass);
-		setBlockName("barley_crop");
+		setStepSound(SoundType.PLANT);
+		setRegistryName("barley_crop");
 	}
 	
 	protected boolean canPlaceBlockOn(Block block) {

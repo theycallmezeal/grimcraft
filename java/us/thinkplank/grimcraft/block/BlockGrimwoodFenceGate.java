@@ -9,6 +9,6 @@ public class BlockGrimwoodFenceGate extends BlockFenceGate {
 	public BlockGrimwoodFenceGate() {
 		super();
 		setHardness(2F);
-		setBlockName("grimwood_fence_gate");
+		setRegistryName("grimwood_fence_gate");
 	}
 }

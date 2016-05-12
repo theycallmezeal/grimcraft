@@ -17,7 +17,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class BlockGhastPepperBush extends BlockBush implements IShearable {
 	
 	public BlockGhastPepperBush () {
-        setBlockName("ghast_pepper_bush");
+        setRegistryName("ghast_pepper_bush");
     }
 	
 	@Override

@@ -13,7 +13,7 @@ public class BlockNetherrootCrop extends BlockCrops {
 	public BlockNetherrootCrop() {
 		super();
 		setStepSound(Block.soundTypeGrass);
-		setBlockName("netherroot_crop");
+		setRegistryName("netherroot_crop");
 	}
 	
 	@Override

@@ -16,7 +16,7 @@ public class BlockFossilstoneOre extends Block {
         super(Material.rock);
         setHardness(3F);
         setStepSound(Block.soundTypeStone);
-        setBlockName("fossilstone_ore");
+        setRegistryName("fossilstone_ore");
         setCreativeTab(CreativeTabs.tabBlock);
         setHarvestLevel("pickaxe", 1);
     }

@@ -26,7 +26,7 @@ public class BlockPeat extends BlockFalling {
         super(Material.grass);
         setHardness(3F);
         setStepSound(Block.soundTypeGrass);
-        setBlockName("peat");
+        setRegistryName("peat");
         setCreativeTab(CreativeTabs.tabBlock);
         setHarvestLevel("shovel", 0);
         setTickRandomly(true);

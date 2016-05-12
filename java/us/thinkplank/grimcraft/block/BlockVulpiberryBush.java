@@ -17,7 +17,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class BlockVulpiberryBush extends BlockBush implements IShearable {
 	
 	public BlockVulpiberryBush () {
-        setBlockName("vulpiberry_bush");
+        setRegistryName("vulpiberry_bush");
     }
 	
 	@Override

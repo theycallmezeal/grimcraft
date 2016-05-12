@@ -17,7 +17,7 @@ public class BlockGrimwoodSlab extends BlockSlab {
         super(isDouble, Material.wood);
         setHardness(2F);
         setStepSound(Block.soundTypeWood);
-        setBlockName("grimwood_slab");
+        setRegistryName("grimwood_slab");
         if (!isDouble) {
         	setCreativeTab(CreativeTabs.tabBlock);
         }
