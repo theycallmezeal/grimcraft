@@ -39,18 +39,19 @@ public class GrimcraftItems {
     public final static Item nether_gold_hoe = new GrimcraftTools.Hoe(nether_gold_material, "nether_gold_hoe");
     public final static Item nether_gold_sword = new GrimcraftTools.Sword(nether_gold_material, "nether_gold_sword");
     
-    public final static Item grimwood_stick = new Item().setCreativeTab(CreativeTabs.tabMaterials).setUnlocalizedName("grimwood_stick").setTextureName("grimcraft:grimwood_stick");
-    public final static Item wither_bone = new Item().setCreativeTab(CreativeTabs.tabMaterials).setUnlocalizedName("wither_bone").setTextureName("grimcraft:wither_bone");
+    public final static Item grimwood_stick = new Item().setCreativeTab(CreativeTabs.tabMaterials).setUnlocalizedName("grimwood_stick");
+    public final static Item wither_bone = new Item().setCreativeTab(CreativeTabs.tabMaterials).setUnlocalizedName("wither_bone");
     public final static Item wither_bonemeal = new ItemWitherBonemeal();
-    public final static Item brimstone = new Item().setCreativeTab(CreativeTabs.tabMaterials).setUnlocalizedName("brimstone").setTextureName("grimcraft:brimstone");
-    public final static Item barley = new Item().setCreativeTab(CreativeTabs.tabMaterials).setUnlocalizedName("barley").setTextureName("grimcraft:barley");
+    public final static Item brimstone = new Item().setCreativeTab(CreativeTabs.tabMaterials).setUnlocalizedName("brimstone");
+    public final static Item barley = new Item().setCreativeTab(CreativeTabs.tabMaterials).setUnlocalizedName("barley");
     public final static Item barley_seeds = new ItemBarleySeeds();
-    public final static Item vulpiberry = new ItemFood(1, 0.1F, false).setCreativeTab(CreativeTabs.tabFood).setUnlocalizedName("vulpiberry").setTextureName("grimcraft:vulpiberry");;
+    public final static Item vulpiberry = new ItemFood(1, 0.1F, false).setCreativeTab(CreativeTabs.tabFood).setUnlocalizedName("vulpiberry");
     public final static Item ghast_pepper = new ItemGhastPepper();
     public final static Item netherroot = new ItemNetherroot();
     public final static Item phoenix_egg = new ItemPhoenixEgg();
     public final static Item netherroot_soup = new ItemNetherRootSoup();
     
+    //TODO deprecated
     public static void register() {
     	GameRegistry.registerItem(grimwood_shovel, "grimwood_shovel");
         GameRegistry.registerItem(grimwood_pickaxe, "grimwood_pickaxe");

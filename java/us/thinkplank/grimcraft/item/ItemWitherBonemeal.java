@@ -16,7 +16,6 @@ public class ItemWitherBonemeal extends Item {
         setMaxStackSize(64);
         setCreativeTab(CreativeTabs.tabMaterials);
         setUnlocalizedName("wither_bonemeal");
-        setTextureName("grimcraft:wither_bonemeal");
     }
     
     // px, py, pz are the coords on the block face that were clicked

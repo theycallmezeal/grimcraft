@@ -9,6 +9,5 @@ public class ItemNetherRootSoup extends ItemSoup {
         setMaxStackSize(64);
         setCreativeTab(CreativeTabs.tabFood);
         setUnlocalizedName("netherroot_soup");
-        setTextureName("grimcraft:netherroot_soup");
     }
 }

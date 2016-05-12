@@ -15,7 +15,6 @@ public class GrimcraftTools {
 	        setMaxStackSize(1);
 	        setCreativeTab(CreativeTabs.tabTools);
 	        setUnlocalizedName(name);
-	        setTextureName("grimcraft:" + name);
 	    }
 	}
 	
@@ -25,7 +24,6 @@ public class GrimcraftTools {
 			setMaxStackSize(1);
 	        setCreativeTab(CreativeTabs.tabTools);
 	        setUnlocalizedName(name);
-	        setTextureName("grimcraft:" + name);
 		}
 	}
 	
@@ -35,7 +33,6 @@ public class GrimcraftTools {
 	        setMaxStackSize(1);
 	        setCreativeTab(CreativeTabs.tabTools);
 	        setUnlocalizedName(name);
-	        setTextureName("grimcraft:" + name);
 	    }
 	}
 	
@@ -45,7 +42,6 @@ public class GrimcraftTools {
 	        setMaxStackSize(1);
 	        setCreativeTab(CreativeTabs.tabTools);
 	        setUnlocalizedName(name);
-	        setTextureName("grimcraft:" + name);
 	    }
 	}
 	
@@ -55,7 +51,6 @@ public class GrimcraftTools {
 	        setMaxStackSize(1);
 	        setCreativeTab(CreativeTabs.tabTools);
 	        setUnlocalizedName(name);
-	        setTextureName("grimcraft:" + name);
 	    }
 	}
 }

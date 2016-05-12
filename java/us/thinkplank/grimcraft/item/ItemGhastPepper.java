@@ -15,7 +15,6 @@ public class ItemGhastPepper extends ItemFood {
         setMaxStackSize(64);
         setCreativeTab(CreativeTabs.tabMaterials);
         setUnlocalizedName("ghast_pepper");
-        setTextureName("grimcraft:ghast_pepper");
     }
     
     @Override
