@@ -28,10 +28,4 @@ public class BlockBrimstoneOre extends Block {
     public int quantityDropped(Random random) {
         return random.nextInt(5) + 4;
     }
-
-    @Override
-    @SideOnly(Side.CLIENT)
-    public void registerBlockIcons(IIconRegister iconRegister) {
-        this.blockIcon = iconRegister.registerIcon("grimcraft:brimstone_ore");
-    }
 }

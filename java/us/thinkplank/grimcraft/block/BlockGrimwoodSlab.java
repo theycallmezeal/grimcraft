@@ -24,12 +24,6 @@ public class BlockGrimwoodSlab extends BlockSlab {
         setHarvestLevel("axe", 0);
         setLightOpacity(0);
     }
-
-    @Override
-    @SideOnly(Side.CLIENT)
-    public void registerBlockIcons(IIconRegister iconRegister) {
-        this.blockIcon = iconRegister.registerIcon("grimcraft:grimwood_planks");
-    }
     
     @Override
     public String func_150002_b(int p_150002_1_) {

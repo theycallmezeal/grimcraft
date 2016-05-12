@@ -21,14 +21,9 @@ public class BlockLavaLamp extends BlockGlowstone {
         setCreativeTab(CreativeTabs.tabDecorations);
         setHarvestLevel("pickaxe", 1);
     }
-
+    
+    //TODO findItem()
     public Item getItemDropped(int p_149650_1_, Random p_149650_2_, int p_149650_3_) {
         return GameRegistry.findItem("minecraft", "lava_bucket");
-    }
-
-    @Override
-    @SideOnly(Side.CLIENT)
-    public void registerBlockIcons(IIconRegister iconRegister) {
-        this.blockIcon = iconRegister.registerIcon("grimcraft:lantern");
     }
 }

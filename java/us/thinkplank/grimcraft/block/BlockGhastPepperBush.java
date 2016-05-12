@@ -5,9 +5,7 @@ import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
-import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.EnumPlantType;
@@ -17,7 +15,6 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockGhastPepperBush extends BlockBush implements IShearable {
-	private IIcon[] icons;
 	
 	public BlockGhastPepperBush () {
         setBlockName("ghast_pepper_bush");
@@ -71,20 +68,5 @@ public class BlockGhastPepperBush extends BlockBush implements IShearable {
 		}
 		
 		return ret;
-	}
-	
-	@Override
-    @SideOnly(Side.CLIENT)
-    public void registerBlockIcons(IIconRegister iconRegister) {
-		this.icons = new IIcon[2];
-		
-        this.icons[0] = iconRegister.registerIcon("grimcraft:ghast_pepper_bush_stage_0");
-        this.icons[1] = iconRegister.registerIcon("grimcraft:ghast_pepper_bush_stage_1");
-    }
-	
-	@Override
-	@SideOnly(Side.CLIENT)
-	public IIcon getIcon(int side, int meta) {
-		return icons[meta];
 	}
 }

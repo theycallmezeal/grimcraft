@@ -18,20 +18,4 @@ public class BlockNetherLantern extends Block {
         setHarvestLevel("pickaxe", 1);
         setLightLevel(15F);
     }
-
-    @Override
-    @SideOnly(Side.CLIENT)
-    public void registerBlockIcons(IIconRegister iconRegister) {
-        this.blockIcon = iconRegister.registerIcon("grimcraft:nether_lantern");
-    }
-    
-    @Override
-    public boolean renderAsNormalBlock() {
-    	return false;
-    }
-    
-    @Override
-    public boolean isOpaqueCube() {
-    	return false;
-    }
 }

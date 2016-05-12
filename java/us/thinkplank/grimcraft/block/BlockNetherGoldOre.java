@@ -16,10 +16,4 @@ public class BlockNetherGoldOre extends Block {
         setCreativeTab(CreativeTabs.tabBlock);
         setHarvestLevel("pickaxe", 1);
     }
-
-    @Override
-    @SideOnly(Side.CLIENT)
-    public void registerBlockIcons(IIconRegister iconRegister) {
-        this.blockIcon = iconRegister.registerIcon("grimcraft:nether_gold_ore");
-    }
 }

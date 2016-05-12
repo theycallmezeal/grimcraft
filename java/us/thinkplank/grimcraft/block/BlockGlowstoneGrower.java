@@ -4,21 +4,13 @@ import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
-import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockGlowstoneGrower extends Block {
-	@SideOnly(Side.CLIENT)
-	private IIcon side;
-	@SideOnly(Side.CLIENT)
-	private IIcon top;
-	@SideOnly(Side.CLIENT)
-	private IIcon bottom;
 	
 	public BlockGlowstoneGrower () {
         super(Material.ground);
@@ -30,28 +22,6 @@ public class BlockGlowstoneGrower extends Block {
         setTickRandomly(true);
         setLightLevel(1.0F);
     }
-	
-	@Override
-    @SideOnly(Side.CLIENT)
-    public void registerBlockIcons(IIconRegister iconRegister) {
-        this.blockIcon = iconRegister.registerIcon("grimcraft:glowstone_grower_side");
-        side = iconRegister.registerIcon("grimcraft:glowstone_grower_side");
-        bottom = iconRegister.registerIcon("grimcraft:glowstone_grower_bottom");
-        top = iconRegister.registerIcon("grimcraft:glowstone_grower_top");
-    }
-	
-	@Override
-	@SideOnly(Side.CLIENT)
-	public IIcon getIcon(int face, int meta) {
-		switch (face) {
-		case 0:
-			return bottom;
-		case 1:
-			return top;
-		default:
-			return side;
-		}
-	}
 	
 	@Override
 	public void updateTick(World world, int x, int y, int z, Random random) {

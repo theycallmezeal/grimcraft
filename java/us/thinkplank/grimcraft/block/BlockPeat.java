@@ -44,12 +44,6 @@ public class BlockPeat extends BlockFalling {
         p_149670_5_.motionX *= 0.4D;
         p_149670_5_.motionZ *= 0.4D;
     }
-
-    @Override
-    @SideOnly(Side.CLIENT)
-    public void registerBlockIcons(IIconRegister iconRegister) {
-        this.blockIcon = iconRegister.registerIcon("grimcraft:peat");
-    }
     
     @Override
     public void updateTick(World world, int x, int y, int z, Random random) {

@@ -20,18 +20,13 @@ public class BlockFossilstoneOre extends Block {
         setCreativeTab(CreativeTabs.tabBlock);
         setHarvestLevel("pickaxe", 1);
     }
-
+    
+    //TODO fix this GameRegistry.findItem() call
     public Item getItemDropped(int p_149650_1_, Random p_149650_2_, int p_149650_3_) {
         return GameRegistry.findItem("minecraft", "bone");
     }
 
     public int quantityDropped(Random random) {
         return random.nextInt(2) + 4;
-    }
-
-    @Override
-    @SideOnly(Side.CLIENT)
-    public void registerBlockIcons(IIconRegister iconRegister) {
-        this.blockIcon = iconRegister.registerIcon("grimcraft:fossilstone_ore");
     }
 }

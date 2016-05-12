@@ -16,10 +16,4 @@ public class BlockGrimwoodPlanks extends Block {
         setCreativeTab(CreativeTabs.tabBlock);
         setHarvestLevel("axe", 0);
     }
-
-    @Override
-    @SideOnly(Side.CLIENT)
-    public void registerBlockIcons(IIconRegister iconRegister) {
-        this.blockIcon = iconRegister.registerIcon("grimcraft:grimwood_planks");
-    }
 }

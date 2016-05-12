@@ -16,10 +16,4 @@ public class BlockBrimstone extends Block {
         setCreativeTab(CreativeTabs.tabBlock);
         setHarvestLevel("pickaxe", 1);
     }
-
-    @Override
-    @SideOnly(Side.CLIENT)
-    public void registerBlockIcons(IIconRegister iconRegister) {
-        this.blockIcon = iconRegister.registerIcon("grimcraft:brimstone_block");
-    }
 }
