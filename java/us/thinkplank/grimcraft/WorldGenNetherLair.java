@@ -8,7 +8,7 @@ package us.thinkplank.grimcraft;
 import java.util.Random;
 
 import us.thinkplank.grimcraft.item.GrimcraftItems;
-import cpw.mods.fml.common.IWorldGenerator;
+import net.minecraftforge.fml.common.IWorldGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;

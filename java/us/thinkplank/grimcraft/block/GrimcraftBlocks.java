@@ -2,7 +2,7 @@ package us.thinkplank.grimcraft.block;
 
 import net.minecraft.block.Block;
 import us.thinkplank.grimcraft.item.ItemGrimwoodSlab;
-import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class GrimcraftBlocks {
 	public final static Block grimwood_log = new BlockGrimwoodLog();

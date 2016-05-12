@@ -4,8 +4,8 @@ import java.util.Random;
 
 import net.minecraft.block.BlockGlass;
 import net.minecraft.block.material.Material;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 /* we decided against this block! */
 import net.minecraft.block.Block;
 
