@@ -1,5 +1,7 @@
 package us.thinkplank.grimcraft;
 
+import java.util.List;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFurnace;
 import net.minecraft.block.material.Material;
@@ -10,13 +12,18 @@ import net.minecraft.entity.monster.EntityGhast;
 import net.minecraft.entity.monster.EntityMagmaCube;
 import net.minecraft.entity.monster.EntityPigZombie;
 import net.minecraft.entity.monster.EntitySkeleton;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.tileentity.TileEntityFurnace;
+import net.minecraft.util.SoundCategory;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.EnumDifficulty;
+import net.minecraft.world.World;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.player.BonemealEvent;
@@ -30,48 +37,54 @@ public class GrimcraftEventHandler {
 	
 	@SubscribeEvent
 	public void onUseHoe(UseHoeEvent event) {
-		Block targetBlock = event.world.getBlock(event.x, event.y, event.z);
+		World world = event.getWorld();
+		BlockPos pos = event.getPos();
+		EntityPlayer player = event.getEntityPlayer();
+		
+		Block targetBlock = world.getBlockState(pos).getBlock();
 		
 		if (targetBlock.equals(Blocks.soul_sand)) {
-			event.world.playSoundEffect((double)((float)event.x + 0.5F), (double)((float)event.y + 0.5F), (double)((float)event.z + 0.5F), targetBlock.stepSound.getStepResourcePath(), (targetBlock.stepSound.getVolume() + 1.0F) / 2.0F, targetBlock.stepSound.getPitch() * 0.8F);
+			world.playSound(player, pos, SoundEvents.item_hoe_till, SoundCategory.BLOCKS, 1.0F, 1.0F);
 			
-			if (event.world.isRemote) {
+			if (world.isRemote) {
 				return;
 			}
 			
-			event.world.setBlock(event.x, event.y, event.z, GrimcraftBlocks.peat);
-            event.current.damageItem(1, event.entityPlayer);
+			world.setBlockState(event.getPos(), GrimcraftBlocks.peat.getDefaultState());
+            event.getCurrent().damageItem(1, player);
 		}
 	}
 	
 	@SubscribeEvent
 	public void onMobDeath(LivingDropsEvent event) {
-		Entity entity = event.entity;
+		Entity entity = event.getEntity();
+		
+		List<EntityItem> drops = event.getDrops();
 		
 	    if (entity instanceof EntitySkeleton && ((EntitySkeleton) entity).getSkeletonType() == 1) { // if entity is wither skeleton
-	        for (int i = 0; i < event.drops.size(); i++) {
-	        	if (event.drops.get(i).getEntityItem().getItem().equals(Items.bone)) {
-	        		event.drops.get(i).setEntityItemStack(new ItemStack(GrimcraftItems.wither_bone));
+	        for (int i = 0; i < drops.size(); i++) {
+	        	if (drops.get(i).getEntityItem().getItem().equals(Items.bone)) {
+	        		drops.get(i).setEntityItemStack(new ItemStack(GrimcraftItems.wither_bone));
 	        	}
 	        }
 	        
 	        int random = (int) (Math.random() * 3) + 3; // 3 to 5
 	        for (int i = 0; i < random; i++) {
-	        	event.drops.add(new EntityItem(entity.worldObj, entity.posX, entity.posY, entity.posZ, new ItemStack(GrimcraftItems.brimstone)));
+	        	drops.add(new EntityItem(entity.worldObj, entity.posX, entity.posY, entity.posZ, new ItemStack(GrimcraftItems.brimstone)));
 	        }
 	    }
 	    
 	    if (entity instanceof EntityGhast || entity instanceof EntityBlaze || entity instanceof EntityMagmaCube || entity instanceof EntityPigZombie) {
 	    	int random = (int) (Math.random() * 3) + 3; // 3 to 5
 	        for (int i = 0; i < random; i++) {
-	        	event.drops.add(new EntityItem(entity.worldObj, entity.posX, entity.posY, entity.posZ, new ItemStack(GrimcraftItems.brimstone)));
+	        	drops.add(new EntityItem(entity.worldObj, entity.posX, entity.posY, entity.posZ, new ItemStack(GrimcraftItems.brimstone)));
 	        }
 	    }
 	} 
 	
 	@SubscribeEvent
 	public void onUseBonemeal(BonemealEvent event) {
-		Block targetBlock = event.block;
+		Block targetBlock = event.getWorld().getBlockState(event.getPos()).getBlock();
 		
 		if (targetBlock.equals(GrimcraftBlocks.barley_crop) || targetBlock.equals(GrimcraftBlocks.netherroot_crop)) {
 			event.setCanceled(true);
@@ -80,29 +93,34 @@ public class GrimcraftEventHandler {
 	
 	@SubscribeEvent
 	public void onPlayerInteract(PlayerInteractEvent event) {
-		Block targetBlock = event.world.getBlock(event.x, event.y, event.z);
-		ItemStack heldItemStack = event.entityPlayer.inventory.getCurrentItem();
+		World world = event.getWorld();
+		BlockPos pos = event.getPos();
+		EntityPlayer player = event.getEntityPlayer();
 		
+		Block targetBlock = world.getBlockState(pos).getBlock();
+		ItemStack heldItemStack = player.inventory.getCurrentItem();
+		
+		//TODO figure out blockstate replacements for metadata
 		// handles strawberry harvesting
 		if (targetBlock.equals(GrimcraftBlocks.vulpiberry_bush) && event.action == event.action.LEFT_CLICK_BLOCK) {
-			if (event.world.getBlockMetadata(event.x, event.y, event.z) == 1) {
+			if (world.getBlockMetadata(pos) == 1) {
 				event.setCanceled(true);
-				event.world.spawnEntityInWorld(new EntityItem(event.world, (double)event.x, (double)event.y, (double)event.z, new ItemStack(GrimcraftItems.vulpiberry, 3)));
-				event.world.setBlockMetadataWithNotify(event.x, event.y, event.z, 0, 2);
+				world.spawnEntityInWorld(new EntityItem(world, (double) pos.getX(), (double) pos.getY(), (double) pos.getZ(), new ItemStack(GrimcraftItems.vulpiberry, 3)));
+				world.setBlockMetadataWithNotify(pos, 0, 2);
 			}
 		}
 		
 		// handles ghast pepper harvesting
 		if (targetBlock.equals(GrimcraftBlocks.ghast_pepper_bush) && event.action == event.action.LEFT_CLICK_BLOCK) {
-			if (event.world.getBlockMetadata(event.x, event.y, event.z) == 1) {
+			if (world.getBlockMetadata(pos) == 1) {
 				event.setCanceled(true);
-				event.world.spawnEntityInWorld(new EntityItem(event.world, (double)event.x, (double)event.y, (double)event.z, new ItemStack(GrimcraftItems.ghast_pepper, 3)));
-				event.world.setBlockMetadataWithNotify(event.x, event.y, event.z, 0, 2);
+				world.spawnEntityInWorld(new EntityItem(world, (double) pos.getX(), (double) pos.getY(), (double) pos.getZ(), new ItemStack(GrimcraftItems.ghast_pepper, 3)));
+				world.setBlockMetadataWithNotify(pos, 0, 2);
 			}
 		}
 		
 		// handles poisoning with sulfur in furnaces
-		EnumDifficulty difficulty = event.world.difficultySetting;
+		EnumDifficulty difficulty = world.getDifficulty();
 		double chance = 0;
 		if (difficulty == EnumDifficulty.NORMAL) {
 			chance = 0.2;
@@ -111,7 +129,7 @@ public class GrimcraftEventHandler {
 		}
 		
 		if (targetBlock instanceof BlockFurnace && event.action == event.action.RIGHT_CLICK_BLOCK) {
-			TileEntityFurnace furnace = (TileEntityFurnace) event.world.getTileEntity(event.x, event.y, event.z);
+			TileEntityFurnace furnace = (TileEntityFurnace) world.getTileEntity(pos);
 			ItemStack furnaceFuel = furnace.getStackInSlot(1);
 			if (furnaceFuel != null && furnaceFuel.getItem() == GrimcraftItems.brimstone) {
 				int poisonStrength = 0;
