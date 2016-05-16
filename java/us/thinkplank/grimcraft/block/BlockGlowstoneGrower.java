@@ -3,19 +3,18 @@ package us.thinkplank.grimcraft.block;
 import java.util.Random;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockGlowstoneGrower extends Block {
 	
 	public BlockGlowstoneGrower () {
         super(Material.ground);
         setHardness(2F);
-        setStepSound(Block.soundTypeStone);
+        setStepSound(SoundType.STONE);
         setRegistryName("glowstone_grower");
         setCreativeTab(CreativeTabs.tabBlock);
         setHarvestLevel("pickaxe", 0);

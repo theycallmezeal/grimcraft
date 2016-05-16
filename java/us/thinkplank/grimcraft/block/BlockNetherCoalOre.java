@@ -3,6 +3,7 @@ package us.thinkplank.grimcraft.block;
 import java.util.Random;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
@@ -14,7 +15,7 @@ public class BlockNetherCoalOre extends Block {
     public BlockNetherCoalOre () {
         super(Material.rock);
         setHardness(3F);
-        setStepSound(Block.soundTypeStone);
+        setStepSound(SoundType.STONE);
         setRegistryName("nether_coal_ore");
         setCreativeTab(CreativeTabs.tabBlock);
         setHarvestLevel("pickaxe", 1);

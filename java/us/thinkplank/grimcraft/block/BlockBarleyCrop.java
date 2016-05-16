@@ -8,8 +8,6 @@ import net.minecraft.block.SoundType;
 import net.minecraft.item.Item;
 import net.minecraft.world.World;
 import us.thinkplank.grimcraft.item.GrimcraftItems;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockBarleyCrop extends BlockCrops {
 	

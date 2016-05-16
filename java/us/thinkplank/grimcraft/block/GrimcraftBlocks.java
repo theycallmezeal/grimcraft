@@ -19,7 +19,6 @@ public class GrimcraftBlocks {
     public final static Block peat = new BlockPeat();
     public final static Block brimstone_ore = new BlockBrimstoneOre();
     public final static Block brimstone_block = new BlockBrimstone();
-    public final static Block soul_sand_glass = new BlockSoulSandGlass();
     public final static Block barley_crop = new BlockBarleyCrop();
     public final static Block netherroot_crop = new BlockNetherrootCrop();
     public final static Block vulpiberry_bush = new BlockVulpiberryBush();
@@ -43,7 +42,6 @@ public class GrimcraftBlocks {
         GameRegistry.registerBlock(peat, "peat");
         GameRegistry.registerBlock(brimstone_ore, "brimstone_ore");
         GameRegistry.registerBlock(brimstone_block, "brimstone_block");
-        GameRegistry.registerBlock(soul_sand_glass, "soul_sand_glass");
         GameRegistry.registerBlock(barley_crop, "barley_crop");
         GameRegistry.registerBlock(netherroot_crop, "netherroot_crop");
         GameRegistry.registerBlock(vulpiberry_bush, "vulpiberry_bush");

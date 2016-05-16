@@ -11,12 +11,10 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.EnumPlantType;
 import net.minecraftforge.common.IShearable;
 import us.thinkplank.grimcraft.item.GrimcraftItems;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockGhastPepperBush extends BlockBush implements IShearable {
 	
-	public BlockGhastPepperBush () {
+	public BlockGhastPepperBush() {
         setRegistryName("ghast_pepper_bush");
     }
 	

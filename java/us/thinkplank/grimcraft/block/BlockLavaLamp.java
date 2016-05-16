@@ -2,21 +2,18 @@ package us.thinkplank.grimcraft.block;
 
 import java.util.Random;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockGlowstone;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockLavaLamp extends BlockGlowstone {
     public BlockLavaLamp () {
         super(Material.glass);
         setHardness(3F);
-        setStepSound(Block.soundTypeGlass);
+        setStepSound(SoundType.GLASS);
         setRegistryName("lava_lamp");
         setCreativeTab(CreativeTabs.tabDecorations);
         setHarvestLevel("pickaxe", 1);
