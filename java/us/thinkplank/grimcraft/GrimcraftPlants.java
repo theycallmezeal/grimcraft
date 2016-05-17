@@ -1,38 +1,47 @@
 package us.thinkplank.grimcraft;
 
+import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import us.thinkplank.grimcraft.block.GrimcraftBlocks;
 
 //helper class for some plants methods
 public class GrimcraftPlants {
-    public static void attemptTree(World world, int x, int y, int z) {
-    	if (isSurroundedByLava(world, x, y - 1, z)) {
-    		growTree(world, x, y, z);
+    public static void attemptTree(World world, BlockPos pos) {
+    	if (isSurroundedByLava(world, pos.down())) {
+    		growTree(world, pos);
     	}
     }
     
-    public static boolean isSurroundedByLava(World world, int x, int y, int z) {
+    private static boolean isSurroundedByLava(World world, BlockPos pos) {
     	int lava = 0;
-    	for (int i = x - 1; i <= x + 1; i++) {
-    		for (int j = z - 1; j <= z + 1; j++) {
-    			if (world.getBlock(i, y, j).equals(Blocks.lava)) {
-    				lava++;
-    			}
-    		}
-    	}
-    	
-    	if (lava == 8) {
+    	if (isLava(world, pos.north()) &&
+    		isLava(world, pos.north().east()) &&
+    		isLava(world, pos.east()) &&
+    		isLava(world, pos.south().east()) &&
+    		isLava(world, pos.south()) &&
+    		isLava(world, pos.south().west()) &&
+    		isLava(world, pos.west()) &&
+    		isLava(world, pos.north().west()) ) {
     		return true;
     	}
     	return false;
     }
     
-    private static void growTree(World world, int x, int y, int z) {
+    private static boolean isLava(World world, BlockPos pos) {
+    	if (world.getBlockState(pos).getBlock().equals(Blocks.lava)) {
+    		return true;
+    	}
+    	return false;
+    }
+    
+    private static void growTree(World world, BlockPos pos) {
     	int random = (int)(Math.random() * 4) + 3; // 3, 4, 5, or 6... if I did the math right.
     	for (int i = 0; i < random; i++) {
-    		if (world.getBlock(x, y + i, z).equals(Blocks.air) || world.getBlock(x, y + i, z).equals(Blocks.nether_wart)) {
-        		world.setBlock(x, y + i, z, GrimcraftBlocks.grimwood_log);
+    		Block block = world.getBlockState(pos.up(i)).getBlock();
+    		if (block.equals(Blocks.air) || block.equals(Blocks.nether_wart)) {
+        		world.setBlockState(pos.up(i), GrimcraftBlocks.grimwood_log.getDefaultState());
         	} else {
         		return;
         	}
