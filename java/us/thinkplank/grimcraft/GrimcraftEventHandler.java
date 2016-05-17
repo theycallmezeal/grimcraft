@@ -15,9 +15,9 @@ import net.minecraft.entity.monster.EntitySkeleton;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.init.MobEffects;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
-import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.tileentity.TileEntityFurnace;
 import net.minecraft.util.SoundCategory;
@@ -27,11 +27,12 @@ import net.minecraft.world.World;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.player.BonemealEvent;
-import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent.LeftClickBlock;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent.RightClickBlock;
 import net.minecraftforge.event.entity.player.UseHoeEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import us.thinkplank.grimcraft.block.GrimcraftBlocks;
 import us.thinkplank.grimcraft.item.GrimcraftItems;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class GrimcraftEventHandler {
 	
@@ -92,32 +93,11 @@ public class GrimcraftEventHandler {
 	}
 	
 	@SubscribeEvent
-	public void onPlayerInteract(PlayerInteractEvent event) {
+	public void onPlayerRightClick(RightClickBlock event) {
 		World world = event.getWorld();
 		BlockPos pos = event.getPos();
+		Block targetBlock = world.getBlockState(event.getPos()).getBlock();
 		EntityPlayer player = event.getEntityPlayer();
-		
-		Block targetBlock = world.getBlockState(pos).getBlock();
-		ItemStack heldItemStack = player.inventory.getCurrentItem();
-		
-		//TODO figure out blockstate replacements for metadata
-		// handles strawberry harvesting
-		if (targetBlock.equals(GrimcraftBlocks.vulpiberry_bush) && event.action == event.action.LEFT_CLICK_BLOCK) {
-			if (world.getBlockMetadata(pos) == 1) {
-				event.setCanceled(true);
-				world.spawnEntityInWorld(new EntityItem(world, (double) pos.getX(), (double) pos.getY(), (double) pos.getZ(), new ItemStack(GrimcraftItems.vulpiberry, 3)));
-				world.setBlockMetadataWithNotify(pos, 0, 2);
-			}
-		}
-		
-		// handles ghast pepper harvesting
-		if (targetBlock.equals(GrimcraftBlocks.ghast_pepper_bush) && event.action == event.action.LEFT_CLICK_BLOCK) {
-			if (world.getBlockMetadata(pos) == 1) {
-				event.setCanceled(true);
-				world.spawnEntityInWorld(new EntityItem(world, (double) pos.getX(), (double) pos.getY(), (double) pos.getZ(), new ItemStack(GrimcraftItems.ghast_pepper, 3)));
-				world.setBlockMetadataWithNotify(pos, 0, 2);
-			}
-		}
 		
 		// handles poisoning with sulfur in furnaces
 		EnumDifficulty difficulty = world.getDifficulty();
@@ -128,7 +108,7 @@ public class GrimcraftEventHandler {
 			chance = 0.4;
 		}
 		
-		if (targetBlock instanceof BlockFurnace && event.action == event.action.RIGHT_CLICK_BLOCK) {
+		if (targetBlock instanceof BlockFurnace) {
 			TileEntityFurnace furnace = (TileEntityFurnace) world.getTileEntity(pos);
 			ItemStack furnaceFuel = furnace.getStackInSlot(1);
 			if (furnaceFuel != null && furnaceFuel.getItem() == GrimcraftItems.brimstone) {
@@ -140,8 +120,37 @@ public class GrimcraftEventHandler {
 				}
 				
 				if (poisonStrength > 0) {
-					event.entityPlayer.addPotionEffect(new PotionEffect(Potion.poison.id, poisonStrength * 20, 0));
+					player.addPotionEffect(new PotionEffect(MobEffects.poison, poisonStrength * 20, 0));
 				}
+			}
+		}
+	}
+	
+	@SubscribeEvent
+	public void onPlayerLeftClick(LeftClickBlock event) {
+		World world = event.getWorld();
+		BlockPos pos = event.getPos();
+		EntityPlayer player = event.getEntityPlayer();
+		
+		Block targetBlock = world.getBlockState(pos).getBlock();
+		ItemStack heldItemStack = player.inventory.getCurrentItem();
+		
+		//TODO figure out blockstate replacements for metadata
+		// handles strawberry harvesting
+		if (targetBlock.equals(GrimcraftBlocks.vulpiberry_bush)) {
+			if (world.getBlockMetadata(pos) == 1) {
+				event.setCanceled(true);
+				world.spawnEntityInWorld(new EntityItem(world, (double) pos.getX(), (double) pos.getY(), (double) pos.getZ(), new ItemStack(GrimcraftItems.vulpiberry, 3)));
+				world.setBlockMetadataWithNotify(pos, 0, 2);
+			}
+		}
+		
+		// handles ghast pepper harvesting
+		if (targetBlock.equals(GrimcraftBlocks.ghast_pepper_bush)) {
+			if (world.getBlockMetadata(pos) == 1) {
+				event.setCanceled(true);
+				world.spawnEntityInWorld(new EntityItem(world, (double) pos.getX(), (double) pos.getY(), (double) pos.getZ(), new ItemStack(GrimcraftItems.ghast_pepper, 3)));
+				world.setBlockMetadataWithNotify(pos, 0, 2);
 			}
 		}
 	}
@@ -149,6 +158,7 @@ public class GrimcraftEventHandler {
 	/* this makes lava push around mobs */
 	@SubscribeEvent
 	public void onLivingUpdate(LivingEvent.LivingUpdateEvent event) {
-		event.entity.worldObj.handleMaterialAcceleration(event.entity.boundingBox.expand(0.0D, -0.4000000059604645D, 0.0D).contract(0.001D, 0.001D, 0.001D), Material.lava, event.entity);
+		Entity entity = event.getEntity();
+		entity.worldObj.handleMaterialAcceleration(entity.getCollisionBoundingBox(), Material.lava, entity);
 	}
 }
