@@ -12,18 +12,9 @@ package us.thinkplank.grimcraft;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.entity.monster.EntityCaveSpider;
 import net.minecraft.entity.monster.EntityEnderman;
-import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraft.init.Biomes;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
-import net.minecraftforge.oredict.OreDictionary;
-import us.thinkplank.grimcraft.block.GrimcraftBlocks;
-import us.thinkplank.grimcraft.item.GrimcraftItems;
-import us.thinkplank.grimcraft.mobs.EntityBoar;
-import us.thinkplank.grimcraft.mobs.EntityPhoenix;
-import us.thinkplank.grimcraft.mobs.ModelBoar;
-import us.thinkplank.grimcraft.mobs.ModelPhoenix;
-import us.thinkplank.grimcraft.mobs.RenderBoar;
-import us.thinkplank.grimcraft.mobs.RenderPhoenix;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -34,6 +25,10 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.oredict.OreDictionary;
+import us.thinkplank.grimcraft.block.GrimcraftBlocks;
+import us.thinkplank.grimcraft.item.GrimcraftItems;
+import us.thinkplank.grimcraft.mobs.*;
 
 @Mod(modid="grimcraft", name="grimcraft", version="1.0.0")
 public class Grimcraft {
@@ -77,10 +72,10 @@ public class Grimcraft {
     	EntityRegistry.registerModEntity(EntityPhoenix.class, "phoenix", EntityRegistry.findGlobalUniqueEntityId(), this, 80, 1, true);
     	RenderingRegistry.registerEntityRenderingHandler(EntityPhoenix.class, new RenderPhoenix(new ModelPhoenix(), 0.5F));
     	
-    	EntityRegistry.addSpawn(EntityCaveSpider.class, 75, 1, 3, EnumCreatureType.MONSTER, BiomeGenBase.hell);
-    	EntityRegistry.addSpawn(EntityEnderman.class, 75, 1, 1, EnumCreatureType.MONSTER, BiomeGenBase.hell);
-    	EntityRegistry.addSpawn(EntityBoar.class, 100, 1, 3, EnumCreatureType.MONSTER, BiomeGenBase.hell);
-    	EntityRegistry.addSpawn(EntityPhoenix.class, 100, 1, 3, EnumCreatureType.MONSTER, BiomeGenBase.hell);
+    	EntityRegistry.addSpawn(EntityCaveSpider.class, 75, 1, 3, EnumCreatureType.MONSTER, Biomes.hell);
+    	EntityRegistry.addSpawn(EntityEnderman.class, 75, 1, 1, EnumCreatureType.MONSTER, Biomes.hell);
+    	EntityRegistry.addSpawn(EntityBoar.class, 100, 1, 3, EnumCreatureType.MONSTER, Biomes.hell);
+    	EntityRegistry.addSpawn(EntityPhoenix.class, 100, 1, 3, EnumCreatureType.MONSTER, Biomes.hell);
     }
 
     @EventHandler
