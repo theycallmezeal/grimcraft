@@ -7,6 +7,10 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumActionResult;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumHand;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class ItemPhoenixEgg extends Item {
@@ -17,21 +21,22 @@ public class ItemPhoenixEgg extends Item {
         setUnlocalizedName("phoenix_egg");
     }
     
+    //TODO check facing?
     @Override
-    public boolean onItemUse(ItemStack itemStack, EntityPlayer player, World world, int x, int y, int z, int par7, float par8, float par9, float par10) {
+    public EnumActionResult onItemUse(ItemStack itemStack, EntityPlayer player, World world, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
 		if (itemStack == null) {
-			return false;
-		} else if (player.canPlayerEdit(x, y, z, par7, itemStack)) {
-			Block block = world.getBlock(x, y, z);
+			return EnumActionResult.FAIL;
+		} else if (player.canPlayerEdit(pos, facing, itemStack)) {
+			Block block = world.getBlockState(pos).getBlock();
 			
 			if (block.equals(Blocks.gravel) && !world.isRemote){
-				world.setBlock(x, y, z, Blocks.air);
-				world.playAuxSFX(2005, x, y, z, 0);
+				world.setBlockState(pos, Blocks.air.getDefaultState());
+				world.playAuxSFX(2005, pos, 0);
 				EntityPhoenix phoenix = new EntityPhoenix(world);
-				phoenix.setLocationAndAngles((double)x + 0.5D, (double)y, (double)z + 0.5D, 0.0F, 0.0F);
+				phoenix.setLocationAndAngles((double)pos.getX() + 0.5D, (double)pos.getY(), (double)pos.getZ() + 0.5D, 0.0F, 0.0F);
 				world.spawnEntityInWorld(phoenix);
 			}
 		}
-    	return true;
+    	return EnumActionResult.SUCCESS;
     }
 }

@@ -19,7 +19,7 @@ public class ItemGhastPepper extends ItemFood {
     
     @Override
     public void onFoodEaten(ItemStack itemStack, World world, EntityPlayer player) {
-    	EnumDifficulty difficulty = world.difficultySetting;
+    	EnumDifficulty difficulty = world.getDifficulty();
 		double chance = 0;
 		if (difficulty == EnumDifficulty.NORMAL) {
 			chance = 0.05;

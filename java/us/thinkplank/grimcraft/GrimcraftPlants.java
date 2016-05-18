@@ -14,7 +14,7 @@ public class GrimcraftPlants {
     	}
     }
     
-    private static boolean isSurroundedByLava(World world, BlockPos pos) {
+    public static boolean isSurroundedByLava(World world, BlockPos pos) {
     	int lava = 0;
     	if (isLava(world, pos.north()) &&
     		isLava(world, pos.north().east()) &&

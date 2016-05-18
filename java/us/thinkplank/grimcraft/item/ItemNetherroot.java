@@ -4,6 +4,10 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemSeedFood;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumActionResult;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumHand;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import us.thinkplank.grimcraft.block.GrimcraftBlocks;
 import net.minecraftforge.fml.relauncher.Side;
@@ -17,16 +21,18 @@ public class ItemNetherroot extends ItemSeedFood {
         setUnlocalizedName("netherroot");
     }
     
-    public boolean onItemUse(ItemStack itemStack, EntityPlayer player, World world, int x, int y, int z, int par7, float par8, float par9, float par10) {
+    //TODO do I need to check the face that you click?
+    @Override
+    public EnumActionResult onItemUse(ItemStack itemStack, EntityPlayer player, World world, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
     	if (itemStack == null) {
-    		return false;
-    	} else if (player.canPlayerEdit(x, y, z, par7, itemStack)) {
-    		if (world.getBlock(x, y, z) == GrimcraftBlocks.peat) {
-    			world.setBlock(x, y + 1, z, GrimcraftBlocks.netherroot_crop);
+    		return EnumActionResult.FAIL;
+    	} else if (player.canPlayerEdit(pos, facing, itemStack)) {
+    		if (world.getBlockState(pos).getBlock().equals(GrimcraftBlocks.peat)) {
+    			world.setBlockState(pos.up(), GrimcraftBlocks.netherroot_crop.getDefaultState());
 				itemStack.stackSize--;
-				return true;
+				return EnumActionResult.SUCCESS;
     		}
     	}
-    	return false;
+    	return EnumActionResult.FAIL;
     }
 }
