@@ -39,54 +39,53 @@ public class GrimcraftItems {
     public final static Item nether_gold_hoe = new GrimcraftTools.Hoe(nether_gold_material, "nether_gold_hoe");
     public final static Item nether_gold_sword = new GrimcraftTools.Sword(nether_gold_material, "nether_gold_sword");
     
-    public final static Item grimwood_stick = new Item().setCreativeTab(CreativeTabs.tabMaterials).setUnlocalizedName("grimwood_stick");
-    public final static Item wither_bone = new Item().setCreativeTab(CreativeTabs.tabMaterials).setUnlocalizedName("wither_bone");
+    public final static Item grimwood_stick = new Item().setCreativeTab(CreativeTabs.tabMaterials).setRegistryName("grimwood_stick").setUnlocalizedName("grimwood_stick");
+    public final static Item wither_bone = new Item().setCreativeTab(CreativeTabs.tabMaterials).setRegistryName("wither_bone").setUnlocalizedName("wither_bone");
     public final static Item wither_bonemeal = new ItemWitherBonemeal();
-    public final static Item brimstone = new Item().setCreativeTab(CreativeTabs.tabMaterials).setUnlocalizedName("brimstone");
-    public final static Item barley = new Item().setCreativeTab(CreativeTabs.tabMaterials).setUnlocalizedName("barley");
+    public final static Item brimstone = new Item().setCreativeTab(CreativeTabs.tabMaterials).setRegistryName("brimstone").setUnlocalizedName("brimstone");
+    public final static Item barley = new Item().setCreativeTab(CreativeTabs.tabMaterials).setRegistryName("barley").setUnlocalizedName("barley");
     public final static Item barley_seeds = new ItemBarleySeeds();
-    public final static Item vulpiberry = new ItemFood(1, 0.1F, false).setCreativeTab(CreativeTabs.tabFood).setUnlocalizedName("vulpiberry");
+    public final static Item vulpiberry = new ItemFood(1, 0.1F, false).setCreativeTab(CreativeTabs.tabFood).setRegistryName("vulpiberry").setUnlocalizedName("vulpiberry");
     public final static Item ghast_pepper = new ItemGhastPepper();
     public final static Item netherroot = new ItemNetherroot();
     public final static Item phoenix_egg = new ItemPhoenixEgg();
     public final static Item netherroot_soup = new ItemNetherRootSoup();
     
-    //TODO deprecated
     public static void register() {
-    	GameRegistry.registerItem(grimwood_shovel, "grimwood_shovel");
-        GameRegistry.registerItem(grimwood_pickaxe, "grimwood_pickaxe");
-        GameRegistry.registerItem(grimwood_axe, "grimwood_axe");
-        GameRegistry.registerItem(grimwood_hoe, "grimwood_hoe");
-        GameRegistry.registerItem(grimwood_sword, "grimwood_sword");
+    	GameRegistry.register(grimwood_shovel);
+        GameRegistry.register(grimwood_pickaxe);
+        GameRegistry.register(grimwood_axe);
+        GameRegistry.register(grimwood_hoe);
+        GameRegistry.register(grimwood_sword);
         
-        GameRegistry.registerItem(netherrack_shovel, "netherrack_shovel");
-        GameRegistry.registerItem(netherrack_pickaxe, "netherrack_pickaxe");
-        GameRegistry.registerItem(netherrack_axe, "netherrack_axe");
-        GameRegistry.registerItem(netherrack_hoe, "netherrack_hoe");
-        GameRegistry.registerItem(netherrack_sword, "netherrack_sword");
+        GameRegistry.register(netherrack_shovel);
+        GameRegistry.register(netherrack_pickaxe);
+        GameRegistry.register(netherrack_axe);
+        GameRegistry.register(netherrack_hoe);
+        GameRegistry.register(netherrack_sword);
         
-        GameRegistry.registerItem(nether_quartz_shovel, "nether_quartz_shovel");
-        GameRegistry.registerItem(nether_quartz_pickaxe, "nether_quartz_pickaxe");
-        GameRegistry.registerItem(nether_quartz_axe, "nether_quartz_axe");
-        GameRegistry.registerItem(nether_quartz_hoe, "nether_quartz_hoe");
-        GameRegistry.registerItem(nether_quartz_sword, "nether_quartz_sword");
+        GameRegistry.register(nether_quartz_shovel);
+        GameRegistry.register(nether_quartz_pickaxe);
+        GameRegistry.register(nether_quartz_axe);
+        GameRegistry.register(nether_quartz_hoe);
+        GameRegistry.register(nether_quartz_sword);
         
-        GameRegistry.registerItem(nether_gold_shovel, "nether_gold_shovel");
-        GameRegistry.registerItem(nether_gold_pickaxe, "nether_gold_pickaxe");
-        GameRegistry.registerItem(nether_gold_axe, "nether_gold_axe");
-        GameRegistry.registerItem(nether_gold_hoe, "nether_gold_hoe");
-        GameRegistry.registerItem(nether_gold_sword, "nether_gold_sword");
+        GameRegistry.register(nether_gold_shovel);
+        GameRegistry.register(nether_gold_pickaxe);
+        GameRegistry.register(nether_gold_axe);
+        GameRegistry.register(nether_gold_hoe);
+        GameRegistry.register(nether_gold_sword);
         
-        GameRegistry.registerItem(grimwood_stick, "grimwood_stick");
-        GameRegistry.registerItem(wither_bone, "wither_bone");
-        GameRegistry.registerItem(wither_bonemeal, "wither_bonemeal");
-        GameRegistry.registerItem(brimstone, "brimstone");
-        GameRegistry.registerItem(barley, "barley");
-        GameRegistry.registerItem(barley_seeds, "barley_seeds");
-        GameRegistry.registerItem(vulpiberry, "vulpiberry");
-        GameRegistry.registerItem(ghast_pepper, "ghast_pepper");
-        GameRegistry.registerItem(netherroot, "netherroot");
-        GameRegistry.registerItem(netherroot_soup, "netherrootsoup");
-        GameRegistry.registerItem(phoenix_egg, "phoenix_egg");
+        GameRegistry.register(grimwood_stick);
+        GameRegistry.register(wither_bone);
+        GameRegistry.register(wither_bonemeal);
+        GameRegistry.register(brimstone);
+        GameRegistry.register(barley);
+        GameRegistry.register(barley_seeds);
+        GameRegistry.register(vulpiberry);
+        GameRegistry.register(ghast_pepper);
+        GameRegistry.register(netherroot);
+        GameRegistry.register(netherroot_soup);
+        GameRegistry.register(phoenix_egg);
     }
 }

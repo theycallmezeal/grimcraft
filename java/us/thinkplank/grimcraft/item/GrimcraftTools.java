@@ -14,6 +14,7 @@ public class GrimcraftTools {
 	        super(material);
 	        setMaxStackSize(1);
 	        setCreativeTab(CreativeTabs.tabTools);
+	        setRegistryName(name);
 	        setUnlocalizedName(name);
 	    }
 	}
@@ -23,6 +24,7 @@ public class GrimcraftTools {
 			super(material);
 			setMaxStackSize(1);
 	        setCreativeTab(CreativeTabs.tabTools);
+	        setRegistryName(name);
 	        setUnlocalizedName(name);
 		}
 	}
@@ -32,6 +34,7 @@ public class GrimcraftTools {
 	        super(material);
 	        setMaxStackSize(1);
 	        setCreativeTab(CreativeTabs.tabTools);
+	        setRegistryName(name);
 	        setUnlocalizedName(name);
 	    }
 	}
@@ -41,6 +44,7 @@ public class GrimcraftTools {
 	        super(material);
 	        setMaxStackSize(1);
 	        setCreativeTab(CreativeTabs.tabTools);
+	        setRegistryName(name);
 	        setUnlocalizedName(name);
 	    }
 	}
@@ -50,6 +54,7 @@ public class GrimcraftTools {
 	        super(material);
 	        setMaxStackSize(1);
 	        setCreativeTab(CreativeTabs.tabTools);
+	        setRegistryName(name);
 	        setUnlocalizedName(name);
 	    }
 	}

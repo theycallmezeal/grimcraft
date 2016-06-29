@@ -1,38 +1,35 @@
 package us.thinkplank.grimcraft.block;
 
 import net.minecraft.block.BlockSlab;
-import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.block.properties.IProperty;
+import net.minecraft.block.properties.PropertyBool;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.ItemStack;
-import net.minecraft.world.World;
 
-public class BlockGrimwoodSlab extends BlockSlab {
-    public BlockGrimwoodSlab (boolean isDouble) {
-        super(isDouble, Material.wood);
-        setHardness(2F);
-        setStepSound(SoundType.WOOD);
-        setRegistryName("grimwood_slab");
-        if (!isDouble) {
-        	setCreativeTab(CreativeTabs.tabBlock);
+public abstract class BlockGrimwoodSlab extends BlockSlab {
+	private static final PropertyBool VARIANT_PROPERTY = PropertyBool.create("variant"); //needed for interactions with ItemSlab
+	
+	public BlockGrimwoodSlab(Material material) {
+		super(material);
+        IBlockState blockState = this.blockState.getBaseState();
+        blockState = blockState.withProperty(VARIANT_PROPERTY, false);
+        if (!this.isDouble()) {
+            blockState = blockState.withProperty(HALF, EnumBlockHalf.BOTTOM);
         }
-        setHarvestLevel("axe", 0);
-        setLightOpacity(0);
-    }
-    
-    @Override
-    public String func_150002_b(int p_150002_1_) {
-        return getUnlocalizedName();
-    }
-    
-    @Override
-    public int getDamageValue(World p_149643_1_, int p_149643_2_, int p_149643_3_, int p_149643_4_) {
-        return super.getDamageValue(p_149643_1_, p_149643_2_, p_149643_3_, p_149643_4_) & 7;
-    }
-    
-    @Override
-    public ItemStack getPickBlock(MovingObjectPosition target, World world, int x, int y, int z, EntityPlayer player) {
-    	return new ItemStack(GrimcraftBlocks.single_grimwood_slab);
-    }
+
+        setDefaultState(blockState);
+	}
+	
+	@Override
+	public IProperty<?> getVariantProperty() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Comparable<?> getTypeForItem(ItemStack stack) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

@@ -1,15 +1,19 @@
 package us.thinkplank.grimcraft.block;
 
 import net.minecraft.block.Block;
-import us.thinkplank.grimcraft.item.ItemGrimwoodSlab;
+import net.minecraft.block.material.Material;
+import net.minecraft.item.ItemBlock;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import us.thinkplank.grimcraft.item.ItemGrimwoodSlab;
+import net.minecraftforge.fml.common.registry.
 
 public class GrimcraftBlocks {
 	public final static Block grimwood_log = new BlockGrimwoodLog();
     public final static Block grimwood_planks = new BlockGrimwoodPlanks();
-    public final static Block single_grimwood_slab = new BlockGrimwoodSlab(false);
-    public final static Block double_grimwood_slab = new BlockGrimwoodSlab(true);
-    public final static Block grimwood_stairs = new BlockGrimwoodStairs();
+    //TODO make sure that single -> half, consistently
+    public final static Block half_grimwood_slab = new BlockGrimwoodHalfSlab(Material.wood);
+    public final static Block double_grimwood_slab = new BlockGrimwoodDoubleSlab(Material.wood);
+    public final static Block grimwood_stairs = new BlockGrimwoodStairs(grimwood_planks);
     public final static Block grimwood_fence = new BlockGrimwoodFence();
     public final static Block grimwood_fence_gate = new BlockGrimwoodFenceGate();
     public final static Block fossilstone_ore = new BlockFossilstoneOre();
@@ -28,26 +32,31 @@ public class GrimcraftBlocks {
     public final static Block glowstone_grower = new BlockGlowstoneGrower();
     
     public static void register() {
-    	GameRegistry.registerBlock(grimwood_log, "grimwood_log");
-        GameRegistry.registerBlock(grimwood_planks, "grimwood_planks");
-        GameRegistry.registerBlock(single_grimwood_slab, ItemGrimwoodSlab.class, "single_grimwood_slab");
-        GameRegistry.registerBlock(double_grimwood_slab, ItemGrimwoodSlab.class, "double_grimwood_slab");
-        GameRegistry.registerBlock(grimwood_stairs, "grimwood_stairs");
-        GameRegistry.registerBlock(grimwood_fence, "grimwood_fence");
-        GameRegistry.registerBlock(grimwood_fence_gate, "grimwood_fence_gate");
-        GameRegistry.registerBlock(fossilstone_ore, "fossilstone_ore");
-        GameRegistry.registerBlock(nether_coal_ore, "nether_coal_ore");
-        GameRegistry.registerBlock(nether_gold_ore, "nether_gold_ore");
-        GameRegistry.registerBlock(nether_redstone_ore, "nether_redstone_ore");
-        GameRegistry.registerBlock(peat, "peat");
-        GameRegistry.registerBlock(brimstone_ore, "brimstone_ore");
-        GameRegistry.registerBlock(brimstone_block, "brimstone_block");
-        GameRegistry.registerBlock(barley_crop, "barley_crop");
-        GameRegistry.registerBlock(netherroot_crop, "netherroot_crop");
-        GameRegistry.registerBlock(vulpiberry_bush, "vulpiberry_bush");
-        GameRegistry.registerBlock(ghast_pepper_bush, "ghast_pepper_bush");
-        GameRegistry.registerBlock(nether_lantern, "nether_lantern");
-        GameRegistry.registerBlock(lava_lamp, "lava_lamp");
-        GameRegistry.registerBlock(glowstone_grower, "glowstone_grower");
+    	registerBlock(grimwood_log);
+        registerBlock(grimwood_planks);
+        registerBlock(half_grimwood_slab);
+        registerBlock(double_grimwood_slab);
+        registerBlock(grimwood_stairs);
+        registerBlock(grimwood_fence);
+        registerBlock(grimwood_fence_gate);
+        registerBlock(fossilstone_ore);
+        registerBlock(nether_coal_ore);
+        registerBlock(nether_gold_ore);
+        registerBlock(nether_redstone_ore);
+        registerBlock(peat);
+        registerBlock(brimstone_ore);
+        registerBlock(brimstone_block);
+        registerBlock(barley_crop);
+        registerBlock(netherroot_crop);
+        registerBlock(vulpiberry_bush);
+        registerBlock(ghast_pepper_bush);
+        registerBlock(nether_lantern);
+        registerBlock(lava_lamp);
+        registerBlock(glowstone_grower);
+    }
+    
+    private static void registerBlock(Block block) {
+    	GameRegistry.register(block);
+    	GameRegistry.register(new ItemBlock(block), block.getRegistryName());
     }
 }

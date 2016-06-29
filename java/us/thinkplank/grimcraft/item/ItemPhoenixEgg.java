@@ -1,6 +1,6 @@
 package us.thinkplank.grimcraft.item;
 
-import us.thinkplank.grimcraft.mobs.EntityPhoenix;
+//import us.thinkplank.grimcraft.mobs.EntityPhoenix;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
@@ -32,9 +32,10 @@ public class ItemPhoenixEgg extends Item {
 			if (block.equals(Blocks.gravel) && !world.isRemote){
 				world.setBlockState(pos, Blocks.air.getDefaultState());
 				world.playAuxSFX(2005, pos, 0);
-				EntityPhoenix phoenix = new EntityPhoenix(world);
-				phoenix.setLocationAndAngles((double)pos.getX() + 0.5D, (double)pos.getY(), (double)pos.getZ() + 0.5D, 0.0F, 0.0F);
-				world.spawnEntityInWorld(phoenix);
+				//TODO come back here once mobs are done again
+				//EntityPhoenix phoenix = new EntityPhoenix(world);
+				//phoenix.setLocationAndAngles((double)pos.getX() + 0.5D, (double)pos.getY(), (double)pos.getZ() + 0.5D, 0.0F, 0.0F);
+				//world.spawnEntityInWorld(phoenix);
 			}
 		}
     	return EnumActionResult.SUCCESS;

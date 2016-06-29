@@ -4,12 +4,16 @@ import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFalling;
+import net.minecraft.block.BlockNetherWart;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.init.Blocks;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.IPlantable;
@@ -27,33 +31,38 @@ public class BlockPeat extends BlockFalling {
         setTickRandomly(true);
     }
     
-    public AxisAlignedBB getCollisionBoundingBoxFromPool(World p_149668_1_, int p_149668_2_, int p_149668_3_, int p_149668_4_) {
-        float f = 0.125F;
-        return AxisAlignedBB.getBoundingBox((double)p_149668_2_, (double)p_149668_3_, (double)p_149668_4_, (double)(p_149668_2_ + 1), (double)((float)(p_149668_3_ + 1) - f), (double)(p_149668_4_ + 1));
+    public AxisAlignedBB getSelectedBoundingBox(IBlockState blockState, World worldIn, BlockPos pos) {
+        return new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.875D, 1.0D);
     }
 
-    /**
-     * Triggered whenever an entity collides with this block (enters into the block). Args: world, x, y, z, entity
-     */
-    public void onEntityCollidedWithBlock(World p_149670_1_, int p_149670_2_, int p_149670_3_, int p_149670_4_, Entity p_149670_5_) {
-        p_149670_5_.motionX *= 0.4D;
-        p_149670_5_.motionZ *= 0.4D;
+    public void onEntityCollidedWithBlock(World worldIn, BlockPos pos, IBlockState state, Entity entityIn) {
+        entityIn.motionX *= 0.4D;
+        entityIn.motionZ *= 0.4D;
     }
     
-    @Override
-    public void updateTick(World world, int x, int y, int z, Random random) {
-    	if (world.getBlock(x, y + 1, z).equals(Blocks.nether_wart) && world.getBlockMetadata(x, y + 1, z) > 0) {
-    		GrimcraftPlants.attemptTree(world, x, y + 1, z);
+    public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
+        super.updateTick(worldIn, pos, state, rand);
+        IBlockState blockStateAbove = worldIn.getBlockState(pos.up());
+        
+        if (blockStateAbove.getBlock().equals(Blocks.nether_wart)
+        		&& blockStateAbove.getValue(BlockNetherWart.AGE) > 0) { //check if the nether wart has grown a little bit
+    		GrimcraftPlants.attemptTree(worldIn, pos.up());
     	}
     }
     
     @Override
-    public boolean canSustainPlant(IBlockAccess world, int x, int y, int z, ForgeDirection direction, IPlantable plantable) {
-    	Block plant = plantable.getPlant(world, x, y + 1, z);
-    	if (plant.equals(GrimcraftBlocks.barley_crop) || plant.equals(GrimcraftBlocks.netherroot_crop) || plant.equals(Blocks.nether_wart)
-    			|| plant.equals(GrimcraftBlocks.vulpiberry_bush) || plant.equals(GrimcraftBlocks.ghast_pepper_bush) || plant.equals(Blocks.deadbush)) {
+    public boolean canSustainPlant(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing direction, IPlantable plantable) {
+    	Block plant = plantable.getPlant(world, pos).getBlock();
+    	
+    	if (plant.equals(GrimcraftBlocks.barley_crop)
+    			|| plant.equals(GrimcraftBlocks.netherroot_crop)
+    			|| plant.equals(Blocks.nether_wart)
+    			|| plant.equals(GrimcraftBlocks.vulpiberry_bush)
+    			|| plant.equals(GrimcraftBlocks.ghast_pepper_bush)
+    			|| plant.equals(Blocks.deadbush)) {
     		return true;
     	}
+    	
     	return false;
     }
 }
