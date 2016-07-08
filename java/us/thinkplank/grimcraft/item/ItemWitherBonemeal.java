@@ -1,6 +1,8 @@
 package us.thinkplank.grimcraft.item;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockCrops;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -48,11 +50,11 @@ public class ItemWitherBonemeal extends Item {
     			return EnumActionResult.SUCCESS;
     		}
     		
-    		//TODO metadata
     		if (block.equals(GrimcraftBlocks.barley_crop) || block.equals(GrimcraftBlocks.netherroot_crop) || block.equals(Blocks.nether_wart)) {
-    			int currentMeta = world.getBlockMetadata(x, y, z);
-    			if (currentMeta < 7) {
-    				world.setBlockMetadataWithNotify(x, y, z, currentMeta + 1, 2);
+    			IBlockState state = world.getBlockState(pos);
+    			int currentGrowth = state.getValue(BlockCrops.AGE);
+    			if (currentGrowth < 7) {
+    				world.setBlockState(pos, state.withProperty(BlockCrops.AGE, currentGrowth + 1));
     			}
     			world.playAuxSFX(2005, pos, 0);
 				itemStack.stackSize--;

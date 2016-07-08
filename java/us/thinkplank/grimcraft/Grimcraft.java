@@ -1,10 +1,12 @@
 /*
- * Grimcraft.java 1.0.0 8-13-2015
+ * Grimcraft.java 1.0.0
  * Made with love by Lapiman and Fox
  * Licensed under whatever we decide
  * 
- * to do:
+ * TODO
  * hunt down any Block == Block and replace with .equals()
+ * hunt down world and replace with worldIn
+ * hunt down any hard-coded "grimcraft" and replace with a .modid reference
  */
 
 package us.thinkplank.grimcraft;

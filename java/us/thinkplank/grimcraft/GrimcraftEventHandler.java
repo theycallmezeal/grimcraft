@@ -5,6 +5,7 @@ import java.util.List;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFurnace;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.monster.EntityBlaze;
@@ -31,6 +32,8 @@ import net.minecraftforge.event.entity.player.PlayerInteractEvent.LeftClickBlock
 import net.minecraftforge.event.entity.player.PlayerInteractEvent.RightClickBlock;
 import net.minecraftforge.event.entity.player.UseHoeEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import us.thinkplank.grimcraft.block.BlockGhastPepperBush;
+import us.thinkplank.grimcraft.block.BlockVulpiberryBush;
 import us.thinkplank.grimcraft.block.GrimcraftBlocks;
 import us.thinkplank.grimcraft.item.GrimcraftItems;
 
@@ -128,29 +131,29 @@ public class GrimcraftEventHandler {
 	
 	@SubscribeEvent
 	public void onPlayerLeftClick(LeftClickBlock event) {
-		World world = event.getWorld();
+		World worldIn = event.getWorld();
 		BlockPos pos = event.getPos();
+		IBlockState state = worldIn.getBlockState(pos);
 		EntityPlayer player = event.getEntityPlayer();
 		
-		Block targetBlock = world.getBlockState(pos).getBlock();
+		Block targetBlock = worldIn.getBlockState(pos).getBlock();
 		ItemStack heldItemStack = player.inventory.getCurrentItem();
 		
-		//TODO figure out blockstate replacements for metadata
 		// handles strawberry harvesting
 		if (targetBlock.equals(GrimcraftBlocks.vulpiberry_bush)) {
-			if (world.getBlockMetadata(pos) == 1) {
+			if (state.getValue(BlockVulpiberryBush.GROWN)) {
 				event.setCanceled(true);
-				world.spawnEntityInWorld(new EntityItem(world, (double) pos.getX(), (double) pos.getY(), (double) pos.getZ(), new ItemStack(GrimcraftItems.vulpiberry, 3)));
-				world.setBlockMetadataWithNotify(pos, 0, 2);
+				worldIn.spawnEntityInWorld(new EntityItem(worldIn, (double) pos.getX(), (double) pos.getY(), (double) pos.getZ(), new ItemStack(GrimcraftItems.vulpiberry, 3)));
+				worldIn.setBlockState(pos, state.withProperty(BlockVulpiberryBush.GROWN, true));
 			}
 		}
 		
 		// handles ghast pepper harvesting
-		if (targetBlock.equals(GrimcraftBlocks.ghast_pepper_bush)) {
-			if (world.getBlockMetadata(pos) == 1) {
+		if (targetBlock.equals(GrimcraftBlocks.vulpiberry_bush)) {
+			if (state.getValue(BlockGhastPepperBush.GROWN)) {
 				event.setCanceled(true);
-				world.spawnEntityInWorld(new EntityItem(world, (double) pos.getX(), (double) pos.getY(), (double) pos.getZ(), new ItemStack(GrimcraftItems.ghast_pepper, 3)));
-				world.setBlockMetadataWithNotify(pos, 0, 2);
+				worldIn.spawnEntityInWorld(new EntityItem(worldIn, (double) pos.getX(), (double) pos.getY(), (double) pos.getZ(), new ItemStack(GrimcraftItems.vulpiberry, 3)));
+				worldIn.setBlockState(pos, state.withProperty(BlockGhastPepperBush.GROWN, true));
 			}
 		}
 	}

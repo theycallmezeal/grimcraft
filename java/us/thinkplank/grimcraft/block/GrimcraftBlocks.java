@@ -4,8 +4,6 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import us.thinkplank.grimcraft.item.ItemGrimwoodSlab;
-import net.minecraftforge.fml.common.registry.
 
 public class GrimcraftBlocks {
 	public final static Block grimwood_log = new BlockGrimwoodLog();
