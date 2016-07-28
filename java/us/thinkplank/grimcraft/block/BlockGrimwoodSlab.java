@@ -23,11 +23,13 @@ public abstract class BlockGrimwoodSlab extends BlockSlab {
 	
 	@Override
 	public IProperty<?> getVariantProperty() {
+		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public Comparable<?> getTypeForItem(ItemStack stack) {
+		// TODO Auto-generated method stub
 		return null;
 	}
 }
