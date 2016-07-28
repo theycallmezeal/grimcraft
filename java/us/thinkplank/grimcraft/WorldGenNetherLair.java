@@ -197,7 +197,7 @@ public class WorldGenNetherLair extends WorldGenerator implements IWorldGenerato
 		
 		if (chest != null) {
 			//TODO ResourceLocation for the loot?
-			chest.setLoot(loot, world.getSeed());
+			//chest.setLoot(loot, world.getSeed());
 		}
 	}
 	
@@ -211,9 +211,9 @@ public class WorldGenNetherLair extends WorldGenerator implements IWorldGenerato
 				BlockPos thisPos = pos.add(x, height, z);
 				world.setBlockState(thisPos, array[x][z].getDefaultState());
 				
-				if (array[x][z] == chest) {
-					fillChest(world, rand, thisPos);
-				}
+				//if (array[x][z] == chest) {
+					//fillChest(world, rand, thisPos);
+				//}
 			}
 		}
 	}
