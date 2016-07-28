@@ -1,0 +1,8 @@
+{
+    "parent": "block/outer_stairs",
+    "textures": {
+        "bottom": "grimcraft:blocks/grimwood_planks",
+        "top": "grimcraft:blocks/grimwood_planks",
+        "side": "grimcraft:blocks/grimwood_planks"
+    }
+}

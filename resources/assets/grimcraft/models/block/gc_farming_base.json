@@ -1,0 +1,6 @@
+{
+    "parent": "block/cube_all",
+    "textures": {
+        "all": "grimcraft:blocks/gc_farming_base"
+    }
+}
