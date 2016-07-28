@@ -18,6 +18,7 @@ public class ItemBarleySeeds extends ItemSeeds {
         super(GrimcraftBlocks.barley_crop, GrimcraftBlocks.peat);
         setMaxStackSize(64);
         setCreativeTab(CreativeTabs.tabMaterials);
+        setRegistryName("barley_seeds");
         setUnlocalizedName("barley_seeds");
     }
     

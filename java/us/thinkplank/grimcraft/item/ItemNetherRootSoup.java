@@ -8,6 +8,7 @@ public class ItemNetherRootSoup extends ItemSoup {
         super(6); // 6 = hunger points
         setMaxStackSize(64);
         setCreativeTab(CreativeTabs.tabFood);
+        setRegistryName("netherroot_soup");
         setUnlocalizedName("netherroot_soup");
     }
 }

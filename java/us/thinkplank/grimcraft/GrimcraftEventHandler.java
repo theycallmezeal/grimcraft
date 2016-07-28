@@ -159,9 +159,10 @@ public class GrimcraftEventHandler {
 	}
 	
 	/* this makes lava push around mobs */
-	@SubscribeEvent
-	public void onLivingUpdate(LivingEvent.LivingUpdateEvent event) {
-		Entity entity = event.getEntity();
-		entity.worldObj.handleMaterialAcceleration(entity.getCollisionBoundingBox(), Material.lava, entity);
-	}
+	/* TODO get this working again */
+//	@SubscribeEvent
+//	public void onLivingUpdate(LivingEvent.LivingUpdateEvent event) {
+//		Entity entity = event.getEntity();
+//		entity.worldObj.handleMaterialAcceleration(entity.getCollisionBoundingBox(), Material.lava, entity);
+//	}
 }

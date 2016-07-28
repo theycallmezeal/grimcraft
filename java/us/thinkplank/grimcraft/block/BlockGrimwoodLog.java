@@ -1,12 +1,13 @@
 package us.thinkplank.grimcraft.block;
 
 import net.minecraft.block.BlockLog;
+import net.minecraft.block.BlockOldLog;
 import net.minecraft.block.SoundType;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class BlockGrimwoodLog extends BlockLog {
+public class BlockGrimwoodLog extends BlockOldLog {
 	@SideOnly(Side.CLIENT)
 	
 	public BlockGrimwoodLog () {
@@ -14,6 +15,7 @@ public class BlockGrimwoodLog extends BlockLog {
         setHardness(2F);
         setStepSound(SoundType.WOOD);
         setRegistryName("grimwood_log");
+        setUnlocalizedName("grimwood_log");
         setCreativeTab(CreativeTabs.tabBlock);
         setHarvestLevel("axe", 0);
     }

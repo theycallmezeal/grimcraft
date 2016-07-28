@@ -18,6 +18,7 @@ public class ItemPhoenixEgg extends Item {
         super();
         setMaxStackSize(64);
         setCreativeTab(CreativeTabs.tabMaterials);
+        setRegistryName("phoenix_egg");
         setUnlocalizedName("phoenix_egg");
     }
     

@@ -1,5 +1,5 @@
 {
-    "variants": {
+	"variants": {
         "normal": { "model": "grimcraft:grimwood_planks" }
-    }
+	}
 }

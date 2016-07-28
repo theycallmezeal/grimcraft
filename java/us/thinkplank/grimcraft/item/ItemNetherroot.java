@@ -18,6 +18,7 @@ public class ItemNetherroot extends ItemSeedFood {
         super(4, 0.6F, GrimcraftBlocks.netherroot_crop, GrimcraftBlocks.peat);
         setMaxStackSize(64);
         setCreativeTab(CreativeTabs.tabMaterials);
+        setRegistryName("netherroot");
         setUnlocalizedName("netherroot");
     }
     

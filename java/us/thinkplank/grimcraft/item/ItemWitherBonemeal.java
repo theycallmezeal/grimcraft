@@ -21,6 +21,7 @@ public class ItemWitherBonemeal extends Item {
         super();
         setMaxStackSize(64);
         setCreativeTab(CreativeTabs.tabMaterials);
+        setRegistryName("wither_bonemeal");
         setUnlocalizedName("wither_bonemeal");
     }
     

@@ -4,6 +4,7 @@ import net.minecraft.block.BlockSlab;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyBool;
+import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.ItemStack;
 
@@ -21,15 +22,19 @@ public abstract class BlockGrimwoodSlab extends BlockSlab {
         setDefaultState(blockState);
 	}
 	
+    @Override
+    protected BlockStateContainer createBlockState() {
+        return new BlockStateContainer(this, VARIANT_PROPERTY);
+    }
+    
+    // these have to be implemented... don't know or care what they do
 	@Override
 	public IProperty<?> getVariantProperty() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public Comparable<?> getTypeForItem(ItemStack stack) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 }

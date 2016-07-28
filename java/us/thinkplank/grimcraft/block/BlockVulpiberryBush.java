@@ -7,6 +7,7 @@ import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.properties.PropertyBool;
+import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
@@ -22,6 +23,27 @@ public class BlockVulpiberryBush extends BlockBush implements IShearable {
 	public BlockVulpiberryBush () {
         setRegistryName("vulpiberry_bush");
         setDefaultState(this.getDefaultState().withProperty(GROWN, false));
+    }
+	
+    @Override
+    protected BlockStateContainer createBlockState() {
+        return new BlockStateContainer(this, GROWN);
+    }
+    
+    @Override
+    public IBlockState getStateFromMeta(int meta) {
+        if (meta == 1) {
+        	return getDefaultState().withProperty(GROWN, true);
+        }
+        return getDefaultState().withProperty(GROWN, false);
+    }
+
+    @Override
+    public int getMetaFromState(IBlockState state) {
+        if (state.getValue(GROWN)) {
+        	return 1;
+        }
+        return 0;
     }
 	
 	@Override

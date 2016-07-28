@@ -14,6 +14,7 @@ public class ItemGhastPepper extends ItemFood {
         super(2, 0.8F, false);
         setMaxStackSize(64);
         setCreativeTab(CreativeTabs.tabMaterials);
+        setRegistryName("ghast_pepper");
         setUnlocalizedName("ghast_pepper");
     }
     

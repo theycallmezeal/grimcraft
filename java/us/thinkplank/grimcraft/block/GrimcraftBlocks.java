@@ -9,8 +9,8 @@ public class GrimcraftBlocks {
 	public final static Block grimwood_log = new BlockGrimwoodLog();
     public final static Block grimwood_planks = new BlockGrimwoodPlanks();
     //TODO make sure that single -> half, consistently
-    public final static Block half_grimwood_slab = new BlockGrimwoodHalfSlab(Material.wood);
-    public final static Block double_grimwood_slab = new BlockGrimwoodDoubleSlab(Material.wood);
+    //public final static Block half_grimwood_slab = new BlockGrimwoodHalfSlab(Material.wood);
+    //public final static Block double_grimwood_slab = new BlockGrimwoodDoubleSlab(Material.wood);
     public final static Block grimwood_stairs = new BlockGrimwoodStairs(grimwood_planks);
     public final static Block grimwood_fence = new BlockGrimwoodFence();
     public final static Block grimwood_fence_gate = new BlockGrimwoodFenceGate();
@@ -32,8 +32,8 @@ public class GrimcraftBlocks {
     public static void register() {
     	registerBlock(grimwood_log);
         registerBlock(grimwood_planks);
-        registerBlock(half_grimwood_slab);
-        registerBlock(double_grimwood_slab);
+        //registerBlock(half_grimwood_slab);
+        //registerBlock(double_grimwood_slab);
         registerBlock(grimwood_stairs);
         registerBlock(grimwood_fence);
         registerBlock(grimwood_fence_gate);
