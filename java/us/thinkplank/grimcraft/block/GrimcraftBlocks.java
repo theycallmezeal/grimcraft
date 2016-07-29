@@ -2,7 +2,10 @@ package us.thinkplank.grimcraft.block;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
+import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class GrimcraftBlocks {
@@ -56,5 +59,6 @@ public class GrimcraftBlocks {
     private static void registerBlock(Block block) {
     	GameRegistry.register(block);
     	GameRegistry.register(new ItemBlock(block), block.getRegistryName());
+    	ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation(block.getRegistryName(), "inventory"));
     }
 }
