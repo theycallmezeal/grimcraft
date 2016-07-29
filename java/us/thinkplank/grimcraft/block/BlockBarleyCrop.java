@@ -6,6 +6,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockCrops;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.util.math.BlockPos;
@@ -16,8 +17,9 @@ public class BlockBarleyCrop extends BlockCrops {
 	
 	public BlockBarleyCrop() {
 		super();
-		setStepSound(SoundType.PLANT);
+		setCreativeTab(CreativeTabs.tabDecorations);
 		setRegistryName("barley_crop");
+		setStepSound(SoundType.PLANT);
 	}
 	
 	protected boolean canPlaceBlockOn(Block block) {

@@ -3,6 +3,7 @@ package us.thinkplank.grimcraft.block;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockCrops;
 import net.minecraft.block.SoundType;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -12,6 +13,7 @@ public class BlockNetherrootCrop extends BlockCrops {
 	
 	public BlockNetherrootCrop() {
 		super();
+		setCreativeTab(CreativeTabs.tabDecorations);
 		setStepSound(SoundType.PLANT);
 		setRegistryName("netherroot_crop");
 	}
