@@ -11,6 +11,7 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class GrimcraftBlocks {
+	//TODO add a creative tab
 	public final static Block grimwood_log = new BlockGrimwoodLog();
     public final static Block grimwood_planks = new BlockGrimwoodPlanks();
     //TODO make sure that single -> half, consistently
@@ -59,6 +60,7 @@ public class GrimcraftBlocks {
     }
     
     private static void registerBlock(Block block) {
+    	block.setUnlocalizedName(block.getRegistryName().getResourcePath());
     	GameRegistry.register(block);
     	GameRegistry.register(new ItemBlock(block), block.getRegistryName());
     	ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation(block.getRegistryName(), "inventory"));
