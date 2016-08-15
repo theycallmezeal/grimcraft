@@ -59,10 +59,37 @@ public class GrimcraftBlocks {
         registerBlock(glowstone_grower);
     }
     
+    public static void registerModels() {
+    	registerBlockModel(grimwood_log);
+        registerBlockModel(grimwood_planks);
+        //registerBlockModel(half_grimwood_slab);
+        //registerBlockModel(double_grimwood_slab);
+        registerBlockModel(grimwood_stairs);
+        registerBlockModel(grimwood_fence);
+        registerBlockModel(grimwood_fence_gate);
+        registerBlockModel(fossilstone_ore);
+        registerBlockModel(nether_coal_ore);
+        registerBlockModel(nether_gold_ore);
+        registerBlockModel(nether_redstone_ore);
+        registerBlockModel(peat);
+        registerBlockModel(brimstone_ore);
+        registerBlockModel(brimstone_block);
+        registerBlockModel(barley_crop);
+        registerBlockModel(netherroot_crop);
+        registerBlockModel(vulpiberry_bush);
+        registerBlockModel(ghast_pepper_bush);
+        registerBlockModel(nether_lantern);
+        registerBlockModel(lava_lamp);
+        registerBlockModel(glowstone_grower);
+    }
+    
     private static void registerBlock(Block block) {
     	block.setUnlocalizedName(block.getRegistryName().getResourcePath());
     	GameRegistry.register(block);
     	GameRegistry.register(new ItemBlock(block), block.getRegistryName());
+    }
+    
+    private static void registerBlockModel(Block block) {
     	ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation(block.getRegistryName(), "inventory"));
     }
 }

@@ -39,19 +39,14 @@ public class Grimcraft {
 	
     public static Grimcraft instance;
 
-    @SidedProxy(clientSide="us.thinkplank.grimcraft.client.ClientProxy", serverSide="us.thinkplank.grimcraft.CommonProxy")
+    @SidedProxy(clientSide="us.thinkplank.grimcraft.ClientProxy", serverSide="us.thinkplank.grimcraft.CommonProxy")
         public static CommonProxy proxy;
 	
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-    	
     	this.config = new Configuration(event.getSuggestedConfigurationFile());
-    	GrimcraftBlocks.register();
-        GrimcraftItems.register();
-        GrimcraftRecipes.register();
-        GameRegistry.registerFuelHandler(new GrimcraftFuelHandler());
-        GameRegistry.registerWorldGenerator(new GrimcraftWorldGenerator(), 20);
+    	proxy.preInit();
     }
 
     @EventHandler

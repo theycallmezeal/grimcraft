@@ -91,8 +91,49 @@ public class GrimcraftItems {
         registerItem(phoenix_egg);
     }
     
+    public static void registerModels() {
+    	registerItemModel(grimwood_shovel);
+        registerItemModel(grimwood_pickaxe);
+        registerItemModel(grimwood_axe);
+        registerItemModel(grimwood_hoe);
+        registerItemModel(grimwood_sword);
+        
+        registerItemModel(netherrack_shovel);
+        registerItemModel(netherrack_pickaxe);
+        registerItemModel(netherrack_axe);
+        registerItemModel(netherrack_hoe);
+        registerItemModel(netherrack_sword);
+        
+        registerItemModel(nether_quartz_shovel);
+        registerItemModel(nether_quartz_pickaxe);
+        registerItemModel(nether_quartz_axe);
+        registerItemModel(nether_quartz_hoe);
+        registerItemModel(nether_quartz_sword);
+        
+        registerItemModel(nether_gold_shovel);
+        registerItemModel(nether_gold_pickaxe);
+        registerItemModel(nether_gold_axe);
+        registerItemModel(nether_gold_hoe);
+        registerItemModel(nether_gold_sword);
+        
+        registerItemModel(grimwood_stick);
+        registerItemModel(wither_bone);
+        registerItemModel(wither_bonemeal);
+        registerItemModel(brimstone);
+        registerItemModel(barley);
+        registerItemModel(barley_seeds);
+        registerItemModel(vulpiberry);
+        registerItemModel(ghast_pepper);
+        registerItemModel(netherroot);
+        registerItemModel(netherroot_soup);
+        registerItemModel(phoenix_egg);
+    }
+    
     public static void registerItem(Item item) {
     	GameRegistry.register(item);
+    }
+    
+    public static void registerItemModel(Item item) {
     	ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
     }
 }
