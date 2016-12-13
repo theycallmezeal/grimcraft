@@ -7,6 +7,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemDye;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumFacing;
@@ -39,14 +40,14 @@ public class ItemWitherBonemeal extends Item {
     			} else {
     				world.setBlockState(pos, GrimcraftBlocks.vulpiberry_bush.getDefaultState());
     			}
-    			world.playAuxSFX(2005, pos, 0);
+    			ItemDye.spawnBonemealParticles(world, pos, 15);
     			itemStack.stackSize--;
     			return EnumActionResult.SUCCESS;
     		}
     		
     		if (block.equals(Blocks.NETHER_WART)) {
     			GrimcraftPlants.attemptTree(world, pos);
-    			world.playAuxSFX(2005, pos, 0);
+    			ItemDye.spawnBonemealParticles(world, pos, 15);
     			itemStack.stackSize--;
     			return EnumActionResult.SUCCESS;
     		}
@@ -57,7 +58,7 @@ public class ItemWitherBonemeal extends Item {
     			if (currentGrowth < 7) {
     				world.setBlockState(pos, state.withProperty(BlockCrops.AGE, currentGrowth + 1));
     			}
-    			world.playAuxSFX(2005, pos, 0);
+    			ItemDye.spawnBonemealParticles(world, pos, 15);
 				itemStack.stackSize--;
 				return EnumActionResult.SUCCESS;
     		}
