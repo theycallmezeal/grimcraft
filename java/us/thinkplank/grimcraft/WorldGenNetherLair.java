@@ -13,7 +13,7 @@ import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.tileentity.TileEntityChest;
-import net.minecraft.util.WeightedRandomChestContent;
+// import net.minecraft.util.WeightedRandomChestContent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkGenerator;
@@ -22,22 +22,23 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 
 public class WorldGenNetherLair extends WorldGenerator implements IWorldGenerator {
 	
+	// TODO come back to loot
 	//WeightedRandomChestContent(Item, meta, min stack size, max stack size, freq)
-    public static final WeightedRandomChestContent[] loot = new WeightedRandomChestContent[] {
-    	new WeightedRandomChestContent(GrimcraftItems.wither_bone, 0, 1, 4, 10), 
-    	new WeightedRandomChestContent(GrimcraftItems.wither_bonemeal, 0, 1, 4, 10), 
-    	new WeightedRandomChestContent(Items.BREAD, 0, 1, 1, 10), 
-    	new WeightedRandomChestContent(GrimcraftItems.barley, 0, 1, 4, 10), 
-    	new WeightedRandomChestContent(GrimcraftItems.brimstone, 0, 1, 4, 10), 
-    	new WeightedRandomChestContent(Items.STRING, 0, 1, 4, 10), 
-    	new WeightedRandomChestContent(Items.BUCKET, 0, 1, 1, 10), 
-    	new WeightedRandomChestContent(Items.GOLDEN_APPLE, 0, 1, 1, 1), 
-    	new WeightedRandomChestContent(GrimcraftItems.ghast_pepper, 0, 1, 4, 10),
-    	new WeightedRandomChestContent(GrimcraftItems.vulpiberry, 0, 1, 4, 10), 
-    	new WeightedRandomChestContent(Items.RECORD_11, 0, 1, 1, 10), 
-    	new WeightedRandomChestContent(Items.RECORD_WAIT, 0, 1, 1, 10), 
-    	new WeightedRandomChestContent(Items.NAME_TAG, 0, 1, 1, 10), 
-    };
+//    public static final WeightedRandomChestContent[] loot = new WeightedRandomChestContent[] {
+//    	new WeightedRandomChestContent(GrimcraftItems.wither_bone, 0, 1, 4, 10), 
+//    	new WeightedRandomChestContent(GrimcraftItems.wither_bonemeal, 0, 1, 4, 10), 
+//    	new WeightedRandomChestContent(Items.BREAD, 0, 1, 1, 10), 
+//    	new WeightedRandomChestContent(GrimcraftItems.barley, 0, 1, 4, 10), 
+//    	new WeightedRandomChestContent(GrimcraftItems.brimstone, 0, 1, 4, 10), 
+//    	new WeightedRandomChestContent(Items.STRING, 0, 1, 4, 10), 
+//    	new WeightedRandomChestContent(Items.BUCKET, 0, 1, 1, 10), 
+//    	new WeightedRandomChestContent(Items.GOLDEN_APPLE, 0, 1, 1, 1), 
+//    	new WeightedRandomChestContent(GrimcraftItems.ghast_pepper, 0, 1, 4, 10),
+//    	new WeightedRandomChestContent(GrimcraftItems.vulpiberry, 0, 1, 4, 10), 
+//    	new WeightedRandomChestContent(Items.RECORD_11, 0, 1, 1, 10), 
+//    	new WeightedRandomChestContent(Items.RECORD_WAIT, 0, 1, 1, 10), 
+//    	new WeightedRandomChestContent(Items.NAME_TAG, 0, 1, 1, 10), 
+//    };
 	
 	Block air = Blocks.AIR;
 	Block brick = Blocks.NETHER_BRICK;
