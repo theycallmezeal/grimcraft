@@ -10,9 +10,9 @@ public class BlockGrimwoodStairs extends BlockStairs {
 	public BlockGrimwoodStairs(Block baseBlock) {
 		super(baseBlock.getDefaultState());
 		setHardness(2F);
-        setStepSound(SoundType.WOOD);
+        setSoundType(SoundType.WOOD);
         setRegistryName("grimwood_stairs");
-        setCreativeTab(CreativeTabs.tabBlock);
+        setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
         setHarvestLevel("axe", 0);
         setLightOpacity(0);
 	}

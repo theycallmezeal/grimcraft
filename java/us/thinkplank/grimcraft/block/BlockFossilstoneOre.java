@@ -6,22 +6,22 @@ import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class BlockFossilstoneOre extends Block {
     public BlockFossilstoneOre () {
-        super(Material.rock);
+        super(Material.ROCK);
         setHardness(3F);
-        setStepSound(SoundType.STONE);
+        setSoundType(SoundType.STONE);
         setRegistryName("fossilstone_ore");
-        setCreativeTab(CreativeTabs.tabBlock);
+        setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
         setHarvestLevel("pickaxe", 1);
     }
     
-    //TODO fix this GameRegistry.findItem() call
     public Item getItemDropped(int p_149650_1_, Random p_149650_2_, int p_149650_3_) {
-        return GameRegistry.findItem("minecraft", "bone");
+        return Items.BONE;
     }
 
     public int quantityDropped(Random random) {

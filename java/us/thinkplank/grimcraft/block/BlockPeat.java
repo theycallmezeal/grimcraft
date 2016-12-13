@@ -22,11 +22,11 @@ import us.thinkplank.grimcraft.GrimcraftPlants;
 public class BlockPeat extends BlockFalling {
 	
     public BlockPeat () {
-        super(Material.grass);
+        super(Material.GLASS);
         setHardness(3F);
-        setStepSound(SoundType.GROUND);
+        setSoundType(SoundType.GROUND);
         setRegistryName("peat");
-        setCreativeTab(CreativeTabs.tabBlock);
+        setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
         setHarvestLevel("shovel", 0);
         setTickRandomly(true);
     }
@@ -44,7 +44,7 @@ public class BlockPeat extends BlockFalling {
         super.updateTick(worldIn, pos, state, rand);
         IBlockState blockStateAbove = worldIn.getBlockState(pos.up());
         
-        if (blockStateAbove.getBlock().equals(Blocks.nether_wart)
+        if (blockStateAbove.getBlock().equals(Blocks.NETHER_WART)
         		&& blockStateAbove.getValue(BlockNetherWart.AGE) > 0) { //check if the nether wart has grown a little bit
     		GrimcraftPlants.attemptTree(worldIn, pos.up());
     	}
@@ -56,10 +56,10 @@ public class BlockPeat extends BlockFalling {
     	
     	if (plant.equals(GrimcraftBlocks.barley_crop)
     			|| plant.equals(GrimcraftBlocks.netherroot_crop)
-    			|| plant.equals(Blocks.nether_wart)
+    			|| plant.equals(Blocks.NETHER_WART)
     			|| plant.equals(GrimcraftBlocks.vulpiberry_bush)
     			|| plant.equals(GrimcraftBlocks.ghast_pepper_bush)
-    			|| plant.equals(Blocks.deadbush)) {
+    			|| plant.equals(Blocks.DEADBUSH)) {
     		return true;
     	}
     	

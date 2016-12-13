@@ -11,11 +11,11 @@ import us.thinkplank.grimcraft.item.GrimcraftItems;
 
 public class BlockBrimstoneOre extends Block {
     public BlockBrimstoneOre () {
-        super(Material.rock);
+        super(Material.ROCK);
         setHardness(3F);
-        setStepSound(SoundType.STONE);
+        setSoundType(SoundType.STONE);
         setRegistryName("brimstone_ore");
-        setCreativeTab(CreativeTabs.tabBlock);
+        setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
         setHarvestLevel("pickaxe", 1);
     }
 

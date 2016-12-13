@@ -14,11 +14,11 @@ import net.minecraft.world.World;
 public class BlockGlowstoneGrower extends Block {
 	
 	public BlockGlowstoneGrower () {
-        super(Material.ground);
+        super(Material.GROUND);
         setHardness(2F);
-        setStepSound(SoundType.STONE);
+        setSoundType(SoundType.STONE);
         setRegistryName("glowstone_grower");
-        setCreativeTab(CreativeTabs.tabBlock);
+        setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
         setHarvestLevel("pickaxe", 0);
         setTickRandomly(true);
         setLightLevel(1.0F);
@@ -36,7 +36,7 @@ public class BlockGlowstoneGrower extends Block {
 					}
 					
 					Block cBlock = world.getBlockState(pos.add(i, j, k)).getBlock();
-					if (cBlock.equals(Blocks.glowstone)) {
+					if (cBlock.equals(Blocks.GLOWSTONE)) {
 						int dx = random.nextInt(3) - 1;
 						int dy = random.nextInt(3) - 1;
 						int dz = random.nextInt(3) - 1;
@@ -48,11 +48,11 @@ public class BlockGlowstoneGrower extends Block {
 							continue;
 						}
 						
-						if (blockAtLoc.equals(Blocks.air)) {
+						if (blockAtLoc.equals(Blocks.AIR)) {
 							continue;
 						}
 						
-						world.setBlockState(newLoc, Blocks.glowstone.getDefaultState());
+						world.setBlockState(newLoc, Blocks.GLOWSTONE.getDefaultState());
 					}
 				}
 			}

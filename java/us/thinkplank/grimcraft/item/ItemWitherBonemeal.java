@@ -20,7 +20,7 @@ public class ItemWitherBonemeal extends Item {
     public ItemWitherBonemeal() {
         super();
         setMaxStackSize(64);
-        setCreativeTab(CreativeTabs.tabMaterials);
+        setCreativeTab(CreativeTabs.MATERIALS);
         setRegistryName("wither_bonemeal");
         setUnlocalizedName("wither_bonemeal");
     }
@@ -33,7 +33,7 @@ public class ItemWitherBonemeal extends Item {
     	} else if (player.canPlayerEdit(pos, facing, itemStack)) {
     		Block block = world.getBlockState(pos).getBlock();
     		
-    		if (block.equals(Blocks.deadbush)) {
+    		if (block.equals(Blocks.DEADBUSH)) {
     			if (world.getBlockState(pos.down()).getBlock().equals(GrimcraftBlocks.peat) && GrimcraftPlants.isSurroundedByLava(world, pos.down())) {
     				world.setBlockState(pos, GrimcraftBlocks.ghast_pepper_bush.getDefaultState());
     			} else {
@@ -44,14 +44,14 @@ public class ItemWitherBonemeal extends Item {
     			return EnumActionResult.SUCCESS;
     		}
     		
-    		if (block.equals(Blocks.nether_wart)) {
+    		if (block.equals(Blocks.NETHER_WART)) {
     			GrimcraftPlants.attemptTree(world, pos);
     			world.playAuxSFX(2005, pos, 0);
     			itemStack.stackSize--;
     			return EnumActionResult.SUCCESS;
     		}
     		
-    		if (block.equals(GrimcraftBlocks.barley_crop) || block.equals(GrimcraftBlocks.netherroot_crop) || block.equals(Blocks.nether_wart)) {
+    		if (block.equals(GrimcraftBlocks.barley_crop) || block.equals(GrimcraftBlocks.netherroot_crop) || block.equals(Blocks.NETHER_WART)) {
     			IBlockState state = world.getBlockState(pos);
     			int currentGrowth = state.getValue(BlockCrops.AGE);
     			if (currentGrowth < 7) {

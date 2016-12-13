@@ -13,15 +13,15 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockNetherCoalOre extends Block {
     public BlockNetherCoalOre () {
-        super(Material.rock);
+        super(Material.ROCK);
         setHardness(3F);
-        setStepSound(SoundType.STONE);
+        setSoundType(SoundType.STONE);
         setRegistryName("nether_coal_ore");
-        setCreativeTab(CreativeTabs.tabBlock);
+        setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
         setHarvestLevel("pickaxe", 1);
     }
 
     public Item getItemDropped(int p_149650_1_, Random p_149650_2_, int p_149650_3_) {
-        return Items.coal;
+        return Items.COAL;
     }
 }

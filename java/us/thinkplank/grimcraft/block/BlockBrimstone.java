@@ -7,11 +7,11 @@ import net.minecraft.creativetab.CreativeTabs;
 
 public class BlockBrimstone extends Block {
     public BlockBrimstone () {
-        super(Material.rock);
+        super(Material.ROCK);
         setHardness(3F);
-        setStepSound(SoundType.STONE);
+        setSoundType(SoundType.STONE);
         setRegistryName("brimstone_block");
-        setCreativeTab(CreativeTabs.tabBlock);
+        setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
         setHarvestLevel("pickaxe", 1);
     }
 }

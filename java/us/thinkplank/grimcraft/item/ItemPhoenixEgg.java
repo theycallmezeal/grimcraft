@@ -17,7 +17,7 @@ public class ItemPhoenixEgg extends Item {
     public ItemPhoenixEgg() {
         super();
         setMaxStackSize(64);
-        setCreativeTab(CreativeTabs.tabMaterials);
+        setCreativeTab(CreativeTabs.MATERIALS);
         setRegistryName("phoenix_egg");
         setUnlocalizedName("phoenix_egg");
     }
@@ -30,8 +30,8 @@ public class ItemPhoenixEgg extends Item {
 		} else if (player.canPlayerEdit(pos, facing, itemStack)) {
 			Block block = world.getBlockState(pos).getBlock();
 			
-			if (block.equals(Blocks.gravel) && !world.isRemote){
-				world.setBlockState(pos, Blocks.air.getDefaultState());
+			if (block.equals(Blocks.GRAVEL) && !world.isRemote){
+				world.setBlockState(pos, Blocks.AIR.getDefaultState());
 				world.playAuxSFX(2005, pos, 0);
 				//TODO come back here once mobs are done again
 				//EntityPhoenix phoenix = new EntityPhoenix(world);

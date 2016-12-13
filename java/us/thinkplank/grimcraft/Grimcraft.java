@@ -7,14 +7,21 @@
  * hunt down any Block == Block and replace with .equals()
  * hunt down world and replace with worldIn
  * hunt down any hard-coded "grimcraft" and replace with a .modid reference
+ * give nether foods a growth rate boost; make netherroot craftable with a beetroot
+ * maybe make netherroot de-corruptible into potatoes, carrots, and beetroot?
+ * make sure all headers match public Item getItemDropped(IBlockState state, Random rand, int fortune)
  */
 
 package us.thinkplank.grimcraft;
 
+import java.util.Random;
+
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.entity.monster.EntityCaveSpider;
 import net.minecraft.entity.monster.EntityEnderman;
 import net.minecraft.init.Biomes;
+import net.minecraft.item.Item;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;

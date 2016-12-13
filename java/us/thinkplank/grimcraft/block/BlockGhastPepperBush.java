@@ -22,7 +22,7 @@ public class BlockGhastPepperBush extends BlockBush implements IShearable {
 	public static final PropertyBool GROWN = PropertyBool.create("grown");
 	
 	public BlockGhastPepperBush() {
-		setCreativeTab(CreativeTabs.tabDecorations);
+		setCreativeTab(CreativeTabs.DECORATIONS);
         setRegistryName("ghast_pepper_bush");
     }
 	

@@ -13,9 +13,9 @@ public class BlockGrimwoodLog extends BlockOldLog {
 	public BlockGrimwoodLog () {
         super();
         setHardness(2F);
-        setStepSound(SoundType.WOOD);
+        setSoundType(SoundType.WOOD);
         setRegistryName("grimwood_log");
-        setCreativeTab(CreativeTabs.tabBlock);
+        setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
         setHarvestLevel("axe", 0);
     }
 }

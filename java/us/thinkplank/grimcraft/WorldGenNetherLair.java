@@ -26,27 +26,27 @@ public class WorldGenNetherLair extends WorldGenerator implements IWorldGenerato
     public static final WeightedRandomChestContent[] loot = new WeightedRandomChestContent[] {
     	new WeightedRandomChestContent(GrimcraftItems.wither_bone, 0, 1, 4, 10), 
     	new WeightedRandomChestContent(GrimcraftItems.wither_bonemeal, 0, 1, 4, 10), 
-    	new WeightedRandomChestContent(Items.bread, 0, 1, 1, 10), 
+    	new WeightedRandomChestContent(Items.BREAD, 0, 1, 1, 10), 
     	new WeightedRandomChestContent(GrimcraftItems.barley, 0, 1, 4, 10), 
     	new WeightedRandomChestContent(GrimcraftItems.brimstone, 0, 1, 4, 10), 
-    	new WeightedRandomChestContent(Items.string, 0, 1, 4, 10), 
-    	new WeightedRandomChestContent(Items.bucket, 0, 1, 1, 10), 
-    	new WeightedRandomChestContent(Items.golden_apple, 0, 1, 1, 1), 
+    	new WeightedRandomChestContent(Items.STRING, 0, 1, 4, 10), 
+    	new WeightedRandomChestContent(Items.BUCKET, 0, 1, 1, 10), 
+    	new WeightedRandomChestContent(Items.GOLDEN_APPLE, 0, 1, 1, 1), 
     	new WeightedRandomChestContent(GrimcraftItems.ghast_pepper, 0, 1, 4, 10),
     	new WeightedRandomChestContent(GrimcraftItems.vulpiberry, 0, 1, 4, 10), 
-    	new WeightedRandomChestContent(Items.record_11, 0, 1, 1, 10), 
-    	new WeightedRandomChestContent(Items.record_wait, 0, 1, 1, 10), 
-    	new WeightedRandomChestContent(Items.name_tag, 0, 1, 1, 10), 
+    	new WeightedRandomChestContent(Items.RECORD_11, 0, 1, 1, 10), 
+    	new WeightedRandomChestContent(Items.RECORD_WAIT, 0, 1, 1, 10), 
+    	new WeightedRandomChestContent(Items.NAME_TAG, 0, 1, 1, 10), 
     };
 	
-	Block air = Blocks.air;
-	Block brick = Blocks.nether_brick;
-	Block tnt = Blocks.tnt;
-	Block sand = Blocks.soul_sand;
-	Block lava = Blocks.lava;
-	Block torch = Blocks.redstone_torch;
-	Block chest = Blocks.trapped_chest;
-	Block wart = Blocks.nether_wart;
+	Block air = Blocks.AIR;
+	Block brick = Blocks.NETHER_BRICK;
+	Block tnt = Blocks.TNT;
+	Block sand = Blocks.SOUL_SAND;
+	Block lava = Blocks.LAVA;
+	Block torch = Blocks.REDSTONE_TORCH;
+	Block chest = Blocks.TRAPPED_CHEST;
+	Block wart = Blocks.NETHER_WART;
 	
 	Block[][] layer7 = {
 		{air, air, air, air, air, air, air, air, air},
@@ -146,8 +146,8 @@ public class WorldGenNetherLair extends WorldGenerator implements IWorldGenerato
 	
 	protected Block[] getValidSpawnBlocks() {
 		return new Block[] {
-			Blocks.netherrack,
-			Blocks.soul_sand
+			Blocks.NETHERRACK,
+			Blocks.SOUL_SAND
 		};
 	}
 
@@ -159,7 +159,7 @@ public class WorldGenNetherLair extends WorldGenerator implements IWorldGenerato
 		
 		Block check = world.getBlockState(new BlockPos(i, j, k)).getBlock();
 
-		while (check != Blocks.air){
+		while (check != Blocks.AIR){
 			if (distanceToAir > 3) {
 				return false;
 			}
@@ -175,12 +175,12 @@ public class WorldGenNetherLair extends WorldGenerator implements IWorldGenerato
 		Block blockBelow = world.getBlockState(new BlockPos(i, j - 1, k)).getBlock();
 		
 		for (Block x : getValidSpawnBlocks()){
-			if (blockAbove != Blocks.air){
+			if (blockAbove != Blocks.AIR){
 				return false;
 			}
 			if (block == x) {
 				return true;
-			} else if (block == Blocks.snow && blockBelow == x) {
+			} else if (block == Blocks.SNOW && blockBelow == x) {
 				return true;
 			}
 		}

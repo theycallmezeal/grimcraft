@@ -7,11 +7,11 @@ import net.minecraft.creativetab.CreativeTabs;
 
 public class BlockNetherLantern extends Block {
     public BlockNetherLantern () {
-        super(Material.glass);
+        super(Material.GLASS);
         setHardness(3F);
-        setStepSound(SoundType.GLASS);
+        setSoundType(SoundType.GLASS);
         setRegistryName("nether_lantern");
-        setCreativeTab(CreativeTabs.tabDecorations);
+        setCreativeTab(CreativeTabs.DECORATIONS);
         setHarvestLevel("pickaxe", 1);
         setLightLevel(15F);
     }

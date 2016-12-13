@@ -12,16 +12,11 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class BlockLavaLamp extends BlockGlowstone {
     public BlockLavaLamp () {
-        super(Material.glass);
+        super(Material.GLASS);
         setHardness(3F);
-        setStepSound(SoundType.GLASS);
+        setSoundType(SoundType.GLASS);
         setRegistryName("lava_lamp");
-        setCreativeTab(CreativeTabs.tabDecorations);
+        setCreativeTab(CreativeTabs.DECORATIONS);
         setHarvestLevel("pickaxe", 1);
-    }
-    
-    //TODO findItem()
-    public Item getItemDropped(int p_149650_1_, Random p_149650_2_, int p_149650_3_) {
-        return Items.lava_bucket;
     }
 }

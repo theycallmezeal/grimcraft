@@ -13,19 +13,16 @@ import net.minecraft.world.IBlockAccess;
 
 public class BlockGrimwoodFence extends BlockFence {
 	public BlockGrimwoodFence() {
-		super(Material.wood, MapColor.woodColor);
+		super(Material.WOOD, MapColor.WOOD);
 		setHardness(2F);
-		setCreativeTab(CreativeTabs.tabDecorations);
+		setCreativeTab(CreativeTabs.DECORATIONS);
 		setRegistryName("grimwood_fence");
 	}
 	
 	public boolean canConnectTo(IBlockAccess worldIn, BlockPos pos) {
-		IBlockState blockState = worldIn.getBlockState(pos);
-        Block block = blockState.getBlock();
-        Material material = block.getMaterial(blockState);
-        
-        return block == Blocks.barrier ? false : ((!(block instanceof BlockGrimwoodFence) || material != this.blockMaterial)
-        		&& !(block instanceof BlockFenceGate) ? (material.isOpaque()
-        		&& blockState.isFullCube() ? material != Material.gourd : false) : true);
+        IBlockState iblockstate = worldIn.getBlockState(pos);
+        Material material = iblockstate.getMaterial();
+        Block block = iblockstate.getBlock();
+        return block == Blocks.BARRIER ? false : ((!(block instanceof BlockFence) || material != this.blockMaterial) && !(block instanceof BlockFenceGate) ? (material.isOpaque() && iblockstate.isFullCube() ? material != Material.GOURD : false) : true);
     }
 }

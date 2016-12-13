@@ -41,13 +41,13 @@ public class GrimcraftItems {
     public final static Item nether_gold_hoe = new GrimcraftTools.Hoe(nether_gold_material, "nether_gold_hoe");
     public final static Item nether_gold_sword = new GrimcraftTools.Sword(nether_gold_material, "nether_gold_sword");
     
-    public final static Item grimwood_stick = new Item().setCreativeTab(CreativeTabs.tabMaterials).setRegistryName("grimwood_stick").setUnlocalizedName("grimwood_stick");
-    public final static Item wither_bone = new Item().setCreativeTab(CreativeTabs.tabMaterials).setRegistryName("wither_bone").setUnlocalizedName("wither_bone");
+    public final static Item grimwood_stick = new Item().setCreativeTab(CreativeTabs.MATERIALS).setRegistryName("grimwood_stick").setUnlocalizedName("grimwood_stick");
+    public final static Item wither_bone = new Item().setCreativeTab(CreativeTabs.MATERIALS).setRegistryName("wither_bone").setUnlocalizedName("wither_bone");
     public final static Item wither_bonemeal = new ItemWitherBonemeal();
-    public final static Item brimstone = new Item().setCreativeTab(CreativeTabs.tabMaterials).setRegistryName("brimstone").setUnlocalizedName("brimstone");
-    public final static Item barley = new Item().setCreativeTab(CreativeTabs.tabMaterials).setRegistryName("barley").setUnlocalizedName("barley");
+    public final static Item brimstone = new Item().setCreativeTab(CreativeTabs.MATERIALS).setRegistryName("brimstone").setUnlocalizedName("brimstone");
+    public final static Item barley = new Item().setCreativeTab(CreativeTabs.MATERIALS).setRegistryName("barley").setUnlocalizedName("barley");
     public final static Item barley_seeds = new ItemBarleySeeds();
-    public final static Item vulpiberry = new ItemFood(1, 0.1F, false).setCreativeTab(CreativeTabs.tabFood).setRegistryName("vulpiberry").setUnlocalizedName("vulpiberry");
+    public final static Item vulpiberry = new ItemFood(1, 0.1F, false).setCreativeTab(CreativeTabs.FOOD).setRegistryName("vulpiberry").setUnlocalizedName("vulpiberry");
     public final static Item ghast_pepper = new ItemGhastPepper();
     public final static Item netherroot = new ItemNetherroot();
     public final static Item phoenix_egg = new ItemPhoenixEgg();

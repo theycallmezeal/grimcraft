@@ -17,9 +17,9 @@ public class BlockBarleyCrop extends BlockCrops {
 	
 	public BlockBarleyCrop() {
 		super();
-		setCreativeTab(CreativeTabs.tabDecorations);
+		setCreativeTab(CreativeTabs.DECORATIONS);
 		setRegistryName("barley_crop");
-		setStepSound(SoundType.PLANT);
+		setSoundType(SoundType.PLANT);
 	}
 	
 	protected boolean canPlaceBlockOn(Block block) {
@@ -28,12 +28,12 @@ public class BlockBarleyCrop extends BlockCrops {
 	
 	@Override
 	protected Item getSeed() {
-        return Items.wheat_seeds;
+        return Items.WHEAT_SEEDS;
     }
 
 	@Override
     protected Item getCrop() {
-        return Items.wheat;
+        return Items.WHEAT;
     }
 	
 	@Override

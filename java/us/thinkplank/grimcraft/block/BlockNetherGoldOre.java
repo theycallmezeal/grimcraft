@@ -7,11 +7,11 @@ import net.minecraft.creativetab.CreativeTabs;
 
 public class BlockNetherGoldOre extends Block {
     public BlockNetherGoldOre () {
-        super(Material.rock);
+        super(Material.ROCK);
         setHardness(3F);
-        setStepSound(SoundType.STONE);
+        setSoundType(SoundType.STONE);
         setRegistryName("nether_gold_ore");
-        setCreativeTab(CreativeTabs.tabBlock);
+        setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
         setHarvestLevel("pickaxe", 1);
     }
 }

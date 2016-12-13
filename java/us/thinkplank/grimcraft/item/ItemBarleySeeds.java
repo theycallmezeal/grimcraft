@@ -17,7 +17,7 @@ public class ItemBarleySeeds extends ItemSeeds {
     public ItemBarleySeeds() {
         super(GrimcraftBlocks.barley_crop, GrimcraftBlocks.peat);
         setMaxStackSize(64);
-        setCreativeTab(CreativeTabs.tabMaterials);
+        setCreativeTab(CreativeTabs.MATERIALS);
         setRegistryName("barley_seeds");
         setUnlocalizedName("barley_seeds");
     }
@@ -26,7 +26,7 @@ public class ItemBarleySeeds extends ItemSeeds {
     	if (facing != EnumFacing.UP) {
             return EnumActionResult.FAIL;
         } else if (playerIn.canPlayerEdit(pos, facing, stack) && playerIn.canPlayerEdit(pos.up(), facing, stack)) {
-            if (worldIn.getBlockState(pos).getBlock().equals(GrimcraftBlocks.peat) && worldIn.getBlockState(pos.up()).getBlock().equals(Blocks.air)) {
+            if (worldIn.getBlockState(pos).getBlock().equals(GrimcraftBlocks.peat) && worldIn.getBlockState(pos.up()).getBlock().equals(Blocks.AIR)) {
             	worldIn.setBlockState(pos.up(), GrimcraftBlocks.barley_crop.getDefaultState());
                 stack.stackSize--;
                 return EnumActionResult.SUCCESS;

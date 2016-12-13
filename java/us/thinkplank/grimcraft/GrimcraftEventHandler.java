@@ -13,6 +13,7 @@ import net.minecraft.entity.monster.EntityGhast;
 import net.minecraft.entity.monster.EntityMagmaCube;
 import net.minecraft.entity.monster.EntityPigZombie;
 import net.minecraft.entity.monster.EntitySkeleton;
+import net.minecraft.entity.monster.SkeletonType;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -47,8 +48,8 @@ public class GrimcraftEventHandler {
 		
 		Block targetBlock = world.getBlockState(pos).getBlock();
 		
-		if (targetBlock.equals(Blocks.soul_sand)) {
-			world.playSound(player, pos, SoundEvents.item_hoe_till, SoundCategory.BLOCKS, 1.0F, 1.0F);
+		if (targetBlock.equals(Blocks.SOUL_SAND)) {
+			world.playSound(player, pos, SoundEvents.ITEM_HOE_TILL, SoundCategory.BLOCKS, 1.0F, 1.0F);
 			
 			if (world.isRemote) {
 				return;
@@ -65,9 +66,9 @@ public class GrimcraftEventHandler {
 		
 		List<EntityItem> drops = event.getDrops();
 		
-	    if (entity instanceof EntitySkeleton && ((EntitySkeleton) entity).getSkeletonType() == 1) { // if entity is wither skeleton
+	    if (entity instanceof EntitySkeleton && ((EntitySkeleton) entity).func_189771_df() == SkeletonType.WITHER) { // if entity is wither skeleton
 	        for (int i = 0; i < drops.size(); i++) {
-	        	if (drops.get(i).getEntityItem().getItem().equals(Items.bone)) {
+	        	if (drops.get(i).getEntityItem().getItem().equals(Items.BONE)) {
 	        		drops.get(i).setEntityItemStack(new ItemStack(GrimcraftItems.wither_bone));
 	        	}
 	        }
@@ -123,7 +124,7 @@ public class GrimcraftEventHandler {
 				}
 				
 				if (poisonStrength > 0) {
-					player.addPotionEffect(new PotionEffect(MobEffects.poison, poisonStrength * 20, 0));
+					player.addPotionEffect(new PotionEffect(MobEffects.POISON, poisonStrength * 20, 0));
 				}
 			}
 		}

@@ -12,11 +12,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockGrimwoodPlanks extends Block {
     public BlockGrimwoodPlanks () {
-        super(Material.wood);
+        super(Material.WOOD);
         setHardness(2F);
-        setStepSound(SoundType.WOOD);
+        setSoundType(SoundType.WOOD);
         setRegistryName("grimwood_planks");
-        setCreativeTab(CreativeTabs.tabBlock);
+        setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
         setHarvestLevel("axe", 0);
     }
 }
