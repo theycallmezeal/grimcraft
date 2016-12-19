@@ -17,7 +17,6 @@ public class BlockBarleyCrop extends BlockCrops {
 	
 	public BlockBarleyCrop() {
 		super();
-		setCreativeTab(CreativeTabs.DECORATIONS);
 		setRegistryName("barley_crop");
 		setSoundType(SoundType.PLANT);
 	}

@@ -13,7 +13,6 @@ public class BlockNetherrootCrop extends BlockCrops {
 	
 	public BlockNetherrootCrop() {
 		super();
-		setCreativeTab(CreativeTabs.DECORATIONS);
 		setSoundType(SoundType.PLANT);
 		setRegistryName("netherroot_crop");
 	}
