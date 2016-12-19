@@ -13,7 +13,7 @@ public class GrimcraftRecipes {
         GameRegistry.addRecipe(new ItemStack(GrimcraftItems.grimwood_stick), "x", "x", 'x', new ItemStack(GrimcraftBlocks.grimwood_planks));
         //GameRegistry.addRecipe(new ItemStack(GrimcraftBlocks.half_grimwood_slab, 6), "xxx", 'x', new ItemStack(GrimcraftBlocks.grimwood_planks));
         GameRegistry.addRecipe(new ItemStack(GrimcraftBlocks.grimwood_stairs, 4), "x  ", "xx ", "xxx", 'x', new ItemStack(GrimcraftBlocks.grimwood_planks));
-        //TODO add a grimwood door
+        //TODO add a grimwood door and trapdoor
         GameRegistry.addRecipe(new ItemStack(Blocks.OAK_DOOR), "xx", "xx", "xx", 'x', new ItemStack(GrimcraftBlocks.grimwood_planks)); //grimwood door?
         GameRegistry.addRecipe(new ItemStack(GrimcraftBlocks.grimwood_fence), "xxx", "xxx", 'x', new ItemStack(GrimcraftItems.grimwood_stick));
         GameRegistry.addRecipe(new ItemStack(GrimcraftBlocks.grimwood_fence_gate), "xyx", "xyx", 'x', new ItemStack(GrimcraftItems.grimwood_stick), 'y', new ItemStack(GrimcraftBlocks.grimwood_planks));
@@ -60,13 +60,15 @@ public class GrimcraftRecipes {
         GameRegistry.addShapelessRecipe(new ItemStack(GrimcraftItems.netherroot), new ItemStack(Items.POTATO), new ItemStack(GrimcraftItems.wither_bonemeal));
         GameRegistry.addShapelessRecipe(new ItemStack(GrimcraftItems.netherroot), new ItemStack(Items.CARROT), new ItemStack(GrimcraftItems.wither_bonemeal));
         GameRegistry.addShapelessRecipe(new ItemStack(GrimcraftItems.netherroot), new ItemStack(Items.POISONOUS_POTATO), new ItemStack(GrimcraftItems.wither_bonemeal));
+        GameRegistry.addShapelessRecipe(new ItemStack(GrimcraftItems.netherroot), new ItemStack(Items.BEETROOT), new ItemStack(GrimcraftItems.wither_bonemeal));
         GameRegistry.addShapelessRecipe(new ItemStack(GrimcraftItems.netherroot_soup), new ItemStack(GrimcraftItems.netherroot), new ItemStack(Items.BOWL));
 
         GameRegistry.addRecipe(new ItemStack(GrimcraftBlocks.glowstone_grower), "plp", "pbp", "ggg",
         		'p', new ItemStack(GrimcraftBlocks.grimwood_planks),
         		'l', new ItemStack(Items.LAVA_BUCKET),
         		'b', new ItemStack(GrimcraftBlocks.brimstone_block),
-        		'g', new ItemStack(Blocks.GLOWSTONE));
+        		'g', new ItemStack(Blocks.GLOWSTONE)
+        );
         
         GameRegistry.addSmelting(GrimcraftBlocks.nether_coal_ore, new ItemStack(Items.COAL), 0.2f);
         GameRegistry.addSmelting(GrimcraftBlocks.nether_gold_ore, new ItemStack(Items.GOLD_INGOT), 1.2f);

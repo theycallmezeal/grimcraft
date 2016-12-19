@@ -7,7 +7,7 @@
  * hunt down any Block == Block and replace with .equals()
  * hunt down world and replace with worldIn
  * hunt down any hard-coded "grimcraft" and replace with a .modid reference
- * give nether foods a growth rate boost; make netherroot craftable with a beetroot
+ * give nether foods a growth rate boost
  * maybe make netherroot de-corruptible into potatoes, carrots, and beetroot?
  * make sure all headers match public Item getItemDropped(IBlockState state, Random rand, int fortune)
  * retexture the ugly ass vulpiberry
