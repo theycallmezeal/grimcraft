@@ -9,7 +9,6 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class BlockNetherRedstoneOre extends Block {
     public BlockNetherRedstoneOre () {
@@ -21,11 +20,13 @@ public class BlockNetherRedstoneOre extends Block {
         setHarvestLevel("pickaxe", 1);
     }
     
-    public Item getItemDropped(IBlockState state, Random rand, int fortune) {
+    @Override
+	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
         return Items.REDSTONE;
     }
 
-    public int quantityDropped(Random random) {
+    @Override
+	public int quantityDropped(Random random) {
         return random.nextInt(2) + 4;
     }
 }

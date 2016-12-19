@@ -31,16 +31,19 @@ public class BlockPeat extends BlockFalling {
         setTickRandomly(true);
     }
     
-    public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, World worldIn, BlockPos pos) {
+    @Override
+	public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, World worldIn, BlockPos pos) {
         return new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.875D, 1.0D);
     }
     
-    public void onEntityCollidedWithBlock(World worldIn, BlockPos pos, IBlockState state, Entity entityIn) {
+    @Override
+	public void onEntityCollidedWithBlock(World worldIn, BlockPos pos, IBlockState state, Entity entityIn) {
         entityIn.motionX *= 0.4D;
         entityIn.motionZ *= 0.4D;
     }
     
-    public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
+    @Override
+	public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
         super.updateTick(worldIn, pos, state, rand);
         IBlockState blockStateAbove = worldIn.getBlockState(pos.up());
         
@@ -50,7 +53,8 @@ public class BlockPeat extends BlockFalling {
     	}
     }
     
-    public boolean canSustainPlant(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing direction, IPlantable plantable) {
+    @Override
+	public boolean canSustainPlant(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing direction, IPlantable plantable) {
     	Block plant = plantable.getPlant(world, pos).getBlock();
     	
     	if (plant.equals(GrimcraftBlocks.barley_crop)

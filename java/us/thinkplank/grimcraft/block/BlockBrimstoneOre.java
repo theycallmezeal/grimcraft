@@ -23,7 +23,8 @@ public class BlockBrimstoneOre extends Block {
         return GrimcraftItems.brimstone;
     }
 
-    public int quantityDropped(Random random) {
+    @Override
+	public int quantityDropped(Random random) {
         return random.nextInt(5) + 4;
     }
 }

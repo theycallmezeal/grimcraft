@@ -2,7 +2,6 @@ package us.thinkplank.grimcraft.block;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSlab;
-import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.item.ItemSlab;
 
 public class ItemBlockGrimwoodSlab extends ItemSlab {

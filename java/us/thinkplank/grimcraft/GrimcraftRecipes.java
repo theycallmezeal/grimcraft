@@ -3,9 +3,9 @@ package us.thinkplank.grimcraft;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import us.thinkplank.grimcraft.block.GrimcraftBlocks;
 import us.thinkplank.grimcraft.item.GrimcraftItems;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class GrimcraftRecipes {
 	public static void register() {

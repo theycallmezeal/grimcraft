@@ -1,9 +1,5 @@
 package us.thinkplank.grimcraft.item;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockSlab;
-import net.minecraft.item.ItemSlab;
-import us.thinkplank.grimcraft.block.GrimcraftBlocks;
 
 //public class ItemGrimwoodSlab extends ItemSlab {
 //	public ItemGrimwoodSlab(Block block) {

@@ -19,6 +19,7 @@ public class BlockGrimwoodFence extends BlockFence {
 		setRegistryName("grimwood_fence");
 	}
 	
+	@Override
 	public boolean canConnectTo(IBlockAccess worldIn, BlockPos pos) {
         IBlockState iblockstate = worldIn.getBlockState(pos);
         Material material = iblockstate.getMaterial();

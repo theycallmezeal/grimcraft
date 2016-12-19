@@ -10,8 +10,6 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import us.thinkplank.grimcraft.block.GrimcraftBlocks;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ItemNetherroot extends ItemSeedFood {
     public ItemNetherroot() {

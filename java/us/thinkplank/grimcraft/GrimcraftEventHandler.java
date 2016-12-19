@@ -4,7 +4,6 @@ import java.util.List;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFurnace;
-import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityItem;
@@ -27,7 +26,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
-import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.player.BonemealEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent.LeftClickBlock;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent.RightClickBlock;
@@ -144,7 +142,7 @@ public class GrimcraftEventHandler {
 		if (targetBlock.equals(GrimcraftBlocks.vulpiberry_bush)) {
 			if (state.getValue(BlockVulpiberryBush.GROWN)) {
 				event.setCanceled(true);
-				worldIn.spawnEntityInWorld(new EntityItem(worldIn, (double) pos.getX(), (double) pos.getY(), (double) pos.getZ(), new ItemStack(GrimcraftItems.vulpiberry, 3)));
+				worldIn.spawnEntityInWorld(new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(GrimcraftItems.vulpiberry, 3)));
 				worldIn.setBlockState(pos, state.withProperty(BlockVulpiberryBush.GROWN, true));
 			}
 		}
@@ -153,7 +151,7 @@ public class GrimcraftEventHandler {
 		if (targetBlock.equals(GrimcraftBlocks.vulpiberry_bush)) {
 			if (state.getValue(BlockGhastPepperBush.GROWN)) {
 				event.setCanceled(true);
-				worldIn.spawnEntityInWorld(new EntityItem(worldIn, (double) pos.getX(), (double) pos.getY(), (double) pos.getZ(), new ItemStack(GrimcraftItems.vulpiberry, 3)));
+				worldIn.spawnEntityInWorld(new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(GrimcraftItems.vulpiberry, 3)));
 				worldIn.setBlockState(pos, state.withProperty(BlockGhastPepperBush.GROWN, true));
 			}
 		}

@@ -8,7 +8,6 @@ import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class BlockFossilstoneOre extends Block {
     public BlockFossilstoneOre () {
@@ -24,7 +23,8 @@ public class BlockFossilstoneOre extends Block {
         return Items.BONE;
     }
 
-    public int quantityDropped(Random random) {
+    @Override
+	public int quantityDropped(Random random) {
         return random.nextInt(2) + 4;
     }
 }

@@ -1,6 +1,5 @@
 package us.thinkplank.grimcraft.block;
 
-import net.minecraft.block.BlockLog;
 import net.minecraft.block.BlockOldLog;
 import net.minecraft.block.SoundType;
 import net.minecraft.creativetab.CreativeTabs;
