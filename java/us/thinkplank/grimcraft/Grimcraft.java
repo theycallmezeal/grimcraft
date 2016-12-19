@@ -10,11 +10,10 @@
  * give nether foods a growth rate boost; make netherroot craftable with a beetroot
  * maybe make netherroot de-corruptible into potatoes, carrots, and beetroot?
  * make sure all headers match public Item getItemDropped(IBlockState state, Random rand, int fortune)
- * make sure barley and netherroot can only be planted on peat
- * make sure right clicking the barley crop gives a barley item
  * retexture the ugly ass vulpiberry
  * make peat's block model match soul sand's height
  * fix the slabs
+ * test: do nether crops grow in the nether? they correctly do not grow in the overworld
  */
 
 package us.thinkplank.grimcraft;
