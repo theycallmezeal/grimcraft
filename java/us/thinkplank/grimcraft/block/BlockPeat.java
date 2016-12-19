@@ -31,10 +31,10 @@ public class BlockPeat extends BlockFalling {
         setTickRandomly(true);
     }
     
-    public AxisAlignedBB getSelectedBoundingBox(IBlockState blockState, World worldIn, BlockPos pos) {
+    public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, World worldIn, BlockPos pos) {
         return new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.875D, 1.0D);
     }
-
+    
     public void onEntityCollidedWithBlock(World worldIn, BlockPos pos, IBlockState state, Entity entityIn) {
         entityIn.motionX *= 0.4D;
         entityIn.motionZ *= 0.4D;
@@ -50,7 +50,6 @@ public class BlockPeat extends BlockFalling {
     	}
     }
     
-    @Override
     public boolean canSustainPlant(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing direction, IPlantable plantable) {
     	Block plant = plantable.getPlant(world, pos).getBlock();
     	

@@ -14,7 +14,8 @@
  * make sure right clicking the barley crop gives a barley item
  * make sure neither barley nor netherroot crop blocks appear in creative inventory
  * retexture the ugly ass vulpiberry
- * make peat slow you down
+ * make peat's block model match soul sand's height
+ * fix the slabs
  */
 
 package us.thinkplank.grimcraft;
