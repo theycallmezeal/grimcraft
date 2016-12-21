@@ -60,10 +60,12 @@ public class BlockVulpiberryBush extends BlockBush implements IShearable {
 	
 	@Override
 	public List<ItemStack> getDrops(IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
-		// this should not be reached if meta is 0 because of the event handler
 		// TODO fortune?
 		ArrayList<ItemStack> ret = new ArrayList<ItemStack>();
-		ret.add(new ItemStack(GrimcraftItems.vulpiberry));
+		ret.add(new ItemStack(GrimcraftBlocks.vulpiberry_bush));
+		if (state.getValue(GROWN)) {
+			ret.add(new ItemStack(GrimcraftItems.vulpiberry, 3));
+		}
 		return ret;
 	}
 	

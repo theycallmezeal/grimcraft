@@ -133,26 +133,28 @@ public class GrimcraftEventHandler {
 		World worldIn = event.getWorld();
 		BlockPos pos = event.getPos();
 		IBlockState state = worldIn.getBlockState(pos);
-		EntityPlayer player = event.getEntityPlayer();
 		
 		Block targetBlock = worldIn.getBlockState(pos).getBlock();
-		ItemStack heldItemStack = player.inventory.getCurrentItem();
 		
 		// handles strawberry harvesting
 		if (targetBlock.equals(GrimcraftBlocks.vulpiberry_bush)) {
 			if (state.getValue(BlockVulpiberryBush.GROWN)) {
 				event.setCanceled(true);
-				worldIn.spawnEntityInWorld(new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(GrimcraftItems.vulpiberry, 3)));
-				worldIn.setBlockState(pos, state.withProperty(BlockVulpiberryBush.GROWN, true));
+				if (!worldIn.isRemote) {
+					worldIn.spawnEntityInWorld(new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(GrimcraftItems.vulpiberry, 3)));
+				}
+				worldIn.setBlockState(pos, state.withProperty(BlockVulpiberryBush.GROWN, false));
 			}
 		}
 		
 		// handles ghast pepper harvesting
-		if (targetBlock.equals(GrimcraftBlocks.vulpiberry_bush)) {
+		if (targetBlock.equals(GrimcraftBlocks.ghast_pepper_bush)) {
 			if (state.getValue(BlockGhastPepperBush.GROWN)) {
 				event.setCanceled(true);
-				worldIn.spawnEntityInWorld(new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(GrimcraftItems.vulpiberry, 3)));
-				worldIn.setBlockState(pos, state.withProperty(BlockGhastPepperBush.GROWN, true));
+				if (!worldIn.isRemote) {
+					worldIn.spawnEntityInWorld(new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(GrimcraftItems.ghast_pepper, 3)));
+				}
+				worldIn.setBlockState(pos, state.withProperty(BlockGhastPepperBush.GROWN, false));
 			}
 		}
 	}
