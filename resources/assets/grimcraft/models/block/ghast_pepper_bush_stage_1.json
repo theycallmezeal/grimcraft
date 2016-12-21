@@ -1,0 +1,6 @@
+{
+    "parent": "block/cross",
+    "textures": {
+        "cross": "grimcraft:blocks/ghast_pepper_bush_stage_1"
+    }
+}

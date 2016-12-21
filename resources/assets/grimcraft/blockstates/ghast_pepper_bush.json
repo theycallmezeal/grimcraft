@@ -1,5 +1,6 @@
 {
     "variants": {
-        "normal": { "model": "grimcraft:ghast_pepper_bush" }
+		"grown=false": { "model": "grimcraft:ghast_pepper_bush_stage_0" },
+		"grown=true": { "model": "grimcraft:ghast_pepper_bush_stage_1" }
     }
 }

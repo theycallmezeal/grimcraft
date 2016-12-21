@@ -15,6 +15,7 @@
  * fix the slabs
  * test: do nether crops grow in the nether? they correctly do not grow in the overworld
  * rename textures/blocks to textures/block (and update the models...)
+ * fix vulpiberry harvesting: blockstate doesn't go back; "ghost" berries created
  */
 
 package us.thinkplank.grimcraft;
