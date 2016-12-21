@@ -27,9 +27,9 @@ import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.entity.player.BonemealEvent;
-import net.minecraftforge.event.entity.player.PlayerInteractEvent.LeftClickBlock;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent.RightClickBlock;
 import net.minecraftforge.event.entity.player.UseHoeEvent;
+import net.minecraftforge.event.world.BlockEvent.BreakEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import us.thinkplank.grimcraft.block.BlockGhastPepperBush;
 import us.thinkplank.grimcraft.block.BlockVulpiberryBush;
@@ -129,14 +129,14 @@ public class GrimcraftEventHandler {
 	}
 	
 	@SubscribeEvent
-	public void onPlayerLeftClick(LeftClickBlock event) {
+	public void onPlayerBreakBlock(BreakEvent event) {
 		World worldIn = event.getWorld();
 		BlockPos pos = event.getPos();
 		IBlockState state = worldIn.getBlockState(pos);
 		
 		Block targetBlock = worldIn.getBlockState(pos).getBlock();
 		
-		// handles strawberry harvesting
+		// handles vulpiberry harvesting
 		if (targetBlock.equals(GrimcraftBlocks.vulpiberry_bush)) {
 			if (state.getValue(BlockVulpiberryBush.GROWN)) {
 				event.setCanceled(true);
