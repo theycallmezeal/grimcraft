@@ -14,6 +14,7 @@
  * make peat's block model match soul sand's height
  * fix the slabs
  * test: do nether crops grow in the nether? they correctly do not grow in the overworld
+ * rename textures/blocks to textures/block (and update the models...)
  */
 
 package us.thinkplank.grimcraft;

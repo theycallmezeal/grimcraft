@@ -1,6 +1,0 @@
-{
-    "parent": "block/fence_n",
-    "textures": {
-        "texture": "grimcraft:blocks/grimwood_planks"
-    }
-}
