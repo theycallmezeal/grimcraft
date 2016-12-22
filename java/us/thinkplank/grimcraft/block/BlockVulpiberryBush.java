@@ -22,7 +22,6 @@ public class BlockVulpiberryBush extends BlockBush implements IShearable {
 	
 	public BlockVulpiberryBush () {
 		super();
-		setCreativeTab(CreativeTabs.DECORATIONS);
         setRegistryName("vulpiberry_bush");
         setDefaultState(this.getDefaultState().withProperty(GROWN, false));
     }

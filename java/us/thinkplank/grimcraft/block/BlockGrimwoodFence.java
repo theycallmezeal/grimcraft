@@ -15,7 +15,6 @@ public class BlockGrimwoodFence extends BlockFence {
 	public BlockGrimwoodFence() {
 		super(Material.WOOD, MapColor.WOOD);
 		setHardness(2F);
-		setCreativeTab(CreativeTabs.DECORATIONS);
 		setRegistryName("grimwood_fence");
 	}
 	

@@ -12,7 +12,6 @@ public class BlockGrimwoodStairs extends BlockStairs {
 		setHardness(2F);
         setSoundType(SoundType.WOOD);
         setRegistryName("grimwood_stairs");
-        setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
         setHarvestLevel("axe", 0);
         setLightOpacity(0);
 	}

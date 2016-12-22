@@ -10,7 +10,6 @@ import net.minecraft.world.World;
 public class ItemGhastPepper extends ItemFood {
     public ItemGhastPepper() {
         super(2, 0.8F, false);
-        setCreativeTab(CreativeTabs.MATERIALS);
         setRegistryName("ghast_pepper");
         setUnlocalizedName("ghast_pepper");
     }

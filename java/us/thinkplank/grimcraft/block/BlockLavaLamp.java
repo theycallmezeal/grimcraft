@@ -11,7 +11,6 @@ public class BlockLavaLamp extends BlockGlowstone {
         setHardness(3F);
         setSoundType(SoundType.GLASS);
         setRegistryName("lava_lamp");
-        setCreativeTab(CreativeTabs.DECORATIONS);
         setHarvestLevel("pickaxe", 1);
     }
 }

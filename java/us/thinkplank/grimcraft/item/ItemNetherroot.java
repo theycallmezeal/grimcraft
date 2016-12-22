@@ -16,7 +16,6 @@ import us.thinkplank.grimcraft.block.GrimcraftBlocks;
 public class ItemNetherroot extends ItemSeedFood {
     public ItemNetherroot() {
         super(4, 0.6F, GrimcraftBlocks.netherroot_crop, GrimcraftBlocks.peat);
-        setCreativeTab(CreativeTabs.MATERIALS);
         setRegistryName("netherroot");
         setUnlocalizedName("netherroot");
     }

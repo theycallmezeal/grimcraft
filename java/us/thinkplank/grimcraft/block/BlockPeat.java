@@ -26,7 +26,6 @@ public class BlockPeat extends BlockFalling {
         setHardness(3F);
         setSoundType(SoundType.GROUND);
         setRegistryName("peat");
-        setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
         setHarvestLevel("shovel", 0);
         setTickRandomly(true);
     }

@@ -15,7 +15,6 @@ public class BlockNetherCoalOre extends Block {
         setHardness(3F);
         setSoundType(SoundType.STONE);
         setRegistryName("nether_coal_ore");
-        setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
         setHarvestLevel("pickaxe", 1);
     }
 

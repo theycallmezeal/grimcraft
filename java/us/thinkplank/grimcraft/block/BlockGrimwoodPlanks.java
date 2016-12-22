@@ -11,7 +11,6 @@ public class BlockGrimwoodPlanks extends Block {
         setHardness(2F);
         setSoundType(SoundType.WOOD);
         setRegistryName("grimwood_planks");
-        setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
         setHarvestLevel("axe", 0);
     }
 }

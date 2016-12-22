@@ -15,7 +15,6 @@ public class BlockGrimwoodLog extends BlockRotatedPillar {
         setHardness(2F);
         setSoundType(SoundType.WOOD);
         setRegistryName("grimwood_log");
-        setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
         setHarvestLevel("axe", 0);
     }
 }

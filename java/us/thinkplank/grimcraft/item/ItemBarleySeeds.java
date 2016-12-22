@@ -16,7 +16,6 @@ import us.thinkplank.grimcraft.block.GrimcraftBlocks;
 public class ItemBarleySeeds extends ItemSeeds {
     public ItemBarleySeeds() {
         super(GrimcraftBlocks.barley_crop, GrimcraftBlocks.peat);
-        setCreativeTab(CreativeTabs.MATERIALS);
         setRegistryName("barley_seeds");
         setUnlocalizedName("barley_seeds");
     }

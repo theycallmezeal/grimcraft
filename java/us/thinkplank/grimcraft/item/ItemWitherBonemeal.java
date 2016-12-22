@@ -20,7 +20,6 @@ import us.thinkplank.grimcraft.block.GrimcraftBlocks;
 public class ItemWitherBonemeal extends Item {
     public ItemWitherBonemeal() {
         super();
-        setCreativeTab(CreativeTabs.MATERIALS);
         setRegistryName("wither_bonemeal");
         setUnlocalizedName("wither_bonemeal");
     }

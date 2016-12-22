@@ -6,9 +6,8 @@ import net.minecraft.creativetab.CreativeTabs;
 
 public class BlockGrimwoodFenceGate extends BlockFenceGate {
 	public BlockGrimwoodFenceGate() {
-		super(BlockPlanks.EnumType.OAK); //TODO does this screw anything up?
+		super(BlockPlanks.EnumType.OAK);
 		setHardness(2F);
-		setCreativeTab(CreativeTabs.DECORATIONS);
 		setRegistryName("grimwood_fence_gate");
 	}
 }

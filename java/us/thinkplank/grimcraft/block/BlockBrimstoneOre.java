@@ -15,7 +15,6 @@ public class BlockBrimstoneOre extends Block {
         setHardness(3F);
         setSoundType(SoundType.STONE);
         setRegistryName("brimstone_ore");
-        setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
         setHarvestLevel("pickaxe", 1);
     }
 

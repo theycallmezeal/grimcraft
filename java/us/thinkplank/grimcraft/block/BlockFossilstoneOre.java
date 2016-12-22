@@ -15,7 +15,6 @@ public class BlockFossilstoneOre extends Block {
         setHardness(3F);
         setSoundType(SoundType.STONE);
         setRegistryName("fossilstone_ore");
-        setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
         setHarvestLevel("pickaxe", 1);
     }
     

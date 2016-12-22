@@ -11,7 +11,6 @@ public class BlockNetherGoldOre extends Block {
         setHardness(3F);
         setSoundType(SoundType.STONE);
         setRegistryName("nether_gold_ore");
-        setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
         setHarvestLevel("pickaxe", 1);
     }
 }

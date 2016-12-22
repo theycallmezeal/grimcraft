@@ -18,7 +18,6 @@ public class BlockGlowstoneGrower extends Block {
         setHardness(2F);
         setSoundType(SoundType.STONE);
         setRegistryName("glowstone_grower");
-        setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
         setHarvestLevel("pickaxe", 0);
         setTickRandomly(true);
         setLightLevel(1.0F);
