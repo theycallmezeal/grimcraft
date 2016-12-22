@@ -26,7 +26,7 @@ public class ItemNetherroot extends ItemSeedFood {
     	if (itemStack == null) {
     		return EnumActionResult.FAIL;
     	} else if (player.canPlayerEdit(pos, facing, itemStack)) {
-    		if (world.getBlockState(pos).getBlock().equals(GrimcraftBlocks.peat)) {
+    		if (world.getBlockState(pos).getBlock().equals(GrimcraftBlocks.peat) && facing == EnumFacing.UP) {
     			world.setBlockState(pos.up(), GrimcraftBlocks.netherroot_crop.getDefaultState());
 				itemStack.stackSize--;
 				return EnumActionResult.SUCCESS;

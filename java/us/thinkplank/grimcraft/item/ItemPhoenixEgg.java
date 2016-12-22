@@ -24,7 +24,6 @@ public class ItemPhoenixEgg extends Item {
         setUnlocalizedName("phoenix_egg");
     }
     
-    //TODO check facing?
     @Override
     public EnumActionResult onItemUse(ItemStack itemStack, EntityPlayer player, World world, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
 		if (itemStack == null) {
