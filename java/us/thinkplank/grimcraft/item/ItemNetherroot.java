@@ -2,6 +2,7 @@ package us.thinkplank.grimcraft.item;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemSeedFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumActionResult;
@@ -20,18 +21,20 @@ public class ItemNetherroot extends ItemSeedFood {
         setUnlocalizedName("netherroot");
     }
     
-    //TODO do I need to check the face that you click?
     @Override
-    public EnumActionResult onItemUse(ItemStack itemStack, EntityPlayer player, World world, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
-    	if (itemStack == null) {
-    		return EnumActionResult.FAIL;
-    	} else if (player.canPlayerEdit(pos, facing, itemStack)) {
-    		if (world.getBlockState(pos).getBlock().equals(GrimcraftBlocks.peat) && facing == EnumFacing.UP) {
-    			world.setBlockState(pos.up(), GrimcraftBlocks.netherroot_crop.getDefaultState());
-				itemStack.stackSize--;
-				return EnumActionResult.SUCCESS;
-    		}
-    	}
-    	return EnumActionResult.FAIL;
+	public EnumActionResult onItemUse(ItemStack stack, EntityPlayer playerIn, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
+    	if (facing != EnumFacing.UP) {
+            return EnumActionResult.FAIL;
+        } else if (playerIn.canPlayerEdit(pos, facing, stack) && playerIn.canPlayerEdit(pos.up(), facing, stack)) {
+            if (worldIn.getBlockState(pos).getBlock().equals(GrimcraftBlocks.peat) && worldIn.getBlockState(pos.up()).getBlock().equals(Blocks.AIR)) {
+            	worldIn.setBlockState(pos.up(), GrimcraftBlocks.netherroot_crop.getDefaultState());
+                stack.stackSize--;
+                return EnumActionResult.SUCCESS;
+            } else {
+            	return EnumActionResult.FAIL;
+            }
+        } else {
+        	return EnumActionResult.FAIL;
+        }
     }
 }
