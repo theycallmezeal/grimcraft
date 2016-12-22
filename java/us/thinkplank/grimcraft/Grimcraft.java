@@ -15,11 +15,14 @@
  * fix the slabs
  * test: do nether crops grow in the nether? they correctly do not grow in the overworld
  * rename textures/blocks to textures/block (and update the models...)
- * fix vulpiberry harvesting: blockstate doesn't go back; "ghost" berries created
+ * update ja_JP.lang
  */
 
 package us.thinkplank.grimcraft;
 
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.Mod;
@@ -31,6 +34,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.oredict.OreDictionary;
 import us.thinkplank.grimcraft.block.GrimcraftBlocks;
+import us.thinkplank.grimcraft.item.GrimcraftItems;
 
 @Mod(modid="grimcraft", name="grimcraft", version="1.0.0")
 public class Grimcraft {
@@ -40,8 +44,13 @@ public class Grimcraft {
     public static Grimcraft instance;
 
     @SidedProxy(clientSide="us.thinkplank.grimcraft.ClientProxy", serverSide="us.thinkplank.grimcraft.CommonProxy")
-        public static CommonProxy proxy;
+    public static CommonProxy proxy;
 	
+    public static final CreativeTabs tabGrimcraft = new CreativeTabs("grimcraft") {
+        @Override public Item getTabIconItem() {
+            return GrimcraftItems.phoenix_egg;
+        }
+    };
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {

@@ -1,5 +1,6 @@
 package us.thinkplank.grimcraft.block;
 
+import us.thinkplank.grimcraft.Grimcraft;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
@@ -82,6 +83,9 @@ public class GrimcraftBlocks {
     
     private static void registerBlock(Block block) {
     	block.setUnlocalizedName(block.getRegistryName().getResourcePath());
+    	if (block != barley_crop && block != netherroot_crop) {
+    		block.setCreativeTab(Grimcraft.tabGrimcraft);
+    	}
     	GameRegistry.register(block);
     	GameRegistry.register(new ItemBlock(block), block.getRegistryName());
     }

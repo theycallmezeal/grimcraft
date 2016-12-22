@@ -1,5 +1,6 @@
 package us.thinkplank.grimcraft.item;
 
+import us.thinkplank.grimcraft.Grimcraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
@@ -129,6 +130,7 @@ public class GrimcraftItems {
     }
     
     public static void registerItem(Item item) {
+    	item.setCreativeTab(Grimcraft.tabGrimcraft);
     	GameRegistry.register(item);
     }
     

@@ -1,5 +1,6 @@
 package us.thinkplank.grimcraft.block;
 
+import us.thinkplank.grimcraft.Grimcraft;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -11,7 +12,6 @@ public class BlockBrimstone extends Block {
         setHardness(3F);
         setSoundType(SoundType.STONE);
         setRegistryName("brimstone_block");
-        setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
         setHarvestLevel("pickaxe", 1);
     }
 }
