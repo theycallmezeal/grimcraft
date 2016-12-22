@@ -4,6 +4,7 @@ import java.util.List;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFurnace;
+import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityItem;
@@ -26,6 +27,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
+import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.player.BonemealEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent.RightClickBlock;
 import net.minecraftforge.event.entity.player.UseHoeEvent;
@@ -161,9 +163,9 @@ public class GrimcraftEventHandler {
 	
 	/* this makes lava push around mobs */
 	/* TODO get this working again */
-//	@SubscribeEvent
-//	public void onLivingUpdate(LivingEvent.LivingUpdateEvent event) {
-//		Entity entity = event.getEntity();
-//		entity.worldObj.handleMaterialAcceleration(entity.getCollisionBoundingBox(), Material.lava, entity);
-//	}
+	@SubscribeEvent
+	public void onLivingUpdate(LivingEvent.LivingUpdateEvent event) {
+		Entity entity = event.getEntity();
+		entity.worldObj.handleMaterialAcceleration(entity.getEntityBoundingBox().expand(0.0D, -0.4000000059604645D, 0.0D).contract(0.001D), Material.LAVA, entity);
+	}
 }
