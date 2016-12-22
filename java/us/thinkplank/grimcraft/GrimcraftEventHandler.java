@@ -162,7 +162,6 @@ public class GrimcraftEventHandler {
 	}
 	
 	/* this makes lava push around mobs */
-	/* TODO get this working again */
 	@SubscribeEvent
 	public void onLivingUpdate(LivingEvent.LivingUpdateEvent event) {
 		Entity entity = event.getEntity();

@@ -10,7 +10,6 @@ import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class GrimcraftItems {
-	//TODO remove all setMaxStackSize(64) since 64 is the default value
 	// name, harvest level, maxUses, efficiency, damage, enchantability
     static ToolMaterial grimwood_material = EnumHelper.addToolMaterial("GRIMWOOD", 0, 59, 2.0F, 1.0F, 15);
     static ToolMaterial netherrack_material = EnumHelper.addToolMaterial("NETHERRACK", 1, 131, 5.0F, 1.0F, 5);

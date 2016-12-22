@@ -20,13 +20,11 @@ import us.thinkplank.grimcraft.block.GrimcraftBlocks;
 public class ItemWitherBonemeal extends Item {
     public ItemWitherBonemeal() {
         super();
-        setMaxStackSize(64);
         setCreativeTab(CreativeTabs.MATERIALS);
         setRegistryName("wither_bonemeal");
         setUnlocalizedName("wither_bonemeal");
     }
     
-    //TODO check facing?
     @Override
     public EnumActionResult onItemUse(ItemStack itemStack, EntityPlayer player, World world, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
     	if (itemStack == null) {

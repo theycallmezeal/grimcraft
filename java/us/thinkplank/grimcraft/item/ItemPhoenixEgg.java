@@ -18,7 +18,6 @@ import net.minecraft.world.World;
 public class ItemPhoenixEgg extends Item {
     public ItemPhoenixEgg() {
         super();
-        setMaxStackSize(64);
         setCreativeTab(CreativeTabs.MATERIALS);
         setRegistryName("phoenix_egg");
         setUnlocalizedName("phoenix_egg");

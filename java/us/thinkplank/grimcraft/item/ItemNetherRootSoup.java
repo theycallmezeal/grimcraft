@@ -6,7 +6,6 @@ import net.minecraft.item.ItemSoup;
 public class ItemNetherRootSoup extends ItemSoup {
     public ItemNetherRootSoup() {
         super(6); // 6 = hunger points
-        setMaxStackSize(64);
         setCreativeTab(CreativeTabs.FOOD);
         setRegistryName("netherroot_soup");
         setUnlocalizedName("netherroot_soup");

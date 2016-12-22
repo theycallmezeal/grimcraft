@@ -18,7 +18,6 @@ import net.minecraft.item.ItemTool;
 import com.google.common.collect.Sets;
 
 public class GrimcraftTools {
-	//TODO apparently, I need to be extending ItemTool, not the individual tool classes.
 	static class Shovel extends ItemSpade {
 	    public Shovel(ToolMaterial material, String name) {
 	        super(material);

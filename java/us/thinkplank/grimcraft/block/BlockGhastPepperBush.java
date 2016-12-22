@@ -58,7 +58,6 @@ public class BlockGhastPepperBush extends BlockBush implements IShearable {
 	
 	@Override
 	public List<ItemStack> getDrops(IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
-		// TODO fortune?
 		ArrayList<ItemStack> ret = new ArrayList<ItemStack>();
 		ret.add(new ItemStack(GrimcraftBlocks.ghast_pepper_bush));
 		if (state.getValue(GROWN)) {
