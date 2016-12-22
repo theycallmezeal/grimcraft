@@ -1,7 +1,12 @@
 package us.thinkplank.grimcraft;
 
 import net.minecraft.block.Block;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumActionResult;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import us.thinkplank.grimcraft.block.GrimcraftBlocks;
@@ -46,5 +51,21 @@ public class GrimcraftPlants {
         		return;
         	}
     	}
+    }
+    
+    public static EnumActionResult attemptCrop(Block crop, Block ground, ItemStack stack, EntityPlayer playerIn, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
+    	if (facing != EnumFacing.UP) {
+            return EnumActionResult.FAIL;
+        } else if (playerIn.canPlayerEdit(pos, facing, stack) && playerIn.canPlayerEdit(pos.up(), facing, stack)) {
+            if (worldIn.getBlockState(pos).getBlock().equals(ground) && worldIn.getBlockState(pos.up()).getBlock().equals(Blocks.AIR)) {
+            	worldIn.setBlockState(pos.up(), crop.getDefaultState());
+                stack.stackSize--;
+                return EnumActionResult.SUCCESS;
+            } else {
+            	return EnumActionResult.FAIL;
+            }
+        } else {
+        	return EnumActionResult.FAIL;
+        }
     }
 }

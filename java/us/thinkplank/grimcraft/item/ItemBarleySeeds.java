@@ -10,6 +10,7 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import us.thinkplank.grimcraft.GrimcraftPlants;
 import us.thinkplank.grimcraft.block.GrimcraftBlocks;
 
 public class ItemBarleySeeds extends ItemSeeds {
@@ -23,18 +24,6 @@ public class ItemBarleySeeds extends ItemSeeds {
     
     @Override
 	public EnumActionResult onItemUse(ItemStack stack, EntityPlayer playerIn, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
-    	if (facing != EnumFacing.UP) {
-            return EnumActionResult.FAIL;
-        } else if (playerIn.canPlayerEdit(pos, facing, stack) && playerIn.canPlayerEdit(pos.up(), facing, stack)) {
-            if (worldIn.getBlockState(pos).getBlock().equals(GrimcraftBlocks.peat) && worldIn.getBlockState(pos.up()).getBlock().equals(Blocks.AIR)) {
-            	worldIn.setBlockState(pos.up(), GrimcraftBlocks.barley_crop.getDefaultState());
-                stack.stackSize--;
-                return EnumActionResult.SUCCESS;
-            } else {
-            	return EnumActionResult.FAIL;
-            }
-        } else {
-        	return EnumActionResult.FAIL;
-        }
+    	return GrimcraftPlants.attemptCrop(GrimcraftBlocks.barley_crop, GrimcraftBlocks.peat, stack, playerIn, worldIn, pos, hand, facing, hitX, hitY, hitZ);
     }
 }
