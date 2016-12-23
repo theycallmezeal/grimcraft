@@ -7,8 +7,8 @@ import net.minecraft.creativetab.CreativeTabs;
 
 public class BlockGrimwoodStairs extends BlockStairs {
 
-	public BlockGrimwoodStairs(Block baseBlock) {
-		super(baseBlock.getDefaultState());
+	public BlockGrimwoodStairs() {
+		super(GrimcraftBlocks.grimwood_planks.getDefaultState());
 		setHardness(2F);
         setSoundType(SoundType.WOOD);
         setRegistryName("grimwood_stairs");

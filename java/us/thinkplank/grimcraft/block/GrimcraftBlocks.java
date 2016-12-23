@@ -9,13 +9,11 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class GrimcraftBlocks {
-	//TODO add a creative tab
 	public final static Block grimwood_log = new BlockGrimwoodLog();
     public final static Block grimwood_planks = new BlockGrimwoodPlanks();
-    //TODO make sure that single -> half, consistently
-    //public final static Block half_grimwood_slab = new BlockGrimwoodHalfSlab(Material.wood);
-    //public final static Block double_grimwood_slab = new BlockGrimwoodDoubleSlab(Material.wood);
-    public final static Block grimwood_stairs = new BlockGrimwoodStairs(grimwood_planks);
+    public final static Block grimwood_slab = new BlockGrimwoodSlab.Half();
+    public final static Block grimwood_double_slab = new BlockGrimwoodSlab.Double();
+    public final static Block grimwood_stairs = new BlockGrimwoodStairs();
     public final static Block grimwood_fence = new BlockGrimwoodFence();
     public final static Block grimwood_fence_gate = new BlockGrimwoodFenceGate();
     public final static Block fossilstone_ore = new BlockFossilstoneOre();
@@ -36,8 +34,8 @@ public class GrimcraftBlocks {
     public static void register() {
     	registerBlock(grimwood_log);
         registerBlock(grimwood_planks);
-        //registerBlock(half_grimwood_slab);
-        //registerBlock(double_grimwood_slab);
+        registerBlock(grimwood_slab);
+        registerBlock(grimwood_double_slab);
         registerBlock(grimwood_stairs);
         registerBlock(grimwood_fence);
         registerBlock(grimwood_fence_gate);
@@ -60,8 +58,8 @@ public class GrimcraftBlocks {
     public static void registerModels() {
     	registerBlockModel(grimwood_log);
         registerBlockModel(grimwood_planks);
-        //registerBlockModel(half_grimwood_slab);
-        //registerBlockModel(double_grimwood_slab);
+        registerBlockModel(grimwood_slab);
+        registerBlockModel(grimwood_double_slab);
         registerBlockModel(grimwood_stairs);
         registerBlockModel(grimwood_fence);
         registerBlockModel(grimwood_fence_gate);
@@ -83,11 +81,16 @@ public class GrimcraftBlocks {
     
     private static void registerBlock(Block block) {
     	block.setUnlocalizedName(block.getRegistryName().getResourcePath());
+    	
     	if (block != barley_crop && block != netherroot_crop) {
     		block.setCreativeTab(Grimcraft.tabGrimcraft);
     	}
+    	
     	GameRegistry.register(block);
-    	GameRegistry.register(new ItemBlock(block), block.getRegistryName());
+    	
+    	if (block != grimwood_double_slab) {
+    		GameRegistry.register(new ItemBlock(block), block.getRegistryName());
+    	}
     }
     
     private static void registerBlockModel(Block block) {
