@@ -18,6 +18,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public abstract class BlockGrimwoodSlab extends BlockSlab {
     public static final PropertyEnum<BlockGrimwoodSlab.Variant> VARIANT = PropertyEnum.<BlockGrimwoodSlab.Variant>create("variant", BlockGrimwoodSlab.Variant.class);
@@ -102,7 +104,7 @@ public abstract class BlockGrimwoodSlab extends BlockSlab {
 
     @Override
 	public Comparable<?> getTypeForItem(ItemStack stack) {
-        return BlockGrimwoodSlab.Variant.DEFAULT;
+        return false;
     }
 
     public static class Double extends BlockGrimwoodSlab {
