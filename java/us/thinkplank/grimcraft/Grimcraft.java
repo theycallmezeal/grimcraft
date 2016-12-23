@@ -20,7 +20,10 @@
 package us.thinkplank.grimcraft;
 
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.init.Items;
+import net.minecraft.entity.EnumCreatureType;
+import net.minecraft.entity.monster.EntityCaveSpider;
+import net.minecraft.entity.monster.EntityEnderman;
+import net.minecraft.init.Biomes;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
@@ -31,6 +34,7 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 import us.thinkplank.grimcraft.block.GrimcraftBlocks;
 import us.thinkplank.grimcraft.item.GrimcraftItems;
@@ -67,20 +71,8 @@ public class Grimcraft {
     	OreDictionary.registerOre("oreRedstone", GrimcraftBlocks.nether_redstone_ore);
     	OreDictionary.registerOre("oreSulfur", GrimcraftBlocks.brimstone_ore); //makes brimstone work as sulfur
     	
-//    	//TODO do boars spawn at all...?
-//    	//TODO don't use deprecated stuff
-//    	EntityRegistry.registerGlobalEntityID(EntityBoar.class, "boar", EntityRegistry.findGlobalUniqueEntityId(), 0xA26C60, 0x8C3519);
-//    	EntityRegistry.registerModEntity(EntityBoar.class, "boar", EntityRegistry.findGlobalUniqueEntityId(), this, 80, 1, true);
-//    	RenderingRegistry.registerEntityRenderingHandler(EntityBoar.class, new RenderBoar(new ModelBoar(), 0.5F));
-//    	
-//    	EntityRegistry.registerGlobalEntityID(EntityPhoenix.class, "phoenix", EntityRegistry.findGlobalUniqueEntityId(), 0x383838, 0x9e2d08);
-//    	EntityRegistry.registerModEntity(EntityPhoenix.class, "phoenix", EntityRegistry.findGlobalUniqueEntityId(), this, 80, 1, true);
-//    	RenderingRegistry.registerEntityRenderingHandler(EntityPhoenix.class, new RenderPhoenix(new ModelPhoenix(), 0.5F));
-//    	
-//    	EntityRegistry.addSpawn(EntityCaveSpider.class, 75, 1, 3, EnumCreatureType.MONSTER, Biomes.hell);
-//    	EntityRegistry.addSpawn(EntityEnderman.class, 75, 1, 1, EnumCreatureType.MONSTER, Biomes.hell);
-//    	EntityRegistry.addSpawn(EntityBoar.class, 100, 1, 3, EnumCreatureType.MONSTER, Biomes.hell);
-//    	EntityRegistry.addSpawn(EntityPhoenix.class, 100, 1, 3, EnumCreatureType.MONSTER, Biomes.hell);
+    	EntityRegistry.addSpawn(EntityCaveSpider.class, 75, 1, 3, EnumCreatureType.MONSTER, Biomes.HELL);
+    	EntityRegistry.addSpawn(EntityEnderman.class, 75, 1, 1, EnumCreatureType.MONSTER, Biomes.HELL);
     }
 
     @EventHandler

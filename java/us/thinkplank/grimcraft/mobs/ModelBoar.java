@@ -1,17 +1,7 @@
-//package us.thinkplank.grimcraft.mobs;
-//
-//import net.minecraft.client.model.ModelQuadruped;
-//
-//public class ModelBoar extends ModelQuadruped {
-//    private static final String __OBFID = "CL_00000849";
-//
-//    public ModelBoar() {
-//        this(0.0F);
-//    }
-//
-//    public ModelBoar(float p_i1151_1_) {
-//        super(6, p_i1151_1_);
-//        this.head.setTextureOffset(16, 16).addBox(-2.0F, 0.0F, -9.0F, 4, 3, 1, p_i1151_1_);
-//        this.field_78145_g = 4.0F;
-//    }
-//}
+package us.thinkplank.grimcraft.mobs;
+
+import net.minecraft.client.model.ModelPig;
+
+public class ModelBoar extends ModelPig {
+	
+}
