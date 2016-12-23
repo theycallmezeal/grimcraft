@@ -34,8 +34,8 @@ public class GrimcraftBlocks {
     public static void register() {
     	registerBlock(grimwood_log);
         registerBlock(grimwood_planks);
-        registerBlock(grimwood_slab);
-        registerBlock(grimwood_double_slab);
+        //registerBlock(grimwood_slab);
+        //registerBlock(grimwood_double_slab);
         registerBlock(grimwood_stairs);
         registerBlock(grimwood_fence);
         registerBlock(grimwood_fence_gate);
@@ -58,8 +58,8 @@ public class GrimcraftBlocks {
     public static void registerModels() {
     	registerBlockModel(grimwood_log);
         registerBlockModel(grimwood_planks);
-        registerBlockModel(grimwood_slab);
-        registerBlockModel(grimwood_double_slab);
+        //registerBlockModel(grimwood_slab);
+        //registerBlockModel(grimwood_double_slab);
         registerBlockModel(grimwood_stairs);
         registerBlockModel(grimwood_fence);
         registerBlockModel(grimwood_fence_gate);

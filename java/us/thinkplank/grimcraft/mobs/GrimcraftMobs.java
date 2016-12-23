@@ -10,7 +10,7 @@ public class GrimcraftMobs {
 	public static void register() {
 		int id = 1;
 		
-		EntityRegistry.registerModEntity(EntityBoar.class, "boar", id++, Grimcraft.instance, 64, 3, true, 0xFF0000, 0x00FF00);
+		EntityRegistry.registerModEntity(EntityBoar.class, "boar", id++, Grimcraft.instance, 64, 3, true, 0xA26C60, 0x8C3519);
 		EntityRegistry.addSpawn(EntityBoar.class, 100, 3, 5, EnumCreatureType.CREATURE, Biomes.HELL);
 	}
 	

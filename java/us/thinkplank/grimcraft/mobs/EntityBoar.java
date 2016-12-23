@@ -31,6 +31,7 @@ public class EntityBoar extends EntityAnimal {
 	
 	public EntityBoar(World worldIn) {
 		super(worldIn);
+		setSize(0.9F, 0.9F);
 	}
 	
 	public static void func_189790_b(DataFixer datafixer) {

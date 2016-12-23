@@ -41,10 +41,13 @@ import us.thinkplank.grimcraft.item.GrimcraftItems;
 
 @Mod(modid="grimcraft", name="grimcraft", version="1.0.0")
 public class Grimcraft {
-    @Instance("Grimcraft")
     public Configuration config;
-	
+    
+    @Instance("grimcraft")
     public static Grimcraft instance;
+    public Grimcraft() {
+    	instance = this;
+    }
 
     @SidedProxy(clientSide="us.thinkplank.grimcraft.ClientProxy", serverSide="us.thinkplank.grimcraft.CommonProxy")
     public static CommonProxy proxy;
