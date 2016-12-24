@@ -24,7 +24,10 @@ public class GrimcraftCreativeTab extends CreativeTabs {
 	public void displayAllRelevantItems(List<ItemStack> list) {
 		super.displayAllRelevantItems(list);
 		list.add(2, list.remove(list.size() - 1));
-		/* if it works, it works! */
+		/* due to the way registration happens, the slab ends up
+		 * at the end of the creative tab after everything else.
+		 * this is my super ugly way of moving it to the correct
+		 * slot... if it works, it works, right? */
 	}
 
 	@Override
