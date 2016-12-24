@@ -54,11 +54,7 @@ public class Grimcraft {
     @SidedProxy(clientSide="us.thinkplank.grimcraft.ClientProxy", serverSide="us.thinkplank.grimcraft.CommonProxy")
     public static CommonProxy proxy;
 	
-    public static final CreativeTabs tabGrimcraft = new CreativeTabs("grimcraft") {
-        @Override public Item getTabIconItem() {
-            return GrimcraftItems.phoenix_egg;
-        }
-    };
+    public static final CreativeTabs tabGrimcraft = new GrimcraftCreativeTab();
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
