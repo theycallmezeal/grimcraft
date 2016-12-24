@@ -53,7 +53,7 @@ item.netherroot.name=Netherroot
 item.netherroot_soup.name=Netherroot Soup
 item.phoenix_egg.name=Phoenix Egg
 
-entity.boar.name=Boar
+entity.grimcraft.boar.name=Boar
 entity.phoenix.name=Phoenix
 
 itemGroup.grimcraft=Grimcraft
