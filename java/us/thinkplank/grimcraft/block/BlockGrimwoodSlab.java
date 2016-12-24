@@ -104,7 +104,7 @@ public abstract class BlockGrimwoodSlab extends BlockSlab {
 
     @Override
 	public Comparable<?> getTypeForItem(ItemStack stack) {
-        return false;
+        return BlockGrimwoodSlab.Variant.DEFAULT;
     }
 
     public static class Double extends BlockGrimwoodSlab {
