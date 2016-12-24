@@ -83,7 +83,7 @@ public class GrimcraftBlocks {
     }
     
     private static void registerBlock(Block block) {
-    	block.setUnlocalizedName(block.getRegistryName().getResourcePath());
+    	block.setUnlocalizedName(Grimcraft.MODID + "." + block.getRegistryName().getResourcePath());
     	
     	if (block != barley_crop && block != netherroot_crop) {
     		block.setCreativeTab(Grimcraft.tabGrimcraft);

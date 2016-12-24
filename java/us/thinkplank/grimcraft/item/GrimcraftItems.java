@@ -130,6 +130,7 @@ public class GrimcraftItems {
     }
     
     public static void registerItem(Item item) {
+    	item.setUnlocalizedName(Grimcraft.MODID + "." + item.getRegistryName().getResourcePath());
     	item.setCreativeTab(Grimcraft.tabGrimcraft);
     	GameRegistry.register(item);
     }

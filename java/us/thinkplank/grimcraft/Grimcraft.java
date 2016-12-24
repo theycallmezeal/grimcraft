@@ -11,7 +11,6 @@
  * maybe make netherroot de-corruptible into potatoes, carrots, and beetroot?
  * make sure all headers match public Item getItemDropped(IBlockState state, Random rand, int fortune)
  * retexture the ugly ass vulpiberry
- * fix the slabs
  * test: do nether crops grow in the nether? they correctly do not grow in the overworld
  * rename textures/blocks to textures/block (and update the models...)
  * update ja_JP.lang
@@ -42,6 +41,7 @@ import us.thinkplank.grimcraft.item.GrimcraftItems;
 
 @Mod(modid="grimcraft", name="grimcraft", version="1.0.0")
 public class Grimcraft {
+	public static final String MODID = "grimcraft";
     public Configuration config;
     
     @Instance("grimcraft")
