@@ -2,9 +2,11 @@ package us.thinkplank.grimcraft.block;
 
 import us.thinkplank.grimcraft.Grimcraft;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockSlab;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemSlab;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
@@ -30,6 +32,8 @@ public class GrimcraftBlocks {
     public final static Block nether_lantern = new BlockNetherLantern();
     public final static Block lava_lamp = new BlockLavaLamp();
     public final static Block glowstone_grower = new BlockGlowstoneGrower();
+    
+    public final static ItemSlab itemBlockSlab = new ItemSlab(grimwood_planks, (BlockSlab)grimwood_slab, (BlockSlab)grimwood_double_slab);
     
     public static void register() {
     	registerBlock(grimwood_log);
@@ -59,7 +63,7 @@ public class GrimcraftBlocks {
     	registerBlockModel(grimwood_log);
         registerBlockModel(grimwood_planks);
         registerBlockModel(grimwood_slab);
-        registerBlockModel(grimwood_double_slab);
+        /* don't register double slab model */
         registerBlockModel(grimwood_stairs);
         registerBlockModel(grimwood_fence);
         registerBlockModel(grimwood_fence_gate);
@@ -88,12 +92,22 @@ public class GrimcraftBlocks {
     	
     	GameRegistry.register(block);
     	
+    	if (block == grimwood_slab) {
+    		GameRegistry.register(itemBlockSlab, block.getRegistryName());
+    		return;
+    	}
+    	
     	if (block != grimwood_double_slab) {
     		GameRegistry.register(new ItemBlock(block), block.getRegistryName());
     	}
     }
     
     private static void registerBlockModel(Block block) {
+    	if (block == grimwood_slab) {
+    		ModelLoader.setCustomModelResourceLocation(itemBlockSlab, 0, new ModelResourceLocation(block.getRegistryName(), "inventory"));
+    		return;
+    	}
+    	
     	if (block != grimwood_double_slab) {
     		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation(block.getRegistryName(), "inventory"));
     	}

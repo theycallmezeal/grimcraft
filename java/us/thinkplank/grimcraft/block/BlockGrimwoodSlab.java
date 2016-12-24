@@ -34,10 +34,10 @@ public abstract class BlockGrimwoodSlab extends BlockSlab {
         
         setHardness(2F);
         setSoundType(SoundType.WOOD);
-        if (!isDouble()) {
-        	setRegistryName("grimwood_slab");
-        } else {
+        if (isDouble()) {
         	setRegistryName("grimwood_double_slab");
+        } else {
+        	setRegistryName("grimwood_slab");
         }
         setHarvestLevel("axe", 0);
     }
