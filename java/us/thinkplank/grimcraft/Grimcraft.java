@@ -15,6 +15,7 @@
  * test: do nether crops grow in the nether? they correctly do not grow in the overworld
  * rename textures/blocks to textures/block (and update the models...)
  * update ja_JP.lang
+ * redo the gradient for barley
  */
 
 package us.thinkplank.grimcraft;

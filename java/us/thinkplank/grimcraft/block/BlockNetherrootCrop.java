@@ -6,12 +6,24 @@ import net.minecraft.block.BlockCrops;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import us.thinkplank.grimcraft.item.GrimcraftItems;
 
 public class BlockNetherrootCrop extends BlockCrops {
-	
+    private static final AxisAlignedBB[] ROOT_AABB = new AxisAlignedBB[] {
+		new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.125D, 1.0D), 
+		new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.1875D, 1.0D), 
+		new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.25D, 1.0D), 
+		new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.3125D, 1.0D), 
+		new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.375D, 1.0D), 
+		new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.4375D, 1.0D), 
+		new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.5D, 1.0D), 
+		new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.5625D, 1.0D)
+    };
+
 	public BlockNetherrootCrop() {
 		super();
 		setSoundType(SoundType.PLANT);
@@ -39,4 +51,9 @@ public class BlockNetherrootCrop extends BlockCrops {
 			super.updateTick(worldIn, pos, state, rand);
 		}
 	}
+	
+	@Override
+	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
+        return ROOT_AABB[((Integer)state.getValue(this.getAgeProperty())).intValue()];
+    }
 }

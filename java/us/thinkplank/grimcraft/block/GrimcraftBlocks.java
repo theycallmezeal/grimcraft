@@ -74,8 +74,7 @@ public class GrimcraftBlocks {
         registerBlockModel(peat);
         registerBlockModel(brimstone_ore);
         registerBlockModel(brimstone_block);
-        registerBlockModel(barley_crop);
-        registerBlockModel(netherroot_crop);
+        /* don't register barley or netherroot crop models */
         registerBlockModel(vulpiberry_bush);
         registerBlockModel(ghast_pepper_bush);
         registerBlockModel(nether_lantern);
