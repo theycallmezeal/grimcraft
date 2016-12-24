@@ -15,6 +15,7 @@
  * rename textures/blocks to textures/block (and update the models...)
  * update ja_JP.lang
  * redo the gradient for barley
+ * figure out why the slab shows up as last in the list
  */
 
 package us.thinkplank.grimcraft;
