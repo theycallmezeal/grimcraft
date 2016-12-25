@@ -8,7 +8,7 @@
 //import net.minecraft.util.ResourceLocation;
 //
 //public class RenderPhoenix extends RenderLiving {
-//    private static final ResourceLocation phoenixTextures = new ResourceLocation("grimcraft:textures/entity/phoenix.png");
+//    private static final ResourceLocation phoenixTextures = new ResourceLocation(Grimcraft.MODID + ":textures/entity/phoenix.png");
 //    private static final String __OBFID = "CL_00000984";
 //
 //    public RenderPhoenix(ModelBase model, float size) {

@@ -17,7 +17,7 @@ import com.google.common.collect.Ordering;
 public class GrimcraftCreativeTab extends CreativeTabs {
 
 	public GrimcraftCreativeTab() {
-		super("grimcraft");
+		super(Grimcraft.MODID);
 	}
 	
 	@Override
