@@ -1,6 +1,6 @@
 {
 	"parent": "item/generated",
 	"textures": { 
-		"layer0": "grimcraft:items/phoenix_egg"
+		"layer0": "grimcraft:item/phoenix_egg"
 	}
 }

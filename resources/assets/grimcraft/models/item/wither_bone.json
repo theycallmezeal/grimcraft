@@ -1,6 +1,6 @@
 {
 	"parent": "item/generated",
 	"textures": { 
-		"layer0": "grimcraft:items/wither_bone"
+		"layer0": "grimcraft:item/wither_bone"
 	}
 }

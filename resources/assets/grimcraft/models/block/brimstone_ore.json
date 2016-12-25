@@ -1,6 +1,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "grimcraft:blocks/brimstone_ore"
+        "all": "grimcraft:block/brimstone_ore"
     }
 }

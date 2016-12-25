@@ -1,6 +1,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "grimcraft:blocks/grimwood_planks"
+        "all": "grimcraft:block/grimwood_planks"
     }
 }

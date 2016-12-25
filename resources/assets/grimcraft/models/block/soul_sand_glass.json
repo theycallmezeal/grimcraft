@@ -1,6 +1,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "grimcraft:blocks/soul_sand_glass"
+        "all": "grimcraft:block/soul_sand_glass"
     }
 }

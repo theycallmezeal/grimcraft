@@ -1,6 +1,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "grimcraft:blocks/brimstone_block"
+        "all": "grimcraft:block/brimstone_block"
     }
 }

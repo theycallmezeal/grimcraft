@@ -1,6 +1,6 @@
 {
     "parent": "block/crop",
     "textures": {
-        "crop": "grimcraft:blocks/barley_crop_stage_2"
+        "crop": "grimcraft:block/barley_crop_stage_2"
     }
 }

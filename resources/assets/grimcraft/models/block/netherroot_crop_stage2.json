@@ -1,6 +1,6 @@
 {
     "parent": "block/crop",
     "textures": {
-        "crop": "grimcraft:blocks/netherroot_crop_stage_2"
+        "crop": "grimcraft:block/netherroot_crop_stage_2"
     }
 }

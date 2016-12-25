@@ -1,6 +1,6 @@
 {
 	"parent": "item/generated",
 	"textures": { 
-		"layer0": "grimcraft:items/grimwood_axe"
+		"layer0": "grimcraft:item/grimwood_axe"
 	}
 }

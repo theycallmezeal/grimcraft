@@ -1,6 +1,6 @@
 {
 	"parent": "item/generated",
 	"textures": { 
-		"layer0": "grimcraft:items/nether_gold_hoe"
+		"layer0": "grimcraft:item/nether_gold_hoe"
 	}
 }

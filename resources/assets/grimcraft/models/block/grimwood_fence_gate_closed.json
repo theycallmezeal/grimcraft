@@ -1,6 +1,6 @@
 {
     "parent": "block/fence_gate_closed",
     "textures": {
-        "texture": "grimcraft:blocks/grimwood_planks"
+        "texture": "grimcraft:block/grimwood_planks"
     }
 }

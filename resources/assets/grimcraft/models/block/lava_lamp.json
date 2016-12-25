@@ -1,6 +1,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "grimcraft:blocks/lava_lamp"
+        "all": "grimcraft:block/lava_lamp"
     }
 }

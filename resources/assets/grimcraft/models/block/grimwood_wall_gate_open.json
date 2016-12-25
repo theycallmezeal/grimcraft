@@ -1,6 +1,6 @@
 {
     "parent": "block/wall_gate_open",
     "textures": {
-        "texture": "grimcraft:blocks/grimwood_planks"
+        "texture": "grimcraft:block/grimwood_planks"
     }
 }
