@@ -1,18 +1,11 @@
 package us.thinkplank.grimcraft;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import us.thinkplank.grimcraft.block.GrimcraftBlocks;
 import us.thinkplank.grimcraft.item.GrimcraftItems;
-
-import com.google.common.base.Function;
-import com.google.common.collect.Ordering;
 
 public class GrimcraftCreativeTab extends CreativeTabs {
 

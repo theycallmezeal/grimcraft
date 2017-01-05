@@ -11,15 +11,11 @@ import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
 public abstract class BlockGrimwoodSlab extends BlockSlab {
     public static final PropertyEnum<BlockGrimwoodSlab.Variant> VARIANT = PropertyEnum.<BlockGrimwoodSlab.Variant>create("variant", BlockGrimwoodSlab.Variant.class);

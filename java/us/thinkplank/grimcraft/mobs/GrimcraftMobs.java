@@ -12,9 +12,13 @@ public class GrimcraftMobs {
 		
 		EntityRegistry.registerModEntity(EntityBoar.class, "boar", id++, Grimcraft.instance, 64, 3, true, 0xA26C60, 0x8C3519);
 		EntityRegistry.addSpawn(EntityBoar.class, 100, 3, 5, EnumCreatureType.CREATURE, Biomes.HELL);
+		
+		EntityRegistry.registerModEntity(EntityPhoenix.class, "phoenix", id++, Grimcraft.instance, 64, 3, true, 0xA26C60, 0x8C3519);
+		EntityRegistry.addSpawn(EntityPhoenix.class, 100, 3, 5, EnumCreatureType.CREATURE, Biomes.HELL);
 	}
 	
 	public static void registerModels() {
 		RenderingRegistry.registerEntityRenderingHandler(EntityBoar.class, RenderBoar.factory);
+		RenderingRegistry.registerEntityRenderingHandler(EntityPhoenix.class, RenderPhoenix.factory);
 	}
 }

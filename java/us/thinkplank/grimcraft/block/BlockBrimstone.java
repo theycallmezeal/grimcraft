@@ -1,10 +1,8 @@
 package us.thinkplank.grimcraft.block;
 
-import us.thinkplank.grimcraft.Grimcraft;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
-import net.minecraft.creativetab.CreativeTabs;
 
 public class BlockBrimstone extends Block {
     public BlockBrimstone () {

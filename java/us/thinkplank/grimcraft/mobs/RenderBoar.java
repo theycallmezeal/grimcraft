@@ -1,7 +1,5 @@
 package us.thinkplank.grimcraft.mobs;
 
-import us.thinkplank.grimcraft.Grimcraft;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelPig;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderLiving;
@@ -9,6 +7,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.client.registry.IRenderFactory;
+import us.thinkplank.grimcraft.Grimcraft;
 
 public class RenderBoar extends RenderLiving {
 	private static final ResourceLocation boarTextures = new ResourceLocation(Grimcraft.MODID + ":textures/entity/boar.png");
@@ -28,6 +27,5 @@ public class RenderBoar extends RenderLiving {
         public Render<? super EntityBoar> createRenderFor(RenderManager manager) {
             return new RenderBoar(manager);
         }
-
     }
 }

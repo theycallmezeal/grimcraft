@@ -1,9 +1,7 @@
 package us.thinkplank.grimcraft.block;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockStairs;
 import net.minecraft.block.SoundType;
-import net.minecraft.creativetab.CreativeTabs;
 
 public class BlockGrimwoodStairs extends BlockStairs {
 

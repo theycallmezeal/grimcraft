@@ -1,6 +1,5 @@
 package us.thinkplank.grimcraft.item;
 
-import us.thinkplank.grimcraft.Grimcraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
@@ -9,6 +8,7 @@ import net.minecraft.item.ItemFood;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import us.thinkplank.grimcraft.Grimcraft;
 
 public class GrimcraftItems {
 	// name, harvest level, maxUses, efficiency, damage, enchantability

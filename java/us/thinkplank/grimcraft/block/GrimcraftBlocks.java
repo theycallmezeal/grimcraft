@@ -1,6 +1,5 @@
 package us.thinkplank.grimcraft.block;
 
-import us.thinkplank.grimcraft.Grimcraft;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSlab;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -9,6 +8,7 @@ import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemSlab;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import us.thinkplank.grimcraft.Grimcraft;
 
 public class GrimcraftBlocks {
 	public final static Block grimwood_log = new BlockGrimwoodLog();
