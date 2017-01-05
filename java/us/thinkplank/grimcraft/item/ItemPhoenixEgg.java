@@ -31,21 +31,18 @@ public class ItemPhoenixEgg extends Item {
 		} else if (player.canPlayerEdit(pos, facing, itemStack)) {
 			Block block = world.getBlockState(pos).getBlock();
 			
-			if (block.equals(Blocks.GRAVEL) && !world.isRemote){
-				world.setBlockState(pos, Blocks.AIR.getDefaultState());
-				world.playSound((EntityPlayer)null, pos.getX(), pos.getY(), pos.getZ(), SoundEvents.ENTITY_GENERIC_EXPLODE, SoundCategory.BLOCKS, 4.0F, (1.0F + (world.rand.nextFloat() - world.rand.nextFloat()) * 0.2F) * 0.7F);
-				spawnParticles(world, pos);
-				EntityPhoenix phoenix = new EntityPhoenix(world);
-				phoenix.setLocationAndAngles((double)pos.getX() + 0.5D, (double)pos.getY(), (double)pos.getZ() + 0.5D, 0.0F, 0.0F);
-				world.spawnEntityInWorld(phoenix);
+			if (block.equals(Blocks.GRAVEL)) {
+				if (!world.isRemote) {
+					world.setBlockState(pos, Blocks.AIR.getDefaultState());
+					world.playSound((EntityPlayer)null, pos.getX(), pos.getY(), pos.getZ(), SoundEvents.ENTITY_GENERIC_EXPLODE, SoundCategory.BLOCKS, 4.0F, (1.0F + (world.rand.nextFloat() - world.rand.nextFloat()) * 0.2F) * 0.7F);
+					EntityPhoenix phoenix = new EntityPhoenix(world);
+					phoenix.setLocationAndAngles((double)pos.getX() + 0.5D, (double)pos.getY(), (double)pos.getZ() + 0.5D, 0.0F, 0.0F);
+					world.spawnEntityInWorld(phoenix);
+				} else {
+					world.spawnParticle(EnumParticleTypes.EXPLOSION_LARGE, pos.getX(), pos.getY(), pos.getZ(), 0.0D, 0.0D, 0.0D, new int[0]);
+				}
 			}
 		}
     	return EnumActionResult.SUCCESS;
-    }
-    
-    @SideOnly(Side.CLIENT)
-    private static void spawnParticles(World world, BlockPos pos) {
-    	// TODO why doesn't this work
-    	world.spawnParticle(EnumParticleTypes.EXPLOSION_NORMAL, pos.getX(), pos.getY(), pos.getZ(), 0.0D, 0.0D, 0.0D, new int[0]);
     }
 }
