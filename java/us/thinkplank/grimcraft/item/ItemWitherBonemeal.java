@@ -27,7 +27,7 @@ public class ItemWitherBonemeal extends Item {
     public EnumActionResult onItemUse(ItemStack itemStack, EntityPlayer player, World world, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
     	if (itemStack == null) {
     		return EnumActionResult.FAIL;
-    	} else if (player.canPlayerEdit(pos, facing, itemStack)) {
+    	} else if (player.dimension == -1 && player.canPlayerEdit(pos, facing, itemStack)) {
     		Block block = world.getBlockState(pos).getBlock();
     		
     		if (block.equals(Blocks.DEADBUSH)) {
