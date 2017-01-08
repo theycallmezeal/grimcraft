@@ -45,7 +45,7 @@ public class BlockPeat extends BlockFalling {
         super.updateTick(worldIn, pos, state, rand);
         IBlockState blockStateAbove = worldIn.getBlockState(pos.up());
         
-        if (blockStateAbove.getBlock().equals(Blocks.NETHER_WART)
+        if (blockStateAbove.getBlock() == Blocks.NETHER_WART
         		&& blockStateAbove.getValue(BlockNetherWart.AGE) > 0) { //check if the nether wart has grown a little bit
     		GrimcraftPlants.attemptTree(worldIn, pos.up());
     	}
@@ -55,12 +55,12 @@ public class BlockPeat extends BlockFalling {
 	public boolean canSustainPlant(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing direction, IPlantable plantable) {
     	Block plant = plantable.getPlant(world, pos).getBlock();
     	
-    	if (plant.equals(GrimcraftBlocks.barley_crop)
-    			|| plant.equals(GrimcraftBlocks.netherroot_crop)
-    			|| plant.equals(Blocks.NETHER_WART)
-    			|| plant.equals(GrimcraftBlocks.vulpiberry_bush)
-    			|| plant.equals(GrimcraftBlocks.ghast_pepper_bush)
-    			|| plant.equals(Blocks.DEADBUSH)) {
+    	if (plant == GrimcraftBlocks.barley_crop
+    			|| plant == GrimcraftBlocks.netherroot_crop
+    			|| plant == Blocks.NETHER_WART
+    			|| plant == GrimcraftBlocks.vulpiberry_bush
+    			|| plant == GrimcraftBlocks.ghast_pepper_bush
+    			|| plant == Blocks.DEADBUSH) {
     		return true;
     	}
     	

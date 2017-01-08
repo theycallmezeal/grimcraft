@@ -34,7 +34,7 @@ public class BlockGlowstoneGrower extends Block {
 					}
 					
 					Block cBlock = worldIn.getBlockState(pos.add(i, j, k)).getBlock();
-					if (cBlock.equals(Blocks.GLOWSTONE)) {
+					if (cBlock == Blocks.GLOWSTONE) {
 						int dx = random.nextInt(3) - 1;
 						int dy = random.nextInt(3) - 1;
 						int dz = random.nextInt(3) - 1;
@@ -42,11 +42,11 @@ public class BlockGlowstoneGrower extends Block {
 						BlockPos newLoc = pos.add(i + dx, j + dy, k + dz);
 						Block blockAtLoc = worldIn.getBlockState(newLoc).getBlock();
 						
-						if (blockAtLoc.equals(GrimcraftBlocks.glowstone_grower)) {
+						if (blockAtLoc == GrimcraftBlocks.glowstone_grower) {
 							continue;
 						}
 						
-						if (blockAtLoc.equals(Blocks.AIR)) {
+						if (blockAtLoc == Blocks.AIR) {
 							continue;
 						}
 						

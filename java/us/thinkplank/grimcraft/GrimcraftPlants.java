@@ -35,7 +35,7 @@ public class GrimcraftPlants {
     }
     
     private static boolean isLava(World world, BlockPos pos) {
-    	if (world.getBlockState(pos).getBlock().equals(Blocks.LAVA)) {
+    	if (world.getBlockState(pos).getBlock() == Blocks.LAVA) {
     		return true;
     	}
     	return false;
@@ -45,7 +45,7 @@ public class GrimcraftPlants {
     	int random = (int)(Math.random() * 4) + 3; // 3, 4, 5, or 6... if I did the math right.
     	for (int i = 0; i < random; i++) {
     		Block block = world.getBlockState(pos.up(i)).getBlock();
-    		if (block.equals(Blocks.AIR) || block.equals(Blocks.NETHER_WART)) {
+    		if (block == Blocks.AIR || block == Blocks.NETHER_WART) {
         		world.setBlockState(pos.up(i), GrimcraftBlocks.grimwood_log.getDefaultState());
         	} else {
         		return;
@@ -57,7 +57,7 @@ public class GrimcraftPlants {
     	if (facing != EnumFacing.UP) {
             return EnumActionResult.FAIL;
         } else if (playerIn.canPlayerEdit(pos, facing, stack) && playerIn.canPlayerEdit(pos.up(), facing, stack)) {
-            if (worldIn.getBlockState(pos).getBlock().equals(ground) && worldIn.getBlockState(pos.up()).getBlock().equals(Blocks.AIR)) {
+            if (worldIn.getBlockState(pos).getBlock() == ground && worldIn.getBlockState(pos.up()).getBlock().equals(Blocks.AIR)) {
             	worldIn.setBlockState(pos.up(), crop.getDefaultState());
                 stack.stackSize--;
                 return EnumActionResult.SUCCESS;

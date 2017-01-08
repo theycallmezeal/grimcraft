@@ -30,8 +30,8 @@ public class ItemWitherBonemeal extends Item {
     	} else if (player.dimension == -1 && player.canPlayerEdit(pos, facing, itemStack)) {
     		Block block = worldIn.getBlockState(pos).getBlock();
     		
-    		if (block.equals(Blocks.DEADBUSH)) {
-    			if (worldIn.getBlockState(pos.down()).getBlock().equals(GrimcraftBlocks.peat) && GrimcraftPlants.isSurroundedByLava(worldIn, pos.down())) {
+    		if (block == Blocks.DEADBUSH) {
+    			if (worldIn.getBlockState(pos.down()).getBlock() == GrimcraftBlocks.peat && GrimcraftPlants.isSurroundedByLava(worldIn, pos.down())) {
     				worldIn.setBlockState(pos, GrimcraftBlocks.ghast_pepper_bush.getDefaultState());
     			} else {
     				worldIn.setBlockState(pos, GrimcraftBlocks.vulpiberry_bush.getDefaultState());
@@ -41,14 +41,14 @@ public class ItemWitherBonemeal extends Item {
     			return EnumActionResult.SUCCESS;
     		}
     		
-    		if (block.equals(Blocks.NETHER_WART)) {
+    		if (block == Blocks.NETHER_WART) {
     			GrimcraftPlants.attemptTree(worldIn, pos);
     			ItemDye.spawnBonemealParticles(worldIn, pos, 15);
     			itemStack.stackSize--;
     			return EnumActionResult.SUCCESS;
     		}
     		
-    		if (block.equals(GrimcraftBlocks.barley_crop) || block.equals(GrimcraftBlocks.netherroot_crop) || block.equals(Blocks.NETHER_WART)) {
+    		if (block == GrimcraftBlocks.barley_crop || block == GrimcraftBlocks.netherroot_crop || block == Blocks.NETHER_WART) {
     			IBlockState state = worldIn.getBlockState(pos);
     			int currentGrowth = state.getValue(BlockCrops.AGE);
     			if (currentGrowth < 7) {

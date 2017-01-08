@@ -31,7 +31,7 @@ public class ItemPhoenixEgg extends Item {
 		} else if (player.canPlayerEdit(pos, facing, itemStack)) {
 			Block block = worldIn.getBlockState(pos).getBlock();
 			
-			if (block.equals(Blocks.GRAVEL)) {
+			if (block == Blocks.GRAVEL) {
 				if (!worldIn.isRemote) {
 					worldIn.setBlockState(pos, Blocks.AIR.getDefaultState());
 					worldIn.playSound((EntityPlayer)null, pos.getX(), pos.getY(), pos.getZ(), SoundEvents.ENTITY_GENERIC_EXPLODE, SoundCategory.BLOCKS, 4.0F, (1.0F + (worldIn.rand.nextFloat() - worldIn.rand.nextFloat()) * 0.2F) * 0.7F);

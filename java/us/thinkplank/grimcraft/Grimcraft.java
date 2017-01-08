@@ -9,6 +9,7 @@
  * give nether foods a growth rate boost
  * ensure the same seed gives you the same ore locations every time
  * update ja_JP.lang
+ * look at item registry / unlocalized names: should they have modid in them
  */
 
 package us.thinkplank.grimcraft;

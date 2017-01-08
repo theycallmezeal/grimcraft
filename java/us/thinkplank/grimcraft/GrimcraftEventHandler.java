@@ -48,7 +48,7 @@ public class GrimcraftEventHandler {
 		
 		Block targetBlock = world.getBlockState(pos).getBlock();
 		
-		if (targetBlock.equals(Blocks.SOUL_SAND)) {
+		if (targetBlock == Blocks.SOUL_SAND) {
 			world.playSound(player, pos, SoundEvents.ITEM_HOE_TILL, SoundCategory.BLOCKS, 1.0F, 1.0F);
 			
 			if (world.isRemote) {
@@ -68,7 +68,7 @@ public class GrimcraftEventHandler {
 		
 	    if (entity instanceof EntitySkeleton && ((EntitySkeleton) entity).func_189771_df() == SkeletonType.WITHER) { // if entity is wither skeleton
 	        for (int i = 0; i < drops.size(); i++) {
-	        	if (drops.get(i).getEntityItem().getItem().equals(Items.BONE)) {
+	        	if (drops.get(i).getEntityItem().getItem() == Items.BONE) {
 	        		drops.get(i).setEntityItemStack(new ItemStack(GrimcraftItems.wither_bone));
 	        	}
 	        }
@@ -91,7 +91,7 @@ public class GrimcraftEventHandler {
 	public void onUseBonemeal(BonemealEvent event) {
 		Block targetBlock = event.getWorld().getBlockState(event.getPos()).getBlock();
 		
-		if (targetBlock.equals(GrimcraftBlocks.barley_crop) || targetBlock.equals(GrimcraftBlocks.netherroot_crop)) {
+		if (targetBlock == GrimcraftBlocks.barley_crop || targetBlock == GrimcraftBlocks.netherroot_crop) {
 			event.setCanceled(true);
 		}
 	}
@@ -139,7 +139,7 @@ public class GrimcraftEventHandler {
 		Block targetBlock = worldIn.getBlockState(pos).getBlock();
 		
 		// handles vulpiberry harvesting
-		if (targetBlock.equals(GrimcraftBlocks.vulpiberry_bush)) {
+		if (targetBlock == GrimcraftBlocks.vulpiberry_bush) {
 			if (state.getValue(BlockVulpiberryBush.GROWN)) {
 				event.setCanceled(true);
 				if (!worldIn.isRemote) {
@@ -150,7 +150,7 @@ public class GrimcraftEventHandler {
 		}
 		
 		// handles ghast pepper harvesting
-		if (targetBlock.equals(GrimcraftBlocks.ghast_pepper_bush)) {
+		if (targetBlock == GrimcraftBlocks.ghast_pepper_bush) {
 			if (state.getValue(BlockGhastPepperBush.GROWN)) {
 				event.setCanceled(true);
 				if (!worldIn.isRemote) {
