@@ -4,12 +4,9 @@
  * Licensed under whatever we decide
  * 
  * TODO
- * hunt down any Block == Block and replace with .equals()
- * hunt down world and replace with worldIn
  * give nether foods a growth rate boost
  * ensure the same seed gives you the same ore locations every time
  * update ja_JP.lang
- * look at item registry / unlocalized names: should they have modid in them
  */
 
 package us.thinkplank.grimcraft;
