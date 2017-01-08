@@ -6,6 +6,5 @@ public class ItemNetherRootSoup extends ItemSoup {
     public ItemNetherRootSoup() {
         super(6); // 6 = hunger points
         setRegistryName("netherroot_soup");
-        setUnlocalizedName("netherroot_soup");
     }
 }

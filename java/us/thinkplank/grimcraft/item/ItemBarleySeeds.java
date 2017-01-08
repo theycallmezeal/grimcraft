@@ -15,7 +15,6 @@ public class ItemBarleySeeds extends ItemSeeds {
     public ItemBarleySeeds() {
         super(GrimcraftBlocks.barley_crop, GrimcraftBlocks.peat);
         setRegistryName("barley_seeds");
-        setUnlocalizedName("barley_seeds");
     }
     
     @Override

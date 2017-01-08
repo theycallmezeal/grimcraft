@@ -20,7 +20,6 @@ public class ItemWitherBonemeal extends Item {
     public ItemWitherBonemeal() {
         super();
         setRegistryName("wither_bonemeal");
-        setUnlocalizedName("wither_bonemeal");
     }
     
     @Override

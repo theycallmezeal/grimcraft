@@ -15,7 +15,6 @@ public class ItemNetherroot extends ItemSeedFood {
     public ItemNetherroot() {
         super(4, 0.6F, GrimcraftBlocks.netherroot_crop, GrimcraftBlocks.peat);
         setRegistryName("netherroot");
-        setUnlocalizedName("netherroot");
     }
     
     @Override

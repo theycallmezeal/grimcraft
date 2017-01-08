@@ -21,7 +21,6 @@ public class ItemPhoenixEgg extends Item {
     public ItemPhoenixEgg() {
         super();
         setRegistryName("phoenix_egg");
-        setUnlocalizedName("phoenix_egg");
     }
     
     @Override
