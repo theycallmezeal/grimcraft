@@ -7,7 +7,7 @@
  * hunt down any Block == Block and replace with .equals()
  * hunt down world and replace with worldIn
  * give nether foods a growth rate boost
- * make sure all headers match public Item getItemDropped(IBlockState state, Random rand, int fortune)
+ * ensure the same seed gives you the same ore locations every time
  * update ja_JP.lang
  */
 

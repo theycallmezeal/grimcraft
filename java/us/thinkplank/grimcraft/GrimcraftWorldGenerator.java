@@ -1,7 +1,3 @@
-/*
- * TODO does the same seed give you the same ores every time?
- */
-
 package us.thinkplank.grimcraft;
 
 import java.util.Random;

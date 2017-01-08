@@ -5,6 +5,7 @@ import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
 import us.thinkplank.grimcraft.item.GrimcraftItems;
 
@@ -17,7 +18,7 @@ public class BlockBrimstoneOre extends Block {
         setHarvestLevel("pickaxe", 1);
     }
 
-    public Item getItemDropped(int p_149650_1_, Random p_149650_2_, int p_149650_3_) {
+    public Item getItemDropped(IBlockState state, Random rand, int fortune) {
         return GrimcraftItems.brimstone;
     }
 
