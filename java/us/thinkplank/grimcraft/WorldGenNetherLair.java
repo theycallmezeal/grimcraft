@@ -150,13 +150,13 @@ public class WorldGenNetherLair extends WorldGenerator implements IWorldGenerato
 		};
 	}
 
-	public boolean locationIsValidSpawn(World world, BlockPos pos) {
+	public boolean locationIsValidSpawn(World worldIn, BlockPos pos) {
 		int distanceToAir = 0;
 		int i = pos.getX();
 		int j = pos.getY();
 		int k = pos.getZ();
 		
-		Block check = world.getBlockState(new BlockPos(i, j, k)).getBlock();
+		Block check = worldIn.getBlockState(new BlockPos(i, j, k)).getBlock();
 
 		while (check != Blocks.AIR){
 			if (distanceToAir > 3) {
@@ -164,14 +164,14 @@ public class WorldGenNetherLair extends WorldGenerator implements IWorldGenerato
 			}
 
 			distanceToAir++;
-			check = world.getBlockState(new BlockPos(i, j + distanceToAir, k)).getBlock();
+			check = worldIn.getBlockState(new BlockPos(i, j + distanceToAir, k)).getBlock();
 		}
 
 		j += distanceToAir - 1;
 
-		Block block = world.getBlockState(new BlockPos(i, j, k)).getBlock();
-		Block blockAbove = world.getBlockState(new BlockPos(i, j + 1, k)).getBlock();
-		Block blockBelow = world.getBlockState(new BlockPos(i, j - 1, k)).getBlock();
+		Block block = worldIn.getBlockState(new BlockPos(i, j, k)).getBlock();
+		Block blockAbove = worldIn.getBlockState(new BlockPos(i, j + 1, k)).getBlock();
+		Block blockBelow = worldIn.getBlockState(new BlockPos(i, j - 1, k)).getBlock();
 		
 		for (Block x : getValidSpawnBlocks()){
 			if (blockAbove != Blocks.AIR){
@@ -191,8 +191,8 @@ public class WorldGenNetherLair extends WorldGenerator implements IWorldGenerato
 		
 	}
 	
-	private void fillChest(World world, Random rand, BlockPos pos) {
-		TileEntityChest chest = (TileEntityChest) world.getTileEntity(pos);
+	private void fillChest(World worldIn, Random rand, BlockPos pos) {
+		TileEntityChest chest = (TileEntityChest) worldIn.getTileEntity(pos);
 		
 		if (chest != null) {
 			//TODO ResourceLocation for the loot?
@@ -200,7 +200,7 @@ public class WorldGenNetherLair extends WorldGenerator implements IWorldGenerato
 		}
 	}
 	
-	private void setBlocksInArray(Block[][] array, int height, BlockPos pos, World world, Random rand, int rotateNum) {
+	private void setBlocksInArray(Block[][] array, int height, BlockPos pos, World worldIn, Random rand, int rotateNum) {
 		for (int x = 0; x < rotateNum; x++) {
 			array = rotateMatrix(array);
 		}
@@ -208,7 +208,7 @@ public class WorldGenNetherLair extends WorldGenerator implements IWorldGenerato
 		for (int x = 0; x < array.length; x++) {
 			for (int z = 0; z < array[0].length; z++) {
 				BlockPos thisPos = pos.add(x, height, z);
-				world.setBlockState(thisPos, array[x][z].getDefaultState());
+				worldIn.setBlockState(thisPos, array[x][z].getDefaultState());
 				
 				//if (array[x][z] == chest) {
 					//fillChest(world, rand, thisPos);
@@ -231,30 +231,30 @@ public class WorldGenNetherLair extends WorldGenerator implements IWorldGenerato
 	}
 
 	@Override
-	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
+	public void generate(Random random, int chunkX, int chunkZ, World worldIn, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
 		
 	}
 
 	@Override
-	public boolean generate(World world, Random rand, BlockPos pos) {
+	public boolean generate(World worldIn, Random rand, BlockPos pos) {
 		//check that each corner is one of the valid spawn blocks
-		if (!locationIsValidSpawn(world, pos) || 
-			!locationIsValidSpawn(world, pos.add(8, 0, 0)) || 
-			!locationIsValidSpawn(world, pos.add(8, 0, 8)) || 
-			!locationIsValidSpawn(world, pos.add(0, 0, 8))) {
+		if (!locationIsValidSpawn(worldIn, pos) || 
+			!locationIsValidSpawn(worldIn, pos.add(8, 0, 0)) || 
+			!locationIsValidSpawn(worldIn, pos.add(8, 0, 8)) || 
+			!locationIsValidSpawn(worldIn, pos.add(0, 0, 8))) {
 			return false;
 		}
 		
 		int rotateNum = (int) Math.floor(rand.nextDouble() * 4);
 		
-		setBlocksInArray(layer0, 0, pos, world, rand, rotateNum);
-		setBlocksInArray(layer1, 1, pos, world, rand, rotateNum);
-		setBlocksInArray(layer2, 2, pos, world, rand, rotateNum);
-		setBlocksInArray(layer3, 3, pos, world, rand, rotateNum);
-		setBlocksInArray(layer4, 4, pos, world, rand, rotateNum);
-		setBlocksInArray(layer5, 5, pos, world, rand, rotateNum);
-		setBlocksInArray(layer6, 6, pos, world, rand, rotateNum);
-		setBlocksInArray(layer7, 7, pos, world, rand, rotateNum);
+		setBlocksInArray(layer0, 0, pos, worldIn, rand, rotateNum);
+		setBlocksInArray(layer1, 1, pos, worldIn, rand, rotateNum);
+		setBlocksInArray(layer2, 2, pos, worldIn, rand, rotateNum);
+		setBlocksInArray(layer3, 3, pos, worldIn, rand, rotateNum);
+		setBlocksInArray(layer4, 4, pos, worldIn, rand, rotateNum);
+		setBlocksInArray(layer5, 5, pos, worldIn, rand, rotateNum);
+		setBlocksInArray(layer6, 6, pos, worldIn, rand, rotateNum);
+		setBlocksInArray(layer7, 7, pos, worldIn, rand, rotateNum);
 		
 		return true;
 	}

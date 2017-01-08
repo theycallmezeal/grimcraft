@@ -19,16 +19,16 @@ public class GrimcraftPlants {
     	}
     }
     
-    public static boolean isSurroundedByLava(World world, BlockPos pos) {
+    public static boolean isSurroundedByLava(World worldIn, BlockPos pos) {
     	int lava = 0;
-    	if (isLava(world, pos.north()) &&
-    		isLava(world, pos.north().east()) &&
-    		isLava(world, pos.east()) &&
-    		isLava(world, pos.south().east()) &&
-    		isLava(world, pos.south()) &&
-    		isLava(world, pos.south().west()) &&
-    		isLava(world, pos.west()) &&
-    		isLava(world, pos.north().west()) ) {
+    	if (isLava(worldIn, pos.north()) &&
+    		isLava(worldIn, pos.north().east()) &&
+    		isLava(worldIn, pos.east()) &&
+    		isLava(worldIn, pos.south().east()) &&
+    		isLava(worldIn, pos.south()) &&
+    		isLava(worldIn, pos.south().west()) &&
+    		isLava(worldIn, pos.west()) &&
+    		isLava(worldIn, pos.north().west()) ) {
     		return true;
     	}
     	return false;

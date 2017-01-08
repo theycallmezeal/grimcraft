@@ -23,7 +23,7 @@ public class BlockGlowstoneGrower extends Block {
     }
 	
 	@Override
-	public void updateTick(World world, BlockPos pos, IBlockState state, Random random) {
+	public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random random) {
 		int radius = 5;
 		
 		for (int i = 0 - radius; i <= radius; i++) {
@@ -33,14 +33,14 @@ public class BlockGlowstoneGrower extends Block {
 						continue;
 					}
 					
-					Block cBlock = world.getBlockState(pos.add(i, j, k)).getBlock();
+					Block cBlock = worldIn.getBlockState(pos.add(i, j, k)).getBlock();
 					if (cBlock.equals(Blocks.GLOWSTONE)) {
 						int dx = random.nextInt(3) - 1;
 						int dy = random.nextInt(3) - 1;
 						int dz = random.nextInt(3) - 1;
 						
 						BlockPos newLoc = pos.add(i + dx, j + dy, k + dz);
-						Block blockAtLoc = world.getBlockState(newLoc).getBlock();
+						Block blockAtLoc = worldIn.getBlockState(newLoc).getBlock();
 						
 						if (blockAtLoc.equals(GrimcraftBlocks.glowstone_grower)) {
 							continue;
@@ -50,16 +50,16 @@ public class BlockGlowstoneGrower extends Block {
 							continue;
 						}
 						
-						world.setBlockState(newLoc, Blocks.GLOWSTONE.getDefaultState());
+						worldIn.setBlockState(newLoc, Blocks.GLOWSTONE.getDefaultState());
 					}
 				}
 			}
 		}
-		world.scheduleBlockUpdate(pos, this, 0, 1);
+		worldIn.scheduleBlockUpdate(pos, this, 0, 1);
 	}
 	
 	@Override
-	public void onBlockAdded(World world, BlockPos pos, IBlockState state) {
-		world.scheduleBlockUpdate(pos, this, 0, 1);
+	public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state) {
+		worldIn.scheduleBlockUpdate(pos, this, 0, 1);
 	}
 }

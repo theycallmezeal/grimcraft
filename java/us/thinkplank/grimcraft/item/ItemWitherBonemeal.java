@@ -24,37 +24,37 @@ public class ItemWitherBonemeal extends Item {
     }
     
     @Override
-    public EnumActionResult onItemUse(ItemStack itemStack, EntityPlayer player, World world, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
+    public EnumActionResult onItemUse(ItemStack itemStack, EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
     	if (itemStack == null) {
     		return EnumActionResult.FAIL;
     	} else if (player.dimension == -1 && player.canPlayerEdit(pos, facing, itemStack)) {
-    		Block block = world.getBlockState(pos).getBlock();
+    		Block block = worldIn.getBlockState(pos).getBlock();
     		
     		if (block.equals(Blocks.DEADBUSH)) {
-    			if (world.getBlockState(pos.down()).getBlock().equals(GrimcraftBlocks.peat) && GrimcraftPlants.isSurroundedByLava(world, pos.down())) {
-    				world.setBlockState(pos, GrimcraftBlocks.ghast_pepper_bush.getDefaultState());
+    			if (worldIn.getBlockState(pos.down()).getBlock().equals(GrimcraftBlocks.peat) && GrimcraftPlants.isSurroundedByLava(worldIn, pos.down())) {
+    				worldIn.setBlockState(pos, GrimcraftBlocks.ghast_pepper_bush.getDefaultState());
     			} else {
-    				world.setBlockState(pos, GrimcraftBlocks.vulpiberry_bush.getDefaultState());
+    				worldIn.setBlockState(pos, GrimcraftBlocks.vulpiberry_bush.getDefaultState());
     			}
-    			ItemDye.spawnBonemealParticles(world, pos, 15);
+    			ItemDye.spawnBonemealParticles(worldIn, pos, 15);
     			itemStack.stackSize--;
     			return EnumActionResult.SUCCESS;
     		}
     		
     		if (block.equals(Blocks.NETHER_WART)) {
-    			GrimcraftPlants.attemptTree(world, pos);
-    			ItemDye.spawnBonemealParticles(world, pos, 15);
+    			GrimcraftPlants.attemptTree(worldIn, pos);
+    			ItemDye.spawnBonemealParticles(worldIn, pos, 15);
     			itemStack.stackSize--;
     			return EnumActionResult.SUCCESS;
     		}
     		
     		if (block.equals(GrimcraftBlocks.barley_crop) || block.equals(GrimcraftBlocks.netherroot_crop) || block.equals(Blocks.NETHER_WART)) {
-    			IBlockState state = world.getBlockState(pos);
+    			IBlockState state = worldIn.getBlockState(pos);
     			int currentGrowth = state.getValue(BlockCrops.AGE);
     			if (currentGrowth < 7) {
-    				world.setBlockState(pos, state.withProperty(BlockCrops.AGE, currentGrowth + 1));
+    				worldIn.setBlockState(pos, state.withProperty(BlockCrops.AGE, currentGrowth + 1));
     			}
-    			ItemDye.spawnBonemealParticles(world, pos, 15);
+    			ItemDye.spawnBonemealParticles(worldIn, pos, 15);
 				itemStack.stackSize--;
 				return EnumActionResult.SUCCESS;
     		}
