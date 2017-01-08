@@ -4,9 +4,13 @@
  * Licensed under whatever we decide
  * 
  * TODO
+ * the nether lantern doesn't light up the world
  * give nether foods a growth rate boost
  * ensure the same seed gives you the same ore locations every time
  * update ja_JP.lang
+ * 
+ * before final build:
+ * restore @Override
  */
 
 package us.thinkplank.grimcraft;
