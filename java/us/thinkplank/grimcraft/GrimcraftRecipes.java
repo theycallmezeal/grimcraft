@@ -13,11 +13,10 @@ public class GrimcraftRecipes {
         GameRegistry.addRecipe(new ItemStack(GrimcraftItems.grimwood_stick), "x", "x", 'x', new ItemStack(GrimcraftBlocks.grimwood_planks));
         GameRegistry.addRecipe(new ItemStack(GrimcraftBlocks.grimwood_slab, 6), "xxx", 'x', new ItemStack(GrimcraftBlocks.grimwood_planks));
         GameRegistry.addRecipe(new ItemStack(GrimcraftBlocks.grimwood_stairs, 4), "x  ", "xx ", "xxx", 'x', new ItemStack(GrimcraftBlocks.grimwood_planks));
-        //TODO add a grimwood door and trapdoor
-        GameRegistry.addRecipe(new ItemStack(Blocks.OAK_DOOR), "xx", "xx", "xx", 'x', new ItemStack(GrimcraftBlocks.grimwood_planks)); //grimwood door?
+        //TODO add a grimwood door
+        //GameRegistry.addRecipe(new ItemStack(Blocks.ANVIL), "xx", "xx", "xx", 'x', new ItemStack(GrimcraftBlocks.grimwood_planks)); //grimwood door?
         GameRegistry.addRecipe(new ItemStack(GrimcraftBlocks.grimwood_fence), "xxx", "xxx", 'x', new ItemStack(GrimcraftItems.grimwood_stick));
         GameRegistry.addRecipe(new ItemStack(GrimcraftBlocks.grimwood_fence_gate), "xyx", "xyx", 'x', new ItemStack(GrimcraftItems.grimwood_stick), 'y', new ItemStack(GrimcraftBlocks.grimwood_planks));
-        GameRegistry.addRecipe(new ItemStack(Blocks.TRAPDOOR, 2), "xxx", "xxx", 'x', new ItemStack(GrimcraftBlocks.grimwood_planks)); //grimwood trapdoor?
         
         GameRegistry.addRecipe(new ItemStack(GrimcraftBlocks.nether_lantern), "xxx", "xyx", "xxx", 'x', new ItemStack(Blocks.STAINED_GLASS, 1, 12), 'y', new ItemStack(GrimcraftItems.brimstone));
         
