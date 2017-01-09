@@ -48,14 +48,18 @@ public class GrimcraftEventHandler {
 		
 		Block targetBlock = world.getBlockState(pos).getBlock();
 		
-		if (targetBlock == Blocks.SOUL_SAND) {
+		if (targetBlock == Blocks.SOUL_SAND || targetBlock == GrimcraftBlocks.peat) {
 			world.playSound(player, pos, SoundEvents.ITEM_HOE_TILL, SoundCategory.BLOCKS, 1.0F, 1.0F);
 			
 			if (world.isRemote) {
 				return;
 			}
 			
-			world.setBlockState(event.getPos(), GrimcraftBlocks.peat.getDefaultState());
+			if (targetBlock == Blocks.SOUL_SAND) { 
+				world.setBlockState(event.getPos(), GrimcraftBlocks.peat.getDefaultState());
+			} else {
+				world.setBlockState(event.getPos(), Blocks.SOUL_SAND.getDefaultState());
+			}
             event.getCurrent().damageItem(1, player);
 		}
 	}
