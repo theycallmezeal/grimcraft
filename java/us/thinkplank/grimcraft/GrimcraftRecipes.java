@@ -28,6 +28,7 @@ public class GrimcraftRecipes {
         GameRegistry.addRecipe(new ItemStack(GrimcraftItems.brimstone, 9), "x", 'x', new ItemStack(GrimcraftBlocks.brimstone_block));
         GameRegistry.addShapelessRecipe(new ItemStack(Items.FIRE_CHARGE), new ItemStack(Items.GUNPOWDER), new ItemStack(GrimcraftItems.brimstone), new ItemStack(Items.COAL));
         GameRegistry.addRecipe(new ItemStack(Blocks.TNT), "xyx", "yxy", "xyx", 'x', new ItemStack(GrimcraftItems.brimstone), 'y', new ItemStack(Blocks.SAND));
+        GameRegistry.addRecipe(new ItemStack(Blocks.TORCH, 12), "x", "y", 'x', new ItemStack(GrimcraftItems.brimstone), 'y', new ItemStack(GrimcraftItems.grimwood_stick));
         
         GameRegistry.addRecipe(new ItemStack(GrimcraftItems.grimwood_shovel), "x", "y", "y", 'x', new ItemStack(GrimcraftBlocks.grimwood_planks), 'y', new ItemStack(GrimcraftItems.grimwood_stick));
         GameRegistry.addRecipe(new ItemStack(GrimcraftItems.netherrack_shovel), "x", "y", "y", 'x', new ItemStack(Blocks.NETHERRACK), 'y', new ItemStack(GrimcraftItems.grimwood_stick));
