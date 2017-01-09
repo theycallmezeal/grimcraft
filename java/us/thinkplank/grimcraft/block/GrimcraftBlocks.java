@@ -30,7 +30,6 @@ public class GrimcraftBlocks {
     public final static Block vulpiberry_bush = new BlockVulpiberryBush();
     public final static Block ghast_pepper_bush = new BlockGhastPepperBush();
     public final static Block nether_lantern = new BlockNetherLantern();
-    public final static Block lava_lamp = new BlockLavaLamp();
     public final static Block glowstone_grower = new BlockGlowstoneGrower();
     
     public final static ItemSlab itemBlockSlab = new ItemSlab(grimwood_slab, (BlockSlab)grimwood_slab, (BlockSlab)grimwood_double_slab);
@@ -55,7 +54,6 @@ public class GrimcraftBlocks {
         registerBlock(vulpiberry_bush);
         registerBlock(ghast_pepper_bush);
         registerBlock(nether_lantern);
-        registerBlock(lava_lamp);
         registerBlock(glowstone_grower);
     }
     
@@ -78,7 +76,6 @@ public class GrimcraftBlocks {
         registerBlockModel(vulpiberry_bush);
         registerBlockModel(ghast_pepper_bush);
         registerBlockModel(nether_lantern);
-        registerBlockModel(lava_lamp);
         registerBlockModel(glowstone_grower);
     }
     
