@@ -32,6 +32,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 import us.thinkplank.grimcraft.block.GrimcraftBlocks;
+import us.thinkplank.grimcraft.item.GrimcraftItems;
 
 @Mod(modid="grimcraft", name="grimcraft", version="1.0.0")
 public class Grimcraft {
@@ -64,6 +65,12 @@ public class Grimcraft {
     	OreDictionary.registerOre("oreGold", GrimcraftBlocks.nether_gold_ore);
     	OreDictionary.registerOre("oreRedstone", GrimcraftBlocks.nether_redstone_ore);
     	OreDictionary.registerOre("oreSulfur", GrimcraftBlocks.brimstone_ore); //makes brimstone work as sulfur
+    	
+    	OreDictionary.registerOre("logWood", GrimcraftBlocks.grimwood_log);
+    	OreDictionary.registerOre("plankWood", GrimcraftBlocks.grimwood_planks);
+    	OreDictionary.registerOre("slabWood", GrimcraftBlocks.grimwood_slab);
+    	OreDictionary.registerOre("stairWood", GrimcraftBlocks.grimwood_stairs);
+    	OreDictionary.registerOre("stickWood", GrimcraftItems.grimwood_stick);
     	
     	EntityRegistry.addSpawn(EntityCaveSpider.class, 75, 1, 3, EnumCreatureType.MONSTER, Biomes.HELL);
     	EntityRegistry.addSpawn(EntityEnderman.class, 75, 1, 1, EnumCreatureType.MONSTER, Biomes.HELL);
