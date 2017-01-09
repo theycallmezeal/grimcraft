@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "particle": "grimcraft:block/glowstone_grower",
+        "down": "grimcraft:block/glowstone_grower_bottom",
+        "up": "grimcraft:block/glowstone_grower_top",
+        "north": "grimcraft:block/glowstone_grower_side",
+        "east": "grimcraft:block/glowstone_grower_side",
+        "south": "grimcraft:block/glowstone_grower_side",
+        "west": "grimcraft:block/glowstone_grower_side"
+    }
+}

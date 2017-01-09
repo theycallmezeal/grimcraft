@@ -1,5 +1,5 @@
 {
-    "parent": "grimcraft:block/gc_farming_base",
+    "parent": "grimcraft:block/glowstone_grower",
     "display": {
         "thirdperson": {
             "rotation": [ -90, 0, 0 ],
