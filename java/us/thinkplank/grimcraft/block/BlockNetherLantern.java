@@ -15,7 +15,7 @@ public class BlockNetherLantern extends Block {
         setSoundType(SoundType.GLASS);
         setRegistryName("nether_lantern");
         setHarvestLevel("pickaxe", 1);
-        setLightLevel(15F);
+        setLightLevel(1.0F);
     }
     
     @SideOnly(Side.CLIENT)
