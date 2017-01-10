@@ -1,6 +1,6 @@
 {
     "variants": {
-		"grown=false": { "model": "grimcraft:vulpiberry_bush_stage_0" },
-		"grown=true": { "model": "grimcraft:vulpiberry_bush_stage_1" }
+		"grown=false": { "model": "grimcraft:vulpiberry_bush_stage0" },
+		"grown=true": { "model": "grimcraft:vulpiberry_bush_stage1" }
     }
 }
