@@ -18,16 +18,19 @@ public class BlockNetherLantern extends Block {
         setLightLevel(1.0F);
     }
     
-    @SideOnly(Side.CLIENT)
+    @Override
+	@SideOnly(Side.CLIENT)
     public BlockRenderLayer getBlockLayer() {
         return BlockRenderLayer.CUTOUT;
     }
 
-    public boolean isFullCube(IBlockState state) {
+    @Override
+	public boolean isFullCube(IBlockState state) {
         return false;
     }
     
-    public boolean isOpaqueCube(IBlockState state) {
+    @Override
+	public boolean isOpaqueCube(IBlockState state) {
     	return false;
     }
 }

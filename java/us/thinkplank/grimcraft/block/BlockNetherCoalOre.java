@@ -18,7 +18,8 @@ public class BlockNetherCoalOre extends Block {
         setHarvestLevel("pickaxe", 1);
     }
 
-    public Item getItemDropped(IBlockState state, Random rand, int fortune) {
+    @Override
+	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
         return Items.COAL;
     }
 }

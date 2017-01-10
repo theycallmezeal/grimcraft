@@ -1,13 +1,10 @@
 package us.thinkplank.grimcraft.mobs;
 
-import net.minecraft.client.model.ModelChicken;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.passive.EntityChicken;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.math.MathHelper;
 import net.minecraftforge.fml.client.registry.IRenderFactory;
 import us.thinkplank.grimcraft.Grimcraft;
 

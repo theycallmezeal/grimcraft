@@ -2,10 +2,8 @@ package us.thinkplank.grimcraft.block;
 
 import java.util.Random;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockCrops;
 import net.minecraft.block.SoundType;
-import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -74,6 +72,6 @@ public class BlockBarleyCrop extends BlockCrops {
 	
 	@Override
 	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
-        return CROPS_AABB[((Integer)state.getValue(this.getAgeProperty())).intValue()];
+        return CROPS_AABB[state.getValue(this.getAgeProperty()).intValue()];
     }
 }

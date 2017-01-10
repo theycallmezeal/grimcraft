@@ -15,7 +15,6 @@ import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
@@ -38,7 +37,8 @@ public class EntityPhoenix extends EntityAnimal {
         EntityLiving.func_189752_a(datafixer, "Phoenix");
     }
 
-    protected void initEntityAI() {
+    @Override
+	protected void initEntityAI() {
         this.tasks.addTask(0, new EntityAIPanic(this, 2.0D));
         this.tasks.addTask(1, new EntityAIMate(this, 1.0D));
         this.tasks.addTask(2, new EntityAITempt(this, 1.25D, GrimcraftItems.barley_seeds, false));
@@ -48,42 +48,51 @@ public class EntityPhoenix extends EntityAnimal {
         this.tasks.addTask(6, new EntityAILookIdle(this));
     }
 
-    protected void applyEntityAttributes() {
+    @Override
+	protected void applyEntityAttributes() {
         super.applyEntityAttributes();
         this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(10.0D);
         this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.20000000298023224D);
     }
 
-    protected SoundEvent getAmbientSound() {
+    @Override
+	protected SoundEvent getAmbientSound() {
         return SoundEvents.ENTITY_CHICKEN_AMBIENT;
     }
 
-    protected SoundEvent getHurtSound() {
+    @Override
+	protected SoundEvent getHurtSound() {
         return SoundEvents.ENTITY_CHICKEN_HURT;
     }
 
-    protected SoundEvent getDeathSound() {
+    @Override
+	protected SoundEvent getDeathSound() {
         return SoundEvents.ENTITY_CHICKEN_DEATH;
     }
 
-    protected void playStepSound(BlockPos pos, Block blockIn) {
+    @Override
+	protected void playStepSound(BlockPos pos, Block blockIn) {
         this.playSound(SoundEvents.ENTITY_CHICKEN_STEP, 0.15F, 1.0F);
     }
     
-    protected float getSoundVolume() {
+    @Override
+	protected float getSoundVolume() {
         return 0.4F;
     }
 
-    @Nullable
+    @Override
+	@Nullable
     protected ResourceLocation getLootTable() {
         return LootTableList.ENTITIES_CHICKEN;
     }
 
-    public EntityPhoenix createChild(EntityAgeable ageable) {
+    @Override
+	public EntityPhoenix createChild(EntityAgeable ageable) {
         return new EntityPhoenix(this.worldObj);
     }
     
-    public void onLivingUpdate() {
+    @Override
+	public void onLivingUpdate() {
     	super.onLivingUpdate();
     	if (Math.random() < 0.0005 && !this.worldObj.isRemote) {
     		this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);

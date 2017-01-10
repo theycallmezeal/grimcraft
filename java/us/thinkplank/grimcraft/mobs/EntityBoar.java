@@ -37,7 +37,8 @@ public class EntityBoar extends EntityAnimal {
         EntityLiving.func_189752_a(datafixer, "Boar");
     }
 
-    protected void initEntityAI() {
+    @Override
+	protected void initEntityAI() {
         this.tasks.addTask(0, new EntityAIPanic(this, 2.0D));
         this.tasks.addTask(1, new EntityAIMate(this, 1.0D));
         this.tasks.addTask(2, new EntityAITempt(this, 1.25D, GrimcraftItems.barley, false));
@@ -47,38 +48,46 @@ public class EntityBoar extends EntityAnimal {
         this.tasks.addTask(6, new EntityAILookIdle(this));
     }
 
-    protected void applyEntityAttributes() {
+    @Override
+	protected void applyEntityAttributes() {
         super.applyEntityAttributes();
         this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(10.0D);
         this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.20000000298023224D);
     }
 
-    protected SoundEvent getAmbientSound() {
+    @Override
+	protected SoundEvent getAmbientSound() {
         return SoundEvents.ENTITY_COW_AMBIENT;
     }
 
-    protected SoundEvent getHurtSound() {
+    @Override
+	protected SoundEvent getHurtSound() {
         return SoundEvents.ENTITY_COW_HURT;
     }
 
-    protected SoundEvent getDeathSound() {
+    @Override
+	protected SoundEvent getDeathSound() {
         return SoundEvents.ENTITY_COW_DEATH;
     }
 
-    protected void playStepSound(BlockPos pos, Block blockIn) {
+    @Override
+	protected void playStepSound(BlockPos pos, Block blockIn) {
         this.playSound(SoundEvents.ENTITY_COW_STEP, 0.15F, 1.0F);
     }
     
-    protected float getSoundVolume() {
+    @Override
+	protected float getSoundVolume() {
         return 0.4F;
     }
 
-    @Nullable
+    @Override
+	@Nullable
     protected ResourceLocation getLootTable() {
         return LootTableList.ENTITIES_PIG;
     }
 
-    public EntityBoar createChild(EntityAgeable ageable) {
+    @Override
+	public EntityBoar createChild(EntityAgeable ageable) {
         return new EntityBoar(this.worldObj);
     }
 }

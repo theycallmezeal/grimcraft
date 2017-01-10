@@ -72,6 +72,6 @@ public class BlockNetherrootCrop extends BlockCrops {
 	
 	@Override
 	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
-        return ROOT_AABB[((Integer)state.getValue(this.getAgeProperty())).intValue()];
+        return ROOT_AABB[state.getValue(this.getAgeProperty()).intValue()];
     }
 }
