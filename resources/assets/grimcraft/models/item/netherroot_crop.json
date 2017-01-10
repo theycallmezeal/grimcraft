@@ -1,5 +1,5 @@
 {
-    "parent": "grimcraft:block/netherroot_crop",
+    "parent": "grimcraft:block/netherroot_crop_stage_0",
     "display": {
         "thirdperson": {
             "rotation": [ -90, 0, 0 ],
