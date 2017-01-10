@@ -1,5 +1,5 @@
 {
-    "parent": "grimcraft:block/barley_crop_stage_0",
+    "parent": "grimcraft:block/barley_crop_stage0",
     "display": {
         "thirdperson": {
             "rotation": [ -90, 0, 0 ],
