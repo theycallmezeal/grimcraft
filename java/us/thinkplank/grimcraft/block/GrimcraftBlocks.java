@@ -18,6 +18,7 @@ public class GrimcraftBlocks {
     public final static Block grimwood_stairs = new BlockGrimwoodStairs();
     public final static Block grimwood_fence = new BlockGrimwoodFence();
     public final static Block grimwood_fence_gate = new BlockGrimwoodFenceGate();
+    public final static Block grimwood_door = new BlockGrimwoodDoor();
     public final static Block fossilstone_ore = new BlockFossilstoneOre();
     public final static Block nether_coal_ore = new BlockNetherCoalOre();
     public final static Block nether_gold_ore = new BlockNetherGoldOre();
@@ -42,6 +43,7 @@ public class GrimcraftBlocks {
         registerBlock(grimwood_stairs);
         registerBlock(grimwood_fence);
         registerBlock(grimwood_fence_gate);
+        registerBlock(grimwood_door);
         registerBlock(fossilstone_ore);
         registerBlock(nether_coal_ore);
         registerBlock(nether_gold_ore);
@@ -65,6 +67,7 @@ public class GrimcraftBlocks {
         registerBlockModel(grimwood_stairs);
         registerBlockModel(grimwood_fence);
         registerBlockModel(grimwood_fence_gate);
+        registerBlockModel(grimwood_door);
         registerBlockModel(fossilstone_ore);
         registerBlockModel(nether_coal_ore);
         registerBlockModel(nether_gold_ore);

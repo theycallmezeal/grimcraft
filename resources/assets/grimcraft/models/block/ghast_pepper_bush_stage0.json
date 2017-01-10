@@ -1,6 +1,6 @@
 {
     "parent": "block/cross",
     "textures": {
-        "cross": "grimcraft:block/ghast_pepper_bush_stage_0"
+        "cross": "grimcraft:block/ghast_pepper_bush_stage0"
     }
 }
