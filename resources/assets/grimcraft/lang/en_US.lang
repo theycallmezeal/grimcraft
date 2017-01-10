@@ -52,6 +52,8 @@ item.grimcraft.netherroot.name=Netherroot
 item.grimcraft.netherroot_soup.name=Netherroot Soup
 item.grimcraft.phoenix_egg.name=Phoenix Egg
 
+item.grimcraft.item_grimwood_door.name=Grimwood Door
+
 entity.grimcraft.boar.name=Boar
 entity.grimcraft.phoenix.name=Phoenix
 

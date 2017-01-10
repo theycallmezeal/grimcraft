@@ -53,6 +53,8 @@ public class GrimcraftItems {
     public final static Item phoenix_egg = new ItemPhoenixEgg();
     public final static Item netherroot_soup = new ItemNetherRootSoup();
     
+    public final static Item item_grimwood_door = new ItemGrimwoodDoor();
+    
     public static void register() {
     	registerItem(grimwood_shovel);
         registerItem(grimwood_pickaxe);
@@ -89,6 +91,8 @@ public class GrimcraftItems {
         registerItem(netherroot);
         registerItem(netherroot_soup);
         registerItem(phoenix_egg);
+        
+        registerItem(item_grimwood_door);
     }
     
     public static void registerModels() {
@@ -127,6 +131,8 @@ public class GrimcraftItems {
         registerItemModel(netherroot);
         registerItemModel(netherroot_soup);
         registerItemModel(phoenix_egg);
+        
+        registerItemModel(item_grimwood_door);
     }
     
     public static void registerItem(Item item) {

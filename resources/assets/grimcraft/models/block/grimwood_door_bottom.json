@@ -1,7 +1,7 @@
 {
     "parent": "block/door_bottom",
     "textures": {
-        "bottom": "grimcraft:blocks/grimwood_door_lower",
-        "top": "grimcraft:blocks/grimwood_door_upper"
+        "bottom": "grimcraft:block/grimwood_door_lower",
+        "top": "grimcraft:block/grimwood_door_upper"
     }
 }
