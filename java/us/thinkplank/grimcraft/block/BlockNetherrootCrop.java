@@ -48,8 +48,26 @@ public class BlockNetherrootCrop extends BlockCrops {
 	@Override
 	public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
 		if (worldIn.provider.getDimension() == -1) {
-			super.updateTick(worldIn, pos, state, rand);
+			/* super.super.updateTick() */
+			this.checkAndDropBlock(worldIn, pos, state);
+	        
+			/* BlockCrops.updateTick() without light level check */
+            int i = this.getAge(state);
+            if (i < this.getMaxAge()) {
+                float f = getGrowthChance(this, worldIn, pos) * 1.2F; /* 1.2x-ish growth rate boost */
+
+                if (rand.nextInt((int)(25.0F / f) + 1) == 0) {
+                    worldIn.setBlockState(pos, this.withAge(i + 1), 2);
+                }
+            }
 		}
+	}
+	
+	@Override
+	public boolean canBlockStay(World worldIn, BlockPos pos, IBlockState state) {
+		/* BlockCrops.canBlockStay() without light level / sky visible check */
+		IBlockState soil = worldIn.getBlockState(pos.down());
+        return soil.getBlock().canSustainPlant(soil, worldIn, pos.down(), net.minecraft.util.EnumFacing.UP, this);
 	}
 	
 	@Override
