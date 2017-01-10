@@ -2,8 +2,10 @@ package us.thinkplank.grimcraft.block;
 
 import java.util.Random;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockCrops;
 import net.minecraft.block.SoundType;
+import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -48,8 +50,26 @@ public class BlockBarleyCrop extends BlockCrops {
 	@Override
 	public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
 		if (worldIn.provider.getDimension() == -1) {
-			super.updateTick(worldIn, pos, state, rand);
+			/* super.super.updateTick() */
+			this.checkAndDropBlock(worldIn, pos, state);
+	        
+			/* BlockCrops.updateTick() without light level check */
+            int i = this.getAge(state);
+            if (i < this.getMaxAge()) {
+                float f = getGrowthChance(this, worldIn, pos) * 1.2F; /* 1.2x-ish growth rate boost */
+
+                if (rand.nextInt((int)(25.0F / f) + 1) == 0) {
+                    worldIn.setBlockState(pos, this.withAge(i + 1), 2);
+                }
+            }
 		}
+	}
+	
+	@Override
+	public boolean canBlockStay(World worldIn, BlockPos pos, IBlockState state) {
+		/* BlockCrops.canBlockStay() without light level / sky visible check */
+		IBlockState soil = worldIn.getBlockState(pos.down());
+        return soil.getBlock().canSustainPlant(soil, worldIn, pos.down(), net.minecraft.util.EnumFacing.UP, this);
 	}
 	
 	@Override
