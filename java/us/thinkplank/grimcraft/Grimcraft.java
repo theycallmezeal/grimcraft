@@ -4,6 +4,7 @@
  * Licensed under whatever we decide
  * 
  * TODO
+ * fix spawn egg colors
  * ensure the same seed gives you the same ore locations every time
  * update ja_JP.lang
  * 
