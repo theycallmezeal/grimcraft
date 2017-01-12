@@ -102,13 +102,14 @@ public class GrimcraftEventHandler {
 	
 	@SubscribeEvent
 	public void onPlayerRightClick(RightClickBlock event) {
-		World world = event.getWorld();
+		World worldIn = event.getWorld();
 		BlockPos pos = event.getPos();
-		Block targetBlock = world.getBlockState(event.getPos()).getBlock();
+		IBlockState state = worldIn.getBlockState(event.getPos());
+		Block targetBlock = state.getBlock();
 		EntityPlayer player = event.getEntityPlayer();
 		
 		// handles poisoning with sulfur in furnaces
-		EnumDifficulty difficulty = world.getDifficulty();
+		EnumDifficulty difficulty = worldIn.getDifficulty();
 		double chance = 0;
 		if (difficulty == EnumDifficulty.NORMAL) {
 			chance = 0.2;
@@ -117,7 +118,7 @@ public class GrimcraftEventHandler {
 		}
 		
 		if (targetBlock instanceof BlockFurnace) {
-			TileEntityFurnace furnace = (TileEntityFurnace) world.getTileEntity(pos);
+			TileEntityFurnace furnace = (TileEntityFurnace) worldIn.getTileEntity(pos);
 			ItemStack furnaceFuel = furnace.getStackInSlot(1);
 			if (furnaceFuel != null && furnaceFuel.getItem() == GrimcraftItems.brimstone) {
 				int poisonStrength = 0;
@@ -132,20 +133,10 @@ public class GrimcraftEventHandler {
 				}
 			}
 		}
-	}
-	
-	@SubscribeEvent
-	public void onPlayerBreakBlock(BreakEvent event) {
-		World worldIn = event.getWorld();
-		BlockPos pos = event.getPos();
-		IBlockState state = worldIn.getBlockState(pos);
-		
-		Block targetBlock = worldIn.getBlockState(pos).getBlock();
 		
 		// handles vulpiberry harvesting
 		if (targetBlock == GrimcraftBlocks.vulpiberry_bush) {
 			if (state.getValue(BlockVulpiberryBush.GROWN)) {
-				event.setCanceled(true);
 				if (!worldIn.isRemote) {
 					worldIn.spawnEntityInWorld(new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(GrimcraftItems.vulpiberry, 3)));
 				}
@@ -156,7 +147,6 @@ public class GrimcraftEventHandler {
 		// handles ghast pepper harvesting
 		if (targetBlock == GrimcraftBlocks.ghast_pepper_bush) {
 			if (state.getValue(BlockGhastPepperBush.GROWN)) {
-				event.setCanceled(true);
 				if (!worldIn.isRemote) {
 					worldIn.spawnEntityInWorld(new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(GrimcraftItems.ghast_pepper, 3)));
 				}
