@@ -10,12 +10,14 @@ import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.tileentity.TileEntityChest;
+import net.minecraft.util.ResourceLocation;
 // import net.minecraft.util.WeightedRandomChestContent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkGenerator;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenerator;
+import net.minecraft.world.storage.loot.LootTableList;
 import net.minecraftforge.fml.common.IWorldGenerator;
 
 public class WorldGenNetherLair extends WorldGenerator implements IWorldGenerator {
@@ -37,6 +39,9 @@ public class WorldGenNetherLair extends WorldGenerator implements IWorldGenerato
 //    	new WeightedRandomChestContent(Items.RECORD_WAIT, 0, 1, 1, 10), 
 //    	new WeightedRandomChestContent(Items.NAME_TAG, 0, 1, 1, 10), 
 //    };
+	
+	ResourceLocation netherLairLootTable = LootTableList.register(new ResourceLocation("nether_lair"));
+	
 	
 	Block air = Blocks.AIR;
 	Block brick = Blocks.NETHER_BRICK;
@@ -195,8 +200,7 @@ public class WorldGenNetherLair extends WorldGenerator implements IWorldGenerato
 		TileEntityChest chest = (TileEntityChest) worldIn.getTileEntity(pos);
 		
 		if (chest != null) {
-			//TODO ResourceLocation for the loot?
-			//chest.setLoot(loot, world.getSeed());
+			chest.setLootTable(netherLairLootTable, rand.nextLong());
 		}
 	}
 	
