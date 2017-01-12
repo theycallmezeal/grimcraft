@@ -4,13 +4,9 @@
  * Licensed under whatever we decide
  * 
  * TODO
- * fix spawn egg colors
  * ensure the same seed gives you the same ore locations every time
  * test loot tables in nether lairs
  * update ja_JP.lang
- * 
- * before final build:
- * restore @Override
  */
 
 package us.thinkplank.grimcraft;
