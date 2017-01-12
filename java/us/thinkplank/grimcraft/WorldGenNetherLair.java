@@ -22,7 +22,6 @@ import net.minecraftforge.fml.common.IWorldGenerator;
 
 public class WorldGenNetherLair extends WorldGenerator implements IWorldGenerator {
 	
-	// TODO come back to loot
 	//WeightedRandomChestContent(Item, meta, min stack size, max stack size, freq)
 //    public static final WeightedRandomChestContent[] loot = new WeightedRandomChestContent[] {
 //    	new WeightedRandomChestContent(GrimcraftItems.wither_bone, 0, 1, 4, 10), 
