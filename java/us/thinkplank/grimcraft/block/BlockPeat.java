@@ -22,7 +22,7 @@ public class BlockPeat extends BlockFalling {
 	
     public BlockPeat () {
         super(Material.GLASS);
-        setHardness(3F);
+        setHardness(0.6F);
         setSoundType(SoundType.GROUND);
         setRegistryName("peat");
         setHarvestLevel("shovel", 0);

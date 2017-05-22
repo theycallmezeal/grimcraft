@@ -1,14 +1,22 @@
 /*
  * Grimcraft.java 1.0.0
- * Made with love by Lapiman and Fox
- * Licensed under whatever we decide
+ * Made with love by Lapiman
+ * Thanks to Fox for the help
+ * Licensed under whatever I decide
  * 
  * TODO
- * implement the rest of the vanilla changes
- * config!
+ * implement the mechanic to create overworld materials
+ * add fox
+ * config for...
+ * 	ore gen
+ *  nether lair on/off
+ *  mobs dropping brimstone
+ *  mob spawns (all)
+ *  ghast peppers setting you on fire
+ *  brimstone chance of poisoning
  * ensure the same seed gives you the same ore locations every time
- * test loot tables in nether lairs
  * give block hardnesses a look-through
+ * make boars and phoenixes attack you
  * update ja_JP.lang
  */
 
