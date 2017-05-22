@@ -12,10 +12,10 @@ import us.thinkplank.grimcraft.Grimcraft;
 
 public class GrimcraftItems {
 	// name, harvest level, maxUses, efficiency, damage, enchantability
-    static ToolMaterial grimwood_material = EnumHelper.addToolMaterial("GRIMWOOD", 0, 59, 2.0F, 1.0F, 15);
-    static ToolMaterial netherrack_material = EnumHelper.addToolMaterial("NETHERRACK", 1, 131, 5.0F, 1.0F, 5);
-    static ToolMaterial nether_quartz_material = EnumHelper.addToolMaterial("NETHER_QUARTZ", 0, 32, 13.0F, 0.0F, 22);
-    static ToolMaterial nether_gold_material = EnumHelper.addToolMaterial("NETHER_GOLD", 3, 250, 7.0F, 2.0F, 14);
+    static ToolMaterial grimwood_material = EnumHelper.addToolMaterial("GRIMWOOD", 0, 69, 3.0F, 1.0F, 15);
+    static ToolMaterial netherrack_material = EnumHelper.addToolMaterial("NETHERRACK", 1, 141, 6.0F, 1.0F, 5);
+    static ToolMaterial nether_quartz_material = EnumHelper.addToolMaterial("NETHER_QUARTZ", 0, 42, 14.0F, 0.0F, 22);
+    static ToolMaterial nether_gold_material = EnumHelper.addToolMaterial("NETHER_GOLD", 3, 260, 8.0F, 2.0F, 14);
     
     public final static Item grimwood_shovel = new GrimcraftTools.Shovel(grimwood_material, "grimwood_shovel");
     public final static Item grimwood_pickaxe = new GrimcraftTools.Pickaxe(grimwood_material, "grimwood_pickaxe");
@@ -47,7 +47,7 @@ public class GrimcraftItems {
     public final static Item brimstone = new Item().setCreativeTab(CreativeTabs.MATERIALS).setRegistryName("brimstone").setUnlocalizedName("brimstone");
     public final static Item barley = new Item().setCreativeTab(CreativeTabs.MATERIALS).setRegistryName("barley").setUnlocalizedName("barley");
     public final static Item barley_seeds = new ItemBarleySeeds();
-    public final static Item vulpiberry = new ItemFood(1, 0.1F, false).setCreativeTab(CreativeTabs.FOOD).setRegistryName("vulpiberry").setUnlocalizedName("vulpiberry");
+    public final static Item vulpiberry = new ItemFood(1, 0.2F, false).setCreativeTab(CreativeTabs.FOOD).setRegistryName("vulpiberry").setUnlocalizedName("vulpiberry");
     public final static Item ghast_pepper = new ItemGhastPepper();
     public final static Item netherroot = new ItemNetherroot();
     public final static Item phoenix_egg = new ItemPhoenixEgg();

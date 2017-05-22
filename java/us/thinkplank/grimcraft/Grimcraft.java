@@ -4,8 +4,6 @@
  * Licensed under whatever we decide
  * 
  * TODO
- * give nether foods a stats boost
- * give nether materials a stats boost
  * implement the rest of the vanilla changes
  * config!
  * ensure the same seed gives you the same ore locations every time

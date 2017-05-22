@@ -8,7 +8,7 @@ import net.minecraft.world.World;
 
 public class ItemGhastPepper extends ItemFood {
     public ItemGhastPepper() {
-        super(2, 0.8F, false);
+        super(2, 1.0F, false);
         setRegistryName("ghast_pepper");
     }
     
