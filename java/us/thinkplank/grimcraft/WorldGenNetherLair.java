@@ -39,8 +39,9 @@ public class WorldGenNetherLair extends WorldGenerator implements IWorldGenerato
 //    	new WeightedRandomChestContent(Items.NAME_TAG, 0, 1, 1, 10), 
 //    };
 	
-	ResourceLocation netherLairLootTable = LootTableList.register(new ResourceLocation("nether_lair"));
-	
+	ResourceLocation netherLairLootTable = LootTableList.CHESTS_SIMPLE_DUNGEON;
+	//TODO figure out how to register Loot Table correctly
+	// LootTableList.register(new ResourceLocation("grimcraft", "nether_lair"));
 	
 	Block air = Blocks.AIR;
 	Block brick = Blocks.NETHER_BRICK;
@@ -213,9 +214,9 @@ public class WorldGenNetherLair extends WorldGenerator implements IWorldGenerato
 				BlockPos thisPos = pos.add(x, height, z);
 				worldIn.setBlockState(thisPos, array[x][z].getDefaultState());
 				
-				//if (array[x][z] == chest) {
-					//fillChest(world, rand, thisPos);
-				//}
+				if (array[x][z] == chest) {
+					fillChest(worldIn, rand, thisPos);
+				}
 			}
 		}
 	}
@@ -247,6 +248,8 @@ public class WorldGenNetherLair extends WorldGenerator implements IWorldGenerato
 			!locationIsValidSpawn(worldIn, pos.add(0, 0, 8))) {
 			return false;
 		}
+		
+		System.out.println("Generating nether lair at coords " + pos.getX() + " " + pos.getY() + " " + pos.getZ());
 		
 		int rotateNum = (int) Math.floor(rand.nextDouble() * 4);
 		
