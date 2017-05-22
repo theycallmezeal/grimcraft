@@ -17,5 +17,6 @@ public class ModelPhoenix extends ModelChicken {
         this.rightLeg.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount;
         this.leftLeg.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F + (float)Math.PI) * 1.4F * limbSwingAmount;
         //remove wing rotation
+        //TODO add back wing rotation somehow?
     }
 }
