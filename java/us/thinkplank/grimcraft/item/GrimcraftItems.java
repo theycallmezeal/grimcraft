@@ -52,6 +52,7 @@ public class GrimcraftItems {
     public final static Item netherroot = new ItemNetherroot();
     public final static Item phoenix_egg = new ItemPhoenixEgg();
     public final static Item netherroot_soup = new ItemNetherRootSoup();
+    public final static Item brimstone_essence = new Item().setCreativeTab(CreativeTabs.MATERIALS).setRegistryName("brimstone_essence").setUnlocalizedName("brimstone_essence");
     
     public final static Item item_grimwood_door = new ItemGrimwoodDoor();
     
@@ -91,6 +92,7 @@ public class GrimcraftItems {
         registerItem(netherroot);
         registerItem(netherroot_soup);
         registerItem(phoenix_egg);
+        registerItem(brimstone_essence);
         
         registerItem(item_grimwood_door);
     }
@@ -131,6 +133,7 @@ public class GrimcraftItems {
         registerItemModel(netherroot);
         registerItemModel(netherroot_soup);
         registerItemModel(phoenix_egg);
+        registerItemModel(brimstone_essence);
         
         registerItemModel(item_grimwood_door);
     }

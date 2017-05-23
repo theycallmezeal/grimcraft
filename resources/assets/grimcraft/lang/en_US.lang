@@ -11,7 +11,6 @@ tile.grimcraft.nether_redstone_ore.name=Nether Redstone Ore
 tile.grimcraft.peat.name=Peat
 tile.grimcraft.brimstone_ore.name=Brimstone Ore
 tile.grimcraft.brimstone_block.name=Brimstone Block
-tile.grimcraft.soul_sand_glass.name=Soul Sand Glass
 tile.grimcraft.barley_crop.name=Barley
 tile.grimcraft.netherroot_crop.name=Netherroot
 tile.grimcraft.vulpiberry_bush.name=Vulpiberry Bush
@@ -51,6 +50,7 @@ item.grimcraft.ghast_pepper.name=Ghast Pepper
 item.grimcraft.netherroot.name=Netherroot
 item.grimcraft.netherroot_soup.name=Netherroot Soup
 item.grimcraft.phoenix_egg.name=Phoenix Egg
+item.grimcraft.brimstone_essence.name=Brimstone Essence
 
 item.grimcraft.item_grimwood_door.name=Grimwood Door
 

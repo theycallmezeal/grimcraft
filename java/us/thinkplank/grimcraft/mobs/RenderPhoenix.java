@@ -1,6 +1,5 @@
 package us.thinkplank.grimcraft.mobs;
 
-import net.minecraft.client.model.ModelChicken;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
