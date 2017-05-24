@@ -16,8 +16,9 @@ import us.thinkplank.grimcraft.block.GrimcraftBlocks;
 import us.thinkplank.grimcraft.item.GrimcraftItems;
 
 public class GrimcraftCreativeTab extends CreativeTabs {
-	private List<Item> ordering;
-	private Comparator<ItemStack> comparator;
+//  TODO figure out if this is still needed.
+//	private List<Item> ordering;
+//	private Comparator<ItemStack> comparator;
 	
 	public GrimcraftCreativeTab() {
 		super(Grimcraft.MODID);

@@ -132,26 +132,6 @@ public class GrimcraftEventHandler {
 				}
 			}
 		}
-		
-		// handles vulpiberry harvesting
-		if (targetBlock == GrimcraftBlocks.vulpiberry_bush) {
-			if (state.getValue(BlockVulpiberryBush.GROWN)) {
-				if (!worldIn.isRemote) {
-					worldIn.spawnEntityInWorld(new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(GrimcraftItems.vulpiberry, 3)));
-				}
-				worldIn.setBlockState(pos, state.withProperty(BlockVulpiberryBush.GROWN, false));
-			}
-		}
-		
-		// handles ghast pepper harvesting
-		if (targetBlock == GrimcraftBlocks.ghast_pepper_bush) {
-			if (state.getValue(BlockGhastPepperBush.GROWN)) {
-				if (!worldIn.isRemote) {
-					worldIn.spawnEntityInWorld(new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(GrimcraftItems.ghast_pepper, 3)));
-				}
-				worldIn.setBlockState(pos, state.withProperty(BlockGhastPepperBush.GROWN, false));
-			}
-		}
 	}
 	
 	/* this makes lava push around mobs */

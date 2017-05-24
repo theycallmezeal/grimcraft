@@ -18,6 +18,7 @@
  * give block hardnesses a look-through
  * make boars and phoenixes attack you
  * update ja_JP.lang
+ * see if the creative tab ordering is still wonky when the mod is loaded completely anew
  */
 
 package us.thinkplank.grimcraft;

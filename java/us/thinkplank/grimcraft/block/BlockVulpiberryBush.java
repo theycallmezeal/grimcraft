@@ -8,6 +8,7 @@ import net.minecraft.block.BlockBush;
 import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
@@ -89,4 +90,14 @@ public class BlockVulpiberryBush extends BlockBush implements IShearable {
 		
 		return ret;
 	}
+	
+	@Override
+	public void breakBlock(World worldIn, BlockPos pos, IBlockState state) {
+		if (state.getValue(GROWN) == true) {
+			worldIn.spawnEntityInWorld(new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(GrimcraftItems.ghast_pepper, 3)));
+			worldIn.setBlockState(pos, state.withProperty(GROWN, false));
+		} else {
+			super.breakBlock(worldIn, pos, state);
+		}
+    }
 }
