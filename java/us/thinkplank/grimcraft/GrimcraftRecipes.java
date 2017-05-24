@@ -61,7 +61,13 @@ public class GrimcraftRecipes {
         GameRegistry.addShapelessRecipe(new ItemStack(GrimcraftItems.netherroot), new ItemStack(Items.POISONOUS_POTATO), new ItemStack(GrimcraftItems.wither_bonemeal));
         GameRegistry.addShapelessRecipe(new ItemStack(GrimcraftItems.netherroot), new ItemStack(Items.BEETROOT), new ItemStack(GrimcraftItems.wither_bonemeal));
         GameRegistry.addShapelessRecipe(new ItemStack(GrimcraftItems.netherroot_soup), new ItemStack(GrimcraftItems.netherroot), new ItemStack(Items.BOWL));
-
+        
+        GameRegistry.addShapelessRecipe(new ItemStack(Blocks.COBBLESTONE), new ItemStack(GrimcraftItems.brimstone_essence), new ItemStack(Blocks.NETHERRACK));
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.IRON_INGOT), new ItemStack(GrimcraftItems.brimstone_essence), new ItemStack(Items.GOLD_INGOT));
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.STICK), new ItemStack(GrimcraftItems.brimstone_essence), new ItemStack(GrimcraftItems.grimwood_stick));
+        GameRegistry.addShapelessRecipe(new ItemStack(Blocks.LOG), new ItemStack(GrimcraftItems.brimstone_essence), new ItemStack(GrimcraftBlocks.grimwood_log));
+        
+        
         GameRegistry.addRecipe(new ItemStack(GrimcraftBlocks.glowstone_grower), "plp", "pbp", "ggg",
         		'p', new ItemStack(GrimcraftBlocks.grimwood_planks),
         		'l', new ItemStack(Items.LAVA_BUCKET),
