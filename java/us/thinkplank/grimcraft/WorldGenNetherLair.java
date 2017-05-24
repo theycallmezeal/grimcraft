@@ -21,6 +21,7 @@ import net.minecraft.world.storage.loot.LootTableList;
 import net.minecraftforge.fml.common.IWorldGenerator;
 
 public class WorldGenNetherLair extends WorldGenerator implements IWorldGenerator {
+	//TODO in 1.11 update, make this work with /locate!
 	
 	// old loot table contents
 	//WeightedRandomChestContent(Item, meta, min stack size, max stack size, freq)

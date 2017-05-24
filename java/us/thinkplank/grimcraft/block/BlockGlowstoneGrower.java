@@ -24,8 +24,6 @@ public class BlockGlowstoneGrower extends Block {
 	
 	@Override
 	public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random random) {
-		
-		
 		int radius = 5;
 		
 		for (int i = 0 - radius; i <= radius; i++) {
